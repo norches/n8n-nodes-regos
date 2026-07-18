@@ -1,0 +1,152 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>Список ошибок</h1>
+  <p></p>
+  <p>
+    Эта страница помогает понять OAuth-ошибки, которые может вернуть REGOS.
+    Ошибка почти всегда состоит из короткого кода <code>error</code> и
+    человекочитаемого описания <code>error_description</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>
+    Если ошибка пришла после перехода на <code>/oauth/authorize</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, она
+    может вернуться на ваш <code>redirect_uri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> в query
+    string. Если ошибка пришла от <code>/oauth/token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>/oauth/introspect</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>/oauth/revoke</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> или
+    <code>/oauth/logout</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, она
+    вернется в JSON-ответе.
+  </p>
+  <h4 id="chastye-oshibki-avtorizac">
+    Частые ошибки авторизации<a
+      href="#chastye-oshibki-avtorizac"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <code>invalid_request</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что в запросе не хватает обязательного параметра или параметр передан в
+    неправильном формате. Проверьте <code>client_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>redirect_uri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>response_type</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>grant_type</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и формат
+    тела запроса.
+  </p>
+  <p>
+    <code>unauthorized_client</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что клиент не может использовать выбранный сценарий. Например, приложению не
+    разрешен нужный grant type или оно пытается использовать сценарий, который
+    не подходит его типу.
+  </p>
+  <p>
+    <code>access_denied</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что пользователь или сервер авторизации отказал в доступе. Обычно приложение
+    должно показать пользователю понятное сообщение и предложить повторить вход.
+  </p>
+  <p>
+    <code>unsupported_response_type</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что запрошенный тип ответа не поддерживается. Для входа через REGOS
+    используйте <code>response_type=code</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>
+    <code>invalid_scope</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что приложение запросило права, которые ему не выданы. Проверьте список
+    scope, согласованный для клиента.
+  </p>
+  <p>
+    <code>server_error</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>temporarily_unavailable</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> говорят о
+    временной проблеме на стороне сервиса. В этом случае не повторяйте запрос
+    бесконечно; покажите пользователю сообщение и попробуйте позже.
+  </p>
+  <h4 id="oshibki-polucheniya-token">
+    Ошибки получения токена<a
+      href="#oshibki-polucheniya-token"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <code>invalid_client</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что клиент не прошел проверку. Проверьте <code>client_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и способ
+    передачи секрета.
+  </p>
+  <p>
+    <code>invalid_grant</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что код авторизации или refresh token недействителен, истек, уже использован
+    или выдан другому клиенту. В большинстве случаев нужно начать вход заново.
+  </p>
+  <p>
+    <code>unsupported_grant_type</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что переданный <code>grant_type</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> не
+    поддерживается для этого endpoint или клиента.
+  </p>
+  <h4 id="oshibki-tokenov-i-sessii">
+    Ошибки токенов и сессии<a
+      href="#oshibki-tokenov-i-sessii"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <code>invalid_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что access token истек, отозван или имеет неправильный формат. Попробуйте
+    обновить токен через <code>refresh_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>; если
+    обновление не удалось, отправьте пользователя на повторный вход.
+  </p>
+  <p>
+    <code>login_required</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что REGOS не может выполнить тихую авторизацию без участия пользователя.
+    Откройте обычный экран входа.
+  </p>
+  <p>
+    <code>consent_required</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что нужно согласие пользователя. Повторите авторизацию без
+    <code>prompt=none</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, чтобы
+    пользователь мог увидеть экран согласия.
+  </p>
+  <p>
+    <code>unsupported_token_type</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что тип токена нельзя отозвать выбранным способом. Для отзыва передавайте
+    выданный access token и очищайте локально связанные токены.
+  </p>
+  <p></p>
+</div>

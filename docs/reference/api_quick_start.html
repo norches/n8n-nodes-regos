@@ -1,0 +1,428 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    18.09.2025 15:00
+  </div>
+  <h1>Быстрый старт</h1>
+  <p></p>
+  <p>
+    REGOS API — это инструмент для интеграции сайта или приложения с сервисом
+    <strong>REGOS</strong>, который позволяет автоматизировать работу с
+    номенклатурой, заказами, остатками, закупками и другими операциями в
+    розничной торговле. Этот гид создан для того, чтобы вы быстро разобрались в
+    структуре и логике API: от получения доступа до работы с ключевыми методами.
+    После прочтения станет ясно, как строятся запросы, как использовать основные
+    сущности и как настраивать уведомления через вебхуки.
+  </p>
+  <div class="notices blue">
+    <p>
+      <strong
+        >Вступайте в наш закрытый
+        <a
+          href="https://t.me/+u5M_byfpzC1kZWQy"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          class="external-link no-image"
+          >Telegram-канал для разработчиков</a
+        >, чтобы быть в курсе обновлений API и лучших практик интеграции и
+        лайфхаков</strong
+      >
+    </p>
+  </div>
+  <p></p>
+  <div class="page-toc">
+    <h4>Содержание</h4>
+    <ul>
+      <li class="first">
+        <a href="#poluchenie-endpoint-i-kly"
+          >Получение Endpoint и ключа интеграции</a
+        >
+      </li>
+      <li>
+        <a href="#obshchie-principy-zaproso">Общие принципы запросов</a>
+      </li>
+      <li>
+        <a href="#paketnye-zaprosy-batch">Пакетные запросы (Batch)</a>
+      </li>
+      <li>
+        <a href="#limity-zaprosov">Лимиты запросов</a>
+      </li>
+      <li>
+        <a href="#osnovnye-metody-i-logika-">Основные методы и логика API</a>
+      </li>
+      <li>
+        <a href="#rabota-s-nomenklaturoy">Работа с номенклатурой</a>
+      </li>
+      <li>
+        <a href="#dokumenty-zakupki">Документы закупки</a>
+      </li>
+      <li>
+        <a href="#roznichnye-zakazy">Розничные заказы</a>
+      </li>
+      <li>
+        <a href="#vebhuki">Вебхуки</a>
+      </li>
+      <li class="last">
+        <a href="#nashi-rekomendacii">Наши рекомендации</a>
+      </li>
+    </ul>
+  </div>
+  <p></p>
+  <hr />
+  <h4 id="poluchenie-endpoint-i-kly">
+    Получение Endpoint и ключа интеграции<a
+      href="#poluchenie-endpoint-i-kly"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Чтобы начать работу с API, нужно получить два ключевых элемента: Endpoint и
+    id интеграции (<code>connected_integration_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>). Они
+    генерируются автоматически при создании интеграции в REGOS.Online. Endpoint
+    представляет собой базовый адрес, к которому будут отправляться запросы, а
+    connected_integration_id — уникальный идентификатор вашей интеграции.
+  </p>
+  <p>
+    После создания интеграции в личном кабинете REGOS.Online вы получите
+    <strong>Endpoint</strong> для выполнения запросов к API, строковый ключ вида
+    <code>11v5929ba236415hb31346ede021bdi4</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>Пример формата Endpoint:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-txt"
+      tabindex="0"
+    ><code class="language-txt">https://integration.regos.uz/gateway/out/{integrationKey}/v1/{method}
+</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Например, если вы хотите получить информацию об аккаунте, запрос будет
+    выглядеть так:
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-txt"
+      tabindex="0"
+    ><code class="language-txt">https://integration.regos.uz/gateway/out/11v5929ba236415hb31346ede021bdi4/v1/Account/Get
+</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <h4 id="obshchie-principy-zaproso">
+    Общие принципы запросов<a
+      href="#obshchie-principy-zaproso"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Все запросы к REGOS API выполняются методом <strong>POST</strong>. Формат
+    обмена данными — JSON. Это значит, что вы отправляете JSON-тело и получаете
+    структурированный JSON-ответ, в котором всегда есть код выполнения,
+    сообщение и тело ответа. Такой единый подход позволяет работать с любыми
+    сущностями — будь то товары, документы или операции — по одинаковой схеме.
+  </p>
+  <p>
+    Важно помнить, что запросы требуют обязательных заголовков, а структура
+    ответов стандартизирована.
+  </p>
+  <p>
+    Если нужно разобраться подробнее в том, как именно строятся запросы, в
+    официальной документации есть отдельная глава, с примерами кода:
+  </p>
+  <div class="notices blue">
+    <p>
+      <a
+        href="https://docs.regos.uz/ru/api/intro/make-api-queries"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >Порядок выполнения запросов</a
+      >.
+    </p>
+  </div>
+  <p>
+    Отдельно стоит изучить
+    <a
+      href="https://docs.regos.uz/ru/api/intro/errors"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >перечень ошибок</a
+    >, чтобы заранее понимать, как интерпретировать коды и сообщения при работе
+    с API.
+  </p>
+  <h4 id="paketnye-zaprosy-batch">
+    Пакетные запросы (Batch)<a
+      href="#paketnye-zaprosy-batch"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Иногда требуется выполнить несколько методов подряд, передавая результат
+    одного шага в другой. Для этого в REGOS: API предусмотрен механизм
+    batch-запросов. Он позволяет объединять до 50 вызовов API в один
+    HTTP-запрос, отправить его на единый и получить массив ответов.
+  </p>
+  <div class="notices blue">
+    <p>
+      Как работать с
+      <a
+        href="https://docs.regos.uz/ru/api/intro/batch"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >пакетными (batch) запросами</a
+      >.
+    </p>
+  </div>
+  <h4 id="limity-zaprosov">
+    Лимиты запросов<a
+      href="#limity-zaprosov"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    REGOS API имеет встроенные ограничения на частоту запросов. Они нужны для
+    того, чтобы все интеграции работали стабильно и равномерно. Лимиты
+    реализованы по принципу «счётчика запросов», который постепенно пополняется
+    с течением времени.<br />
+    Это значит, что можно отправлять burst-запросы (то есть пачку подряд), но
+    только в пределах накопленного лимита. Когда счётчик исчерпан, новые запросы
+    будут отклоняться до тех пор, пока счётчик не восстановится.
+  </p>
+  <div class="notices blue">
+    <p>
+      Подробное описание механизма можно найти в разделе
+      <a
+        href="https://docs.regos.uz/ru/api/intro/limits"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >лимиты запросов</a
+      >.
+    </p>
+  </div>
+  <h4 id="osnovnye-metody-i-logika-">
+    Основные методы и логика API<a
+      href="#osnovnye-metody-i-logika-"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Архитектура REGOS API построена вокруг различных сущностей. Главная из них —
+    номенклатура товаров, которая обозначается как <strong>Item</strong>. Кроме
+    этого, есть документы (все методы начинаются с <code>Doc*</code>) и операции
+    (<code>Operation*</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>).
+  </p>
+  <p>
+    Общая логика всегда одинакова: сначала создаётся основной документ, например
+    закупка, продажа или заказ, а затем к нему добавляются операции, которые
+    содержат конкретные позиции с товарами, количеством и ценой. Такой подход
+    обеспечивает атомарность: документ является агрегатором операций и позволяет
+    корректно рассчитывать итоговые суммы, НДС и другие показатели.
+  </p>
+  <p>
+    Многие методы API поддерживают фильтрацию. Например, при получении данных
+    можно ограничить выборку по датам, ID сущностей или использовать поиск по
+    коду и наименованию.
+  </p>
+  <p>
+    Независимо от того, работаете ли вы с товарами или документами, все методы
+    вызываются через <strong>POST и принимают JSON-тело</strong> с параметрами
+    фильтрации.
+  </p>
+  <h4 id="rabota-s-nomenklaturoy">
+    Работа с номенклатурой<a
+      href="#rabota-s-nomenklaturoy"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Номенклатура — это базовая сущность в REGOS. В ней содержатся данные обо
+    всех товарах, и именно она используется при формировании заказов, отчётов,
+    чеков продаж или возвратов.
+  </p>
+  <p>
+    Для работы с номенклатурой есть несколько методов. Метод
+    <a
+      href="https://docs.regos.uz/ru/api/references/item/get"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >Item/Get</a
+    >
+    возвращает базовый список номенклатуры и поддерживает фильтрацию по ID или
+    имени. Более расширенная версия метода —
+    <a
+      href="https://docs.regos.uz/ru/api/references/item/getext"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >Item/GetExt</a
+    >. Она дополнительно возвращает цены, остатки и ссылки на изображения. Если
+    вам нужно получить только текущее количество товара на складе, то для этого
+    используется метод
+    <a
+      href="https://docs.regos.uz/ru/api/references/item/getquantity"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >Item/GetQuantity</a
+    >.
+  </p>
+  <p>
+    Отдельно стоит отметить работу с изображениями. Так как ресурсы CDN
+    ограничены,
+    <strong
+      >рекомендуется скачивать изображения на свой сервер и работать уже с
+      локальными копиями</strong
+    >. Это снижает вероятность блокировки по лимитам.
+  </p>
+  <h4 id="dokumenty-zakupki">
+    Документы закупки<a
+      href="#dokumenty-zakupki"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Документы закупки в REGOS обозначаются как <strong>DocPurchase</strong>. Они
+    отражают поступления товаров от контрагентов. Логика работы всегда одна:
+    сначала создаётся документ, в котором фиксируются основные параметры (дата,
+    код документа, контрагент, склад, валюта и так далее). После этого к
+    документу добавляются операции, где указываются позиции номенклатуры,
+    количество и цены.
+  </p>
+  <p>
+    Для выборки документов закупки используется метод
+    <a
+      href="https://docs.regos.uz/ru/api/store/docpurchase/get"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >DocPurchase/Get</a
+    >. Он поддерживает фильтрацию по дате, ID контрагентов, фирм или складов, а
+    также поиск по коду и наименованию. Чтобы создать документ, его сначала
+    нужно добавить через API, а затем наполнить операциями с помощью метода
+    <a
+      href="https://docs.regos.uz/ru/api/store/purchaseoperation"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >PurchaseOperation/Add</a
+    >. Таким образом обеспечивается целостность данных: документ — это «шапка»,
+    а операции — детали.
+  </p>
+  <h4 id="roznichnye-zakazy">
+    Розничные заказы<a
+      href="#roznichnye-zakazy"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Для работы с заказами от клиентов используется сущность
+    <strong>DocOrderDelivery</strong>. Этот тип документа предназначен для того,
+    чтобы передавать заказы с сайта или приложения в систему REGOS.
+  </p>
+  <p>
+    Создание заказа может выполняться по упрощенной схеме через метод
+    <a
+      href="https://docs.regos.uz/ru/retail/docorderdelivery/addfull"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >DocOrderDelivery/AddFull</a
+    >. В одном запросе вы указываете партнёра, список позиций с идентификаторами
+    товаров, их количеством и ценами. В результате формируется полный документ
+    заказа, готовый к обработке в системе.
+  </p>
+  <h4 id="vebhuki">
+    Вебхуки<a
+      href="#vebhuki"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Для мониторинга изменений и событий, которые происходят в REGOS,
+    предусмотрена поддержка вебхуков. Это асинхронный механизм: при наступлении
+    события <strong>система сама отправляет POST-запрос</strong> на ваш сервер.
+    Например, вы можете получать уведомления об изменении статуса заказа без
+    необходимости опрашивать API вручную.
+  </p>
+  <p>
+    Чтобы использовать вебхуки, нужно при создании локальной интеграции указать
+    URL вашего обработчика и подписаться на те события, которые вы хотите
+    получать. После этого REGOS будет автоматически отправлять уведомления в ваш
+    сервис. Более подробную информацию можно найти в разделе
+    <a
+      href="https://docs.regos.uz/ru/integration/webhooks"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >Вебхуки</a
+    >.
+  </p>
+  <h4 id="nashi-rekomendacii">
+    Наши рекомендации<a
+      href="#nashi-rekomendacii"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Мы рекомендуем начинать работу с API через тесты в <strong>Postman</strong>,
+    используя полученный Endpoint . Это позволит вам проверить структуру
+    запросов и убедиться в правильности ответов. Для дальнейшего изучения всегда
+    можно обратиться к
+    <a
+      href="https://docs.regos.uz/ru/api"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >полной документации</a
+    >. В случае возникновения вопросов техническая поддержка REGOS поможет
+    разобраться.
+  </p>
+  <p></p>
+</div>

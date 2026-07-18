@@ -1,0 +1,56 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>backchannel_logout</h1>
+  <p></p>
+  <p><strong>[POST] /oauth/backchannel_logout</strong></p>
+  <p>
+    Backchannel Logout используется для серверного уведомления о выходе
+    пользователя. Обычно этот метод не вызывается вручную пользователем и не
+    нужен для простой кнопки входа. Он нужен интеграциям, которые должны
+    завершить серверную сессию, когда REGOS сообщает о выходе.
+  </p>
+  <p>
+    Запрос отправляется как <code>application/x-www-form-urlencoded</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    содержит <code>logout_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://auth.regos.uz/oauth/backchannel_logout <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"logout_token=eyJ...logout_token"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    <code>logout_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> должен
+    быть JWT, подписанным доверенным ключом и содержащим данные сессии. После
+    успешной обработки сервер возвращает <code>200 OK</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Если
+    токен отсутствует, истек или не прошел проверку, будет возвращена
+    OAuth-ошибка.
+  </p>
+  <p>
+    Если вы подключаете обычный вход пользователя через REGOS, начните с
+    <code>/oauth/logout</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>;
+    backchannel-сценарий нужен только для согласованных серверных интеграций.
+  </p>
+  <p></p>
+</div>

@@ -1,0 +1,565 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>Кнопка авторизации</h1>
+  <p></p>
+  <p></p>
+  <div class="page-toc">
+    <h4>Содержание</h4>
+    <ul>
+      <li class="first">
+        <a href="#vvedenie">Введение</a>
+      </li>
+      <li>
+        <a href="#kak-eto-rabotaet">Как это работает</a>
+      </li>
+      <li>
+        <a href="#podklyuchenie">Подключение</a>
+      </li>
+      <li>
+        <a href="#bystryy-start">Быстрый старт</a>
+      </li>
+      <li>
+        <a href="#nastroyki">Настройки</a>
+      </li>
+      <li>
+        <a href="#callback-i">Callback-и</a>
+      </li>
+      <li>
+        <a href="#silent-avtorizaciya">Silent-авторизация</a>
+      </li>
+      <li>
+        <a href="#bezopasnost">Безопасность</a>
+      </li>
+      <li class="last">
+        <a href="#primer-polnoy-stranicy">Пример полной страницы</a>
+      </li>
+    </ul>
+  </div>
+  <p></p>
+  <h2 id="vvedenie">
+    Введение<a
+      href="#vvedenie"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h2>
+  <p>
+    RegosOAuthSDK — это готовая JavaScript-библиотека для кнопки "Войти через
+    REGOS". Она нужна, если вы хотите быстро добавить вход пользователя на сайт
+    и не писать весь OAuth-процесс вручную.
+  </p>
+  <p>
+    SDK открывает авторизацию REGOS, получает authorization code, обменивает его
+    на токены через PKCE, запрашивает профиль пользователя и сообщает вашему
+    сайту результат через callback. После успешного входа кнопка заменяется
+    аватаром пользователя с меню.
+  </p>
+  <p>
+    Клиентский секрет для SDK не нужен и не должен использоваться в браузере.
+    Для виджета достаточно <code>clientId</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    зарегистрированного <code>redirectUri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>Пример темной кнопки:</p>
+  <p>
+    <img
+      title="button"
+      alt="button"
+      src="/user/pages/02.sso/01.sso-button/button.png"
+    />
+  </p>
+  <p>Пример светлой кнопки:</p>
+  <p>
+    <img
+      title="button2"
+      alt="button2"
+      src="/user/pages/02.sso/01.sso-button/button2.png"
+    />
+  </p>
+  <p>Меню после входа:</p>
+  <p>
+    <img
+      title="menu"
+      alt="menu"
+      src="/user/pages/02.sso/01.sso-button/menu.png"
+    />
+  </p>
+  <h2 id="kak-eto-rabotaet">
+    Как это работает<a
+      href="#kak-eto-rabotaet"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h2>
+  <p>
+    Пользователь нажимает кнопку входа. SDK создает PKCE-защиту и открывает
+    страницу REGOS. На desktop обычно используется popup, а на мобильных
+    устройствах и в PWA SDK переходит на redirect-flow. Если popup заблокирован
+    браузером, SDK также использует redirect.
+  </p>
+  <p>
+    После входа REGOS возвращает пользователя на ваш <code>redirectUri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. На этой
+    странице подключается небольшой обработчик <code>regos-redirect.js</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>: он
+    передает результат обратно основному окну или сохраняет его для
+    redirect-flow. Затем SDK получает токены и вызывает
+    <code>onData(user, access_token)</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>
+    SDK хранит токены в браузере, чтобы пользователь не входил заново при каждом
+    обновлении страницы. Профиль пользователя кэшируется только на короткое
+    время в памяти страницы и при необходимости запрашивается снова.
+  </p>
+  <h2 id="podklyuchenie">
+    Подключение<a
+      href="#podklyuchenie"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h2>
+  <p>Подключите SDK на странице, где должна появиться кнопка:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-html"
+      tabindex="0"
+    ><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://auth.regos.uz/widget/regos-oauth-sdk.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Добавьте контейнер. По умолчанию SDK ищет элемент с id
+    <code>regos-login</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-html"
+      tabindex="0"
+    ><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>regos-login<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Создайте страницу возврата, например
+    <code>https://your.app/oauth/redirect.html</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Этот
+    адрес должен быть зарегистрирован для вашего клиента в REGOS. Внутри
+    страницы достаточно подключить redirect-обработчик:
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-html"
+      tabindex="0"
+    ><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ru<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>REGOS Redirect<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://auth.regos.uz/widget/regos-redirect.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <h2 id="bystryy-start">
+    Быстрый старт<a
+      href="#bystryy-start"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h2>
+  <p>
+    После подключения скрипта вызовите <code>RegosOAuthSDK.initialize</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+    Минимально нужны <code>clientId</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>redirectUri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    callback <code>onData</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-javascript"
+      tabindex="0"
+    ><code class="language-javascript">RegosOAuthSDK<span class="token punctuation">.</span><span class="token function">initialize</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">clientId</span><span class="token operator">:</span> <span class="token string">'your_client_id'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">redirectUri</span><span class="token operator">:</span> <span class="token string">'https://your.app/oauth/redirect.html'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">language</span><span class="token operator">:</span> <span class="token string">'ru'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">buttonSize</span><span class="token operator">:</span> <span class="token string">'m'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">buttonTheme</span><span class="token operator">:</span> <span class="token string">'light'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">buttonType</span><span class="token operator">:</span> <span class="token string">'text'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">buttonTextType</span><span class="token operator">:</span> <span class="token string">'full'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">silent</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">onData</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">user<span class="token punctuation">,</span> accessToken</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Пользователь вошел:'</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Access token:'</span><span class="token punctuation">,</span> accessToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Пользователь не авторизован'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">onLogout</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Локальный выход выполнен'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">onError</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'Ошибка REGOS:'</span><span class="token punctuation">,</span> error<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Если токены уже сохранены и еще действуют, SDK сразу покажет профиль и
+    вызовет <code>onData</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Если
+    токены недействительны, будет показана кнопка входа.
+  </p>
+  <h2 id="nastroyki">
+    Настройки<a
+      href="#nastroyki"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h2>
+  <p>
+    Большую часть настроек можно оставить по умолчанию. Ниже перечислены
+    параметры, которые чаще всего нужны при подключении.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Параметр</th>
+        <th>Обязательный</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>clientId</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да</td>
+        <td>Идентификатор приложения, выданный REGOS.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>redirectUri</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да</td>
+        <td>Страница возврата. Должна быть зарегистрирована в REGOS.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>containerId</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          ID контейнера. По умолчанию <code>regos-login</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>buttonSize</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          Размер кнопки: <code>s</code>, <code>m</code>, <code>l</code>. По
+          умолчанию <code>m</code>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>buttonTheme</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          Тема: <code>light</code> или <code>dark</code>. По умолчанию
+          <code>light</code>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>buttonType</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          Вид кнопки: <code>text</code>, <code>icon-text</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+          <code>icon</code>. По умолчанию <code>text</code>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>buttonTextType</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          Длина текста: <code>full</code> или <code>short</code>. По умолчанию
+          <code>full</code>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>buttonBorderRadius</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>Радиус скругления в пикселях. По умолчанию <code>4</code>.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>language</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          Язык интерфейса SDK: <code>ru</code>, <code>en</code>,
+          <code>uz</code>.
+        </td>
+      </tr>
+      <tr>
+        <td><code>flow</code></td>
+        <td>Нет</td>
+        <td>
+          <code>auto</code> или <code>redirect</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. По
+          умолчанию <code>auto</code>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>silent</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          Попытаться войти без показа окна авторизации, если у пользователя уже
+          есть сессия REGOS. По умолчанию <code>false</code>.
+        </td>
+      </tr>
+      <tr>
+        <td><code>debug</code></td>
+        <td>Нет</td>
+        <td>
+          Писать диагностические сообщения в консоль. По умолчанию
+          <code>false</code>.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="callback-i">
+    Callback-и<a
+      href="#callback-i"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h2>
+  <p>
+    <code>onData(user, accessToken)</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> — главный
+    callback. Он вызывается после входа, после успешного обновления токена и
+    после потери авторизации. Если пользователь авторизован,
+    <code>user</code> содержит данные профиля, а <code>accessToken</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> можно
+    использовать для запросов к вашему API. Если авторизация потеряна, оба
+    значения будут пустыми.
+  </p>
+  <p>
+    <code>onLogout()</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    вызывается после локального выхода через меню SDK. Локальный выход очищает
+    токены в браузере и возвращает кнопку. Если вам нужен полный выход из REGOS,
+    используйте отдельный переход на logout REGOS или настройте серверный
+    сценарий выхода.
+  </p>
+  <p>
+    <code>onError(error)</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    вызывается при сетевой ошибке, ошибке токена, закрытом popup, неуспешной
+    silent-авторизации или другой проблеме. Для пользователя лучше показывать
+    короткое понятное сообщение, а подробности писать в диагностику только при
+    включенном <code>debug</code>.
+  </p>
+  <h2 id="silent-avtorizaciya">
+    Silent-авторизация<a
+      href="#silent-avtorizaciya"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h2>
+  <p>
+    Silent-авторизация пытается войти без popup и redirect, если у пользователя
+    уже есть активная сессия REGOS. SDK открывает скрытый iframe с
+    <code>prompt=none</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Если
+    REGOS может подтвердить пользователя без экрана входа, SDK получает токены и
+    вызывает <code>onData</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-javascript"
+      tabindex="0"
+    ><code class="language-javascript">RegosOAuthSDK<span class="token punctuation">.</span><span class="token function">initialize</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">clientId</span><span class="token operator">:</span> <span class="token string">'your_client_id'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">redirectUri</span><span class="token operator">:</span> <span class="token string">'https://your.app/oauth/redirect.html'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">silent</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">onData</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">user<span class="token punctuation">,</span> token</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user <span class="token operator">?</span> <span class="token string">'Silent-вход успешен'</span> <span class="token operator">:</span> <span class="token string">'Пользователь не вошел'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Silent-авторизация не гарантирована. Некоторые браузеры блокируют cross-site
+    cookies или iframe-сценарии. Если silent-вход не удался, SDK покажет обычную
+    кнопку входа.
+  </p>
+  <h2 id="bezopasnost">
+    Безопасность<a
+      href="#bezopasnost"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h2>
+  <p>
+    Используйте HTTPS для сайта и redirect-страницы. Проверяйте, что
+    <code>redirectUri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> совпадает
+    с зарегистрированным адресом. Не добавляйте <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> в
+    JavaScript и не храните его в браузере. Обрабатывайте состояние "не
+    авторизован" так же явно, как успешный вход.
+  </p>
+  <p>
+    Если ваш сайт отправляет <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> на
+    backend, передавайте его только по HTTPS и проверяйте токен на сервере перед
+    выполнением защищенных действий.
+  </p>
+  <h2 id="primer-polnoy-stranicy">
+    Пример полной страницы<a
+      href="#primer-polnoy-stranicy"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h2>
+  <div class="code-toolbar">
+    <pre
+      class="language-html"
+      tabindex="0"
+    ><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ru<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>REGOS Login<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>regos-login<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://auth.regos.uz/widget/regos-oauth-sdk.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+        RegosOAuthSDK<span class="token punctuation">.</span><span class="token function">initialize</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token literal-property property">clientId</span><span class="token operator">:</span> <span class="token string">'your_client_id'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">redirectUri</span><span class="token operator">:</span> <span class="token string">'https://your.app/oauth/redirect.html'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">buttonSize</span><span class="token operator">:</span> <span class="token string">'m'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">buttonTheme</span><span class="token operator">:</span> <span class="token string">'light'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">buttonType</span><span class="token operator">:</span> <span class="token string">'icon-text'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">buttonTextType</span><span class="token operator">:</span> <span class="token string">'short'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">language</span><span class="token operator">:</span> <span class="token string">'ru'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">flow</span><span class="token operator">:</span> <span class="token string">'auto'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">silent</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token function-variable function">onData</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">user<span class="token punctuation">,</span> accessToken</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> accessToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function-variable function">onError</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p></p>
+</div>

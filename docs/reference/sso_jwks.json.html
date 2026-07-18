@@ -1,0 +1,71 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>jwks.json</h1>
+  <p></p>
+  <p><strong>[GET] /jwks.json</strong></p>
+  <p>
+    JWKS — это набор публичных ключей, которыми приложения проверяют подпись
+    JWT. Проверка подписи нужна, чтобы убедиться, что <code>id_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> или JWT
+    access token действительно выдан REGOS и не был изменен.
+  </p>
+  <p>Метод не требует параметров.</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> GET https://auth.regos.uz/jwks.json</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>Ответ содержит массив ключей:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"kty"</span><span class="token operator">:</span> <span class="token string">"RSA"</span><span class="token punctuation">,</span>
+      <span class="token property">"use"</span><span class="token operator">:</span> <span class="token string">"sig"</span><span class="token punctuation">,</span>
+      <span class="token property">"alg"</span><span class="token operator">:</span> <span class="token string">"RS256"</span><span class="token punctuation">,</span>
+      <span class="token property">"kid"</span><span class="token operator">:</span> <span class="token string">"key_identifier"</span><span class="token punctuation">,</span>
+      <span class="token property">"n"</span><span class="token operator">:</span> <span class="token string">"base64url_modulus"</span><span class="token punctuation">,</span>
+      <span class="token property">"e"</span><span class="token operator">:</span> <span class="token string">"AQAB"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Если вы используете готовую OpenID Connect библиотеку, обычно не нужно
+    загружать этот endpoint вручную. Библиотека прочитает <code>jwks_uri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> из
+    <code>/.well-known/openid-configuration</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и будет
+    обновлять ключи сама.
+  </p>
+  <p></p>
+</div>

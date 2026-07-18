@@ -1,0 +1,107 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>openid-configuration</h1>
+  <p></p>
+  <p><strong>[GET] /.well-known/openid-configuration</strong></p>
+  <p>
+    OpenID Configuration - это публичный служебный документ, который помогает
+    OAuth и OpenID Connect библиотекам автоматически найти нужные адреса REGOS.
+    Если ваша библиотека поддерживает discovery, обычно достаточно передать ей
+    адрес issuer, после чего она сама прочитает этот документ и узнает, куда
+    отправлять пользователя, где получать токены и где брать публичные ключи для
+    проверки подписи.
+  </p>
+  <p>Метод не требует параметров и вызывается без токена.</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> GET https://auth.regos.uz/.well-known/openid-configuration</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Ответ содержит issuer, адрес авторизации, адрес получения токенов, адрес
+    <code>userinfo</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, адрес
+    публичных ключей, поддерживаемые grant types, response types, алгоритмы
+    подписи и список публичных claims. Список <code>claims_supported</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    показывает, какие поля REGOS может вернуть в <code>id_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> или
+    <code>/oauth/userinfo</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, если
+    приложению выданы подходящие scope.
+  </p>
+  <p>Пример сокращенного ответа:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"issuer"</span><span class="token operator">:</span> <span class="token string">"https://auth.regos.uz"</span><span class="token punctuation">,</span>
+  <span class="token property">"authorization_endpoint"</span><span class="token operator">:</span> <span class="token string">"https://auth.regos.uz/oauth/authorize"</span><span class="token punctuation">,</span>
+  <span class="token property">"token_endpoint"</span><span class="token operator">:</span> <span class="token string">"https://auth.regos.uz/oauth/token"</span><span class="token punctuation">,</span>
+  <span class="token property">"userinfo_endpoint"</span><span class="token operator">:</span> <span class="token string">"https://auth.regos.uz/oauth/userinfo"</span><span class="token punctuation">,</span>
+  <span class="token property">"jwks_uri"</span><span class="token operator">:</span> <span class="token string">"https://auth.regos.uz/jwks.json"</span><span class="token punctuation">,</span>
+  <span class="token property">"grant_types_supported"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"authorization_code"</span><span class="token punctuation">,</span>
+    <span class="token string">"refresh_token"</span><span class="token punctuation">,</span>
+    <span class="token string">"client_credentials"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"response_types_supported"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"code"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"id_token_signing_alg_values_supported"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"RS256"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"claims_supported"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"sub"</span><span class="token punctuation">,</span>
+    <span class="token string">"sid"</span><span class="token punctuation">,</span>
+    <span class="token string">"email"</span><span class="token punctuation">,</span>
+    <span class="token string">"email_verified"</span><span class="token punctuation">,</span>
+    <span class="token string">"phone_number"</span><span class="token punctuation">,</span>
+    <span class="token string">"phone_number_verified"</span><span class="token punctuation">,</span>
+    <span class="token string">"given_name"</span><span class="token punctuation">,</span>
+    <span class="token string">"family_name"</span><span class="token punctuation">,</span>
+    <span class="token string">"company"</span><span class="token punctuation">,</span>
+    <span class="token string">"picture"</span><span class="token punctuation">,</span>
+    <span class="token string">"gender"</span><span class="token punctuation">,</span>
+    <span class="token string">"birthdate"</span><span class="token punctuation">,</span>
+    <span class="token string">"country_code"</span><span class="token punctuation">,</span>
+    <span class="token string">"timezone"</span><span class="token punctuation">,</span>
+    <span class="token string">"language_code"</span><span class="token punctuation">,</span>
+    <span class="token string">"telegram_chat_id"</span><span class="token punctuation">,</span>
+    <span class="token string">"roles"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Если в реальном ответе значения отличаются от примера, используйте реальные
+    значения из ответа. Они считаются источником правды для текущего окружения.
+  </p>
+  <p></p>
+</div>

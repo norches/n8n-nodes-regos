@@ -1,0 +1,4435 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    04.07.2026 12:53
+  </div>
+  <h1>События</h1>
+  <p></p>
+  <p>
+    Событие (<code>event</code>) - единый объект уведомления REGOS. У события
+    есть уникальный <code>event_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, тип
+    (<code>action</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>), время
+    возникновения (<code>occurred_at</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>) и
+    полезная нагрузка (<code>data</code>).
+  </p>
+  <p>
+    Persistent-события сохраняются в истории 7 дней с момента возникновения и
+    могут быть восстановлены через
+    <a href="https://docs.regos.uz/ru/api/event/01.get/">
+      <code>Event/Get</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span> </a
+    >. Transient-события актуальны только в момент доставки, не сохраняются в
+    истории и не возвращаются через <code>Event/Get</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p><strong>Event</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Название</strong></th>
+        <th><strong>Тип данных</strong></th>
+        <th><strong>Обязательность</strong></th>
+        <th><strong>Описание</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>event_id</td>
+        <td>String</td>
+        <td>Обязательный</td>
+        <td>
+          UUID события. Используйте для идемпотентности и как
+          <code>last_event_id</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+          в
+          <a href="https://docs.regos.uz/ru/api/event/01.get/">
+            <code>Event/Get</code
+            ><span
+              class="copy-to-clipboard"
+              title="Copy to clipboard"
+            ></span> </a
+          >; не используйте для сортировки
+        </td>
+      </tr>
+      <tr>
+        <td>occurred_at</td>
+        <td>DateTime</td>
+        <td>Обязательный</td>
+        <td>Дата и время возникновения события в REGOS, UTC, ISO 8601</td>
+      </tr>
+      <tr>
+        <td>action</td>
+        <td>String</td>
+        <td>Обязательный</td>
+        <td>
+          Тип события. Допустимые значения перечислены в разделе
+          <a
+            href="https://docs.regos.uz/ru/api/event#%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9"
+            >Список событий</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>data</td>
+        <td>Object</td>
+        <td>Обязательный</td>
+        <td>
+          Полезная нагрузка события. Состав зависит от
+          <code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Пример event</strong></p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"event_id"</span><span class="token operator">:</span> <span class="token string">"2f0f7b7a-7c43-4d91-917f-8f412ad0ab5e"</span><span class="token punctuation">,</span>
+  <span class="token property">"occurred_at"</span><span class="token operator">:</span> <span class="token string">"2026-06-26T10:00:00Z"</span><span class="token punctuation">,</span>
+  <span class="token property">"action"</span><span class="token operator">:</span> <span class="token string">"DocOrderDeliveryStatusSet"</span><span class="token punctuation">,</span>
+  <span class="token property">"data"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">54321</span><span class="token punctuation">,</span>
+    <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"Completed"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <h4 id="spisok-sobytiy">
+    Список событий<a
+      href="https://docs.regos.uz/ru/api/event#spisok-sobytiy"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Ниже приведён публичный список значений <code>action</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, которые
+    используются в событиях REGOS.
+  </p>
+  <h5 id="account-scheta">
+    Account — Счета<a
+      href="https://docs.regos.uz/ru/api/event#account-scheta"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>AccountAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Account/Add</td>
+        <td>Создание счёта</td>
+      </tr>
+      <tr>
+        <td>
+          <code>AccountEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Account/Edit</td>
+        <td>Редактирование счёта</td>
+      </tr>
+      <tr>
+        <td>
+          <code>AccountDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Account/Delete</td>
+        <td>Удаление счёта</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="accountoperationcategory-">
+    AccountOperationCategory — Статьи доходов и расходов<a
+      href="https://docs.regos.uz/ru/api/event#accountoperationcategory-"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>AccountOperationCategoryAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/AccountOperationCategory/Add</td>
+        <td>Создание статьи</td>
+      </tr>
+      <tr>
+        <td>
+          <code>AccountOperationCategoryEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/AccountOperationCategory/Edit</td>
+        <td>Редактирование статьи</td>
+      </tr>
+      <tr>
+        <td>
+          <code>AccountOperationCategoryDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/AccountOperationCategory/Delete</td>
+        <td>Удаление статьи</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="brand-brendy">
+    Brand — Бренды<a
+      href="https://docs.regos.uz/ru/api/event#brand-brendy"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>BrandAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Brand/Add</td>
+        <td>Создание бренда</td>
+      </tr>
+      <tr>
+        <td>
+          <code>BrandEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Brand/Edit</td>
+        <td>Редактирование бренда</td>
+      </tr>
+      <tr>
+        <td>
+          <code>BrandDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Brand/Delete</td>
+        <td>Удаление бренда</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="campaign-massovaya-rassyl">
+    Campaign — Массовая рассылка SMS<a
+      href="https://docs.regos.uz/ru/api/event#campaign-massovaya-rassyl"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>CampaignAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Campaign/Add</td>
+        <td>Создание массовой рассылки SMS</td>
+      </tr>
+      <tr>
+        <td>
+          <code>CampaignRecipientsStatusSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, status</td>
+        <td>/v1/Campaign/SetRecipientsStatus</td>
+        <td>Изменение статуса получателей рассылки</td>
+      </tr>
+      <tr>
+        <td>
+          <code>CampaignDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Campaign/Delete</td>
+        <td>Удаление массовой рассылки SMS</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="report-otchety">
+    Report — Отчёты<a
+      href="https://docs.regos.uz/ru/api/event#report-otchety"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>ReportPrepared</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>uuid</td>
+        <td>/v1/Report/SetPrepared</td>
+        <td>Отчёт сформирован и подготовлен</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ReportError</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>uuid</td>
+        <td>/v1/Report/SetError</td>
+        <td>Отчёт завершился с ошибкой</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="storage-ochistka-hranilis">
+    Storage — Очистка хранилища<a
+      href="https://docs.regos.uz/ru/api/event#storage-ochistka-hranilis"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>StorageCleanupProcessed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>total_files, processed_files, error_files</td>
+        <td>/v1/Storage/Cleanup</td>
+        <td>Прогресс пакетной очистки файлов хранилища</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="cashserver-servery-kass">
+    CashServer — Серверы касс<a
+      href="https://docs.regos.uz/ru/api/event#cashserver-servery-kass"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>CashServerAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/CashServer/Add</td>
+        <td>Создание сервера касс</td>
+      </tr>
+      <tr>
+        <td>
+          <code>CashServerEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/CashServer/Edit</td>
+        <td>Редактирование сервера касс</td>
+      </tr>
+      <tr>
+        <td>
+          <code>CashServerDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/CashServer/Delete</td>
+        <td>Удаление сервера касс</td>
+      </tr>
+      <tr>
+        <td>
+          <code>CashServerSyncBegun</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/CashServer/SyncBegin</td>
+        <td>Начало синхронизации</td>
+      </tr>
+      <tr>
+        <td>
+          <code>CashServerSyncEnded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/CashServer/SyncEnd</td>
+        <td>Завершение синхронизации</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="chat-chaty">
+    Chat — Чаты<a
+      href="https://docs.regos.uz/ru/api/event#chat-chaty"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>ChatAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, external_id</td>
+        <td>/v1/Chat/Add</td>
+        <td>Создание чата</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, external_id</td>
+        <td>/v1/Chat/Edit</td>
+        <td>Редактирование чата</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatParticipantsSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>
+          /v1/Chat/SetParticipants, /v1/Chat/AddParticipant, /v1/Chat/Join
+        </td>
+        <td>Обновление состава участников чата</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatParticipantsRemoved</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Chat/RemoveParticipants, /v1/Chat/Leave</td>
+        <td>
+          Удаление участников из чата или выход текущего пользователя из чата
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatMutedSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, user_id, muted</td>
+        <td>/v1/Chat/SetMuted</td>
+        <td>
+          Изменение признака отключенных уведомлений чата для текущего
+          пользователя
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatArchivedSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, user_id, archived</td>
+        <td>/v1/Chat/SetArchived</td>
+        <td>Изменение признака архивации чата для текущего пользователя</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatPinnedSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, user_id, pinned</td>
+        <td>/v1/Chat/SetPinned</td>
+        <td>Изменение признака закрепления чата для текущего пользователя</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="chatmessage-soobshcheniya">
+    ChatMessage — Сообщения чатов<a
+      href="https://docs.regos.uz/ru/api/event#chatmessage-soobshcheniya"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>ChatMessageAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, chat_id, external_message_id</td>
+        <td>/v1/ChatMessage/Add</td>
+        <td>Добавление сообщения в чат</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatMessageEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, chat_id, external_message_id</td>
+        <td>/v1/ChatMessage/Edit</td>
+        <td>Редактирование сообщения в чате</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatMessageDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, chat_id, external_message_id</td>
+        <td>/v1/ChatMessage/Delete</td>
+        <td>Удаление сообщения в чате</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatMessageRead</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>chat_id, user_id, last_read_message_id, row_affected</td>
+        <td>/v1/ChatMessage/MarkRead</td>
+        <td>Отметка сообщений чата как прочитанных</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatMessagePinnedSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, chat_id, external_message_id, pinned, user_id</td>
+        <td>/v1/ChatMessage/SetPinned</td>
+        <td>Изменение признака закрепления сообщения</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatMessageReactionsSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>
+          id, chat_id, external_message_id, user_id, old_reactions, reactions
+        </td>
+        <td>/v1/ChatMessage/SetReaction</td>
+        <td>Изменение набора реакций текущего пользователя на сообщение</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatMessageCallback</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>chat_id, message_id, external_message_id, action_id, user_id</td>
+        <td>/v1/ChatMessage/Callback</td>
+        <td>Callback-действие inline-кнопки сообщения</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatWriting</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>chat_id, author_entity_type, author_entity_id</td>
+        <td>/v1/ChatMessage/Writing</td>
+        <td>Событие «печатает» в чате</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChatSuggest</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>
+          chat_id, author_entity_type, author_entity_id, suggestions,
+          source_message_id
+        </td>
+        <td>/v1/ChatMessage/Suggest</td>
+        <td>Эфемерные подсказки быстрого ответа от ChatBot</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="color-cveta">
+    Color — Цвета<a
+      href="https://docs.regos.uz/ru/api/event#color-cveta"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>ColorAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Color/Add</td>
+        <td>Создание цвета</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ColorEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Color/Edit</td>
+        <td>Редактирование цвета</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ColorDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Color/Delete</td>
+        <td>Удаление цвета</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="country-strany">
+    Country — Страны<a
+      href="https://docs.regos.uz/ru/api/event#country-strany"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>CountryAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Country/Add</td>
+        <td>Создание страны</td>
+      </tr>
+      <tr>
+        <td>
+          <code>CountryEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Country/Edit</td>
+        <td>Редактирование страны</td>
+      </tr>
+      <tr>
+        <td>
+          <code>CountryDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Country/Delete</td>
+        <td>Удаление страны</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="currency-valyuty">
+    Currency — Валюты<a
+      href="https://docs.regos.uz/ru/api/event#currency-valyuty"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>CurrencyAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Currency/Add</td>
+        <td>Создание валюты</td>
+      </tr>
+      <tr>
+        <td>
+          <code>CurrencyEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Currency/Edit</td>
+        <td>Редактирование валюты</td>
+      </tr>
+      <tr>
+        <td>
+          <code>CurrencyDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Currency/Delete</td>
+        <td>Удаление валюты</td>
+      </tr>
+      <tr>
+        <td>
+          <code>CurrencyExchangeRateEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Currency/EditExchangeRate</td>
+        <td>Изменение курса валют</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="deliverycourier-kurery">
+    DeliveryCourier — Курьеры<a
+      href="https://docs.regos.uz/ru/api/event#deliverycourier-kurery"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DeliveryCourierAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DeliveryCourier/Add</td>
+        <td>Создание курьера</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DeliveryCourierEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DeliveryCourier/Edit</td>
+        <td>Редактирование курьера</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DeliveryCourierDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DeliveryCourier/Delete</td>
+        <td>Удаление курьера</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="deliveryfrom-istochniki-r">
+    DeliveryFrom — Источники розничных заказов<a
+      href="https://docs.regos.uz/ru/api/event#deliveryfrom-istochniki-r"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DeliveryFromAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DeliveryFrom/Add</td>
+        <td>Создание источника</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DeliveryFromEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DeliveryFrom/Edit</td>
+        <td>Редактирование источника</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DeliveryFromDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DeliveryFrom/Delete</td>
+        <td>Удаление источника</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="deliverytype-sposoby-dost">
+    DeliveryType — Способы доставки<a
+      href="https://docs.regos.uz/ru/api/event#deliverytype-sposoby-dost"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DeliveryTypeAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DeliveryType/Add</td>
+        <td>Создание способа доставки</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DeliveryTypeEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DeliveryType/Edit</td>
+        <td>Редактирование способа доставки</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DeliveryTypeDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DeliveryType/Delete</td>
+        <td>Удаление способа доставки</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="department-otdely-dlya-no">
+    Department — Отделы для номенклатуры<a
+      href="https://docs.regos.uz/ru/api/event#department-otdely-dlya-no"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DepartmentAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Department/Add</td>
+        <td>Создание отдела</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DepartmentEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Department/Edit</td>
+        <td>Редактирование отдела</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DepartmentDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Department/Delete</td>
+        <td>Удаление отдела</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docaccountmovement-perevo">
+    DocAccountMovement — Переводы со счёта на счёт<a
+      href="https://docs.regos.uz/ru/api/event#docaccountmovement-perevo"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocAccountMovementAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocAccountMovement/Add</td>
+        <td>Создание документа перевода со счёта на счёт</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocAccountMovementEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocAccountMovement/Edit</td>
+        <td>Редактирование документа перевода</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocAccountMovementDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocAccountMovement/DeleteMark</td>
+        <td>Пометка перевода как удалённого</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocAccountMovementDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocAccountMovement/Delete</td>
+        <td>Удаление документа перевода</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocAccountMovementPerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocAccountMovement/Perform</td>
+        <td>Выполнение перевода</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocAccountMovementPerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocAccountMovement/PerformCancel</td>
+        <td>Отмена выполнения перевода</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="doccontract-dogovory">
+    DocContract — Договоры<a
+      href="https://docs.regos.uz/ru/api/event#doccontract-dogovory"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocContractAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, direction</td>
+        <td>/v1/DocContract/Add</td>
+        <td>Создание договора (direction: Income/Outcome)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocContractEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocContract/Edit</td>
+        <td>Редактирование договора</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocContractDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocContract/Delete</td>
+        <td>Удаление договора</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocContractDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocContract/DeleteMark</td>
+        <td>Пометка договора как удалённого</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docinout-spisanie-vneseni">
+    DocInOut — Списание/внесение<a
+      href="https://docs.regos.uz/ru/api/event#docinout-spisanie-vneseni"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocInOutAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInOut/Add</td>
+        <td>Создание списания/внесения</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInOutEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInOut/Edit</td>
+        <td>Редактирование списания/внесения</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInOutDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInOut/Delete</td>
+        <td>Удаление списания/внесения</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInOutDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInOut/DeleteMark</td>
+        <td>Пометка списания/внесения как удаленного</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInOutPerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInOut/Perform</td>
+        <td>Выполнение списания/внесения</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInOutPerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInOut/PerformCancel</td>
+        <td>Отмена выполнения списания/внесения</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docinventory-inventarizac">
+    DocInventory — Инвентаризация<a
+      href="https://docs.regos.uz/ru/api/event#docinventory-inventarizac"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocInventoryAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInventory/Add</td>
+        <td>Создание инвентаризации</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInventoryEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInventory/Edit</td>
+        <td>Редактирование инвентаризации</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInventoryDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInventory/Delete</td>
+        <td>Удаление инвентаризации</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInventoryDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInventory/DeleteMark</td>
+        <td>Пометка инвентаризации как удаленной</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInventoryClosed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInventory/Close</td>
+        <td>Закрытие инвентаризации</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInventoryOpened</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInventory/Open</td>
+        <td>Открытие инвентаризации</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docinvoice-schet-faktura">
+    DocInvoice — Счёт-фактура<a
+      href="https://docs.regos.uz/ru/api/event#docinvoice-schet-faktura"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocInvoiceAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, invoice_type</td>
+        <td>/v1/DocInvoice/Add; /v1/DocInvoice/AddOnBase</td>
+        <td>
+          Создание счёта-фактуры (<code>invoice_type</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>:
+          Income/Outcome/Corrective)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInvoiceEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInvoice/Edit</td>
+        <td>Редактирование счёта-фактуры</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInvoiceDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInvoice/Delete</td>
+        <td>Удаление счёта-фактуры</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInvoiceDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInvoice/DeleteMark</td>
+        <td>Пометка счёта-фактуры как удалённого</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInvoicePerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInvoice/Perform</td>
+        <td>Выполнение счёта-фактуры</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocInvoicePerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocInvoice/PerformCancel</td>
+        <td>Отмена выполнения счёта-фактуры</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docmovement-peremeshcheni">
+    DocMovement — Перемещения<a
+      href="https://docs.regos.uz/ru/api/event#docmovement-peremeshcheni"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocMovementAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocMovement/Add</td>
+        <td>Создание документа перемещения</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocMovementEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocMovement/Edit</td>
+        <td>Редактирование перемещения</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocMovementDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocMovement/DeleteMark</td>
+        <td>Пометка перемещения как удаленного</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocMovementDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocMovement/Delete</td>
+        <td>Удаление перемещения</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocMovementPerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocMovement/Perform</td>
+        <td>Выполнение перемещения</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocMovementPerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocMovement/PerformCancel</td>
+        <td>Отмена выполнения перемещения</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docopeningbalance-dokumen">
+    DocOpeningBalance — Документы начальных взаиморасчётов с контрагентом<a
+      href="https://docs.regos.uz/ru/api/event#docopeningbalance-dokumen"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocOpeningBalanceAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOpeningBalance/Add</td>
+        <td>Создание документа начальных взаиморасчётов</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOpeningBalanceEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOpeningBalance/Edit</td>
+        <td>Редактирование документа начальных взаиморасчётов</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOpeningBalanceDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOpeningBalance/Delete</td>
+        <td>Удаление документа начальных взаиморасчётов</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOpeningBalanceDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOpeningBalance/DeleteMark</td>
+        <td>Пометка документа как удалённого</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOpeningBalancePerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOpeningBalance/Perform</td>
+        <td>Выполнение документа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOpeningBalancePerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOpeningBalance/PerformCancel</td>
+        <td>Отмена выполнения документа</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docorderdelivery-roznichn">
+    DocOrderDelivery — Розничные заказы<a
+      href="https://docs.regos.uz/ru/api/event#docorderdelivery-roznichn"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderDelivery/Add</td>
+        <td>Создание нового розничного заказа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderDelivery/Edit</td>
+        <td>Редактирование заказа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderDelivery/Delete</td>
+        <td>Удаление заказа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderDelivery/DeleteMark</td>
+        <td>Пометка заказа как удаленного</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryPerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderDelivery/Perform</td>
+        <td>Выполнение заказа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryPerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderDelivery/PerformCancel</td>
+        <td>Отмена выполнения заказа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryStatusSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, status</td>
+        <td>
+          /v1/DocOrderDelivery/SetStatus, /v1/DocOrderDelivery/SetOperatingCash
+        </td>
+        <td>Изменение статуса заказа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryStockSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, stock_id</td>
+        <td>/v1/DocOrderDelivery/SetStock</td>
+        <td>Назначение склада</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryCourierSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, courier_id</td>
+        <td>/v1/DocOrderDelivery/SetCourier</td>
+        <td>Назначение курьера</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryReturned</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderDelivery/Return</td>
+        <td>Возврат заказа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryActualized</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderDelivery/Actualize</td>
+        <td>Актуализация заказа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryFiscalInfoSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderDelivery/FiscalInfo</td>
+        <td>Установка фискальной информации</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderDeliveryResetToBeginning</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderDelivery/ResetToBeginning</td>
+        <td>Сброс заказа к начальному состоянию</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docorderfrompartner-zakaz">
+    DocOrderFromPartner — Заказы от контрагентов<a
+      href="https://docs.regos.uz/ru/api/event#docorderfrompartner-zakaz"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocOrderFromPartnerAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderFromPartner/Add</td>
+        <td>Создание заказа от контрагента</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderFromPartnerEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderFromPartner/Edit</td>
+        <td>Редактирование заказа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderFromPartnerDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderFromPartner/Delete</td>
+        <td>Удаление заказа от контрагента</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderFromPartnerDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderFromPartner/DeleteMark</td>
+        <td>Пометка заказа как удаленного</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docordertomovement-zakazy">
+    DocOrderToMovement — Заказы на перемещение<a
+      href="https://docs.regos.uz/ru/api/event#docordertomovement-zakazy"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocOrderToMovementAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderToMovement/Add</td>
+        <td>Создание заказа на перемещение</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderToMovementEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderToMovement/Edit</td>
+        <td>Редактирование заказа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderToMovementDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderToMovement/Delete</td>
+        <td>Удаление заказа на перемещение</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderToMovementDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderToMovement/DeleteMark</td>
+        <td>Пометка заказа как удаленного</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docordertopartner-zakazy-">
+    DocOrderToPartner — Заказы контрагенту<a
+      href="https://docs.regos.uz/ru/api/event#docordertopartner-zakazy-"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocOrderToPartnerAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderToPartner/Add</td>
+        <td>Создание заказа контрагенту</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderToPartnerEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderToPartner/Edit</td>
+        <td>Редактирование заказа контрагенту</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderToPartnerDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderToPartner/Delete</td>
+        <td>Удаление заказа контрагенту</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocOrderToPartnerDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocOrderToPartner/DeleteMark</td>
+        <td>Пометка заказа как удаленного</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docpayment-platezhi">
+    DocPayment — Платежи<a
+      href="https://docs.regos.uz/ru/api/event#docpayment-platezhi"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocPaymentAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPayment/Add</td>
+        <td>Создание платежа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPaymentEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPayment/Edit</td>
+        <td>Редактирование платежа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPaymentDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPayment/Delete</td>
+        <td>Удаление платежа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPaymentDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPayment/DeleteMark</td>
+        <td>Пометка платежа как удаленного</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPaymentPerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPayment/Perform</td>
+        <td>Выполнение платежа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPaymentPerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPayment/PerformCancel</td>
+        <td>Отмена выполнения платежа</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docperiodclosing-dokument">
+    DocPeriodClosing — Документы закрытия периода<a
+      href="https://docs.regos.uz/ru/api/event#docperiodclosing-dokument"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocPeriodClosingAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPeriodClosing/Add</td>
+        <td>Создание документа закрытия периода</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPeriodClosingEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPeriodClosing/Edit</td>
+        <td>Редактирование документа закрытия периода</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPeriodClosingDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPeriodClosing/Delete</td>
+        <td>Удаление документа закрытия периода</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPeriodClosingCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPeriodClosing/Cancel</td>
+        <td>Отмена закрытия периода</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docproduction-proizvodstv">
+    DocProduction — Производство<a
+      href="https://docs.regos.uz/ru/api/event#docproduction-proizvodstv"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocProductionAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocProduction/Add</td>
+        <td>Создание документа производства</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocProductionEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocProduction/Edit</td>
+        <td>Редактирование документа производства</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocProductionDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocProduction/Delete</td>
+        <td>Удаление документа производства</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocProductionPerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocProduction/Perform</td>
+        <td>Выполнение документа производства</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocProductionPerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocProduction/PerformCancel</td>
+        <td>Отмена выполнения документа производства</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docpurchase-postupleniya-">
+    DocPurchase — Поступления от контрагента<a
+      href="https://docs.regos.uz/ru/api/event#docpurchase-postupleniya-"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocPurchaseAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPurchase/Add</td>
+        <td>Создание поступления</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPurchaseEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPurchase/Edit</td>
+        <td>Редактирование поступления</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPurchaseDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPurchase/Delete</td>
+        <td>Удаление поступления</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPurchaseDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPurchase/DeleteMark</td>
+        <td>Пометка поступления как удаленного</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPurchasePerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPurchase/Perform</td>
+        <td>Выполнение поступления</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocPurchasePerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPurchase/PerformCancel</td>
+        <td>Отмена выполнения поступления</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docreturnstopartner-vozvr">
+    DocReturnsToPartner — Возврат контрагенту<a
+      href="https://docs.regos.uz/ru/api/event#docreturnstopartner-vozvr"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocReturnsToPartnerAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPurchase/Add</td>
+        <td>Создание док. возврата контрагенту</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocReturnsToPartnerEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPurchase/Edit</td>
+        <td>Редактирование док. возврата контрагенту</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocReturnsToPartnerDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPurchase/Delete</td>
+        <td>Удаление док. возврата контрагенту</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocReturnsToPartnerDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPurchase/DeleteMark</td>
+        <td>Пометка док. возврата контрагенту как удаленного</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocReturnsToPartnerPerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPurchase/Perform</td>
+        <td>Проведение док. возврата контрагенту</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocReturnsToPartnerPerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocPurchase/PerformCancel</td>
+        <td>Отмена проведения док. возврата контрагенту</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docsetprice-dokumenty-ust">
+    DocSetPrice — Документы установки цен<a
+      href="https://docs.regos.uz/ru/api/event#docsetprice-dokumenty-ust"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocSetPriceAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocSetPrice/Add</td>
+        <td>Создание документа установки цен</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocSetPriceEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocSetPrice/Edit</td>
+        <td>Редактирование документа установки цен</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocSetPriceDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocSetPrice/Delete</td>
+        <td>Удаление документа установки цен</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocSetPriceDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocSetPrice/DeleteMark</td>
+        <td>Пометка документа как удалённого</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocSetPricePerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocSetPrice/Perform</td>
+        <td>Выполнение документа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocSetPricePerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocSetPrice/PerformCancel</td>
+        <td>Отмена выполнения документа</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="doctechmap-tehnologichesk">
+    DocTechMap — Технологическая карта<a
+      href="https://docs.regos.uz/ru/api/event#doctechmap-tehnologichesk"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocTechMapAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocTechMap/Add</td>
+        <td>Создание технологической карты</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocTechMapEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocTechMap/Edit</td>
+        <td>Редактирование технологической карты</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocTechMapDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocTechMap/Delete</td>
+        <td>Удаление технологической карты</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocTechMapPerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocTechMap/Perform</td>
+        <td>Выполнение технологической карты</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocTechMapPerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocTechMap/PerformCancel</td>
+        <td>Отмена выполнения технологической карты</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docwholesale-otgruzki-kon">
+    DocWholeSale — Отгрузки контрагенту<a
+      href="https://docs.regos.uz/ru/api/event#docwholesale-otgruzki-kon"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocWholeSaleAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocWholeSale/Add</td>
+        <td>Создание отгрузки контрагенту</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocWholeSaleEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocWholeSale/Edit</td>
+        <td>Редактирование отгрузки</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocWholeSaleDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocWholeSale/Delete</td>
+        <td>Удаление отгрузки</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocWholeSaleDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocWholeSale/DeleteMark</td>
+        <td>Пометка отгрузки как удаленной</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocWholeSalePerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocWholeSale/Perform</td>
+        <td>Выполнение отгрузки</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocWholeSalePerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocWholeSale/PerformCancel</td>
+        <td>Отмена выполнения отгрузки</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="docwholesalereturn-vozvra">
+    DocWholeSaleReturn — Возвраты от контрагентов<a
+      href="https://docs.regos.uz/ru/api/event#docwholesalereturn-vozvra"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocWholeSaleReturnAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocWholeSaleReturn/Add</td>
+        <td>Создание возврата от контрагента</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocWholeSaleReturnEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocWholeSaleReturn/Edit</td>
+        <td>Редактирование возврата</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocWholeSaleReturnDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocWholeSaleReturn/Delete</td>
+        <td>Удаление возврата</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocWholeSaleReturnDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocWholeSaleReturn/DeleteMark</td>
+        <td>Пометка возврата как удаленного</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocWholeSaleReturnPerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocWholeSaleReturn/Perform</td>
+        <td>Выполнение возврата</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocWholeSaleReturnPerformCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/DocWholeSaleReturn/PerformCancel</td>
+        <td>Отмена выполнения возврата</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="firm-predpriyatiya">
+    Firm — Предприятия<a
+      href="https://docs.regos.uz/ru/api/event#firm-predpriyatiya"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>FirmAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Firm/Add</td>
+        <td>Создание предприятия</td>
+      </tr>
+      <tr>
+        <td>
+          <code>FirmEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Firm/Edit; /v1/Firm/AddImage; /v1/Firm/DeleteImage</td>
+        <td>Редактирование предприятия</td>
+      </tr>
+      <tr>
+        <td>
+          <code>FirmDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Firm/Delete</td>
+        <td>Удаление предприятия</td>
+      </tr>
+      <tr>
+        <td>
+          <code>FirmDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Firm/DeleteMark</td>
+        <td>Пометка предприятия как удалённого</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="firmgroup-gruppy-predpriy">
+    FirmGroup — Группы предприятий<a
+      href="https://docs.regos.uz/ru/api/event#firmgroup-gruppy-predpriy"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>FirmGroupAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/FirmGroup/Add</td>
+        <td>Создание группы предприятий</td>
+      </tr>
+      <tr>
+        <td>
+          <code>FirmGroupEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/FirmGroup/Edit</td>
+        <td>Редактирование группы предприятий</td>
+      </tr>
+      <tr>
+        <td>
+          <code>FirmGroupDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/FirmGroup/Delete</td>
+        <td>Удаление группы предприятий</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="item-nomenklatura">
+    Item — Номенклатура<a
+      href="https://docs.regos.uz/ru/api/event#item-nomenklatura"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>ItemAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Item/Add, /v1/Item/Copy, /v1/Item/Import</td>
+        <td>Создание номенклатуры</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ItemEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>
+          /v1/Item/Edit, /v1/Item/AddToCompound (compound_id),
+          /v1/Item/DeleteFromCompound (compound_id)
+        </td>
+        <td>Редактирование номенклатуры</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ItemDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Item/Delete</td>
+        <td>Удаление номенклатуры</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ItemDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Item/DeleteMark</td>
+        <td>Пометка номенклатуры как удалённой</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="itemgroup-gruppy-nomenkla">
+    ItemGroup — Группы номенклатуры<a
+      href="https://docs.regos.uz/ru/api/event#itemgroup-gruppy-nomenkla"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>ItemGroupAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/ItemGroup/Add</td>
+        <td>Создание группы номенклатуры</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ItemGroupEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/ItemGroup/Edit</td>
+        <td>Редактирование группы номенклатуры</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ItemGroupDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/ItemGroup/Delete</td>
+        <td>Удаление группы номенклатуры</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="kassa-i-cheki">
+    Касса и чеки<a
+      href="https://docs.regos.uz/ru/api/event#kassa-i-cheki"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DocChequeClosed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>uuid</td>
+        <td>/v1/pos/doccheque/Close, /SyncAdd/DocRetailSale (status=Closed)</td>
+        <td>Закрытие чека</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocChequeCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>uuid</td>
+        <td>
+          /v1/pos/doccheque/Cancel, /SyncAdd/DocRetailSale (status=Canceled)
+        </td>
+        <td>Отмена чека</td>
+      </tr>
+      <tr>
+        <td>
+          <code>POSChequePayDebt</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>uuid</td>
+        <td>/v1/pos/doccheque/PayDebt</td>
+        <td>Оплата долга в чеке</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocSessionOpened</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>uuid</td>
+        <td>
+          /v1/pos/docsession/open, /v1/SyncAdd/DocCashSession (closed=false)
+        </td>
+        <td>Открытие кассовой смены</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DocSessionClosed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>uuid</td>
+        <td>
+          /v1/pos/docsession/close, /v1/SyncAdd/DocCashSession (closed=true)
+        </td>
+        <td>Закрытие кассовой смены</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="operatingcash-kassy-rozni">
+    OperatingCash — Кассы розничной торговли<a
+      href="https://docs.regos.uz/ru/api/event#operatingcash-kassy-rozni"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>OperatingCashAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/OperatingCash/Add</td>
+        <td>Создание кассы</td>
+      </tr>
+      <tr>
+        <td>
+          <code>OperatingCashEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>
+          /v1/OperatingCash/EditSettings; /v1/OperatingCash/EditChequeTemplate
+        </td>
+        <td>Редактирование кассы</td>
+      </tr>
+      <tr>
+        <td>
+          <code>OperatingCashDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/OperatingCash/Delete</td>
+        <td>Удаление кассы</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="partner-kontragent">
+    Partner — Контрагент<a
+      href="https://docs.regos.uz/ru/api/event#partner-kontragent"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>PartnerAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Partner/Add</td>
+        <td>Создание контрагента</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PartnerEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Partner/Edit</td>
+        <td>Редактирование контрагента</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PartnerDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Partner/DeleteMark</td>
+        <td>Пометка контрагента как удалённого</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PartnerDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Partner/Delete</td>
+        <td>Удаление контрагента</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="partnergroup-gruppy-kontr">
+    PartnerGroup — Группы контрагентов<a
+      href="https://docs.regos.uz/ru/api/event#partnergroup-gruppy-kontr"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>PartnerGroupAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/PartnerGroup/Add</td>
+        <td>Создание группы контрагентов</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PartnerGroupEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/PartnerGroup/Edit</td>
+        <td>Редактирование группы контрагентов</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PartnerGroupDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/PartnerGroup/Delete</td>
+        <td>Удаление группы контрагентов</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="paymenttype-formy-oplaty">
+    PaymentType — Формы оплаты<a
+      href="https://docs.regos.uz/ru/api/event#paymenttype-formy-oplaty"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>PaymentTypeAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/PaymentType/Add</td>
+        <td>Создание формы оплаты</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PaymentTypeEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/PaymentType/Edit</td>
+        <td>Редактирование формы оплаты</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PaymentTypeDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/PaymentType/Delete</td>
+        <td>Удаление формы оплаты</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="pricetype-vidy-cen">
+    PriceType — Виды цен<a
+      href="https://docs.regos.uz/ru/api/event#pricetype-vidy-cen"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>PriceTypeAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/PriceType/Add</td>
+        <td>Создание вида цен</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PriceTypeEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/PriceType/Edit</td>
+        <td>Редактирование вида цен</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PriceTypeDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/PriceType/Delete</td>
+        <td>Удаление вида цен</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="producer-proizvoditeli">
+    Producer — Производители<a
+      href="https://docs.regos.uz/ru/api/event#producer-proizvoditeli"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>ProducerAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Producer/Add</td>
+        <td>Создание производителя</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ProducerEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Producer/Edit</td>
+        <td>Редактирование производителя</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ProducerDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Producer/Delete</td>
+        <td>Удаление производителя</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="project-proekty">
+    Project — Проекты<a
+      href="https://docs.regos.uz/ru/api/event#project-proekty"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>ProjectAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Project/Add</td>
+        <td>Создание проекта</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ProjectEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Project/Edit</td>
+        <td>Редактирование проекта</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ProjectDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Project/Delete</td>
+        <td>Удаление проекта</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="projecttask-zadachi-proek">
+    ProjectTask — Задачи проекта<a
+      href="https://docs.regos.uz/ru/api/event#projecttask-zadachi-proek"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>ProjectTaskAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, chat_id</td>
+        <td>/v1/ProjectTask/Add</td>
+        <td>Создание задачи проекта</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ProjectTaskEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/ProjectTask/Edit</td>
+        <td>Редактирование задачи проекта</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ProjectTaskDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/ProjectTask/Delete</td>
+        <td>Удаление задачи проекта</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ProjectTaskStatusSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, status</td>
+        <td>/v1/ProjectTask/SetStatus</td>
+        <td>Изменение статуса задачи проекта</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ProjectTaskResponsibleSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/ProjectTask/SetResponsible</td>
+        <td>Изменение ответственного по задаче проекта</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="channel-kanal-kommunikaci">
+    Channel — канал коммуникации в CRM (источник входящих обращений)<a
+      href="https://docs.regos.uz/ru/api/event#channel-kanal-kommunikaci"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>ChannelAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Channel/Add</td>
+        <td>Создание CRM-канала</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChannelEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Channel/Edit</td>
+        <td>Редактирование CRM-канала</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ChannelDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Channel/Delete</td>
+        <td>Удаление CRM-канала</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="client-klient-crm">
+    Client — клиент CRM<a
+      href="https://docs.regos.uz/ru/api/event#client-klient-crm"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>ClientAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Client/Add</td>
+        <td>Создание CRM-клиента</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ClientEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Client/Edit</td>
+        <td>Редактирование CRM-клиента</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ClientDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Client/Delete</td>
+        <td>Удаление CRM-клиента</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ClientResponsibleSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Client/SetResponsible</td>
+        <td>Назначение ответственного CRM-клиента</td>
+      </tr>
+      <tr>
+        <td>
+          <code>ClientMerged</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>source_client_id, target_client_id</td>
+        <td>/v1/Client/Merge</td>
+        <td>Объединение CRM-клиентов</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="lead-obrashchenie-lid-v-c">
+    Lead — обращение/лид в CRM (потенциальный клиент до конвертации в сделку)<a
+      href="https://docs.regos.uz/ru/api/event#lead-obrashchenie-lid-v-c"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>LeadAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Lead/Add</td>
+        <td>Создание обращения (Lead)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>LeadEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Lead/Edit</td>
+        <td>Редактирование обращения (Lead)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>LeadStageSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Lead/SetStage, /v1/Lead/Close, /v1/Lead/Convert</td>
+        <td>Изменение стадии обращения (Lead)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>LeadResponsibleSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Lead/SetResponsible</td>
+        <td>Назначение ответственного по обращению (Lead)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>LeadParticipantsSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Lead/SetParticipants</td>
+        <td>Изменение участников обращения (Lead)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>LeadConverted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>lead_id, deal_id, lead_chat_id, deal_chat_id, status</td>
+        <td>/v1/Lead/Convert</td>
+        <td>Конвертация обращения в сделку</td>
+      </tr>
+      <tr>
+        <td>
+          <code>LeadClosed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, status</td>
+        <td>/v1/Lead/SetStage, /v1/Lead/Close</td>
+        <td>Закрытие обращения (Lead)</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="deal-sdelka-v-crm-kommerc">
+    Deal — сделка в CRM (коммерческая возможность на этапах до закрытия)<a
+      href="https://docs.regos.uz/ru/api/event#deal-sdelka-v-crm-kommerc"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>DealAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Deal/Add</td>
+        <td>Создание сделки (Deal)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DealEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Deal/Edit</td>
+        <td>Редактирование сделки (Deal)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DealStageSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Deal/SetStage, /v1/Deal/Close</td>
+        <td>Изменение стадии сделки (Deal)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DealResponsibleSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Deal/SetResponsible</td>
+        <td>Назначение ответственного по сделке (Deal)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DealParticipantsSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Deal/SetParticipants</td>
+        <td>Изменение участников сделки (Deal)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>DealClosed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Deal/SetStage, /v1/Deal/Close</td>
+        <td>Закрытие сделки (Deal)</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="worktime-uchet-rabochego-">
+    WorkTime — Учет рабочего времени<a
+      href="https://docs.regos.uz/ru/api/event#worktime-uchet-rabochego-"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>UserCheckedIn</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>user_id, session_id</td>
+        <td>/v1/WorkAttendance/CheckIn</td>
+        <td>Пользователь открыл рабочую сессию</td>
+      </tr>
+      <tr>
+        <td>
+          <code>UserCheckedOut</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>user_id, session_id</td>
+        <td>/v1/WorkAttendance/CheckOut</td>
+        <td>Пользователь закрыл рабочую сессию</td>
+      </tr>
+      <tr>
+        <td>
+          <code>UserBreakStarted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>user_id, session_id, break_id</td>
+        <td>/v1/WorkAttendance/BreakStart</td>
+        <td>Пользователь начал перерыв</td>
+      </tr>
+      <tr>
+        <td>
+          <code>UserBreakEnded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>user_id, session_id, break_id</td>
+        <td>/v1/WorkAttendance/BreakEnd</td>
+        <td>Пользователь завершил перерыв</td>
+      </tr>
+      <tr>
+        <td>
+          <code>UserAvailabilityChanged</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>user_id, status, is_in_shift, is_checked_in, is_on_break</td>
+        <td>
+          /v1/WorkAttendance/Status; /v1/WorkAttendance/CheckIn;
+          /v1/WorkAttendance/CheckOut; /v1/WorkAttendance/BreakStart;
+          /v1/WorkAttendance/BreakEnd
+        </td>
+        <td>Изменился расчетный статус доступности сотрудника</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="promobonus-bonusnye-opera">
+    PromoBonus — Бонусные операции<a
+      href="https://docs.regos.uz/ru/api/event#promobonus-bonusnye-opera"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>PromoBonusPaymentPerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>uuid, value</td>
+        <td>/v1/PromoBonus/PaymentPerformed</td>
+        <td>Выполнение бонусного платежа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PromoBonusEnrollmentPerformed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>uuid, value</td>
+        <td>/v1/PromoBonus/EnrollmentPerformed</td>
+        <td>Начисление бонусов</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PromoBonusPaymentCanceled</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>uuid, value</td>
+        <td>/v1/PromoBonus/PaymentCanceled</td>
+        <td>Отмена бонусного платежа</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PromoBonusManualIncomeOperationCreated</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>uuid, value</td>
+        <td>/v1/PromoBonus/ManualIncome</td>
+        <td>Создание ручного начисления бонусов</td>
+      </tr>
+      <tr>
+        <td>
+          <code>PromoBonusManualOutcomeOperationCreated</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>uuid, value</td>
+        <td>/v1/PromoBonus/ManualOutcome</td>
+        <td>Создание ручного списания бонусов</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="region-regiony">
+    Region — Регионы<a
+      href="https://docs.regos.uz/ru/api/event#region-regiony"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>RegionAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Region/Add</td>
+        <td>Создание региона</td>
+      </tr>
+      <tr>
+        <td>
+          <code>RegionEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Region/Edit</td>
+        <td>Редактирование региона</td>
+      </tr>
+      <tr>
+        <td>
+          <code>RegionDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Region/Delete</td>
+        <td>Удаление региона</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="retailcard-karta-loyalnos">
+    RetailCard — Карта лояльности<a
+      href="https://docs.regos.uz/ru/api/event#retailcard-karta-loyalnos"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>RetailCardAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailCard/Add, /v1/RetailCard/Addwithcustomer</td>
+        <td>Создание карты лояльности</td>
+      </tr>
+      <tr>
+        <td>
+          <code>RetailCardEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailCard/Edit</td>
+        <td>Редактирование карты лояльности</td>
+      </tr>
+      <tr>
+        <td>
+          <code>RetailCardDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailCard/Delete</td>
+        <td>Удаление карты лояльности</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="retailcustomer-roznichnyy">
+    RetailCustomer — Розничный покупатель<a
+      href="https://docs.regos.uz/ru/api/event#retailcustomer-roznichnyy"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>RetailCustomerAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailCustomer/Add, /v1/RetailCard/Addwithcustomer</td>
+        <td>
+          Создание розничного покупателя (в т.ч. при создании карты с
+          покупателем)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>RetailCustomerEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailCustomer/Edit</td>
+        <td>Редактирование розничного покупателя</td>
+      </tr>
+      <tr>
+        <td>
+          <code>RetailCustomerDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailCustomer/DeleteMark</td>
+        <td>Пометка розничного покупателя как удалённого</td>
+      </tr>
+      <tr>
+        <td>
+          <code>RetailCustomerDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailCustomer/Delete</td>
+        <td>Удаление розничного покупателя</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="retailcustomergroup-grupp">
+    RetailCustomerGroup — Группы покупателей<a
+      href="https://docs.regos.uz/ru/api/event#retailcustomergroup-grupp"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>RetailCustomerGroupAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailCustomerGroup/Add</td>
+        <td>Создание группы покупателей</td>
+      </tr>
+      <tr>
+        <td>
+          <code>RetailCustomerGroupEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailCustomerGroup/Edit</td>
+        <td>Редактирование группы покупателей</td>
+      </tr>
+      <tr>
+        <td>
+          <code>RetailCustomerGroupDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailCustomerGroup/Delete</td>
+        <td>Удаление группы покупателей</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="retailreturnreason-prichi">
+    RetailReturnReason — Причины возвратов<a
+      href="https://docs.regos.uz/ru/api/event#retailreturnreason-prichi"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>RetailReturnReasonAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailReturnReason/Add</td>
+        <td>Создание причины возврата</td>
+      </tr>
+      <tr>
+        <td>
+          <code>RetailReturnReasonEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailReturnReason/Edit</td>
+        <td>Редактирование причины возврата</td>
+      </tr>
+      <tr>
+        <td>
+          <code>RetailReturnReasonDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/RetailReturnReason/Delete</td>
+        <td>Удаление причины возврата</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="sms-otpravka-odinochnyh-s">
+    SMS — Отправка одиночных SMS<a
+      href="https://docs.regos.uz/ru/api/event#sms-otpravka-odinochnyh-s"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>SMSAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/SMS/Add</td>
+        <td>Создание одиночного SMS</td>
+      </tr>
+      <tr>
+        <td>
+          <code>SMSStatusSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, status</td>
+        <td>/v1/SMS/SetStatus</td>
+        <td>Изменение статуса SMS</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="sizechart-razmery">
+    SizeChart — Размеры<a
+      href="https://docs.regos.uz/ru/api/event#sizechart-razmery"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>SizeChartAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/SizeChart/Add</td>
+        <td>Создание размерной сетки</td>
+      </tr>
+      <tr>
+        <td>
+          <code>SizeChartEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/SizeChart/Edit</td>
+        <td>Редактирование размерной сетки</td>
+      </tr>
+      <tr>
+        <td>
+          <code>SizeChartDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/SizeChart/Delete</td>
+        <td>Удаление размерной сетки</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="stock-sklady">
+    Stock — Склады<a
+      href="https://docs.regos.uz/ru/api/event#stock-sklady"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>StockAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Stock/Add</td>
+        <td>Создание склада</td>
+      </tr>
+      <tr>
+        <td>
+          <code>StockEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Stock/Edit</td>
+        <td>Редактирование склада</td>
+      </tr>
+      <tr>
+        <td>
+          <code>StockDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Stock/Delete</td>
+        <td>Удаление склада</td>
+      </tr>
+      <tr>
+        <td>
+          <code>StockDeleteMarked</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Stock/DeleteMark</td>
+        <td>Пометка склада как удалённого</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="target-celi">
+    Target — Цели<a
+      href="https://docs.regos.uz/ru/api/event#target-celi"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>TargetAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Target/Add</td>
+        <td>Создание цели</td>
+      </tr>
+      <tr>
+        <td>
+          <code>TargetDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Target/Delete</td>
+        <td>Удаление цели</td>
+      </tr>
+      <tr>
+        <td>
+          <code>TargetFinished</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Target/Finish</td>
+        <td>Завершение цели</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="taxvat-stavki-nds">
+    TaxVat — Ставки НДС<a
+      href="https://docs.regos.uz/ru/api/event#taxvat-stavki-nds"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>TaxVatAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/TaxVat/Add</td>
+        <td>Создание ставки НДС</td>
+      </tr>
+      <tr>
+        <td>
+          <code>TaxVatEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/TaxVat/Edit</td>
+        <td>Редактирование ставки НДС</td>
+      </tr>
+      <tr>
+        <td>
+          <code>TaxVatDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/TaxVat/Delete</td>
+        <td>Удаление ставки НДС</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="unit-edinicy-izmereniya">
+    Unit — Единицы измерения<a
+      href="https://docs.regos.uz/ru/api/event#unit-edinicy-izmereniya"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>UnitAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Unit/Add</td>
+        <td>Создание единицы измерения</td>
+      </tr>
+      <tr>
+        <td>
+          <code>UnitEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Unit/Edit</td>
+        <td>Редактирование единицы измерения</td>
+      </tr>
+      <tr>
+        <td>
+          <code>UnitDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Unit/Delete</td>
+        <td>Удаление единицы измерения</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="user-polzovateli">
+    User — Пользователи<a
+      href="https://docs.regos.uz/ru/api/event#user-polzovateli"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>UserAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/User/Add</td>
+        <td>Создание пользователя</td>
+      </tr>
+      <tr>
+        <td>
+          <code>UserAddedGlobal</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/User/AddGlobal</td>
+        <td>Создание пользователя (глобально)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>UserEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/User/Edit</td>
+        <td>Редактирование пользователя</td>
+      </tr>
+      <tr>
+        <td>
+          <code>UserDeleted</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/User/Delete</td>
+        <td>Удаление пользователя</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ticket-crm-tikety">
+    Ticket - CRM тикеты<a
+      href="https://docs.regos.uz/ru/api/event#ticket-crm-tikety"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Событие (<code>action</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>)
+        </th>
+        <th>Данные</th>
+        <th>Источник вызова</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>TicketAdded</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Ticket/Add</td>
+        <td>Создание CRM-тикета</td>
+      </tr>
+      <tr>
+        <td>
+          <code>TicketEdited</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Ticket/Edit</td>
+        <td>Редактирование CRM-тикета</td>
+      </tr>
+      <tr>
+        <td>
+          <code>TicketResponsibleSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Ticket/SetResponsible</td>
+        <td>Назначение ответственного CRM-тикета</td>
+      </tr>
+      <tr>
+        <td>
+          <code>TicketParticipantsSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id</td>
+        <td>/v1/Ticket/SetParticipants</td>
+        <td>Изменение участников CRM-тикета</td>
+      </tr>
+      <tr>
+        <td>
+          <code>TicketStatusSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, old_status, status</td>
+        <td>/v1/Ticket/SetStatus</td>
+        <td>Изменение статуса CRM-тикета (кроме закрытия)</td>
+      </tr>
+      <tr>
+        <td>
+          <code>TicketClosed</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, status</td>
+        <td>/v1/Ticket/Close</td>
+        <td>Закрытие CRM-тикета</td>
+      </tr>
+      <tr>
+        <td>
+          <code>TicketSlaBreached</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, sla_breached, sla_breached_date, metric</td>
+        <td>
+          /v1/Ticket/Add; /v1/Ticket/SetResponsible; /v1/Ticket/SetStatus;
+          /v1/Ticket/Close
+        </td>
+        <td>Первое зафиксированное нарушение SLA CRM-тикета</td>
+      </tr>
+      <tr>
+        <td>
+          <code>TicketRatingSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>id, rating</td>
+        <td>/v1/Ticket/SetRating</td>
+        <td>Установка оценки CRM-тикета</td>
+      </tr>
+      <tr>
+        <td>
+          <code>TicketClientSentimentSet</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>
+          id, client_id, sentiment_score, sentiment_user_id, sentiment_date
+        </td>
+        <td>/v1/Ticket/SetClientSentiment</td>
+        <td>Установка операторской оценки клиента по CRM-тикету</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Хранение и восстановление</strong></p>
+  <p>
+    Persistent-события сохраняются в истории 7 дней с момента возникновения и
+    могут быть восстановлены через
+    <a href="https://docs.regos.uz/ru/api/event/01.get/">
+      <code>Event/Get</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    </a>
+    в пределах этого срока.
+  </p>
+  <p>
+    Если история событий ещё недоступна для аккаунта, доставка событий
+    продолжает работать без сохранения истории. Такие события нельзя
+    восстановить через
+    <a href="https://docs.regos.uz/ru/api/event/01.get/">
+      <code>Event/Get</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span> </a
+    >.
+  </p>
+  <p>
+    Transient-события не сохраняются в истории и не возвращаются через
+    <a href="https://docs.regos.uz/ru/api/event/01.get/">
+      <code>Event/Get</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span> </a
+    >. К transient-событиям относятся события, актуальные только в момент
+    доставки, например <code>ChatWriting</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>ChatSuggest</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p></p>
+</div>

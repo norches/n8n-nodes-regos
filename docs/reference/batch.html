@@ -1,0 +1,336 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    19.09.2025 18:54
+  </div>
+  <h1>Пакетные запросы (batch)</h1>
+  <p></p>
+  <p>
+    В работе с REGOS:API часто возникает необходимость последовательно выполнить
+    несколько методов, передавая результат одного шага в другой. Для этого
+    предусмотрен специальный механизм — пакетные запросы (batch). Он позволяет
+    объединить до пятидесяти отдельных вызовов API в один запрос, отправить его
+    на сервер и получить структурированный ответ со всеми результатами. Такой
+    подход экономит сетевые ресурсы и делает интеграцию предсказуемой и удобной.
+  </p>
+  <div class="notices blue">
+    <p><strong>Количество запросов в пакете не более 50 штук.</strong></p>
+  </div>
+  <h4 id="kak-vypolnyat-paketnye-za">
+    Как выполнять пакетные запросы (batch)<a
+      href="#kak-vypolnyat-paketnye-za"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p><strong>[POST] …/v1/batch</strong></p>
+  <p>
+    Запрос к batch-методу всегда отправляется на единый endpoint
+    <code>…/v1/batch</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    представляет собой JSON-массив шагов. Каждый шаг описывается ключом
+    <code>key</code>, который идентифицирует его внутри пакета, путем
+    <code>path</code> и телом <code>payload</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p><strong>Входные параметры</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Название</strong></th>
+        <th><strong>Тип данных</strong></th>
+        <th><strong>Обязательность</strong></th>
+        <th><strong>Описание</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>stop_on_error</td>
+        <td>Bool</td>
+        <td>Необязательный</td>
+        <td>
+          Если <code>true</code>, пакет прерывается на первом неуспешном шаге.
+        </td>
+      </tr>
+      <tr>
+        <td>requests</td>
+        <td>Array of BatchStep</td>
+        <td>Обязательный</td>
+        <td>Список шагов пакета. Максимум 50 элементов.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="notices yellow">
+    <p>
+      <strong
+        >Ключ key должен быть уникальным у каждого шага внутри пакета.</strong
+      >
+    </p>
+  </div>
+  <p>
+    Можно объединять в один пакет как полностью независимые шаги, так и
+    связанные друг с другом. Связь строится через плейсхолдеры — специальные
+    ссылки на результат предыдущих шагов. Они записываются в формате
+    <code>${stepKey.property}</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    позволяют подставлять значения прямо из ответа сервера. Благодаря этому нет
+    необходимости вручную обрабатывать промежуточные данные на стороне клиента:
+    система сама передаст их в нужный шаг.
+  </p>
+  <p>
+    Например, если в первом запросе был создан новый поставщик, его
+    идентификатор можно использовать в следующем шаге так:
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-txt"
+      tabindex="0"
+    ><code class="language-txt">${ProducerAdd.result.new_id}</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    А если <strong>метод вернул массив объектов</strong>, то
+    <strong>доступ к элементам выполняется по индексу</strong>. Чтобы взять
+    идентификатор первого поставщика в списке, используется запись:
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-txt"
+      tabindex="0"
+    ><code class="language-txt">${ProducerList.result.0.id}</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    В теле запроса доступен параметр <code>stop_on_error</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Если его
+    значение равно <code>true</code>, выполнение пакета прервётся на первом
+    неуспешном шаге. Если установлено <code>false</code>, все шаги будут
+    выполнены до конца, даже если некоторые из них вернут ошибку. Это полезно,
+    когда важна максимальная полнота обработки.
+  </p>
+  <div class="notices red">
+    <p>
+      <strong
+        >Важно учитывать, что шаги, выполненные до прерывания пакета, не будут
+        отменены.</strong
+      >
+    </p>
+  </div>
+  <p>
+    Каждый шаг выполняется с ограничением по времени — десять секунд. Если за
+    это время метод не успел завершиться, в ответ вернётся ошибка таймаута.
+    Отдельно стоит учитывать ограничения: нельзя вызывать batch изнутри batch, а
+    также заблокированы некоторые методы, которые вызывают чрезмерную нагрузку
+    на систему, например <code>Item/Import</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="notices red">
+    <p><strong>Нельзя вызывать batch изнутри batch.</strong></p>
+  </div>
+  <p>
+    Ответ на batch-запрос всегда содержит массив <code>responses</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Внутри
+    каждого элемента находится ключ шага, HTTP-статус выполнения и тело ответа.
+    Если метод завершился успешно, в поле <code>response</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> будет
+    стандартный объект API с полями <code>ok</code> и <code>result</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Если
+    произошла ошибка, то внутри будет возвращён объект <code>ErrorResult</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> с кодом и
+    описанием. Это обеспечивает единый контракт и позволяет обрабатывать
+    пакетные вызовы так же, как одиночные.
+  </p>
+  <p>
+    Ниже приведён пример простого пакета. Сначала создаётся производитель с
+    помощью метода <code>Producer/Add</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, а затем
+    в следующем шаге сразу же выполняется его выборка через
+    <code>Producer/Get</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. При этом
+    идентификатор нового производителя передаётся во второй шаг динамически,
+    через плейсхолдер:
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"stop_on_error"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"requests"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"ProducerAdd"</span><span class="token punctuation">,</span>
+      <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"Producer/Add"</span><span class="token punctuation">,</span>
+      <span class="token property">"payload"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Coca-Cola"</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"ProducerGet"</span><span class="token punctuation">,</span>
+      <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"Producer/Get"</span><span class="token punctuation">,</span>
+      <span class="token property">"payload"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"ids"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"${ProducerAdd.result.new_id}"</span><span class="token punctuation">]</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Сервер вернёт ответ, где в блоке <code>responses</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> будут
+    результаты обоих шагов. В первом видно, что создан производитель с
+    <code>new_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, а во
+    втором — что он тут же успешно найден по этому идентификатору:
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"ok"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"result"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"ProducerAdd"</span><span class="token punctuation">,</span>
+      <span class="token property">"status"</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      <span class="token property">"response"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"ok"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">"result"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">"new_id"</span><span class="token operator">:</span> <span class="token number">4</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"ProducerGet"</span><span class="token punctuation">,</span>
+      <span class="token property">"status"</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      <span class="token property">"response"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"ok"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">"result"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Coca-Cola"</span><span class="token punctuation">,</span>
+            <span class="token property">"last_update"</span><span class="token operator">:</span> <span class="token number">1758289402</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"next_offset"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token property">"total"</span><span class="token operator">:</span> <span class="token number">1</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p><strong>Входные параметры</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Название</strong></th>
+        <th><strong>Тип данных</strong></th>
+        <th><strong>Обязательность</strong></th>
+        <th><strong>Описание</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>request_data</td>
+        <td>Object</td>
+        <td>Необязательный</td>
+        <td>Параметры запроса.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Пример запроса</strong></p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p><strong>Выходные параметры</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Название</strong></th>
+        <th><strong>Тип данных</strong></th>
+        <th><strong>Описание</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>result</td>
+        <td>Object</td>
+        <td>Результат выполнения метода.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Пример ответа</strong></p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"ok"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"result"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p></p>
+</div>

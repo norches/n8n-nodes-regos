@@ -1,0 +1,252 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>token</h1>
+  <p></p>
+  <p><strong>[POST] /oauth/token</strong></p>
+  <p>
+    Метод <code>/oauth/token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> выдает
+    или обновляет токены. Запрос всегда отправляется как
+    <code>application/x-www-form-urlencoded</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>; JSON для
+    этого метода не используется.
+  </p>
+  <h4 id="obmen-authorization-code-">
+    Обмен authorization code на токены<a
+      href="#obmen-authorization-code-"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Этот запрос выполняется после возврата пользователя с
+    <code>/oauth/authorize</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+    Передайте одноразовый код, тот же <code>redirect_uri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, ваш
+    <code>client_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>code_verifier</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, если
+    использовался PKCE.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://auth.regos.uz/oauth/token <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"grant_type=authorization_code"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"code=one_time_code"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"redirect_uri=https%3A%2F%2Fyour.app%2Fcallback"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"client_id=your_client_id"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"code_verifier=your_code_verifier"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Confidential-клиент также передает <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+    Публичный клиент не должен иметь секрет в браузере или мобильном приложении.
+  </p>
+  <p>Успешный ответ:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"access_token"</span><span class="token operator">:</span> <span class="token string">"eyJ...access_token"</span><span class="token punctuation">,</span>
+  <span class="token property">"token_type"</span><span class="token operator">:</span> <span class="token string">"Bearer"</span><span class="token punctuation">,</span>
+  <span class="token property">"id_token"</span><span class="token operator">:</span> <span class="token string">"eyJ...id_token"</span><span class="token punctuation">,</span>
+  <span class="token property">"expires_in"</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
+  <span class="token property">"refresh_token"</span><span class="token operator">:</span> <span class="token string">"opaque_refresh_token"</span><span class="token punctuation">,</span>
+  <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"openid profile email"</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Если в ответе есть <code>id_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    приложение должно проверить его подпись и стандартные поля, а затем может
+    читать публичные данные пользователя из payload. Подробное описание состава
+    <code>id_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, включая
+    поля <code>gender</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>birthdate</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, вынесено
+    на отдельную страницу <code>id_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Эти два
+    поля появляются при scope <code>profile</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>:
+    <code>gender</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    возвращается как <code>male</code> или <code>female</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, а
+    <code>birthdate</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    возвращается в формате <code>YYYY-MM-DD</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>
+    Не предполагаете срок жизни токена заранее. Всегда используйте
+    <code>expires_in</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, который
+    пришел в ответе.
+  </p>
+  <h4 id="obnovlenie-access-token">
+    Обновление access token<a
+      href="#obnovlenie-access-token"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Когда <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> истек,
+    обновите его через <code>refresh_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://auth.regos.uz/oauth/token <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"grant_type=refresh_token"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"refresh_token=opaque_refresh_token"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"client_id=your_client_id"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Если клиент confidential, добавьте <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. После
+    успешного ответа сохраните новые значения токенов. Старый refresh token
+    больше не нужно использовать.
+  </p>
+  <h4 id="poluchenie-tokena-prilozh">
+    Получение токена приложения<a
+      href="#poluchenie-tokena-prilozh"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Для серверной интеграции без пользователя используйте
+    <code>client_credentials</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://auth.regos.uz/oauth/token <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"grant_type=client_credentials"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"client_id=your_client_id"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"client_secret=your_client_secret"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Ответ содержит <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>token_type</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>expires_in</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>scope</code>. В этом сценарии не выдаются <code>id_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>refresh_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <h4 id="obmen-embed-token">
+    Обмен embed token<a
+      href="#obmen-embed-token"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <code>grant_type=embed_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    используется только для встроенных интеграций REGOS. Применяйте его, если
+    REGOS отдельно выдал вам такой сценарий. Обмен выполняется на
+    backend-стороне интеграции; подробный процесс с подключением JavaScript SDK
+    и iframe описан на отдельной странице Embed Token.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://auth.regos.uz/oauth/token <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"grant_type=embed_token"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"embed_token=one_time_embed_token"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"client_id=your_client_id"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"client_secret=your_client_secret"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Успешный ответ содержит delegated <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, который
+    действует ограниченное время и используется только в рамках согласованного
+    сценария.
+  </p>
+  <p></p>
+</div>

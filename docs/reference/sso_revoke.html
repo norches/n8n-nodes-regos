@@ -1,0 +1,101 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>revoke</h1>
+  <p></p>
+  <p><strong>[POST] /oauth/revoke</strong></p>
+  <p>
+    Метод отзывает выданный токен. Используйте его, когда пользователь отключил
+    интеграцию, приложение выполняет локальный выход или вам нужно прекратить
+    доступ раньше окончания срока действия токена.
+  </p>
+  <p>
+    Запрос отправляется как <code>application/x-www-form-urlencoded</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Клиент
+    подтверждает себя через Basic Auth или через <code>client_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> в теле
+    формы.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://auth.regos.uz/oauth/revoke <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-u</span> <span class="token string">"your_client_id:your_client_secret"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"token=eyJ...access_token"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"token_type_hint=access_token"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>Параметры:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Название</th>
+        <th>Обязательность</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>token</code></td>
+        <td>Да</td>
+        <td>Access token, который нужно отозвать.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>token_type_hint</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          Обычно <code>access_token</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>client_id</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да, если не используется Basic Auth</td>
+        <td>Идентификатор клиента.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>client_secret</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да, если не используется Basic Auth</td>
+        <td>Секрет клиента.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    При успешном отзыве сервер возвращает пустой ответ
+    <code>204 No Content</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. После
+    этого приложение должно удалить токены у себя и не пытаться использовать их
+    снова.
+  </p>
+  <p>
+    Если токен уже неактивен, приложение все равно должно считать локальную
+    очистку успешной: пользователю важно, что интеграция больше не использует
+    старые учетные данные.
+  </p>
+  <p></p>
+</div>

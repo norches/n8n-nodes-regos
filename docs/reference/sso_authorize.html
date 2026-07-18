@@ -1,0 +1,169 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>authorize</h1>
+  <p></p>
+  <p><strong>[GET] /oauth/authorize</strong></p>
+  <p>
+    Этот метод открывается в браузере пользователя и начинает вход через REGOS.
+    Его не нужно вызывать скрытым серверным запросом: пользователь должен
+    попасть на страницу авторизации, войти в профиль и затем вернуться в ваше
+    приложение.
+  </p>
+  <p>
+    Минимальный запрос содержит тип ответа <code>code</code>, идентификатор
+    клиента и адрес возврата. Для безопасной интеграции добавьте
+    <code>state</code> и PKCE-параметры.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-text"
+      tabindex="0"
+    ><code class="language-text">GET https://auth.regos.uz/oauth/authorize?response_type=code&amp;client_id=your_client_id&amp;redirect_uri=https%3A%2F%2Fyour.app%2Fcallback&amp;scope=openid%20profile%20email&amp;state=random_state&amp;code_challenge=your_code_challenge&amp;code_challenge_method=S256</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>Параметры передаются в query string:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Название</th>
+        <th>Обязательность</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>response_type</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да</td>
+        <td>Всегда <code>code</code>.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>client_id</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да</td>
+        <td>Идентификатор вашего приложения.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>redirect_uri</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да</td>
+        <td>
+          Адрес возврата после входа. Должен совпадать с зарегистрированным
+          адресом.
+        </td>
+      </tr>
+      <tr>
+        <td><code>scope</code></td>
+        <td>Нет</td>
+        <td>
+          Запрашиваемые права, разделенные пробелами, например
+          <code>openid profile email</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+          Если не передать, REGOS использует разрешения клиента.
+        </td>
+      </tr>
+      <tr>
+        <td><code>state</code></td>
+        <td>Рекомендуется</td>
+        <td>
+          Случайное значение для защиты от подмены ответа. REGOS вернет его без
+          изменений.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>prompt</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          Управляет поведением входа. Например, <code>login</code> просит войти
+          заново, <code>consent</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+          показывает согласие, <code>none</code> запрещает показывать экран
+          входа.
+        </td>
+      </tr>
+      <tr>
+        <td><code>nonce</code></td>
+        <td>Нет</td>
+        <td>
+          Значение для связывания запроса с <code>id_token</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+          Используется в OpenID Connect.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>code_challenge</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Рекомендуется</td>
+        <td>
+          PKCE challenge, вычисленный из <code>code_verifier</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+          Может быть обязательным для вашего клиента.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>code_challenge_method</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Рекомендуется</td>
+        <td>Используйте <code>S256</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    После успешного входа REGOS перенаправит пользователя на
+    <code>redirect_uri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>:
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-text"
+      tabindex="0"
+    ><code class="language-text">https://your.app/callback?code=one_time_code&amp;state=random_state</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Если вход невозможен, REGOS вернет OAuth-ошибку. Если
+    <code>redirect_uri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> принят,
+    ошибка будет отправлена на него в query string, например
+    <code>error=login_required</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Ваше
+    приложение должно обработать и успешный ответ, и ошибку.
+  </p>
+  <p></p>
+</div>

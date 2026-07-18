@@ -1,0 +1,214 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    13.02.2026 23:05
+  </div>
+  <h1>Выполнение запросов</h1>
+  <p></p>
+  <p>
+    Все запросы к API осуществляются методом <strong>POST</strong>. Для отправки
+    запросов к API используется Endpoint полученный при создании локальной или
+    тиражируемой интеграции.
+  </p>
+  <div class="notices blue">
+    <p>
+      <strong
+        >Узнайте как получить
+        <a
+          href="https://docs.regos.uz/ru/integration/local"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          class="external-link no-image"
+          >Endpoint</a
+        ></strong
+      >
+    </p>
+  </div>
+  <div class="notices yellow">
+    <p>
+      <strong
+        >Методы помеченные как "УСТАРЕВШИЙ" не получают поддержку и обновление.
+        Корректность их работы не гарантируется!</strong
+      >
+    </p>
+  </div>
+  <p>
+    Каждый запрос должен содержать обязательные
+    <strong>Заголовки (Headers):</strong>
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Название</strong></th>
+        <th><strong>Обязательность</strong></th>
+        <th><strong>Значение</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Content-Type</td>
+        <td>Обязательный</td>
+        <td>application/json;charset=utf-8</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    На уровне прикладной логики API использует <strong>HTTP 200</strong> (ошибки
+    возвращаются в <code>ErrorResult</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> внутри
+    <code>result</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>). Иные
+    HTTP-коды обычно связаны с внешней инфраструктурой (proxy/gateway) или
+    недоступностью сервера.
+  </p>
+  <p><strong>Выходные параметры (Body):</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Название</strong></th>
+        <th><strong>Тип данных</strong></th>
+        <th><strong>Обязательность</strong></th>
+        <th><strong>Описание параметра</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ok</td>
+        <td>bool</td>
+        <td>Обязательный</td>
+        <td>True/False – метка успешного ответа</td>
+      </tr>
+      <tr>
+        <td>result</td>
+        <td>Object, array of objects</td>
+        <td>Обязательный</td>
+        <td>
+          Массив возвращаемых данных. Единичное значение либо массив данных
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Пример успешного ответа (Object)</strong></p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"ok"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"result"</span><span class="token operator">:</span> 
+        <span class="token punctuation">{</span>
+            <span class="token property">"new_id"</span><span class="token operator">:</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    <strong
+      >Пример успешного ответа (Object) при добавлении массива данных</strong
+    >
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"ok"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"result"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"row_affected"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token property">"ids"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token number">1016537</span><span class="token punctuation">,</span>
+      <span class="token number">1016538</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="notices yellow">
+    <p>
+      Для методов, которые вносят массовые изменения, стандартным является
+      возврат обоих полей: <code>row_affected</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+      <code>ids</code> (ID фактически изменённых записей).<br />
+      Для legacy-методов, где пока возвращается только <code>row_affected</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, это
+      считается временным ограничением до унификации контракта.
+    </p>
+  </div>
+  <p><strong>Пример успешного ответа (Array of Objects)</strong></p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"ok"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"result"</span><span class="token operator">:</span> 
+        <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"зелёный"</span><span class="token punctuation">,</span>
+                <span class="token property">"last_update"</span><span class="token operator">:</span> <span class="token number">1534151629</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p><strong>Пример ответа с ошибкой</strong></p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"ok"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">"result"</span><span class="token operator">:</span> 
+        <span class="token punctuation">{</span>
+            <span class="token property">"error"</span><span class="token operator">:</span> <span class="token number">9000</span><span class="token punctuation">,</span>
+            <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Ошибка авторизации. Отсутствует заголовок Token"</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="notices blue">
+    <p>Полный <a href="/ru/api/intro/errors">перечень возможных ошибок</a></p>
+  </div>
+  <p></p>
+</div>

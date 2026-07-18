@@ -1,0 +1,379 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>Code Flow</h1>
+  <p></p>
+  <p></p>
+  <div class="page-toc">
+    <h4>Содержание</h4>
+    <ul>
+      <li class="first">
+        <a href="#chto-podgotovit-zaranee">Что подготовить заранее</a>
+      </li>
+      <li>
+        <a href="#shag-1-podgotovte-pkce">Шаг 1. Подготовьте PKCE</a>
+      </li>
+      <li>
+        <a href="#shag-2-otpravte-polzovate"
+          >Шаг 2. Отправьте пользователя на авторизацию</a
+        >
+      </li>
+      <li>
+        <a href="#shag-3-primite-kod-avtori">Шаг 3. Примите код авторизации</a>
+      </li>
+      <li>
+        <a href="#shag-4-obmenyayte-kod-na-">Шаг 4. Обменяйте код на токены</a>
+      </li>
+      <li>
+        <a href="#shag-5-ispolzuyte-access-">Шаг 5. Используйте access token</a>
+      </li>
+      <li>
+        <a href="#shag-6-obnovite-token">Шаг 6. Обновите токен</a>
+      </li>
+      <li class="last">
+        <a href="#proverka-id-token">Проверка id_token</a>
+      </li>
+    </ul>
+  </div>
+  <p></p>
+  <p>
+    Authorization Code Flow с PKCE — основной сценарий входа пользователя через
+    REGOS. Он подходит для сайта, мобильного приложения, SPA и серверного
+    веб-приложения. Идея простая: пользователь входит на стороне REGOS, ваше
+    приложение получает короткий одноразовый код, а затем меняет этот код на
+    токены.
+  </p>
+  <p>
+    PKCE нужен для защиты кода авторизации. Даже если кто-то перехватит код
+    возврата, он не сможет обменять его на токены без <code>code_verifier</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, который
+    остался у вашего приложения.
+  </p>
+  <p>
+    <img
+      title="CodeFlow_scheme"
+      alt="CodeFlow_scheme"
+      src="/user/pages/02.sso/02.avtorizaciya-oauth/01.code-flow/CodeFlow_scheme.png"
+    />
+  </p>
+  <h4 id="chto-podgotovit-zaranee">
+    Что подготовить заранее<a
+      href="#chto-podgotovit-zaranee"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Перед началом интеграции получите <code>client_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> для
+    вашего приложения и зарегистрируйте <code>redirect_uri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Это
+    адрес в вашем приложении, куда REGOS вернет пользователя после входа. Адрес
+    должен совпадать с зарегистрированным значением полностью, включая протокол
+    <code>https</code>, путь и завершающий слэш, если он есть.
+  </p>
+  <p>
+    Если ваше приложение является серверным и ему выдан
+    <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, храните
+    секрет только на сервере. Не вставляйте секрет в frontend, мобильное
+    приложение, HTML-страницу или JavaScript.
+  </p>
+  <h4 id="shag-1-podgotovte-pkce">
+    Шаг 1. Подготовьте PKCE<a
+      href="#shag-1-podgotovte-pkce"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Перед открытием страницы авторизации приложение создает случайную строку
+    <code>code_verifier</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Из нее
+    вычисляется <code>code_challenge</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, который
+    отправляется в REGOS. Рекомендуемый метод — <code>S256</code>.
+  </p>
+  <p>
+    Обычно библиотека OAuth делает это автоматически. Если вы реализуете процесс
+    вручную, используйте случайную строку длиной от 43 до 128 символов и
+    вычислите:
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-text"
+      tabindex="0"
+    ><code class="language-text">code_challenge = BASE64URL(SHA256(code_verifier))</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <h4 id="shag-2-otpravte-polzovate">
+    Шаг 2. Отправьте пользователя на авторизацию<a
+      href="#shag-2-otpravte-polzovate"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Пользователь должен открыть адрес <code>/oauth/authorize</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> в
+    браузере. Это не серверный запрос: пользователь увидит страницу входа REGOS,
+    пройдет авторизацию и затем будет возвращен на ваш <code>redirect_uri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-text"
+      tabindex="0"
+    ><code class="language-text">GET https://auth.regos.uz/oauth/authorize?response_type=code&amp;client_id=your_client_id&amp;redirect_uri=https%3A%2F%2Fyour.app%2Fcallback&amp;scope=openid%20profile%20email&amp;state=random_state&amp;code_challenge=your_code_challenge&amp;code_challenge_method=S256</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Параметр <code>state</code> нужен для защиты от подмены ответа. Сохраните
+    его до перехода на REGOS и после возврата проверьте, что значение не
+    изменилось.
+  </p>
+  <p>
+    Если <code>scope</code> не передан, REGOS использует разрешения, которые
+    настроены для клиента. Для OpenID Connect обычно нужен <code>openid</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>; для
+    email добавьте <code>email</code>, для расширенного профиля —
+    <code>profile</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, для
+    телефона — <code>phone</code>.
+  </p>
+  <h4 id="shag-3-primite-kod-avtori">
+    Шаг 3. Примите код авторизации<a
+      href="#shag-3-primite-kod-avtori"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    После успешного входа REGOS перенаправит пользователя на ваш
+    <code>redirect_uri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. В адресе
+    будет параметр <code>code</code>, а также <code>state</code>, если вы
+    передавали его на первом шаге.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-text"
+      tabindex="0"
+    ><code class="language-text">https://your.app/callback?code=one_time_code&amp;state=random_state</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Код авторизации короткоживущий и одноразовый. Не сохраняйте его надолго и не
+    используйте повторно. Сразу обменяйте его на токены.
+  </p>
+  <h4 id="shag-4-obmenyayte-kod-na-">
+    Шаг 4. Обменяйте код на токены<a
+      href="#shag-4-obmenyayte-kod-na-"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Запрос на обмен кода отправляется методом <code>POST</code> в формате
+    <code>application/x-www-form-urlencoded</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Если вы
+    использовали PKCE, обязательно передайте исходный <code>code_verifier</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://auth.regos.uz/oauth/token <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"grant_type=authorization_code"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"code=one_time_code"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"redirect_uri=https%3A%2F%2Fyour.app%2Fcallback"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"client_id=your_client_id"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"code_verifier=your_code_verifier"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Для confidential-клиента добавьте <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Для
+    публичного клиента секрет не используется.
+  </p>
+  <p>
+    Успешный ответ содержит токены. Значение <code>expires_in</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    показывает срок жизни <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> в
+    секундах. Не задавайте это значение вручную в приложении: используйте то,
+    что пришло в ответе.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"access_token"</span><span class="token operator">:</span> <span class="token string">"eyJ...access_token"</span><span class="token punctuation">,</span>
+  <span class="token property">"token_type"</span><span class="token operator">:</span> <span class="token string">"Bearer"</span><span class="token punctuation">,</span>
+  <span class="token property">"id_token"</span><span class="token operator">:</span> <span class="token string">"eyJ...id_token"</span><span class="token punctuation">,</span>
+  <span class="token property">"expires_in"</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
+  <span class="token property">"refresh_token"</span><span class="token operator">:</span> <span class="token string">"opaque_refresh_token"</span><span class="token punctuation">,</span>
+  <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"openid profile email"</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <h4 id="shag-5-ispolzuyte-access-">
+    Шаг 5. Используйте access token<a
+      href="#shag-5-ispolzuyte-access-"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    передается в API в заголовке <code>Authorization</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-text"
+      tabindex="0"
+    ><code class="language-text">Authorization: Bearer eyJ...access_token</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Если вам нужно получить данные профиля пользователя, вызовите
+    <code>/oauth/userinfo</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Набор
+    полей в ответе зависит от выданных scope.
+  </p>
+  <h4 id="shag-6-obnovite-token">
+    Шаг 6. Обновите токен<a
+      href="#shag-6-obnovite-token"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Когда <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> истек, не
+    отправляйте пользователя на повторный вход сразу. Сначала попробуйте
+    обновить токен через <code>refresh_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://auth.regos.uz/oauth/token <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"grant_type=refresh_token"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"refresh_token=opaque_refresh_token"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"client_id=your_client_id"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Если ваш клиент confidential, добавьте <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. После
+    успешного обновления сохраните новый <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и новый
+    <code>refresh_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, если он
+    есть в ответе. Старые значения больше не должны использоваться.
+  </p>
+  <h4 id="proverka-id-token">
+    Проверка id_token<a
+      href="#proverka-id-token"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <code>id_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> — это
+    JWT, который подтверждает факт входа пользователя. Проверяйте подпись токена
+    публичными ключами REGOS, issuer, audience и срок действия. Публичные ключи
+    доступны через endpoint JWKS, а служебные адреса можно получить из OpenID
+    configuration.
+  </p>
+  <p></p>
+</div>

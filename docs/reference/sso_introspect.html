@@ -1,0 +1,130 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>introspect</h1>
+  <p></p>
+  <p><strong>[POST] /oauth/introspect</strong></p>
+  <p>
+    Introspection проверяет токен и возвращает информацию о том, активен ли он.
+    Этот метод обычно вызывает сервер ресурса, перед тем как принять запрос с
+    <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>
+    Запрос отправляется как <code>application/x-www-form-urlencoded</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Клиент
+    должен подтвердить себя через HTTP Basic Auth или через поля
+    <code>client_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> в теле
+    формы. Для новых интеграций предпочтительнее Basic Auth, потому что секрет
+    не смешивается с обычными параметрами запроса.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://auth.regos.uz/oauth/introspect <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-u</span> <span class="token string">"your_client_id:your_client_secret"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"token=eyJ...access_token"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"token_type_hint=access_token"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>Параметры формы:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Название</th>
+        <th>Обязательность</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>token</code></td>
+        <td>Да</td>
+        <td>Токен, который нужно проверить.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>token_type_hint</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          Подсказка для сервера. Обычно <code>access_token</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>client_id</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да, если не используется Basic Auth</td>
+        <td>Идентификатор клиента.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>client_secret</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да, если не используется Basic Auth</td>
+        <td>Секрет клиента.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Если токен действителен, ответ содержит <code>active: true</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    публичные сведения, которые помогают ресурсу принять решение о доступе.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"active"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"openid profile email"</span><span class="token punctuation">,</span>
+  <span class="token property">"client_id"</span><span class="token operator">:</span> <span class="token string">"your_client_id"</span><span class="token punctuation">,</span>
+  <span class="token property">"token_type"</span><span class="token operator">:</span> <span class="token string">"Bearer"</span><span class="token punctuation">,</span>
+  <span class="token property">"exp"</span><span class="token operator">:</span> <span class="token number">1760000000</span><span class="token punctuation">,</span>
+  <span class="token property">"iat"</span><span class="token operator">:</span> <span class="token number">1759999400</span><span class="token punctuation">,</span>
+  <span class="token property">"sub"</span><span class="token operator">:</span> <span class="token string">"user_identifier"</span><span class="token punctuation">,</span>
+  <span class="token property">"aud"</span><span class="token operator">:</span> <span class="token string">"https://api.example.com"</span><span class="token punctuation">,</span>
+  <span class="token property">"iss"</span><span class="token operator">:</span> <span class="token string">"https://auth.regos.uz"</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Если токен не найден, истек или был отозван, метод возвращает успешный
+    HTTP-ответ с <code>active: false</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Это
+    нормальное поведение: ресурс должен просто отказать в доступе.
+  </p>
+  <p></p>
+</div>

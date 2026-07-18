@@ -1,0 +1,566 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>Embed Token</h1>
+  <p></p>
+  <p></p>
+  <div class="page-toc">
+    <h4>Содержание</h4>
+    <ul>
+      <li class="first">
+        <a href="#minimalnyy-put">Минимальный путь</a>
+      </li>
+      <li>
+        <a href="#shag-1-podklyuchite-skrip"
+          >Шаг 1. Подключите скрипт на странице iframe</a
+        >
+      </li>
+      <li>
+        <a href="#shag-2-zapustite-sdk">Шаг 2. Запустите SDK</a>
+      </li>
+      <li>
+        <a href="#shag-3-sozdayte-backend-e"
+          >Шаг 3. Создайте backend endpoint</a
+        >
+      </li>
+      <li>
+        <a href="#chto-vazhno-ponyat">Что важно понять</a>
+      </li>
+      <li>
+        <a href="#chto-delaet-regos">Что делает REGOS</a>
+      </li>
+      <li>
+        <a href="#parametry-sdk">Параметры SDK</a>
+      </li>
+      <li class="last">
+        <a href="#chastye-oshibki">Частые ошибки</a>
+      </li>
+    </ul>
+  </div>
+  <p></p>
+  <p>
+    Embed Token — это самый простой способ авторизовать встроенную интеграцию,
+    которая открывается внутри REGOS в <code>iframe</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+    Пользователь уже вошел в REGOS, поэтому вашей интеграции не нужно показывать
+    отдельную кнопку входа, открывать popup или просить пользователя повторно
+    вводить пароль.
+  </p>
+  <p>
+    Если ваша страница уже открывается внутри REGOS, для первого запуска вам
+    нужно сделать только две вещи: подключить Embed SDK на странице iframe и
+    создать небольшой backend endpoint, который обменяет одноразовый
+    <code>embed_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> на
+    <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>
+    Вам не нужно вручную работать с <code>postMessage</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, если вы
+    используете SDK. Вам не нужно передавать <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> в
+    браузер. Вам не нужно самостоятельно выпускать <code>embed_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, если
+    родительскую сторону выполняет REGOS.
+  </p>
+  <h4 id="minimalnyy-put">
+    Минимальный путь<a
+      href="#minimalnyy-put"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>Для разработчика встроенной интеграции процесс выглядит так:</p>
+  <ol>
+    <li>
+      На странице, которая открывается в iframe, подключите
+      <code>regos-embed-sdk.v1.1.min.js</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+    </li>
+    <li>
+      На этой же странице вызовите <code>RegosEmbedSDK.init</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+      укажите <code>clientId</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+      <code>connectedIntegrationId</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и адрес
+      вашего backend.
+    </li>
+    <li>
+      На backend примите <code>embed_token</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span> от SDK
+      и обменяйте его на <code>access_token</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span> через
+      <code>/oauth/token</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+    </li>
+    <li>
+      После успешного обмена верните SDK простой успешный ответ и покажите
+      пользователю интерфейс интеграции.
+    </li>
+  </ol>
+  <p>В большинстве случаев этого достаточно.</p>
+  <h4 id="shag-1-podklyuchite-skrip">
+    Шаг 1. Подключите скрипт на странице iframe<a
+      href="#shag-1-podklyuchite-skrip"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Откройте HTML-страницу, которую REGOS будет показывать в iframe, и добавьте
+    скрипт Embed SDK:
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-html"
+      tabindex="0"
+    ><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://auth.regos.uz/widget/regos-embed-sdk.v1.1.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    На этой странице не нужен <code>regos-oauth-sdk.js</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Он
+    используется для обычной кнопки "Войти через REGOS", а не для
+    embed-сценария.
+  </p>
+  <h4 id="shag-2-zapustite-sdk">
+    Шаг 2. Запустите SDK<a
+      href="#shag-2-zapustite-sdk"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Сразу после подключения скрипта вызовите <code>RegosEmbedSDK.init</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-html"
+      tabindex="0"
+    ><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  RegosEmbedSDK<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">connectedIntegrationId</span><span class="token operator">:</span> <span class="token string">"connected_integration_id"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">clientId</span><span class="token operator">:</span> <span class="token string">"your_client_id"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">backendUrl</span><span class="token operator">:</span> <span class="token string">"https://integration.example.com/api/regos/embed/consume"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">parentOrigin</span><span class="token operator">:</span> <span class="token string">"https://regos.online"</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">onSuccess</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Интеграция авторизована"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// Здесь можно загрузить основной интерфейс интеграции.</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">onError</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"Не удалось авторизовать интеграцию"</span><span class="token punctuation">,</span> error<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// Здесь можно показать пользователю понятное сообщение об ошибке.</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    <code>connectedIntegrationId</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> — это
+    идентификатор подключенной интеграции. <code>clientId</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> —
+    идентификатор OAuth-клиента вашей интеграции. <code>backendUrl</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> —
+    endpoint вашего backend, куда SDK отправит одноразовый
+    <code>embed_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>
+    SDK сам создаст <code>nonce</code>, сообщит родительской странице, что
+    iframe готов, дождется <code>embed_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    отправит его на <code>backendUrl</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>Минимальная страница iframe может выглядеть так:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-html"
+      tabindex="0"
+    ><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ru<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>REGOS Integration<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Загрузка...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://auth.regos.uz/widget/regos-embed-sdk.v1.1.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    RegosEmbedSDK<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">connectedIntegrationId</span><span class="token operator">:</span> <span class="token string">"connected_integration_id"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">clientId</span><span class="token operator">:</span> <span class="token string">"your_client_id"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">backendUrl</span><span class="token operator">:</span> <span class="token string">"https://integration.example.com/api/regos/embed/consume"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">parentOrigin</span><span class="token operator">:</span> <span class="token string">"https://regos.online"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">onSuccess</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">"Интеграция готова"</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">onError</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">"Не удалось открыть интеграцию"</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <h4 id="shag-3-sozdayte-backend-e">
+    Шаг 3. Создайте backend endpoint<a
+      href="#shag-3-sozdayte-backend-e"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    SDK отправит на ваш <code>backendUrl</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    JSON-запрос. Вам нужно принять его на backend, взять <code>embed_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    обменять его на <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>SDK отправляет такое тело:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"embed_token"</span><span class="token operator">:</span> <span class="token string">"opaque_embed_token"</span><span class="token punctuation">,</span>
+  <span class="token property">"connected_integration_id"</span><span class="token operator">:</span> <span class="token string">"connected_integration_id"</span><span class="token punctuation">,</span>
+  <span class="token property">"nonce"</span><span class="token operator">:</span> <span class="token string">"generated_nonce"</span><span class="token punctuation">,</span>
+  <span class="token property">"origin"</span><span class="token operator">:</span> <span class="token string">"https://integration.example.com"</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>Минимальная логика backend:</p>
+  <ol>
+    <li>
+      Принять <code>embed_token</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+    </li>
+    <li>
+      Проверить, что <code>connected_integration_id</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+      <code>origin</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+      ожидаемые.
+    </li>
+    <li>
+      Отправить запрос в REGOS <code>/oauth/token</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+    </li>
+    <li>
+      Получить <code>access_token</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+    </li>
+    <li>Создать свою сессию или сохранить токен на backend.</li>
+    <li>Вернуть SDK короткий успешный ответ.</li>
+  </ol>
+  <p>Обмен выполняется так:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://auth.regos.uz/oauth/token <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"grant_type=embed_token"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"embed_token=opaque_embed_token"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"client_id=your_client_id"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"client_secret=your_client_secret"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>Успешный ответ REGOS:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"access_token"</span><span class="token operator">:</span> <span class="token string">"eyJ...access_token"</span><span class="token punctuation">,</span>
+  <span class="token property">"token_type"</span><span class="token operator">:</span> <span class="token string">"Bearer"</span><span class="token punctuation">,</span>
+  <span class="token property">"expires_in"</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
+  <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"allowed.scope another.scope"</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>После этого ваш backend может вернуть SDK простой ответ:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"ok"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Этот ответ попадет в <code>onSuccess(data)</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> на
+    странице iframe.
+  </p>
+  <h4 id="chto-vazhno-ponyat">
+    Что важно понять<a
+      href="#chto-vazhno-ponyat"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <code>embed_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> — не
+    access token. Это одноразовый короткоживущий код для обмена. Его нельзя
+    использовать для запросов к API и нельзя хранить.
+  </p>
+  <p>
+    <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    используется только на backend интеграции. Никогда не передавайте его в
+    HTML, JavaScript, localStorage, URL или мобильное приложение.
+  </p>
+  <p>
+    <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    полученный после обмена, безопаснее держать на backend. Если frontend может
+    обращаться к вашему backend, а backend уже обращается к нужным API, не
+    возвращайте <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> в
+    браузер.
+  </p>
+  <h4 id="chto-delaet-regos">
+    Что делает REGOS<a
+      href="#chto-delaet-regos"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Если интеграция запускается внутри REGOS, родительская страница уже
+    открывает ваш iframe и выдает SDK одноразовый <code>embed_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+    Разработчику интеграции обычно не нужно реализовывать эту сторону.
+  </p>
+  <p>
+    Ваша задача — подготовить iframe-страницу и backend endpoint. SDK берет на
+    себя связь с родительской страницей.
+  </p>
+  <h4 id="parametry-sdk">
+    Параметры SDK<a
+      href="#parametry-sdk"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Параметр</th>
+        <th>Обязательный</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>connectedIntegrationId</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да</td>
+        <td>Идентификатор подключенной интеграции.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>clientId</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да</td>
+        <td>OAuth client id вашей интеграции.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>backendUrl</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да</td>
+        <td>
+          Backend endpoint интеграции, который принимает <code>embed_token</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>parentOrigin</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          Origin родительской страницы. По умолчанию
+          <code>https://regos.online</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>timeout</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          Время ожидания ответа от родительской страницы в миллисекундах. По
+          умолчанию 10000.
+        </td>
+      </tr>
+      <tr>
+        <td><code>debug</code></td>
+        <td>Нет</td>
+        <td>
+          Диагностические сообщения в консоли. Для production обычно
+          <code>false</code>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>onSuccess</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>Вызывается после успешного ответа вашего backend.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>onError</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>
+          Вызывается при ошибке конфигурации, timeout, ошибке родительской
+          страницы или ошибке backend.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="chastye-oshibki">
+    Частые ошибки<a
+      href="#chastye-oshibki"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <code>RegosEmbedSDK: missing required config</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что не передан <code>connectedIntegrationId</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>clientId</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> или
+    <code>backendUrl</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>
+    <code>RegosEmbedSDK: parent window not available</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что страница открыта не внутри iframe.
+  </p>
+  <p>
+    <code>RegosEmbedSDK: crypto unavailable</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что браузер не смог создать безопасный <code>nonce</code>.
+  </p>
+  <p>
+    <code>RegosEmbedSDK: handshake timeout</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что родительская страница не ответила за указанное время.
+  </p>
+  <p>
+    <code>RegosEmbedSDK: backend request failed</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> означает,
+    что ваш <code>backendUrl</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> вернул
+    неуспешный HTTP-статус или недоступен.
+  </p>
+  <p></p>
+</div>

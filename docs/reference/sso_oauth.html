@@ -1,0 +1,108 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>Авторизация OAuth</h1>
+  <p></p>
+  <p></p>
+  <div class="page-toc">
+    <h4>Содержание</h4>
+    <ul>
+      <li class="first">
+        <a href="#osnovnye-scenarii">Основные сценарии</a>
+      </li>
+    </ul>
+  </div>
+  <p></p>
+  <p>
+    Авторизация через REGOS построена на OAuth 2.0 и OpenID Connect. В обычном
+    пользовательском сценарии ваше приложение отправляет человека на страницу
+    входа REGOS, REGOS проверяет пользователя, возвращает в ваше приложение
+    короткий код, а ваш сервер или SDK меняет этот код на токены.
+  </p>
+  <p>
+    Токены нужны для разных задач. <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> позволяет
+    обращаться к API. <code>id_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    подтверждает личность пользователя в сценариях OpenID Connect.
+    <code>refresh_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> позволяет
+    получить новый <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, когда
+    старый истек, без повторного ввода пароля.
+  </p>
+  <p>Базовый адрес публичного сервиса:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-text"
+      tabindex="0"
+    ><code class="language-text">https://auth.regos.uz</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Большинство POST-запросов OAuth отправляются в формате
+    <code>application/x-www-form-urlencoded</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Это
+    важно: не отправляйте JSON туда, где в примере указан form-urlencoded. Для
+    запросов к <code>/oauth/userinfo</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    используется заголовок <code>Authorization: Bearer ...</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>
+    <img
+      alt=""
+      src="/user/pages/02.sso/02.avtorizaciya-oauth/OAuthSchemeFigma.png"
+    />
+  </p>
+  <h4 id="osnovnye-scenarii">
+    Основные сценарии<a
+      href="#osnovnye-scenarii"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Для входа пользователя используйте Authorization Code Flow с PKCE. Этот
+    сценарий подходит для сайтов, SPA, мобильных приложений и серверных
+    веб-приложений. Пользователь видит страницу REGOS, подтверждает вход, а
+    приложение получает токены безопасным способом.
+  </p>
+  <p>
+    Для серверной интеграции без пользователя используйте Client Credentials
+    Flow. Этот сценарий подходит для фоновых обменов между серверами, когда
+    приложение действует от своего имени. В этом сценарии не выдаются
+    <code>id_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>refresh_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>
+    Для встроенных интеграций внутри REGOS используйте Embed Token. В этом
+    сценарии страница интеграции открывается в <code>iframe</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    подключает Embed SDK и передает одноразовый <code>embed_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> на свой
+    backend, где он обменивается на <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p>
+    Готовый JavaScript SDK использует тот же Authorization Code Flow с PKCE, но
+    скрывает большую часть технических шагов. Если вам нужна кнопка "Войти через
+    REGOS", начните с раздела "Кнопка авторизации".
+  </p>
+  <p></p>
+</div>

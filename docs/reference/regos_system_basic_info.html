@@ -1,0 +1,539 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    13.05.2025 12:39
+  </div>
+  <h1>Введение</h1>
+  <p></p>
+  <h3 id="onlayn-rukovodstvo-polzov">
+    Онлайн руководство пользователя комплекса <strong>REGOS</strong
+    ><a
+      href="#onlayn-rukovodstvo-polzov"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h3>
+  <p>
+    Комплекс <strong>REGOS</strong> это многофункциональный и удобный инструмент
+    управления средним и крупным бизнесом.
+  </p>
+  <p>
+    <a href="/ru/intro/./opredeleniya-i-terminy" target="_blank"
+      >Определения и термины</a
+    >
+  </p>
+  <p>
+    Структура комплекса представляет собой взаимосвязь нескольких модулей,
+    каждый из которых отвечает за свои задачи.
+  </p>
+  <p>
+    <img
+      title="regos_scheme"
+      alt="regos_scheme"
+      src="/user/pages/01.intro/regos_scheme.png"
+    />
+  </p>
+  <p>
+    <strong
+      ><a
+        href="https://docs.regos.uz/regos-online"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >REGOS: ONLINE - Веб-интерфейс для работы с комплексом</a
+      ></strong
+    ><br />
+    Управление предприятием онлайн и с любого устройства. Предоставляет
+    практически тот же функционал, что и
+    <strong>REGOS: Store Management</strong>.
+  </p>
+  <p>
+    <strong
+      ><a
+        href="https://docs.regos.uz/regos-sm"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >REGOS: Store Management - Управление складом</a
+      ></strong
+    ><br />
+    Основной инструмент управления складом и бэк-офисом оптовой и розничной
+    торговли. Предназначена для бухгалтеров, менеджеров и товароведов. Позволяет
+    контролировать поступление товаров, управлять имеющимся товарным
+    ассортиментом и ценообразованием, производить взаиморасчеты с контрагентами,
+    а также формировать различные отчеты по движению товаров и расходам
+    предприятия.
+  </p>
+  <p>
+    <strong
+      ><a
+        href="https://docs.regos.uz/regos-cashserver"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >REGOS: CashServer - Сервер касс</a
+      ></strong
+    ><br />
+    Обслуживает и управляет синхронизацией данных между базой данных каждого
+    экземпляра <strong>REGOS:POS</strong> и центральной базой всего комплекса.
+  </p>
+  <p>
+    <strong
+      ><a
+        href="https://docs.regos.uz/regos-pos"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >REGOS: POS - Рабочее место кассира</a
+      ></strong
+    ><br />
+    Приложение автоматизирует и ускоряет работу кассира, обслуживает задачи
+    контроля над отпуском товаров и распечатке чеков. Каждый экземпляр
+    <strong>REGOS:POS</strong> имеет собственную локальную базу.
+  </p>
+  <p>
+    <strong
+      ><a
+        href="https://docs.regos.uz/regos-vcr"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >REGOS: VCR - Виртуальная касса</a
+      ></strong
+    ><br />
+    Программное обеспечение виртуальной кассы
+    <strong>REGOS: VCR</strong> (версия 1.1.0.0) разработано в соответствии с
+    ПКМ Республики Узбекистан №943 от 23.11.2020. Программа обеспечивает гибкое
+    взаимодействие между пользователем и фискальным модулем посредством HTTP
+    запросов и визуального интерфейса (GUI), а также хранение и распечатку
+    фискальных документов на бумажных носителях с помощью POS принтеров.
+  </p>
+  <p>
+    <strong
+      ><a
+        href="https://docs.regos.uz/api"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >REGOS: API - интерфейс взаимодействия с комплексом REGOS</a
+      ></strong
+    ><br />
+    Интерфейс API позволяет взаимодействовать сторонним приложениям с комплексом
+    REGOS и проводить синхронизацию между собственными модулями системы.
+  </p>
+  <p></p>
+</div>
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    28.08.2024 06:59
+  </div>
+  <h1>Определения и термины</h1>
+  <p></p>
+  <p>
+    В данном разделе собраны определения, термины и понятия, встречающиеся в
+    описании функционала сервиса REGOS.
+  </p>
+  <p></p>
+  <div class="page-toc">
+    <h4>Содержание</h4>
+    <ul>
+      <li class="first">
+        <a href="#ikpu">ИКПУ</a>
+      </li>
+      <li>
+        <a href="#kod-upakovki">Код упаковки</a>
+      </li>
+      <li>
+        <a href="#sinhronizaciya">Синхронизация</a>
+      </li>
+      <li>
+        <a href="#agregaciya">Агрегация</a>
+      </li>
+      <li>
+        <a href="#variativnaya-nomenklatura">Вариативная номенклатура</a>
+      </li>
+      <li>
+        <a href="#variacii">Вариации</a>
+      </li>
+      <li>
+        <a href="#sostavnaya-nomenklatura">Составная номенклатура</a>
+      </li>
+      <li>
+        <a href="#zakrytie-perioda">Закрытие периода</a>
+      </li>
+      <li class="last">
+        <a href="#eps">ЭПС</a>
+      </li>
+    </ul>
+  </div>
+  <p></p>
+  <p>
+    <strong><br /> </strong>
+  </p>
+  <h4 id="ikpu">
+    <strong>ИКПУ</strong
+    ><a
+      href="#ikpu"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <strong>ИКПУ</strong> – идентификационный код продукции и услуг. Сервис
+    REGOS взаимодействует с порталом
+    <a href="/ru/intro/opredeleniya-i-terminy/tasnif.soliq.uz" target="_blank"
+      >tasnif.soliq.uz</a
+    >
+    для получения ИКПУ.
+  </p>
+  <p>Все ИКПУ делятся на две группы:</p>
+  <ol>
+    <li><strong>Базовые</strong> ИКПУ (оканчиваются на «000 000»);</li>
+    <li>
+      <strong>Идентификационные</strong> ИКПУ (включают в себя информацию о
+      бренде и свойствах товара (цвет, форма, упаковка и т.д.), оканчиваются
+      комбинацией из разных цифр).
+    </li>
+  </ol>
+  <p>
+    До оптимизации системы(портала
+    <a href="/ru/intro/opredeleniya-i-terminy/tasnif.soliq.uz" target="_blank"
+      >tasnif.soliq.uz</a
+    >) в конце 2022 года идентификационные ИКПУ присваивались всем товарам со
+    штрих-кодом EAN Uzbekistan.<br />
+    С 1 января 2023 года:
+  </p>
+  <ul>
+    <li>
+      Товарам, подлежащим обязательной цифровой маркировке, присваивают
+      идентификационные ИКПУ;
+    </li>
+    <li>
+      Товарам, не подлежащим обязательной цифровой маркировке, – базовые ИКПУ
+      товарной группы (с шестью нулями в конце).
+    </li>
+  </ul>
+  <p>
+    Но если для вашего товара создан идентификационный ИКПУ до начала
+    оптимизации в конце 2022 года и он – действующий согласно текущей версии
+    <a href="/ru/intro/opredeleniya-i-terminy/tasnif.soliq.uz" target="_blank"
+      >tasnif.soliq.uz</a
+    >.
+  </p>
+  <h4 id="kod-upakovki">
+    <strong>Код упаковки</strong
+    ><a
+      href="#kod-upakovki"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <strong>Код упаковки</strong> - характеризует единицу измерения товара,
+    привязанную к определенному ИКПУ; является кодом контейнера в системе
+    <a href="/ru/intro/opredeleniya-i-terminy/tasnif.soliq.uz" target="_blank"
+      >tasnif.soliq.uz</a
+    >, используемого для защиты, хранения и транспортировки товара.
+  </p>
+  <p>Виды упаковки:</p>
+  <ul>
+    <li>
+      <em>Потребительская упаковка</em> – неотделима от самого товара и
+      необходима для защиты товаров от воздействия внешней среды. Например,
+      пачки, банки, ампулы, блистеры и т.п. Формируется автоматически и не
+      подлежит дальнейшей корректировке;
+    </li>
+    <li>
+      <em>Внешняя упаковка</em> – предназначена для защиты потребительской
+      упаковки. Например, коробка от зубной пасты, блок минеральной воды.
+      Формируется на основе потребительской упаковки;
+    </li>
+    <li>
+      <em>Транспортная упаковка</em> – предназначена для перевозки товаров.
+      Например, коробки и мешки. Формируется на основе потребительской или
+      внешней упаковки.
+    </li>
+  </ul>
+  <p>
+    <strong><br /> </strong>
+  </p>
+  <h4 id="sinhronizaciya">
+    <strong>Синхронизация</strong
+    ><a
+      href="#sinhronizaciya"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <strong>Синхронизация</strong> - перенос данных с REGOS:CashSever на
+    REGOS:API.
+  </p>
+  <p>
+    <strong><br /> </strong>
+  </p>
+  <h4 id="agregaciya">
+    <strong>Агрегация</strong
+    ><a
+      href="#agregaciya"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <strong>Агрегация</strong> - подведение итогов по продажам и возвратам,
+    выполняется в промежуток с 1:00 по 1:30 GMT+5. После закрытия кассовой смены
+    в 1:00 будут созданы документы
+    <a href="/ru/regos-sm/operations/retail/operations" target="_blank"
+      >Агрегированных операций</a
+    >
+    и
+    <a href="/ru/regos-sm/operations/retail/payments" target="_blank"
+      >Агрегированных платежей</a
+    >, кассовые продажи и оплаты будут окончательно занесены в базу данных
+    REGOS:API (до закрытия смены и агрегации все кассовые продажи и возвраты
+    собираются в промежуточной базе данных и не учитываются в общей отчётности).
+  </p>
+  <p>
+    <strong><br /> </strong>
+  </p>
+  <h4 id="variativnaya-nomenklatura">
+    <strong>Вариативная номенклатура</strong
+    ><a
+      href="#variativnaya-nomenklatura"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <strong>Вариативная номенклатура</strong> - это базовая (родительская)
+    номенклатура, обобщающая категорию данной номенклатуры; используется для
+    группировки вариаций или модификаций, различающихся по определённым
+    характеристикам, таким как размер, цвет, материал и т.д.
+  </p>
+  <p>
+    <strong><br /> </strong>
+  </p>
+  <h4 id="variacii">
+    <strong>Вариации</strong
+    ><a
+      href="#variacii"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <strong>Вариация</strong> - это дочерняя номенклатура Вариативной
+    (родительской) номенклатуры из категории родительской, с конкретными
+    свойствами.
+  </p>
+  <p>Например:</p>
+  <ul>
+    <li>
+      <em>Вариативный товар (родительский)</em> - Футболка:
+      <ul>
+        <li><em>Вариация</em> - Футболка красная М;</li>
+        <li><em>Вариация</em> - Футболка синяя XL.</li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    <strong><br /> </strong>
+  </p>
+  <h4 id="sostavnaya-nomenklatura">
+    <strong>Составная номенклатура</strong
+    ><a
+      href="#sostavnaya-nomenklatura"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <strong>Составная номенклатура</strong> - это номенклатура, который состоит
+    из нескольких отдельных позиций номенклатуры, объединённых в один продукт
+    для продажи. Такая номенклатура может продаваться как единое целое, и
+    покупатель приобретает её вместе, по общей цене.
+  </p>
+  <p>Примеры составной номенклатуры:</p>
+  <ul>
+    <li>
+      Компьютерные комплекты: настольный компьютер, монитор, клавиатура и мышь,
+      продаваемые как один комплект.
+    </li>
+    <li>
+      Подарочные наборы: корзина с виноградом, сыром и шоколадом, упакованные и
+      продаваемые вместе.
+    </li>
+    <li>
+      Мебельные гарнитуры: стол, стулья и шкаф, продающиеся как единый набор.
+    </li>
+  </ul>
+  <p>
+    <strong><br /> </strong>
+  </p>
+  <h4 id="zakrytie-perioda">
+    <strong>Закрытие периода</strong
+    ><a
+      href="#zakrytie-perioda"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <strong>Закрытие периода</strong> - подведение итогов и расчёт
+    средневзвешенной себестоимости номенклатуры за период.
+  </p>
+  <p>
+    <strong><br /> </strong>
+  </p>
+  <h4 id="eps">
+    <strong>ЭПС</strong
+    ><a
+      href="#eps"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    <strong>ЭПС</strong> (Электронная Платёжная Система) - сторонний сервис,
+    позволяющий пользователю выполнять платежи через графический интерфtйс.
+  </p>
+  <p></p>
+</div>
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    13.05.2025 12:39
+  </div>
+  <h1>Введение</h1>
+  <p></p>
+  <h3 id="onlayn-rukovodstvo-polzov">
+    Онлайн руководство пользователя комплекса <strong>REGOS</strong
+    ><a
+      href="#onlayn-rukovodstvo-polzov"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h3>
+  <p>
+    Комплекс <strong>REGOS</strong> это многофункциональный и удобный инструмент
+    управления средним и крупным бизнесом.
+  </p>
+  <p>
+    <a href="/ru/intro/./opredeleniya-i-terminy" target="_blank"
+      >Определения и термины</a
+    >
+  </p>
+  <p>
+    Структура комплекса представляет собой взаимосвязь нескольких модулей,
+    каждый из которых отвечает за свои задачи.
+  </p>
+  <p>
+    <img
+      title="regos_scheme"
+      alt="regos_scheme"
+      src="/user/pages/01.intro/regos_scheme.png"
+    />
+  </p>
+  <p>
+    <strong
+      ><a
+        href="https://docs.regos.uz/regos-online"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >REGOS: ONLINE - Веб-интерфейс для работы с комплексом</a
+      ></strong
+    ><br />
+    Управление предприятием онлайн и с любого устройства. Предоставляет
+    практически тот же функционал, что и
+    <strong>REGOS: Store Management</strong>.
+  </p>
+  <p>
+    <strong
+      ><a
+        href="https://docs.regos.uz/regos-sm"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >REGOS: Store Management - Управление складом</a
+      ></strong
+    ><br />
+    Основной инструмент управления складом и бэк-офисом оптовой и розничной
+    торговли. Предназначена для бухгалтеров, менеджеров и товароведов. Позволяет
+    контролировать поступление товаров, управлять имеющимся товарным
+    ассортиментом и ценообразованием, производить взаиморасчеты с контрагентами,
+    а также формировать различные отчеты по движению товаров и расходам
+    предприятия.
+  </p>
+  <p>
+    <strong
+      ><a
+        href="https://docs.regos.uz/regos-cashserver"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >REGOS: CashServer - Сервер касс</a
+      ></strong
+    ><br />
+    Обслуживает и управляет синхронизацией данных между базой данных каждого
+    экземпляра <strong>REGOS:POS</strong> и центральной базой всего комплекса.
+  </p>
+  <p>
+    <strong
+      ><a
+        href="https://docs.regos.uz/regos-pos"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >REGOS: POS - Рабочее место кассира</a
+      ></strong
+    ><br />
+    Приложение автоматизирует и ускоряет работу кассира, обслуживает задачи
+    контроля над отпуском товаров и распечатке чеков. Каждый экземпляр
+    <strong>REGOS:POS</strong> имеет собственную локальную базу.
+  </p>
+  <p>
+    <strong
+      ><a
+        href="https://docs.regos.uz/regos-vcr"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >REGOS: VCR - Виртуальная касса</a
+      ></strong
+    ><br />
+    Программное обеспечение виртуальной кассы
+    <strong>REGOS: VCR</strong> (версия 1.1.0.0) разработано в соответствии с
+    ПКМ Республики Узбекистан №943 от 23.11.2020. Программа обеспечивает гибкое
+    взаимодействие между пользователем и фискальным модулем посредством HTTP
+    запросов и визуального интерфейса (GUI), а также хранение и распечатку
+    фискальных документов на бумажных носителях с помощью POS принтеров.
+  </p>
+  <p>
+    <strong
+      ><a
+        href="https://docs.regos.uz/api"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >REGOS: API - интерфейс взаимодействия с комплексом REGOS</a
+      ></strong
+    ><br />
+    Интерфейс API позволяет взаимодействовать сторонним приложениям с комплексом
+    REGOS и проводить синхронизацию между собственными модулями системы.
+  </p>
+  <p></p>
+</div>

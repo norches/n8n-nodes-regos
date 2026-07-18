@@ -1,0 +1,163 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>Client Credentials Flow</h1>
+  <p></p>
+  <p></p>
+  <div class="page-toc">
+    <h4>Содержание</h4>
+    <ul>
+      <li class="first">
+        <a href="#chto-podgotovit">Что подготовить</a>
+      </li>
+      <li>
+        <a href="#poluchenie-tokena-prilozh">Получение токена приложения</a>
+      </li>
+      <li class="last">
+        <a href="#ispolzovanie-tokena">Использование токена</a>
+      </li>
+    </ul>
+  </div>
+  <p></p>
+  <p>
+    Client Credentials Flow используется, когда пользователь не участвует в
+    процессе. В этом сценарии серверное приложение получает
+    <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> от имени
+    самого приложения и затем обращается к API как доверенный клиент.
+  </p>
+  <p>
+    Этот flow подходит только для confidential-клиентов, у которых есть
+    <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Не
+    используйте его в браузере, SPA, мобильном приложении или любом месте, где
+    секрет может увидеть пользователь.
+  </p>
+  <h4 id="chto-podgotovit">
+    Что подготовить<a
+      href="#chto-podgotovit"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Получите <code>client_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    убедитесь, что для клиента разрешен grant type
+    <code>client_credentials</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, и
+    заранее согласуйте набор доступных scope. Сервис выдаст токен только с
+    разрешениями, которые назначены клиенту.
+  </p>
+  <h4 id="poluchenie-tokena-prilozh">
+    Получение токена приложения<a
+      href="#poluchenie-tokena-prilozh"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    Запрос отправляется методом <code>POST</code> в формате
+    <code>application/x-www-form-urlencoded</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://auth.regos.uz/oauth/token <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"grant_type=client_credentials"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"client_id=your_client_id"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"client_secret=your_client_secret"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Успешный ответ содержит только <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. В этом
+    сценарии нет пользователя, поэтому REGOS не выдает <code>id_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>refresh_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"access_token"</span><span class="token operator">:</span> <span class="token string">"eyJ...access_token"</span><span class="token punctuation">,</span>
+  <span class="token property">"token_type"</span><span class="token operator">:</span> <span class="token string">"Bearer"</span><span class="token punctuation">,</span>
+  <span class="token property">"expires_in"</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
+  <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"allowed.scope another.scope"</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Используйте <code>expires_in</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> из
+    ответа, чтобы понять, когда нужно запросить новый токен. Когда токен истек,
+    повторите тот же запрос с <code>client_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>client_secret</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <h4 id="ispolzovanie-tokena">
+    Использование токена<a
+      href="#ispolzovanie-tokena"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>Передавайте токен в API в заголовке:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-text"
+      tabindex="0"
+    ><code class="language-text">Authorization: Bearer eyJ...access_token</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Такой токен не подходит для <code>/oauth/userinfo</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, потому
+    что он не связан с конкретным пользователем. Если вам нужен профиль
+    пользователя, используйте Authorization Code Flow.
+  </p>
+  <p></p>
+</div>

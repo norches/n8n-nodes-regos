@@ -1,0 +1,174 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>userinfo</h1>
+  <p></p>
+  <p><strong>[GET] /oauth/userinfo</strong></p>
+  <p>
+    Метод <code>/oauth/userinfo</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    возвращает публичные данные пользователя по действующему
+    <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Обычно
+    приложение вызывает этот метод после входа через Authorization Code Flow или
+    после получения токена через Embed Token, когда нужно показать имя
+    пользователя, email, телефон или другие данные профиля.
+  </p>
+  <p>
+    Запрос очень простой: передайте <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> в
+    заголовке <code>Authorization</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. В query
+    string и body ничего добавлять не нужно.
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> GET https://auth.regos.uz/oauth/userinfo <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Authorization: Bearer eyJ...access_token"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Токен должен быть активным и должен содержать scope <code>openid</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Это
+    базовое разрешение, без него метод не вернет данные пользователя. Остальные
+    поля зависят от scope, которые были выданы приложению при входе
+    пользователя. Если приложение запросило только <code>openid</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, в ответе
+    будет только идентификатор пользователя. Если дополнительно были запрошены
+    <code>profile</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>email</code>, <code>phone</code> или <code>roles</code>, ответ станет
+    шире.
+  </p>
+  <p>
+    Поле <code>sub</code> приходит всегда. Это публичный идентификатор
+    пользователя для вашей интеграции. Его можно сохранить у себя, чтобы связать
+    локальную учетную запись с пользователем REGOS.
+  </p>
+  <p>
+    Если был выдан scope <code>email</code>, в ответ добавляются
+    <code>email</code> и <code>email_verified</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Поле
+    <code>email</code> содержит адрес электронной почты, а
+    <code>email_verified</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    показывает, подтвержден ли этот адрес.
+  </p>
+  <p>
+    Если был выдан scope <code>phone</code>, в ответ добавляются
+    <code>phone_number</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>phone_number_verified</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Поле
+    <code>phone_number</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> содержит
+    номер телефона, а <code>phone_number_verified</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    показывает, подтвержден ли номер.
+  </p>
+  <p>
+    Scope <code>profile</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> открывает
+    базовые данные профиля. Вместе с ним могут прийти <code>given_name</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>family_name</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>company</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>picture</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>gender</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>birthdate</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>country_code</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>timezone</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    <code>language_code</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и
+    <code>telegram_chat_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Поле
+    <code>gender</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    возвращается как публичное значение <code>male</code> или <code>female</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Если
+    пользователь не указал пол, поле вернется пустой строкой. Поле
+    <code>birthdate</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    возвращается в формате <code>YYYY-MM-DD</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, например
+    <code>1995-04-23</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Если
+    дата рождения не указана, поле также вернется пустой строкой.
+  </p>
+  <p>
+    Если был выдан scope <code>roles</code>, в ответ может добавиться
+    <code>roles</code>. Это список публичных ролей пользователя, доступных
+    вашему приложению. Если ролей нет, поле может отсутствовать.
+  </p>
+  <p>
+    Пример ответа при scopes <code>openid profile email phone</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>:
+  </p>
+  <div class="code-toolbar">
+    <pre
+      class="language-json"
+      tabindex="0"
+    ><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"sub"</span><span class="token operator">:</span> <span class="token string">"user_identifier"</span><span class="token punctuation">,</span>
+  <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"user@example.com"</span><span class="token punctuation">,</span>
+  <span class="token property">"email_verified"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"phone_number"</span><span class="token operator">:</span> <span class="token string">"+998901234567"</span><span class="token punctuation">,</span>
+  <span class="token property">"phone_number_verified"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"given_name"</span><span class="token operator">:</span> <span class="token string">"Ali"</span><span class="token punctuation">,</span>
+  <span class="token property">"family_name"</span><span class="token operator">:</span> <span class="token string">"Valiyev"</span><span class="token punctuation">,</span>
+  <span class="token property">"company"</span><span class="token operator">:</span> <span class="token string">"Example"</span><span class="token punctuation">,</span>
+  <span class="token property">"picture"</span><span class="token operator">:</span> <span class="token string">"https://example.com/avatar.png"</span><span class="token punctuation">,</span>
+  <span class="token property">"gender"</span><span class="token operator">:</span> <span class="token string">"male"</span><span class="token punctuation">,</span>
+  <span class="token property">"birthdate"</span><span class="token operator">:</span> <span class="token string">"1995-04-23"</span><span class="token punctuation">,</span>
+  <span class="token property">"country_code"</span><span class="token operator">:</span> <span class="token string">"UZ"</span><span class="token punctuation">,</span>
+  <span class="token property">"timezone"</span><span class="token operator">:</span> <span class="token string">"Asia/Tashkent"</span><span class="token punctuation">,</span>
+  <span class="token property">"language_code"</span><span class="token operator">:</span> <span class="token string">"ru"</span><span class="token punctuation">,</span>
+  <span class="token property">"telegram_chat_id"</span><span class="token operator">:</span> <span class="token number">123456789</span>
+<span class="token punctuation">}</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>
+    Не делайте код зависимым от того, что все поля всегда заполнены.
+    Пользователь может не указать часть профиля, а приложение может получить не
+    все scope. Надежная интеграция сначала проверяет наличие поля и только потом
+    показывает его в интерфейсе.
+  </p>
+  <p>
+    Если токен истек или был отозван, метод вернет ошибку авторизации. В этом
+    случае сначала попробуйте обновить токен через <code>refresh_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, а если
+    обновление не удалось, отправьте пользователя на повторный вход.
+  </p>
+  <p></p>
+</div>

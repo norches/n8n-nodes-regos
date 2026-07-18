@@ -1,0 +1,103 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    16.05.2026 00:00
+  </div>
+  <h1>logout</h1>
+  <p></p>
+  <p><strong>[GET] или [POST] /oauth/logout</strong></p>
+  <p>
+    Метод завершает сессию, связанную с OpenID Connect токеном. Его используют,
+    когда приложение хочет выполнить единый выход пользователя через REGOS, а не
+    только удалить токены в своем браузере или backend.
+  </p>
+  <p>
+    Главный параметр — <code>id_token_hint</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Это
+    <code>id_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, который
+    приложение получило при входе пользователя. По нему REGOS понимает, какую
+    пользовательскую сессию нужно завершить.
+  </p>
+  <p>Пример GET-запроса:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-text"
+      tabindex="0"
+    ><code class="language-text">https://auth.regos.uz/oauth/logout?id_token_hint=eyJ...id_token&amp;post_logout_redirect_uri=https%3A%2F%2Fyour.app%2Flogged-out&amp;state=random_state</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>Пример POST-запроса:</p>
+  <div class="code-toolbar">
+    <pre
+      class="language-bash"
+      tabindex="0"
+    ><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://auth.regos.uz/oauth/logout <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/x-www-form-urlencoded"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"id_token_hint=eyJ...id_token"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"post_logout_redirect_uri=https%3A%2F%2Fyour.app%2Flogged-out"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">"state=random_state"</span></code><span class="copy-to-clipboard" title="Copy to clipboard"></span></pre>
+    <div class="toolbar">
+      <div class="toolbar-item">
+        <button
+          class="copy-to-clipboard-button"
+          type="button"
+          data-copy-state="copy"
+        >
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p>Параметры:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Название</th>
+        <th>Обязательность</th>
+        <th>Описание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>id_token_hint</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Да</td>
+        <td>ID token пользователя, полученный при входе.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>post_logout_redirect_uri</code
+          ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+        </td>
+        <td>Нет</td>
+        <td>Куда вернуть пользователя после выхода.</td>
+      </tr>
+      <tr>
+        <td><code>state</code></td>
+        <td>Нет</td>
+        <td>Значение, которое REGOS добавит к redirect после выхода.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Если <code>post_logout_redirect_uri</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> указан,
+    REGOS перенаправит пользователя на него. Если <code>state</code> тоже
+    указан, он будет возвращен без изменений. Если redirect не указан, сервер
+    вернет простой успешный ответ.
+  </p>
+  <p></p>
+</div>

@@ -1,0 +1,417 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    01.03.2026 15:56
+  </div>
+  <h1>Базовый флоу и обработка методов</h1>
+  <p></p>
+  <p></p>
+  <div class="page-toc">
+    <h4>Содержание</h4>
+    <ul>
+      <li class="first">
+        <a href="#1-sozdanie-integracii-i-t"
+          >1. Создание интеграции и тестирование</a
+        >
+      </li>
+      <li>
+        <a href="#2-kak-regos-vyzyvaet-meto">2. Как REGOS вызывает методы</a>
+      </li>
+      <li class="last">
+        <a href="#3-kogda-vyzyvayutsya-bazo"
+          >3. Когда вызываются базовые методы</a
+        >
+        <ul>
+          <li class="first">
+            <a href="#3-1-connect">3.1. Connect</a>
+          </li>
+          <li>
+            <a href="#3-2-disconnect">3.2. Disconnect</a>
+          </li>
+          <li>
+            <a href="#3-3-reconnect">3.3. Reconnect</a>
+          </li>
+          <li>
+            <a href="#3-4-updatesettings">3.4. UpdateSettings</a>
+          </li>
+          <li class="last">
+            <a href="#3-5-handlewebhook">3.5. HandleWebhook</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <p></p>
+  <p>
+    В статье кратко разберём, как работает тиражируемая интеграция REGOS: как её
+    создать, как REGOS вызывает ваш обработчик, какие
+    <strong>базовые методы</strong> бывают и в каких сценариях они приходят.
+  </p>
+  <h4 id="1-sozdanie-integracii-i-t">
+    1. Создание интеграции и тестирование<a
+      href="#1-sozdanie-integracii-i-t"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    1) Создайте интеграцию в профиле разработчика:<br />
+    <a
+      href="https://apps.regos.uz/developers/integrations"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >https://apps.regos.uz/developers/integrations</a
+    >
+  </p>
+  <p>
+    2) После создания интеграция получает статус <strong>«Черновик»</strong>, и
+    вам будут доступны <strong>Client ID</strong> и
+    <strong>Client Secret</strong>.
+  </p>
+  <p>
+    3) Чтобы ваша интеграция могла выполнять запросы к REGOS API, получите
+    <code>access_token</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> через
+    <strong>Client Credentials Flow</strong> и передавайте его в запросах в
+    заголовке:<br />
+    <code>Authorization: Bearer &lt;access_token&gt;</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+  </p>
+  <p>
+    Документация по токену:<br />
+    <a
+      href="https://docs.regos.uz/ru/sso/avtorizaciya-oauth/client-credentials-flow"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >https://docs.regos.uz/ru/sso/avtorizaciya-oauth/client-credentials-flow</a
+    >
+  </p>
+  <div class="notices blue">
+    <p>
+      <strong
+        >В статусе «Черновик» вы можете подключить интеграцию к тестовому
+        аккаунту и проверить, как REGOS вызывает методы вашего
+        обработчика.</strong
+      >
+    </p>
+  </div>
+  <h4 id="2-kak-regos-vyzyvaet-meto">
+    2. Как REGOS вызывает методы<a
+      href="#2-kak-regos-vyzyvaet-meto"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>
+    REGOS сам инициирует вызовы базовых методов и отправляет
+    <strong>POST</strong> на URL, который вы указали в поле
+    <strong>«URL обработчика»</strong> при создании интеграции.
+  </p>
+  <div class="notices blue">
+    <p>
+      То есть вам не нужно “дергать” Connect/Disconnect руками — вы просто
+      принимаете входящие запросы и обрабатываете их.
+    </p>
+  </div>
+  <p>
+    Общая документация по базовым методам:<br />
+    <a
+      href="https://docs.regos.uz/ru/integration/methods/base"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >https://docs.regos.uz/ru/integration/methods/base</a
+    >
+  </p>
+  <p>
+    Ключевая сущность здесь — <code>connected_integration_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Это
+    уникальный идентификатор подключения интеграции к конкретному аккаунту
+    REGOS. По сути, это ваш “ключ” для того, чтобы понять:
+    <strong>какой именно аккаунт</strong> сейчас вызвал обработчик. Его почти
+    всегда имеет смысл сохранить у себя в базе, чтобы дальше правильно
+    сопоставлять аккаунт REGOS с сущностями в вашей системе.
+  </p>
+  <p>
+    Запросы “из интеграции” в REGOS API выполняются через gateway:<br />
+    <code
+      >https://integration.regos.uz/gateway/out/{connected_integration_id}/v1/{Method}</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+  </p>
+  <div class="notices blue">
+    <p>
+      <strong>Описание формата запросов и quick start:</strong><br />
+      <a
+        href="https://docs.regos.uz/ru/api/intro/make-api-queries"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >https://docs.regos.uz/ru/api/intro/make-api-queries</a
+      ><br />
+      <a
+        href="https://docs.regos.uz/ru/api/intro/quick-start"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >https://docs.regos.uz/ru/api/intro/quick-start</a
+      >
+    </p>
+  </div>
+  <p>
+    Ещё момент из практики: не пытайтесь делать тяжёлую работу прямо внутри
+    входящего запроса. У вызовов есть ограничение по времени (таймаут), поэтому
+    лучше быстро принять событие, положить задачу в очередь/фоновую обработку и
+    вернуть <code>200 OK</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <h4 id="3-kogda-vyzyvayutsya-bazo">
+    3. Когда вызываются базовые методы<a
+      href="#3-kogda-vyzyvayutsya-bazo"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>Основные сценарии и рекомендации по обработке.</p>
+  <h5 id="3-1-connect">
+    3.1. Connect<a
+      href="#3-1-connect"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <p>
+    Документация:<br />
+    <a
+      href="https://docs.regos.uz/ru/integration/methods/base/connect"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >https://docs.regos.uz/ru/integration/methods/base/connect</a
+    >
+  </p>
+  <p>
+    <strong>Когда вызывается:</strong> пользователь подключает интеграцию к
+    своему аккаунту.
+  </p>
+  <p>
+    В момент подключения REGOS пришлёт вам <code>connected_integration_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> и дату
+    подключения. <code>connected_integration_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> — самое
+    важное: сохраните его. Если вы дальше планируете сопоставлять аккаунты,
+    включать платную интеграцию/биллинг, инициировать запросы в REGOS API — без
+    этого идентификатора будет сложно.
+  </p>
+  <div class="notices blue">
+    <p>
+      Часто сразу после Connect полезно получить информацию об аккаунте (тариф,
+      статус, api_login и т.д.). Для этого можно вызвать <code>sys/getinfo</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span>:<br />
+      <a
+        href="https://docs.regos.uz/ru/api/other/getinfo"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        class="external-link no-image"
+        >https://docs.regos.uz/ru/api/other/getinfo</a
+      >
+    </p>
+  </div>
+  <p>
+    <img
+      title="2"
+      alt="2"
+      src="/user/pages/10.integration/01.catalog/01.bazovyi-flou-i-obrabotka-metodov/2.png"
+    />
+  </p>
+  <h5 id="3-2-disconnect">
+    3.2. Disconnect<a
+      href="#3-2-disconnect"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <p>
+    Документация:<br />
+    <a
+      href="https://docs.regos.uz/ru/integration/methods/base/disconnect"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >https://docs.regos.uz/ru/integration/methods/base/disconnect</a
+    >
+  </p>
+  <p>
+    <strong>Когда вызывается:</strong> пользователь удаляет интеграцию из
+    аккаунта.
+  </p>
+  <p>
+    По факту это сигнал “интеграцию больше не используют”. REGOS снова передаст
+    <code>connected_integration_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, чтобы вы
+    могли у себя корректно выключить всё, что связано с этим подключением:
+    остановить синхронизации, отменить фоновые задачи, закрыть доступ к платным
+    функциям (если они завязаны на активность интеграции).
+  </p>
+  <p>
+    <img
+      title="3"
+      alt="3"
+      src="/user/pages/10.integration/01.catalog/01.bazovyi-flou-i-obrabotka-metodov/3.png"
+    />
+  </p>
+  <h5 id="3-3-reconnect">
+    3.3. Reconnect<a
+      href="#3-3-reconnect"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <p>
+    Документация:<br />
+    <a
+      href="https://docs.regos.uz/ru/integration/methods/base/reconnect"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >https://docs.regos.uz/ru/integration/methods/base/reconnect</a
+    >
+  </p>
+  <p>
+    <strong>Когда вызывается:</strong> пользователь переустанавливает
+    интеграцию.
+  </p>
+  <p>
+    Переустановка обычно нужна в двух случаях:<br />
+    — поменялся <code>connected_integration_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>
+    (например, по соображениям безопасности);<br />
+    — вы обновили интеграцию и хотите, чтобы изменения (например, список
+    настроек) корректно применились в аккаунте.
+  </p>
+  <p>
+    В Reconnect приходит <strong>новый</strong>
+    <code>connected_integration_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>, а старый
+    приезжает в поле <code>previous_integration_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>. Это
+    сделано специально, чтобы вы могли у себя “перепривязать” подключение и не
+    потерять связь с аккаунтом.
+  </p>
+  <p>
+    Что обычно делают: находят запись по <code>previous_integration_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>,
+    переносят на новый ID, а старый помечают как неактуальный.
+  </p>
+  <p>
+    <img
+      title="4"
+      alt="4"
+      src="/user/pages/10.integration/01.catalog/01.bazovyi-flou-i-obrabotka-metodov/4.png"
+    />
+  </p>
+  <h5 id="3-4-updatesettings">
+    3.4. UpdateSettings<a
+      href="#3-4-updatesettings"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <p>
+    Документация:<br />
+    <a
+      href="https://docs.regos.uz/ru/integration/methods/base/updatesettings"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >https://docs.regos.uz/ru/integration/methods/base/updatesettings</a
+    >
+  </p>
+  <p>
+    <strong>Когда вызывается:</strong> пользователь изменил настройки интеграции
+    в интерфейсе REGOS.
+  </p>
+  <p>
+    Если вы добавили настройки при создании интеграции, и эти настройки
+    редактируются пользователем, то при каждом сохранении REGOS отправит вам
+    UpdateSettings. Внутри будет массив <code>settings</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> с
+    актуальными значениями.
+  </p>
+  <p>
+    Ваша задача тут простая: принять эти значения и применить их у себя.
+    Например: включить/выключить какой-то функционал, поменять токен
+    Telegram-бота, фильтры, режим работы и т.д.
+  </p>
+  <p>
+    API-метод редактирования настроек, который инициализировал событие
+    UpdateSettings:<br />
+    <a
+      href="https://docs.regos.uz/ru/api/integrations/connectedintegrationsetting/edit"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >https://docs.regos.uz/ru/api/integrations/connectedintegrationsetting/edit</a
+    >
+  </p>
+  <p>
+    <img
+      title="5"
+      alt="5"
+      src="/user/pages/10.integration/01.catalog/01.bazovyi-flou-i-obrabotka-metodov/5.png"
+    />
+  </p>
+  <p>
+    <img
+      title="6"
+      alt="6"
+      src="/user/pages/10.integration/01.catalog/01.bazovyi-flou-i-obrabotka-metodov/6.png"
+    />
+  </p>
+  <h5 id="3-5-handlewebhook">
+    3.5. HandleWebhook<a
+      href="#3-5-handlewebhook"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h5>
+  <p>
+    Документация:<br />
+    <a
+      href="https://docs.regos.uz/ru/integration/methods/base/handlewebhook"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      class="external-link no-image"
+      >https://docs.regos.uz/ru/integration/methods/base/handlewebhook</a
+    >
+  </p>
+  <p>
+    <strong>Когда вызывается:</strong> в REGOS произошло событие, на которое
+    интеграция подписана.
+  </p>
+  <p>
+    HandleWebhook — это уже “боевые” события. Внутри <code>data.action</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> вы
+    увидите тип события, а в <code>data.data</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span> —
+    полезную нагрузку (иногда минимальную, например только <code>id</code>).
+    Дальше вы решаете, что делать: подтянуть детали из API, обновить вашу
+    систему, отправить данные дальше.
+  </p>
+  <p>
+    Если в обработке вебхука есть сетевые запросы или тяжёлая логика — лучше
+    снова не делать это синхронно в одном запросе. Приняли событие → поставили
+    задачу в очередь → вернули <code>200 OK</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>.
+  </p>
+  <p></p>
+</div>

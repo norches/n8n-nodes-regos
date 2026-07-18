@@ -1,0 +1,78 @@
+<div id="body-inner">
+  <div class="page-updated">
+    <i class="fa fa-clock-o" aria-hidden="true"></i>
+    13.02.2026 22:30
+  </div>
+  <h1>Лимиты запросов</h1>
+  <p></p>
+  <p>
+    Чтобы сервис REGOS работал быстро и без сбоев для всех пользователей, мы
+    ввели ограничения на частоту запросов. Лимиты действуют отдельно для каждого
+    <strong>отдельного приложения</strong> или
+    <strong>интеграции</strong> (<code>connected_integration_id</code
+    ><span class="copy-to-clipboard" title="Copy to clipboard"></span>).<br />
+    Они помогают поддерживать стабильность даже при большой нагрузке,
+    распределять ресурсы честно между всеми клиентами и делать поведение API
+    предсказуемым — вы всегда знаете, сколько запросов может отправить ваше
+    приложение.
+  </p>
+  <h4 id="limity">
+    Лимиты<a
+      href="#limity"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Что ограничиваем</th>
+        <th>Значение</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Средний поток запросов</td>
+        <td>2 запроса в секунду</td>
+      </tr>
+      <tr>
+        <td>Максимальный запас</td>
+        <td>до 50 запросов подряд</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="kak-eto-ustroeno">
+    Как это устроено<a
+      href="#kak-eto-ustroeno"
+      class="toc-anchor after"
+      data-anchor-icon="#"
+      aria-label="Anchor"
+    ></a>
+  </h4>
+  <p>У каждой интеграции или приложения есть свой «счётчик запросов».</p>
+  <ul>
+    <li>Счётчик пополняется со скоростью 2 запроса в секунду.</li>
+    <li>
+      Можно накопить запас до 50 запросов и отправить их одним большим пакетом.
+    </li>
+    <li>
+      Если запас исчерпан, новые запросы не выполняются — пока счётчик не
+      пополнится.
+    </li>
+  </ul>
+  <p><strong>Примеры:</strong></p>
+  <ul>
+    <li>Делаем 1–2 запроса в секунду — всё работает стабильно.</li>
+    <li>Отправили подряд 30 запросов — тоже нормально (берутся из запаса).</li>
+    <li>
+      Отправили подряд 60 запросов — выполнится только 50, а для оставшихся
+      вернётся <code>HTTP 200</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span> с
+      <code>ErrorResult</code
+      ><span class="copy-to-clipboard" title="Copy to clipboard"></span> (код
+      <code>8213</code>).
+    </li>
+  </ul>
+  <p></p>
+</div>
