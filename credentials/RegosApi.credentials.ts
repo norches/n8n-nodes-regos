@@ -7,7 +7,7 @@ export class RegosApi implements ICredentialType {
 
 	icon: Icon = { light: 'file:regos.svg', dark: 'file:regos.dark.svg' };
 
-	documentationUrl = 'https://github.com/OWNER/n8n-nodes-regos?tab=readme-ov-file#credentials';
+	documentationUrl = 'https://github.com/norches/n8n-nodes-regos?tab=readme-ov-file#credentials';
 
 	properties: INodeProperties[] = [
 		{

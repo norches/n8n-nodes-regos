@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"description": "n8n community nodes for the REGOS SaaS ERP (retail, inventory, documents, POS, CRM)",
 	"license": "MIT",
-	"homepage": "https://github.com/OWNER/n8n-nodes-regos",
+	"homepage": "https://github.com/norches/n8n-nodes-regos",
 	"keywords": [
 		"n8n-community-node-package",
 		"n8n",
@@ -18,7 +18,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/OWNER/n8n-nodes-regos.git"
+		"url": "https://github.com/norches/n8n-nodes-regos.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",

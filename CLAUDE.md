@@ -4,10 +4,10 @@ n8n community node package for the REGOS SaaS ERP (Uzbekistan retail/ERP). Targe
 
 ## Current phase
 
-**Scaffolded and generated (2026-07-18).** Package builds, lints clean, 28 unit tests pass, generated output covers all 919 non-batch endpoints + 297 trigger events. Not yet published to npm. Remaining before first release: real-gateway smoke test, GitHub repo (replace OWNER placeholders in package.json/README/codex files), `npm run release` + Creator Portal submission. Keep this section current when phases change.
+**Scaffolded and generated (2026-07-18).** Package builds, lints clean, 28 unit tests pass, generated output covers all 919 non-batch endpoints + 297 trigger events. GitHub owner set to `norches`. Not yet published to npm. Remaining before first release: real-gateway smoke test (`npm run dev`), create the GitHub repo `norches/n8n-nodes-regos` and push, `npm run release` + Creator Portal submission. Keep this section current when phases change.
 
 Local environment notes:
-- Local dev needs **Node >= 20.19** (`@n8n/node-cli` uses `require(esm)`; this machine's system Node 20.15 is too old — builds were run with a portable Node 22).
+- Local dev needs **Node >= 20.19** (`@n8n/node-cli` uses `require(esm)`); machine runs Node 24.
 - Install with `npm install --ignore-scripts`: the transitive `isolated-vm` dep (via @n8n/node-cli → ai-node-sdk, unused at dev time) otherwise fails its native build on Windows without VS build tools.
 
 ## Hard rules (never violate)
