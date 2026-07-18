@@ -25,6 +25,10 @@ All 920 operations across 5 action nodes (plus the trigger's Resolve Data / GetW
 ### Transport
 
 - Always `POST`, `Content-Type: application/json;charset=utf-8`.
+- The request helper calls `this.helpers.httpRequest` directly with a single documented
+  `eslint-disable` for `@n8n/community-nodes/no-http-request-with-manual-auth`: REGOS auth is the
+  integration key embedded in the URL path, so there is nothing a credential `authenticate` block
+  could inject and `httpRequestWithAuthentication` is not applicable.
 - URL = `{baseUrl}/{integrationKey}/v1/{literal path}` — path strings come only from the generated metadata map, preserving **literal swagger casing** (`/Item/Get`, but `/batch` and all `/pos/*` endpoints keep their lowercase prefix and mixed-case actions). Casing is never normalized anywhere.
 
 ### Envelope and errors

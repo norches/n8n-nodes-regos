@@ -4,7 +4,11 @@ n8n community node package for the REGOS SaaS ERP (Uzbekistan retail/ERP). Targe
 
 ## Current phase
 
-**Docs-only. No code yet.** Next phase: scaffold with `npm create @n8n/node`, then build the codegen pipeline ([ADR-0005](docs/adr/0005-codegen-pipeline-and-implementation-style.md)). Keep this section current when phases change.
+**Scaffolded and generated (2026-07-18).** Package builds, lints clean, 28 unit tests pass, generated output covers all 919 non-batch endpoints + 297 trigger events. Not yet published to npm. Remaining before first release: real-gateway smoke test, GitHub repo (replace OWNER placeholders in package.json/README/codex files), `npm run release` + Creator Portal submission. Keep this section current when phases change.
+
+Local environment notes:
+- Local dev needs **Node >= 20.19** (`@n8n/node-cli` uses `require(esm)`; this machine's system Node 20.15 is too old — builds were run with a portable Node 22).
+- Install with `npm install --ignore-scripts`: the transitive `isolated-vm` dep (via @n8n/node-cli → ai-node-sdk, unused at dev time) otherwise fails its native build on Windows without VS build tools.
 
 ## Hard rules (never violate)
 
@@ -35,7 +39,7 @@ n8n community node package for the REGOS SaaS ERP (Uzbekistan retail/ERP). Targe
 - Trigger/webhook nodes must be programmatic style; credential must define a `test`.
 - Submission via n8n Creator Portal; n8n may reject nodes competing with its paid features.
 
-## Planned repo layout (update when scaffolded)
+## Repo layout
 
 ```
 openapi/regos_api_swagger.json    # spec of record, codegen input
@@ -50,7 +54,12 @@ tests/
 
 ## Commands
 
-None yet. After scaffold: `npm run build` | `lint` | `test` | `generate`. Keep this section current.
+- `npm run generate` — regenerate `nodes/*/generated/**` from `openapi/regos_api_swagger.json` (`generate:check` = CI drift gate, `generate:diff` = what would change)
+- `npm run lint` / `lint:fix` — n8n community-node ESLint (do not fix generated files by hand; fix the generator)
+- `npm test` — vitest (helpers, executor, generator invariants, trigger normalization)
+- `npm run build` — `n8n-node build` → `dist/`
+- `npm run dev` — `n8n-node dev` loop against a local n8n
+- `npm run release` — interactive release (tag push triggers the provenance publish workflow)
 
 ## Where to look things up
 

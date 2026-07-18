@@ -1,5 +1,7 @@
 node_modules/
 dist/
+*.tgz
+lint-report.json
 *.tsbuildinfo
 .env*
 .DS_Store

@@ -37,7 +37,8 @@ The package targets n8n **verified community node** status, which imposes hard t
 ### Layout and registration
 
 - n8n starter layout: `nodes/<Name>/<Name>.node.ts` + `<Name>.node.json` codex + SVG icon; `credentials/<Name>.credentials.ts`.
-- `package.json` `n8n` attribute: `n8nNodesApiVersion: 1`, `strict: true`, `nodes`/`credentials` arrays pointing at compiled `dist/**/*.js`.
+- `package.json` `n8n` attribute: `n8nNodesApiVersion: 1`, `strict: false`, `nodes`/`credentials` arrays pointing at compiled `dist/**/*.js`.
+  - *Amended at scaffold time (2026-07-18):* `strict: true` was the original decision, but n8n strict mode requires a byte-identical default `eslint.config.mjs`, which cannot exclude the dev-only `scripts/` and `tests/` trees — and those can never satisfy the cloud runtime rules (they import `vitest`/`node:fs` by nature). `strict` is therefore `false`, with `eslint.config.mjs` spreading the **full default config including cloud rules** and only appending ignores for `scripts/**`, `tests/**`, `dist/**`. Everything published (package `files` = `["dist"]`) is still linted with the complete cloud ruleset.
 - Package name `n8n-nodes-regos`; `keywords` includes `n8n-community-node-package`.
 - Publishing: **GitHub Actions with npm provenance only** — never from a local machine.
 
