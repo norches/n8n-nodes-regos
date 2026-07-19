@@ -146,4 +146,23 @@ describe('executeRegosNode', () => {
 		expect(output[0]).toHaveLength(1);
 		expect(output[0][0].json.error).toMatch(/1044/);
 	});
+
+	it('includes request/response debug context in continueOnFail items when available', async () => {
+		const apiError = Object.assign(new Error('REGOS error 1008: bad params'), {
+			context: {
+				request: { method: 'POST', path: 'Item/Get', body: { ids: [1] } },
+				response: { ok: false, result: { error: 1008, description: 'bad params' } },
+			},
+		});
+		vi.mocked(regosApiRequest).mockRejectedValueOnce(apiError);
+
+		const ctx = {
+			...mockExecuteContext({ resource: 'item', operation: 'get', returnAll: false, limit: 50, additionalFields: {} }),
+			continueOnFail: () => true,
+		};
+
+		const output = await executeRegosNode(ctx as never, meta);
+		expect(output[0][0].json.request).toEqual({ method: 'POST', path: 'Item/Get', body: { ids: [1] } });
+		expect((output[0][0].json.response as { result: { error: number } }).result.error).toBe(1008);
+	});
 });

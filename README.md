@@ -43,6 +43,7 @@ Notes:
 ## Behavior details
 
 - REGOS returns application errors as HTTP 200 with `{ok: false, result: {error, description}}` — the nodes surface these as node errors with the REGOS error code.
+- Failed calls expose full debug context — the called endpoint path, the request body actually sent, and the raw REGOS response — in the error details, and on the output item when "Continue on Fail" is enabled. The integration key is never included.
 - Rate limiting (2 req/s, burst 50 per integration) is handled automatically: client-side pacing plus bounded retry on REGOS error 8213.
 - List operations support **Return All** with automatic `next_offset` pagination.
 - Date parameters accept n8n date values and are sent as Unix epoch seconds.

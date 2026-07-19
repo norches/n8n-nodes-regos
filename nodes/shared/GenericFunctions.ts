@@ -95,6 +95,21 @@ export async function regosApiRequest(
 		json: true,
 	};
 
+	// Debug context attached to every failure: the literal endpoint and the body actually
+	// sent, plus the raw REGOS response. The integration key lives only in the URL, which is
+	// intentionally NOT included here.
+	const request = { method: 'POST', path, body };
+
+	const fail = (cause: Record<string, unknown>, message: string, description: string): never => {
+		const error = new NodeApiError(this.getNode(), { request, ...cause } as unknown as JsonObject, {
+			message,
+			description,
+		});
+		error.context.request = request;
+		if (cause.response !== undefined) error.context.response = cause.response;
+		throw error;
+	};
+
 	let lastError: unknown;
 
 	for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
@@ -111,7 +126,12 @@ export async function regosApiRequest(
 		} catch (error) {
 			lastError = error;
 			if (isRetryableHttpError(error)) continue;
-			throw new NodeApiError(this.getNode(), error as JsonObject);
+			const httpError = error as { message?: string; httpCode?: string; statusCode?: number };
+			return fail(
+				{ error: httpError.message ?? String(error), status: httpError.httpCode ?? httpError.statusCode ?? null },
+				`REGOS request failed: ${httpError.message ?? 'unknown HTTP error'}`,
+				`POST ${path} — the request did not reach the REGOS application layer (infrastructure/network error).`,
+			);
 		}
 
 		if (response?.ok === true) return response;
@@ -122,16 +142,20 @@ export async function regosApiRequest(
 			continue;
 		}
 
-		throw new NodeApiError(this.getNode(), response as unknown as JsonObject, {
-			message: `REGOS error ${errorResult.error ?? 'unknown'}: ${errorResult.description ?? 'no description'}`,
-			description:
-				'REGOS returns application errors with HTTP 200. See the error catalog: https://docs.regos.uz/ru/api/intro/errors',
-		});
+		return fail(
+			{ response },
+			`REGOS error ${errorResult.error ?? 'unknown'}: ${errorResult.description ?? 'no description'}`,
+			`POST ${path} — REGOS returns application errors with HTTP 200. Error catalog: https://docs.regos.uz/ru/api/intro/errors`,
+		);
 	}
 
-	throw new NodeApiError(this.getNode(), (lastError ?? {}) as JsonObject, {
-		message: `REGOS request to ${path} failed after ${MAX_ATTEMPTS} attempts (rate limit or transient errors)`,
-	});
+	const lastErrorPayload =
+		typeof lastError === 'object' && lastError !== null ? lastError : { error: String(lastError) };
+	return fail(
+		{ lastError: lastErrorPayload },
+		`REGOS request to ${path} failed after ${MAX_ATTEMPTS} attempts (rate limit or transient errors)`,
+		`POST ${path} — every attempt was rejected with rate-limit code 8213 or a transient network/HTTP error.`,
+	);
 }
 
 /**

@@ -50,6 +50,22 @@ describe('regosApiRequest', () => {
 		);
 	});
 
+	it('attaches request and response debug context to application errors', async () => {
+		const ctx = mockContext([{ ok: false, result: { error: 1008, description: 'bad params' } }]);
+		try {
+			await regosApiRequest.call(ctx as never, 'Item/Add', { name: 'Cola' });
+			expect.unreachable('should have thrown');
+		} catch (error) {
+			const apiError = error as {
+				description?: string;
+				context: { request?: { method: string; path: string; body: unknown }; response?: { result: { error: number } } };
+			};
+			expect(apiError.description).toContain('POST Item/Add');
+			expect(apiError.context.request).toEqual({ method: 'POST', path: 'Item/Add', body: { name: 'Cola' } });
+			expect(apiError.context.response?.result.error).toBe(1008);
+		}
+	});
+
 	it('retries on rate-limit code 8213 and succeeds', async () => {
 		const ctx = mockContext([
 			{ ok: false, result: { error: 8213, description: 'rate limited' } },

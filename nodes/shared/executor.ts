@@ -183,11 +183,19 @@ export async function executeRegosNode(
 			}
 		} catch (error) {
 			if (context.continueOnFail()) {
-				const errorPayload = error as { message?: string; context?: { data?: unknown } };
-				returnData.push({
-					json: { error: errorPayload.message ?? String(error) },
-					pairedItem: { item: itemIndex },
-				});
+				const errorPayload = error as {
+					message?: string;
+					context?: { request?: unknown; response?: unknown };
+				};
+				const json: JsonObject = { error: errorPayload.message ?? String(error) };
+				// API-layer failures carry the called path/body and the raw REGOS response.
+				if (errorPayload.context?.request !== undefined) {
+					json.request = errorPayload.context.request as JsonObject[keyof JsonObject];
+				}
+				if (errorPayload.context?.response !== undefined) {
+					json.response = errorPayload.context.response as JsonObject[keyof JsonObject];
+				}
+				returnData.push({ json, pairedItem: { item: itemIndex } });
 				continue;
 			}
 			throw toNodeError(context, error, itemIndex);
