@@ -4,7 +4,12 @@ n8n community node package for the REGOS SaaS ERP (Uzbekistan retail/ERP). Targe
 
 ## Current phase
 
-**Published (2026-07-20).** `n8n-nodes-regos@0.1.3` live on npm with SLSA provenance via the OIDC publish workflow, and passing `@n8n/scan-community-package` (0.1.1 was a token-based bootstrap publish — npm Trusted Publisher can only be configured on an existing package). Smoke tested against a real gateway. Releases: `npm run release` (never `npm publish` directly — prerelease guard). Remaining: n8n Creator Portal submission for verified status. Post-release check: run the "Scan published package" workflow from the Actions tab (the scanner CLI is broken on Windows — tar path escaping); it lints with inline eslint configs disabled, so scanner-enforced rules must be satisfied, never suppressed. Keep this section current when phases change.
+**Published; preparing 0.2.0 for re-submission (2026-07-20).** `0.1.3` is live on npm with SLSA provenance and passes `@n8n/scan-community-package`, but **failed the Creator Portal's automated review**. Root cause identified: `n8n.strict: false` marked the package "NOT eligible for n8n Cloud verification" (`n8n-node cloud-support`), a flag the portal can read from the published manifest but the public scanner never checks. Fixed on main along with a documentation rewrite and an operation-curation pass; ship as **0.2.0**, then deprecate 0.1.1/0.1.2 and resubmit.
+
+Release invariants — verify before every release:
+- `npx n8n-node cloud-support` → **ENABLED** (strict mode + stock `eslint.config.mjs`). Never disable it.
+- `npm run release` only (never `npm publish` — the prerelease guard blocks it).
+- After publishing, run the "Scan published package" workflow from the Actions tab; the scanner CLI is unreliable on Windows (tar path escaping) and lints with inline eslint configs disabled, so scanner-enforced rules must be satisfied, never suppressed.
 
 Local environment notes:
 - Local dev needs **Node >= 20.19** (`@n8n/node-cli` uses `require(esm)`); machine runs Node 24.
@@ -47,10 +52,12 @@ credentials/RegosApi.credentials.ts
 nodes/shared/{GenericFunctions.ts, executor.ts}
 nodes/{Regos,RegosDocuments,RegosPos,RegosCrm,RegosReports}/   # + generated/
 nodes/RegosTrigger/
-scripts/generate/                 # index.ts, mappers/, domains.json, overrides/
+scripts/generate/                 # index.mts, domains.json, overrides/*.json
 docs/{SPEC.md, adr/, reference/}
-tests/
+tests/*.test.mts
 ```
+
+Dev-time TypeScript uses `.mts` on purpose: n8n's stock ESLint config scopes its rules to `**/*.ts`, so `.mts` keeps `scripts/`+`tests/` out of scope without touching the config (which strict mode requires to stay byte-identical).
 
 ## Commands
 
