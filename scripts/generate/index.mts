@@ -16,6 +16,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import prettier from 'prettier';
 
 type JsonSchema = {
@@ -74,10 +75,14 @@ interface OverridePatch {
 	hide?: boolean;
 }
 
-const ROOT = resolve(__dirname, '..', '..');
+// This file is an ES module (.mts) so that n8n's stock ESLint config, which scopes its
+// rules to **/*.ts, leaves dev-time tooling alone. That means no __dirname/require.
+const HERE = dirname(fileURLToPath(import.meta.url));
+
+const ROOT = resolve(HERE, '..', '..');
 const SPEC_PATH = join(ROOT, 'openapi', 'regos_api_swagger.json');
-const DOMAINS_PATH = join(__dirname, 'domains.json');
-const OVERRIDES_DIR = join(__dirname, 'overrides');
+const DOMAINS_PATH = join(HERE, 'domains.json');
+const OVERRIDES_DIR = join(HERE, 'overrides');
 
 const NODE_DIRS: Record<string, string> = {
 	Regos: 'nodes/Regos/generated',
@@ -681,7 +686,7 @@ async function main(): Promise<void> {
 export { buildModel, buildEvents, loadSpec, loadDomains, generateOutputs, titleCase };
 export type { OperationModel };
 
-if (require.main === module) {
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
 	void main().catch((error) => {
 		console.error(error instanceof Error ? error.message : error);
 		process.exit(1);

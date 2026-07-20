@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { buildEvents, buildModel, loadDomains, loadSpec } from '../scripts/generate/index';
+import { buildEvents, buildModel, loadDomains, loadSpec } from '../scripts/generate/index.mts';
 
 const spec = loadSpec();
 const domains = loadDomains();

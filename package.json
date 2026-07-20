@@ -26,9 +26,9 @@
 		"dev": "n8n-node dev",
 		"lint": "n8n-node lint",
 		"lint:fix": "n8n-node lint --fix",
-		"generate": "tsx scripts/generate/index.ts",
-		"generate:check": "tsx scripts/generate/index.ts --check",
-		"generate:diff": "tsx scripts/generate/index.ts --diff",
+		"generate": "tsx scripts/generate/index.mts",
+		"generate:check": "tsx scripts/generate/index.mts --check",
+		"generate:diff": "tsx scripts/generate/index.mts --diff",
 		"test": "vitest run",
 		"test:watch": "vitest",
 		"release": "n8n-node release",
@@ -42,7 +42,7 @@
 	},
 	"n8n": {
 		"n8nNodesApiVersion": 1,
-		"strict": false,
+		"strict": true,
 		"credentials": [
 			"dist/credentials/RegosApi.credentials.js"
 		],
