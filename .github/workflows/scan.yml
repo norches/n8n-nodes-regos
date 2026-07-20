@@ -1,0 +1,21 @@
+# Manual run of n8n's official community-package scanner against the published
+# package (the same check n8n runs during verification). Run it from the Actions
+# tab after each release. Runs on Linux because the scanner's tar extraction is
+# broken on Windows.
+
+name: Scan published package
+
+on:
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Scan
+        run: npx -y @n8n/scan-community-package n8n-nodes-regos
