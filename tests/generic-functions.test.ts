@@ -40,7 +40,15 @@ describe('regosApiRequest', () => {
 		expect(ctx.calls[0].url).toBe(
 			'https://integration.regos.uz/gateway/out/test-key/v1/pos/ChequeItemOperation/get',
 		);
+		// Body is pre-serialized: n8n's httpRequest would silently drop an empty object body.
+		expect(JSON.parse(ctx.calls[0].body as string)).toEqual({ a: 1 });
 		expect(envelope.ok).toBe(true);
+	});
+
+	it('sends "{}" when the operation has no parameters (n8n drops empty object bodies)', async () => {
+		const ctx = mockContext([{ ok: true, result: 1782468000 }]);
+		await regosApiRequest.call(ctx as never, 'CurrentTimeStamp/Get');
+		expect(ctx.calls[0].body).toBe('{}');
 	});
 
 	it('throws NodeApiError with the REGOS code on ok:false', async () => {

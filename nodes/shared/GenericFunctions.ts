@@ -91,7 +91,9 @@ export async function regosApiRequest(
 		method: 'POST',
 		url,
 		headers: { 'Content-Type': 'application/json;charset=utf-8' },
-		body,
+		// Serialized by us, not by the helper: n8n's httpRequest drops empty-object bodies
+		// entirely, but REGOS requires a JSON body ("{}") on every call.
+		body: JSON.stringify(body),
 		json: true,
 	};
 
