@@ -1,0 +1,66 @@
+{
+	"DocPurchase.get": {
+		"description": "Retrieve many purchase documents (goods received from partners)"
+	},
+	"DocPurchase.add": {
+		"description": "Create a purchase document header, then add lines with Purchase Operation"
+	},
+	"DocPurchase.perform": {
+		"description": "Post a purchase document so it affects stock and balances"
+	},
+	"DocPurchase.performCancel": {
+		"description": "Unpost a purchase document, reverting its effect on stock and balances"
+	},
+	"PurchaseOperation.get": {
+		"description": "Retrieve the line items of purchase documents"
+	},
+	"PurchaseOperation.add": {
+		"description": "Add a line item to a purchase document"
+	},
+	"DocWholeSale.get": {
+		"description": "Retrieve many shipment documents (goods sold to partners)"
+	},
+	"DocWholeSale.perform": {
+		"description": "Post a shipment document so it affects stock and balances"
+	},
+	"WholeSaleOperation.add": {
+		"description": "Add a line item to a shipment document"
+	},
+	"DocOrderDelivery.get": {
+		"description": "Retrieve many retail delivery orders"
+	},
+	"DocOrderDelivery.addFull": {
+		"displayName": "Create Complete Order",
+		"description": "Create a retail delivery order together with all of its line items in one call"
+	},
+	"DocOrderDelivery.setStatus": {
+		"description": "Change the fulfilment status of a retail delivery order"
+	},
+	"DocOrderDelivery.setCourier": {
+		"description": "Assign a courier to a retail delivery order"
+	},
+	"DocOrderDelivery.setStock": {
+		"description": "Assign the fulfilling warehouse to a retail delivery order"
+	},
+	"DocInventory.get": {
+		"description": "Retrieve many stocktaking documents"
+	},
+	"DocInventory.close": {
+		"description": "Close a stocktaking document and apply its differences"
+	},
+	"DocMovement.get": {
+		"description": "Retrieve many stock transfer documents"
+	},
+	"DocSetPrice.get": {
+		"description": "Retrieve many price-setting documents"
+	},
+	"DocSetPrice.perform": {
+		"description": "Post a price-setting document so its prices take effect"
+	},
+	"DocInvoice.get": {
+		"description": "Retrieve many invoices"
+	},
+	"DocPayment.get": {
+		"description": "Retrieve many payment documents"
+	}
+}

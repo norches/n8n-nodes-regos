@@ -1,10 +1,18 @@
 import { describe, expect, it } from 'vitest';
 
-import { buildEvents, buildModel, loadDomains, loadSpec } from '../scripts/generate/index.mts';
+import {
+	applyOverrides,
+	buildEvents,
+	buildModel,
+	loadDomains,
+	loadOverrides,
+	loadSpec,
+} from '../scripts/generate/index.mts';
 
 const spec = loadSpec();
 const domains = loadDomains();
 const byNode = buildModel(spec, domains);
+applyOverrides(byNode, loadOverrides());
 const allOps = [...byNode.values()].flat();
 
 describe('generator invariants', () => {
@@ -65,6 +73,28 @@ describe('generator invariants', () => {
 
 		const docPurchaseGet = allOps.find((op) => op.path === 'DocPurchase/Get');
 		expect(docPurchaseGet?.fields.find((f) => f.api === 'start_date')?.kind).toBe('dateTime');
+	});
+
+	it('marks the scalar primary key required on non-list operations', () => {
+		const accountDelete = allOps.find((op) => op.path === 'Account/Delete');
+		const id = accountDelete?.fields.find((f) => f.api === 'id');
+		expect(id?.required).toBe(true);
+
+		// `ids` on a paginated list is a filter, not a required key
+		const itemGet = allOps.find((op) => op.path === 'Item/Get');
+		expect(itemGet?.fields.every((f) => !f.required)).toBe(true);
+	});
+
+	it('gives every operation a human-readable description, never a raw path', () => {
+		expect(allOps.every((op) => op.description.length > 0)).toBe(true);
+		expect(allOps.some((op) => op.description.startsWith('Call '))).toBe(false);
+		expect(allOps.find((op) => op.path === 'Account/Delete')?.description).toBe(
+			'Delete an account',
+		);
+		// overrides win over the generated sentence
+		expect(allOps.find((op) => op.path === 'Item/GetExt')?.description).toContain(
+			'prices, stock quantities',
+		);
 	});
 
 	it('emits 297 trigger events (enum minus the Default sentinel) with a resolve map', () => {

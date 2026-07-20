@@ -88,7 +88,7 @@ export const operationsMeta = {
 					api: 'id',
 					param: 'id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -101,7 +101,7 @@ export const operationsMeta = {
 					api: 'id',
 					param: 'id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'is_fixed',
@@ -151,7 +151,7 @@ export const operationsMeta = {
 					api: 'id',
 					param: 'id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'period',
@@ -1470,7 +1470,7 @@ export const operationsMeta = {
 					api: 'id',
 					param: 'id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
@@ -1514,7 +1514,7 @@ export const operationsMeta = {
 					api: 'id',
 					param: 'id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_id',
@@ -1541,7 +1541,7 @@ export const operationsMeta = {
 					api: 'id',
 					param: 'id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},

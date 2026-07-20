@@ -58,6 +58,7 @@ interface OperationModel {
 	resource: string; // tag
 	value: string; // n8n operation value
 	display: string;
+	description: string;
 	path: string; // literal swagger path without leading slash
 	envelope: 'offsettedArray' | 'array' | 'object' | 'insert' | 'raw';
 	paginated: boolean;
@@ -70,9 +71,12 @@ interface DomainsConfig {
 }
 
 interface OverridePatch {
+	/** Replaces the operation's display name in the Operation dropdown. */
 	displayName?: string;
+	/** Replaces the generated operation description (the sub-text under the name). */
 	description?: string;
-	hide?: boolean;
+	/** API field names to force as required top-level parameters. */
+	required?: string[];
 }
 
 // This file is an ES module (.mts) so that n8n's stock ESLint config, which scopes its
@@ -148,6 +152,68 @@ function titleCase(identifier: string): string {
 
 function lowerFirst(value: string): string {
 	return value.charAt(0).toLowerCase() + value.slice(1);
+}
+
+const ACRONYM_VALUES = new Set(Object.values(ACRONYMS));
+
+/** "Zero Quantity" -> "zero quantity", but "Item VAT" -> "item VAT". */
+function sentenceCase(identifier: string): string {
+	return titleCase(identifier)
+		.split(' ')
+		.map((w) => (ACRONYM_VALUES.has(w) ? w : w.toLowerCase()))
+		.join(' ');
+}
+
+function capitalizeFirst(value: string): string {
+	return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+/** "account" -> "an account", "stock" -> "a stock". */
+function withArticle(noun: string): string {
+	return `${/^[aeiou]/i.test(noun) ? 'an' : 'a'} ${noun}`;
+}
+
+/**
+ * Human-readable operation description. The swagger carries no summaries or
+ * descriptions at all, so every sentence here is derived from the resource name
+ * and the operation verb. `scripts/generate/overrides/` can replace any of them.
+ */
+function describeOperation(
+	tag: string,
+	value: string,
+	display: string,
+	paginated: boolean,
+	hasRequiredId: boolean,
+): string {
+	const resource = sentenceCase(resourceDisplay(tag));
+	const parts = words(display);
+	const verb = lowerFirst(parts[0] ?? '');
+	const rest = sentenceCase(parts.slice(1).join(' '));
+
+	if (verb === 'get' && !rest) {
+		if (paginated) return `Retrieve many ${resource} records`;
+		return hasRequiredId ? `Retrieve ${withArticle(resource)} by ID` : `Retrieve ${resource} data`;
+	}
+	if (verb === 'add' && !rest) return `Create ${withArticle(resource)}`;
+	if (verb === 'edit' && !rest) return `Update ${withArticle(resource)}`;
+	if (verb === 'delete' && !rest) return `Delete ${withArticle(resource)}`;
+	if (value === 'deleteMark') return `Mark ${withArticle(resource)} for deletion`;
+	if (value === 'perform') return `Perform ${withArticle(resource)}`;
+	if (value === 'performCancel') return `Cancel a performed ${resource}`;
+
+	const phrase = `${verb}${rest ? ` ${rest}` : ''}`;
+	return capitalizeFirst(`${phrase} for ${withArticle(resource)}`);
+}
+
+/**
+ * A scalar `id`/`uuid` on a non-list endpoint identifies the record being acted
+ * on, so it is surfaced as a required top-level parameter instead of hiding in
+ * Additional Fields. Array filters (`ids`) stay optional — they narrow a list.
+ */
+function isPrimaryKeyField(field: FieldModel, paginated: boolean): boolean {
+	if (paginated) return false;
+	if (field.api !== 'id' && field.api !== 'uuid') return false;
+	return field.kind === 'number' || field.kind === 'string';
 }
 
 function camelCase(segments: string[]): string {
@@ -294,13 +360,23 @@ function buildModel(spec: OpenApiSpec, domains: DomainsConfig): Map<string, Oper
 		const fields: FieldModel[] = [];
 		for (const [apiName, propSchema] of Object.entries(properties).sort(([a], [b]) => a.localeCompare(b))) {
 			if (paginated && (apiName === 'limit' || apiName === 'offset')) continue;
-			fields.push(classifyField(spec, apiName, propSchema));
+			const field = classifyField(spec, apiName, propSchema);
+			field.required = isPrimaryKeyField(field, paginated);
+			fields.push(field);
 		}
 
+		const display = titleCase(remainder.join(' '));
 		const model: OperationModel = {
 			resource: tag,
 			value,
-			display: titleCase(remainder.join(' ')),
+			display,
+			description: describeOperation(
+				tag,
+				value,
+				display,
+				paginated,
+				fields.some((f) => f.required),
+			),
 			path: path.replace(/^\//, ''),
 			envelope,
 			paginated,
@@ -336,10 +412,23 @@ function applyOverrides(byNode: Map<string, OperationModel[]>, overrides: Record
 	for (const ops of byNode.values()) {
 		for (const op of ops) {
 			const patch = overrides[`${op.resource}.${op.value}`];
-			if (patch?.displayName) op.display = patch.displayName;
+			if (!patch) continue;
+			if (patch.displayName) op.display = patch.displayName;
+			if (patch.description) op.description = patch.description;
+			if (patch.required) {
+				const known = new Set(op.fields.map((f) => f.api));
+				const missing = patch.required.filter((name) => !known.has(name));
+				if (missing.length > 0) {
+					throw new Error(
+						`Override ${op.resource}.${op.value} marks unknown fields as required: ${missing.join(', ')}`,
+					);
+				}
+				for (const field of op.fields) {
+					if (patch.required.includes(field.api)) field.required = true;
+				}
+			}
 		}
 	}
-	// `hide` and `description` patches are applied at property-emission time via the same map.
 }
 
 function fieldToProperty(field: FieldModel, show: { resource: string[]; operation: string[] }): object {
@@ -366,7 +455,12 @@ function fieldToProperty(field: FieldModel, show: { resource: string[]; operatio
 			}
 			return { ...base, type: 'number', default: 0 };
 		case 'boolean':
-			return { ...base, type: 'boolean', default: false, description: `Whether ${lowerFirst(displayName)} is enabled` };
+			return {
+				...base,
+				type: 'boolean',
+				default: false,
+				description: `Whether ${sentenceCase(field.api)} is enabled`,
+			};
 		case 'triBoolean':
 			return {
 				...base,
@@ -470,7 +564,7 @@ function buildProperties(ops: OperationModel[], config: NodeEmitConfig): object[
 				name: op.display,
 				value: op.value,
 				action,
-				description: `Call ${op.path}`,
+					description: op.description,
 			};
 		});
 
@@ -511,8 +605,19 @@ function buildProperties(ops: OperationModel[], config: NodeEmitConfig): object[
 				);
 			}
 
-			if (op.fields.length > 0) {
-				const options = op.fields
+			// Required fields (the record's primary key) are shown as top-level
+			// parameters; everything else stays behind Additional Fields.
+			for (const field of op.fields.filter((f) => f.required)) {
+				properties.push({
+					...(fieldToProperty(field, show) as Record<string, unknown>),
+					required: true,
+					displayOptions: { show },
+				});
+			}
+
+			const optionalFields = op.fields.filter((f) => !f.required);
+			if (optionalFields.length > 0) {
+				const options = optionalFields
 					.map((field) => fieldToProperty(field, show))
 					.sort((a, b) => (a as { displayName: string }).displayName.localeCompare((b as { displayName: string }).displayName));
 
@@ -572,9 +677,13 @@ function buildEvents(
 	for (const event of [...enumSchema.enum].filter((e) => e !== 'Default').sort()) {
 		const group = allTags.find((tag) => event.startsWith(tag));
 		options.push({
-			name: event,
+			// `value` stays the exact REGOS enum — it is what incoming payloads are matched
+			// against. Only the label is humanized.
+			name: titleCase(event),
 			value: event,
-			description: group ? `${titleCase(group)} event` : 'REGOS event',
+			description: group
+				? `${titleCase(group)} event (REGOS action "${event}")`
+				: `REGOS event "${event}"`,
 		});
 		if (group && resolvableTags.has(group)) resolveMap[event] = `${group}/Get`;
 	}
@@ -683,7 +792,16 @@ async function main(): Promise<void> {
 }
 
 /* Exported for tests (scripts/generate is dev-time only). */
-export { buildModel, buildEvents, loadSpec, loadDomains, generateOutputs, titleCase };
+export {
+	buildModel,
+	buildEvents,
+	loadSpec,
+	loadDomains,
+	loadOverrides,
+	applyOverrides,
+	generateOutputs,
+	titleCase,
+};
 export type { OperationModel };
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {

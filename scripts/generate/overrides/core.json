@@ -1,0 +1,97 @@
+{
+	"Item.get": {
+		"description": "Retrieve many items, optionally filtered by IDs, group, type or search text"
+	},
+	"Item.getExt": {
+		"displayName": "Get Many Extended",
+		"description": "Retrieve many items including prices, stock quantities and image URLs"
+	},
+	"Item.getQuantity": {
+		"displayName": "Get Quantity",
+		"description": "Retrieve current stock quantities for items"
+	},
+	"Item.add": {
+		"description": "Create an item (product or service) in the catalog"
+	},
+	"Item.edit": {
+		"description": "Update an existing item in the catalog"
+	},
+	"Item.delete": {
+		"description": "Permanently delete an item from the catalog"
+	},
+	"Item.deleteMark": {
+		"description": "Mark an item for deletion without removing it"
+	},
+	"Item.import": {
+		"description": "Bulk import items into the catalog"
+	},
+	"Partner.get": {
+		"description": "Retrieve many partners (counterparties such as suppliers and customers)"
+	},
+	"Partner.add": {
+		"description": "Create a partner (counterparty)"
+	},
+	"Partner.edit": {
+		"description": "Update an existing partner"
+	},
+	"Partner.delete": {
+		"description": "Permanently delete a partner"
+	},
+	"Stock.get": {
+		"description": "Retrieve many warehouses"
+	},
+	"Stock.add": {
+		"description": "Create a warehouse"
+	},
+	"Account.get": {
+		"description": "Retrieve many money accounts (cash desks and bank accounts)"
+	},
+	"AccountBalance.get": {
+		"description": "Retrieve current balances for money accounts"
+	},
+	"PartnerBalance.get": {
+		"description": "Retrieve outstanding balances per partner"
+	},
+	"Barcode.get": {
+		"description": "Retrieve barcodes registered for items"
+	},
+	"Barcode.add": {
+		"description": "Register a barcode for an item"
+	},
+	"Event.get": {
+		"description": "Replay persistent webhook events from the last 7 days using a last_event_id cursor"
+	},
+	"Webhook.get": {
+		"description": "Retrieve the list of webhook events this integration can subscribe to"
+	},
+	"IntegrationWebhook.get": {
+		"description": "Retrieve the webhook events currently registered for this integration"
+	},
+	"ConnectedIntegration.getWebhookInfo": {
+		"description": "Retrieve webhook delivery health and reputation for this integration"
+	},
+	"CurrentTimeStamp.get": {
+		"description": "Retrieve the current REGOS server time as a Unix timestamp"
+	},
+	"Firm.get": {
+		"description": "Retrieve many companies (legal entities)"
+	},
+	"User.get": {
+		"description": "Retrieve many REGOS users"
+	},
+	"ItemGroup.get": {
+		"description": "Retrieve the item category tree"
+	},
+	"PriceType.get": {
+		"description": "Retrieve many price types (price lists)"
+	},
+	"ItemPrice.get": {
+		"description": "Retrieve current prices per item and price type"
+	},
+	"Unit.get": {
+		"description": "Retrieve many units of measurement"
+	},
+	"Currency.get": {
+		"description": "Retrieve many currencies with their exchange rates"
+	}
+}

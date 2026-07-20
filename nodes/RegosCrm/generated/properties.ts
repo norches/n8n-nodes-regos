@@ -142,43 +142,43 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add campaign',
-				description: 'Call Campaign/Add',
+				description: 'Create a campaign',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete campaign',
-				description: 'Call Campaign/Delete',
+				description: 'Delete a campaign',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit campaign',
-				description: 'Call Campaign/Edit',
+				description: 'Update a campaign',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get campaign',
-				description: 'Call Campaign/Get',
+				description: 'Retrieve many campaign records',
 			},
 			{
 				name: 'Get Recipients',
 				value: 'getRecipients',
 				action: 'Get recipients campaign',
-				description: 'Call Campaign/GetRecipients',
+				description: 'Get recipients for a campaign',
 			},
 			{
 				name: 'Set Recipients Status',
 				value: 'setRecipientsStatus',
 				action: 'Set recipients status campaign',
-				description: 'Call Campaign/SetRecipientsStatus',
+				description: 'Set recipients status for a campaign',
 			},
 			{
 				name: 'Set Status',
 				value: 'setStatus',
 				action: 'Set status campaign',
-				description: 'Call Campaign/SetStatus',
+				description: 'Set status for a campaign',
 			},
 		],
 		default: 'get',
@@ -243,7 +243,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'run_immediately',
 				type: 'boolean',
 				default: false,
-				description: 'Whether run Immediately is enabled',
+				description: 'Whether run immediately is enabled',
 			},
 			{
 				displayName: 'Type',
@@ -272,25 +272,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['campaign'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -316,12 +321,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'file',
 				type: 'string',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Integration Key',
@@ -566,6 +565,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['setStatus'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -583,12 +595,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'error_message',
 				type: 'string',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Status',
@@ -639,37 +645,37 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add channel',
-				description: 'Call Channel/Add',
+				description: 'Create a channel',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete channel',
-				description: 'Call Channel/Delete',
+				description: 'Delete a channel',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit channel',
-				description: 'Call Channel/Edit',
+				description: 'Update a channel',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get channel',
-				description: 'Call Channel/Get',
+				description: 'Retrieve many channel records',
 			},
 			{
 				name: 'Set Intervals',
 				value: 'setIntervals',
 				action: 'Set intervals channel',
-				description: 'Call Channel/SetIntervals',
+				description: 'Set intervals for a channel',
 			},
 			{
 				name: 'Set Operators',
 				value: 'setOperators',
 				action: 'Set operators channel',
-				description: 'Call Channel/SetOperators',
+				description: 'Set operators for a channel',
 			},
 		],
 		default: 'get',
@@ -729,7 +735,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'pause_on_waiting_client',
 				type: 'boolean',
 				default: false,
-				description: 'Whether pause On Waiting Client is enabled',
+				description: 'Whether pause on waiting client is enabled',
 			},
 			{
 				displayName: 'Queue Mode',
@@ -756,7 +762,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'rating_enabled',
 				type: 'boolean',
 				default: false,
-				description: 'Whether rating Enabled is enabled',
+				description: 'Whether rating enabled is enabled',
 			},
 			{
 				displayName: 'Rating Message',
@@ -815,25 +821,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['channel'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['channel'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -877,12 +888,6 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				displayName: 'First Response Sec',
 				name: 'first_response_sec',
-				type: 'number',
-				default: 0,
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
 				type: 'number',
 				default: 0,
 			},
@@ -1168,103 +1173,103 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add chat',
-				description: 'Call Chat/Add',
+				description: 'Create a chat',
 			},
 			{
 				name: 'Add Bot',
 				value: 'addBot',
 				action: 'Add bot chat',
-				description: 'Call Chat/AddBot',
+				description: 'Add bot for a chat',
 			},
 			{
 				name: 'Add Participant',
 				value: 'addParticipant',
 				action: 'Add participant chat',
-				description: 'Call Chat/AddParticipant',
+				description: 'Add participant for a chat',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit chat',
-				description: 'Call Chat/Edit',
+				description: 'Update a chat',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get chat',
-				description: 'Call Chat/Get',
+				description: 'Retrieve many chat records',
 			},
 			{
 				name: 'Get Available Reactions',
 				value: 'getAvailableReactions',
 				action: 'Get available reactions chat',
-				description: 'Call Chat/GetAvailableReactions',
+				description: 'Get available reactions for a chat',
 			},
 			{
 				name: 'Get Unread Count',
 				value: 'getUnreadCount',
 				action: 'Get unread count chat',
-				description: 'Call Chat/GetUnreadCount',
+				description: 'Get unread count for a chat',
 			},
 			{
 				name: 'Get Unread Counts',
 				value: 'getUnreadCounts',
 				action: 'Get unread counts chat',
-				description: 'Call Chat/GetUnreadCounts',
+				description: 'Get unread counts for a chat',
 			},
 			{
 				name: 'Get User Presence',
 				value: 'getUserPresence',
 				action: 'Get user presence chat',
-				description: 'Call Chat/GetUserPresence',
+				description: 'Get user presence for a chat',
 			},
 			{
 				name: 'Join',
 				value: 'join',
 				action: 'Join chat',
-				description: 'Call Chat/Join',
+				description: 'Join for a chat',
 			},
 			{
 				name: 'Leave',
 				value: 'leave',
 				action: 'Leave chat',
-				description: 'Call Chat/Leave',
+				description: 'Leave for a chat',
 			},
 			{
 				name: 'Remove Participants',
 				value: 'removeParticipants',
 				action: 'Remove participants chat',
-				description: 'Call Chat/RemoveParticipants',
+				description: 'Remove participants for a chat',
 			},
 			{
 				name: 'Set Archived',
 				value: 'setArchived',
 				action: 'Set archived chat',
-				description: 'Call Chat/SetArchived',
+				description: 'Set archived for a chat',
 			},
 			{
 				name: 'Set Available Reactions',
 				value: 'setAvailableReactions',
 				action: 'Set available reactions chat',
-				description: 'Call Chat/SetAvailableReactions',
+				description: 'Set available reactions for a chat',
 			},
 			{
 				name: 'Set Muted',
 				value: 'setMuted',
 				action: 'Set muted chat',
-				description: 'Call Chat/SetMuted',
+				description: 'Set muted for a chat',
 			},
 			{
 				name: 'Set Participants',
 				value: 'setParticipants',
 				action: 'Set participants chat',
-				description: 'Call Chat/SetParticipants',
+				description: 'Set participants for a chat',
 			},
 			{
 				name: 'Set Pinned',
 				value: 'setPinned',
 				action: 'Set pinned chat',
-				description: 'Call Chat/SetPinned',
+				description: 'Set pinned for a chat',
 			},
 		],
 		default: 'get',
@@ -1387,6 +1392,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -1402,12 +1420,6 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				displayName: 'External ID',
 				name: 'external_id',
-				type: 'string',
-				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
 				type: 'string',
 				default: '',
 			},
@@ -1753,46 +1765,43 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['chat'],
 				operation: ['join'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'string',
-				default: '',
-			},
-		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['chat'],
 				operation: ['leave'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'string',
-				default: '',
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['removeParticipants'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -1808,18 +1817,25 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'string',
-				default: '',
-			},
-			{
 				displayName: 'Participants',
 				name: 'participants',
 				type: 'json',
 				default: '',
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setArchived'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -1840,12 +1856,6 @@ export const nodeProperties: INodeProperties[] = [
 				type: 'boolean',
 				default: false,
 				description: 'Whether archived is enabled',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'string',
-				default: '',
 			},
 		],
 	},
@@ -1878,6 +1888,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setMuted'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -1891,12 +1914,6 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'string',
-				default: '',
-			},
-			{
 				displayName: 'Muted',
 				name: 'muted',
 				type: 'boolean',
@@ -1904,6 +1921,19 @@ export const nodeProperties: INodeProperties[] = [
 				description: 'Whether muted is enabled',
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setParticipants'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -1919,18 +1949,25 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'string',
-				default: '',
-			},
-			{
 				displayName: 'Participants',
 				name: 'participants',
 				type: 'json',
 				default: '',
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setPinned'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -1945,12 +1982,6 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'string',
-				default: '',
-			},
 			{
 				displayName: 'Pinned',
 				name: 'pinned',
@@ -1975,109 +2006,109 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add chat message',
-				description: 'Call ChatMessage/Add',
+				description: 'Create a chat message',
 			},
 			{
 				name: 'Add File',
 				value: 'addFile',
 				action: 'Add file chat message',
-				description: 'Call ChatMessage/AddFile',
+				description: 'Add file for a chat message',
 			},
 			{
 				name: 'Callback',
 				value: 'callback',
 				action: 'Callback chat message',
-				description: 'Call ChatMessage/Callback',
+				description: 'Callback for a chat message',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete chat message',
-				description: 'Call ChatMessage/Delete',
+				description: 'Delete a chat message',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit chat message',
-				description: 'Call ChatMessage/Edit',
+				description: 'Update a chat message',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get chat message',
-				description: 'Call ChatMessage/Get',
+				description: 'Retrieve many chat message records',
 			},
 			{
 				name: 'Get Around',
 				value: 'getAround',
 				action: 'Get around chat message',
-				description: 'Call ChatMessage/GetAround',
+				description: 'Get around for a chat message',
 			},
 			{
 				name: 'Get Files',
 				value: 'getFiles',
 				action: 'Get files chat message',
-				description: 'Call ChatMessage/GetFiles',
+				description: 'Get files for a chat message',
 			},
 			{
 				name: 'Get Pinned',
 				value: 'getPinned',
 				action: 'Get pinned chat message',
-				description: 'Call ChatMessage/GetPinned',
+				description: 'Get pinned for a chat message',
 			},
 			{
 				name: 'Get Reactions',
 				value: 'getReactions',
 				action: 'Get reactions chat message',
-				description: 'Call ChatMessage/GetReactions',
+				description: 'Get reactions for a chat message',
 			},
 			{
 				name: 'Get Read Users',
 				value: 'getReadUsers',
 				action: 'Get read users chat message',
-				description: 'Call ChatMessage/GetReadUsers',
+				description: 'Get read users for a chat message',
 			},
 			{
 				name: 'Mark Read',
 				value: 'markRead',
 				action: 'Mark read chat message',
-				description: 'Call ChatMessage/MarkRead',
+				description: 'Mark read for a chat message',
 			},
 			{
 				name: 'Mark Sent',
 				value: 'markSent',
 				action: 'Mark sent chat message',
-				description: 'Call ChatMessage/MarkSent',
+				description: 'Mark sent for a chat message',
 			},
 			{
 				name: 'Search',
 				value: 'search',
 				action: 'Search chat message',
-				description: 'Call ChatMessage/Search',
+				description: 'Search for a chat message',
 			},
 			{
 				name: 'Set Pinned',
 				value: 'setPinned',
 				action: 'Set pinned chat message',
-				description: 'Call ChatMessage/SetPinned',
+				description: 'Set pinned for a chat message',
 			},
 			{
 				name: 'Set Reaction',
 				value: 'setReaction',
 				action: 'Set reaction chat message',
-				description: 'Call ChatMessage/SetReaction',
+				description: 'Set reaction for a chat message',
 			},
 			{
 				name: 'Suggest',
 				value: 'suggest',
 				action: 'Suggest chat message',
-				description: 'Call ChatMessage/Suggest',
+				description: 'Suggest for a chat message',
 			},
 			{
 				name: 'Writing',
 				value: 'writing',
 				action: 'Writing chat message',
-				description: 'Call ChatMessage/Writing',
+				description: 'Writing for a chat message',
 			},
 		],
 		default: 'get',
@@ -2235,25 +2266,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['chatMessage'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'string',
-				default: '',
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -2275,12 +2311,6 @@ export const nodeProperties: INodeProperties[] = [
 				default: '',
 				placeholder: 'e.g. 1,2,3',
 				description: 'Comma-separated list of IDs',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'string',
-				default: '',
 			},
 			{
 				displayName: 'Mention Options',
@@ -2369,7 +2399,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'include_staff_private',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include Staff Private is enabled',
+				description: 'Whether include staff private is enabled',
 			},
 			{
 				displayName: 'To Date',
@@ -2378,6 +2408,19 @@ export const nodeProperties: INodeProperties[] = [
 				default: '',
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getAround'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -2399,17 +2442,11 @@ export const nodeProperties: INodeProperties[] = [
 				default: '',
 			},
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'string',
-				default: '',
-			},
-			{
 				displayName: 'Include Staff Private',
 				name: 'include_staff_private',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include Staff Private is enabled',
+				description: 'Whether include staff private is enabled',
 			},
 			{
 				displayName: 'Limit After',
@@ -2515,7 +2552,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'include_staff_private',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include Staff Private is enabled',
+				description: 'Whether include staff private is enabled',
 			},
 			{
 				displayName: 'Kind',
@@ -2611,7 +2648,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'include_staff_private',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include Staff Private is enabled',
+				description: 'Whether include staff private is enabled',
 			},
 		],
 	},
@@ -2751,6 +2788,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['markSent'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -2766,12 +2816,6 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				displayName: 'External Message ID',
 				name: 'external_message_id',
-				type: 'string',
-				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
 				type: 'string',
 				default: '',
 			},
@@ -2837,7 +2881,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'include_staff_private',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include Staff Private is enabled',
+				description: 'Whether include staff private is enabled',
 			},
 			{
 				displayName: 'Query',
@@ -2854,6 +2898,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['setPinned'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -2867,12 +2924,6 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'string',
-				default: '',
-			},
-			{
 				displayName: 'Pinned',
 				name: 'pinned',
 				type: 'boolean',
@@ -2880,6 +2931,19 @@ export const nodeProperties: INodeProperties[] = [
 				description: 'Whether pinned is enabled',
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['setReaction'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -2894,12 +2958,6 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'string',
-				default: '',
-			},
 			{
 				displayName: 'Reaction',
 				name: 'reaction',
@@ -3038,37 +3096,37 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add client',
-				description: 'Call Client/Add',
+				description: 'Create a client',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete client',
-				description: 'Call Client/Delete',
+				description: 'Delete a client',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit client',
-				description: 'Call Client/Edit',
+				description: 'Update a client',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get client',
-				description: 'Call Client/Get',
+				description: 'Retrieve many client records',
 			},
 			{
 				name: 'Merge',
 				value: 'merge',
 				action: 'Merge client',
-				description: 'Call Client/Merge',
+				description: 'Merge for a client',
 			},
 			{
 				name: 'Set Responsible',
 				value: 'setResponsible',
 				action: 'Set responsible client',
-				description: 'Call Client/SetResponsible',
+				description: 'Set responsible for a client',
 			},
 		],
 		default: 'get',
@@ -3138,25 +3196,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['client'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['client'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -3195,12 +3258,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'fields',
 				type: 'json',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Name',
@@ -3435,6 +3492,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['client'],
+				operation: ['setResponsible'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -3447,12 +3517,6 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
 			{
 				displayName: 'Responsible User ID',
 				name: 'responsible_user_id',
@@ -3476,31 +3540,31 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add customer personal document',
-				description: 'Call CustomerPersonalDocument/Add',
+				description: 'Create a customer personal document',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete customer personal document',
-				description: 'Call CustomerPersonalDocument/Delete',
+				description: 'Delete a customer personal document',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit customer personal document',
-				description: 'Call CustomerPersonalDocument/Edit',
+				description: 'Update a customer personal document',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get customer personal document',
-				description: 'Call CustomerPersonalDocument/Get',
+				description: 'Retrieve customer personal document data',
 			},
 			{
 				name: 'Remove File',
 				value: 'removeFile',
 				action: 'Remove file customer personal document',
-				description: 'Call CustomerPersonalDocument/RemoveFile',
+				description: 'Remove file for a customer personal document',
 			},
 		],
 		default: 'get',
@@ -3621,49 +3685,49 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add deal',
-				description: 'Call Deal/Add',
+				description: 'Create a deal',
 			},
 			{
 				name: 'Close',
 				value: 'close',
 				action: 'Close deal',
-				description: 'Call Deal/Close',
+				description: 'Close for a deal',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete deal',
-				description: 'Call Deal/Delete',
+				description: 'Delete a deal',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit deal',
-				description: 'Call Deal/Edit',
+				description: 'Update a deal',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get deal',
-				description: 'Call Deal/Get',
+				description: 'Retrieve many deal records',
 			},
 			{
 				name: 'Set Participants',
 				value: 'setParticipants',
 				action: 'Set participants deal',
-				description: 'Call Deal/SetParticipants',
+				description: 'Set participants for a deal',
 			},
 			{
 				name: 'Set Responsible',
 				value: 'setResponsible',
 				action: 'Set responsible deal',
-				description: 'Call Deal/SetResponsible',
+				description: 'Set responsible for a deal',
 			},
 			{
 				name: 'Set Stage',
 				value: 'setStage',
 				action: 'Set stage deal',
-				description: 'Call Deal/SetStage',
+				description: 'Set stage for a deal',
 			},
 		],
 		default: 'get',
@@ -3800,6 +3864,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['close'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -3813,12 +3890,6 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Stage ID',
 				name: 'stage_id',
 				type: 'number',
@@ -3827,25 +3898,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['deal'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -3895,12 +3971,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'fields',
 				type: 'json',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Mention Options',
@@ -4095,7 +4165,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'include_mentions',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include Mentions is enabled',
+				description: 'Whether include mentions is enabled',
 			},
 			{
 				displayName: 'Lead IDs',
@@ -4144,6 +4214,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['setParticipants'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -4157,12 +4240,6 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Participant User IDs',
 				name: 'participant_user_ids',
 				type: 'string',
@@ -4175,9 +4252,22 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'replace_mode',
 				type: 'boolean',
 				default: false,
-				description: 'Whether replace Mode is enabled',
+				description: 'Whether replace mode is enabled',
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['setResponsible'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -4193,18 +4283,25 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Responsible User ID',
 				name: 'responsible_user_id',
 				type: 'number',
 				default: 0,
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['setStage'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -4224,12 +4321,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'comment',
 				type: 'string',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Stage ID',
@@ -4254,25 +4345,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add deal type',
-				description: 'Call DealType/Add',
+				description: 'Create a deal type',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete deal type',
-				description: 'Call DealType/Delete',
+				description: 'Delete a deal type',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit deal type',
-				description: 'Call DealType/Edit',
+				description: 'Update a deal type',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get deal type',
-				description: 'Call DealType/Get',
+				description: 'Retrieve many deal type records',
 			},
 		],
 		default: 'get',
@@ -4312,25 +4403,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['dealType'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['dealType'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -4370,12 +4466,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'description',
 				type: 'string',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Name',
@@ -4479,55 +4569,55 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add lead',
-				description: 'Call Lead/Add',
+				description: 'Create a lead',
 			},
 			{
 				name: 'Close',
 				value: 'close',
 				action: 'Close lead',
-				description: 'Call Lead/Close',
+				description: 'Close for a lead',
 			},
 			{
 				name: 'Convert',
 				value: 'convert',
 				action: 'Convert lead',
-				description: 'Call Lead/Convert',
+				description: 'Convert for a lead',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete lead',
-				description: 'Call Lead/Delete',
+				description: 'Delete a lead',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit lead',
-				description: 'Call Lead/Edit',
+				description: 'Update a lead',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get lead',
-				description: 'Call Lead/Get',
+				description: 'Retrieve many lead records',
 			},
 			{
 				name: 'Set Participants',
 				value: 'setParticipants',
 				action: 'Set participants lead',
-				description: 'Call Lead/SetParticipants',
+				description: 'Set participants for a lead',
 			},
 			{
 				name: 'Set Responsible',
 				value: 'setResponsible',
 				action: 'Set responsible lead',
-				description: 'Call Lead/SetResponsible',
+				description: 'Set responsible for a lead',
 			},
 			{
 				name: 'Set Stage',
 				value: 'setStage',
 				action: 'Set stage lead',
-				description: 'Call Lead/SetStage',
+				description: 'Set stage for a lead',
 			},
 		],
 		default: 'get',
@@ -4628,6 +4718,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['close'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -4641,18 +4744,25 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Stage ID',
 				name: 'stage_id',
 				type: 'number',
 				default: 0,
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['convert'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -4696,12 +4806,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'fields',
 				type: 'json',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Participant User IDs',
@@ -4760,25 +4864,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['lead'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -4816,12 +4925,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'fields',
 				type: 'json',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Mention Options',
@@ -4998,7 +5101,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'include_mentions',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include Mentions is enabled',
+				description: 'Whether include mentions is enabled',
 			},
 			{
 				displayName: 'Responsible User IDs',
@@ -5031,6 +5134,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['setParticipants'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -5044,12 +5160,6 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Participant User IDs',
 				name: 'participant_user_ids',
 				type: 'string',
@@ -5062,9 +5172,22 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'replace_mode',
 				type: 'boolean',
 				default: false,
-				description: 'Whether replace Mode is enabled',
+				description: 'Whether replace mode is enabled',
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['setResponsible'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -5080,18 +5203,25 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Responsible User ID',
 				name: 'responsible_user_id',
 				type: 'number',
 				default: 0,
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['setStage'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -5111,12 +5241,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'comment',
 				type: 'string',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Stage ID',
@@ -5141,25 +5265,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add personal doc type',
-				description: 'Call PersonalDocType/Add',
+				description: 'Create a personal doc type',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete personal doc type',
-				description: 'Call PersonalDocType/Delete',
+				description: 'Delete a personal doc type',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit personal doc type',
-				description: 'Call PersonalDocType/Edit',
+				description: 'Update a personal doc type',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get personal doc type',
-				description: 'Call PersonalDocType/Get',
+				description: 'Retrieve personal doc type data',
 			},
 		],
 		default: 'get',
@@ -5192,25 +5316,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['personalDocType'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['personalDocType'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -5225,12 +5354,6 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
 			{
 				displayName: 'Mask',
 				name: 'mask',
@@ -5283,37 +5406,37 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add pipeline',
-				description: 'Call Pipeline/Add',
+				description: 'Create a pipeline',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete pipeline',
-				description: 'Call Pipeline/Delete',
+				description: 'Delete a pipeline',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit pipeline',
-				description: 'Call Pipeline/Edit',
+				description: 'Update a pipeline',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get pipeline',
-				description: 'Call Pipeline/Get',
+				description: 'Retrieve many pipeline records',
 			},
 			{
 				name: 'Set Access',
 				value: 'setAccess',
 				action: 'Set access pipeline',
-				description: 'Call Pipeline/SetAccess',
+				description: 'Set access for a pipeline',
 			},
 			{
 				name: 'Set Stages',
 				value: 'setStages',
 				action: 'Set stages pipeline',
-				description: 'Call Pipeline/SetStages',
+				description: 'Set stages for a pipeline',
 			},
 		],
 		default: 'get',
@@ -5336,7 +5459,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'access_all',
 				type: 'boolean',
 				default: false,
-				description: 'Whether access All is enabled',
+				description: 'Whether access all is enabled',
 			},
 			{
 				displayName: 'Access Group IDs',
@@ -5394,7 +5517,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'is_default',
 				type: 'boolean',
 				default: false,
-				description: 'Whether is Default is enabled',
+				description: 'Whether is default is enabled',
 			},
 			{
 				displayName: 'Name',
@@ -5405,25 +5528,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['pipeline'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -5457,12 +5585,6 @@ export const nodeProperties: INodeProperties[] = [
 					},
 				],
 				default: 'default',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Is Default',
@@ -5594,6 +5716,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+				operation: ['setAccess'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -5611,7 +5746,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'access_all',
 				type: 'boolean',
 				default: false,
-				description: 'Whether access All is enabled',
+				description: 'Whether access all is enabled',
 			},
 			{
 				displayName: 'Access Group IDs',
@@ -5630,17 +5765,11 @@ export const nodeProperties: INodeProperties[] = [
 				description: 'Comma-separated list of IDs',
 			},
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Replace Mode',
 				name: 'replace_mode',
 				type: 'boolean',
 				default: false,
-				description: 'Whether replace Mode is enabled',
+				description: 'Whether replace mode is enabled',
 			},
 		],
 	},
@@ -5686,37 +5815,37 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add project',
-				description: 'Call Project/Add',
+				description: 'Create a project',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete project',
-				description: 'Call Project/Delete',
+				description: 'Delete a project',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit project',
-				description: 'Call Project/Edit',
+				description: 'Update a project',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get project',
-				description: 'Call Project/Get',
+				description: 'Retrieve many project records',
 			},
 			{
 				name: 'Set Access',
 				value: 'setAccess',
 				action: 'Set access project',
-				description: 'Call Project/SetAccess',
+				description: 'Set access for a project',
 			},
 			{
 				name: 'Set Responsible',
 				value: 'setResponsible',
 				action: 'Set responsible project',
-				description: 'Call Project/SetResponsible',
+				description: 'Set responsible for a project',
 			},
 		],
 		default: 'get',
@@ -5739,7 +5868,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'access_all',
 				type: 'boolean',
 				default: false,
-				description: 'Whether access All is enabled',
+				description: 'Whether access all is enabled',
 			},
 			{
 				displayName: 'Access Group IDs',
@@ -5784,25 +5913,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['project'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -5858,12 +5992,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'description',
 				type: 'string',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Logo File ID',
@@ -5959,6 +6087,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['setAccess'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -5976,7 +6117,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'access_all',
 				type: 'boolean',
 				default: false,
-				description: 'Whether access All is enabled',
+				description: 'Whether access all is enabled',
 			},
 			{
 				displayName: 'Access Group IDs',
@@ -5995,19 +6136,26 @@ export const nodeProperties: INodeProperties[] = [
 				description: 'Comma-separated list of IDs',
 			},
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Replace Mode',
 				name: 'replace_mode',
 				type: 'boolean',
 				default: false,
-				description: 'Whether replace Mode is enabled',
+				description: 'Whether replace mode is enabled',
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['setResponsible'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -6022,12 +6170,6 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
 			{
 				displayName: 'Responsible User ID',
 				name: 'responsible_user_id',
@@ -6051,55 +6193,55 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add project task',
-				description: 'Call ProjectTask/Add',
+				description: 'Create a project task',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete project task',
-				description: 'Call ProjectTask/Delete',
+				description: 'Delete a project task',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit project task',
-				description: 'Call ProjectTask/Edit',
+				description: 'Update a project task',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get project task',
-				description: 'Call ProjectTask/Get',
+				description: 'Retrieve many project task records',
 			},
 			{
 				name: 'Set Due',
 				value: 'setDue',
 				action: 'Set due project task',
-				description: 'Call ProjectTask/SetDue',
+				description: 'Set due for a project task',
 			},
 			{
 				name: 'Set Observers',
 				value: 'setObservers',
 				action: 'Set observers project task',
-				description: 'Call ProjectTask/SetObservers',
+				description: 'Set observers for a project task',
 			},
 			{
 				name: 'Set Project',
 				value: 'setProject',
 				action: 'Set project project task',
-				description: 'Call ProjectTask/SetProject',
+				description: 'Set project for a project task',
 			},
 			{
 				name: 'Set Responsible',
 				value: 'setResponsible',
 				action: 'Set responsible project task',
-				description: 'Call ProjectTask/SetResponsible',
+				description: 'Set responsible for a project task',
 			},
 			{
 				name: 'Set Status',
 				value: 'setStatus',
 				action: 'Set status project task',
-				description: 'Call ProjectTask/SetStatus',
+				description: 'Set status for a project task',
 			},
 		],
 		default: 'get',
@@ -6210,25 +6352,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['projectTask'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -6280,12 +6427,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'fields',
 				type: 'json',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Inline File IDs',
@@ -6484,7 +6625,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'include_mentions',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include Mentions is enabled',
+				description: 'Whether include mentions is enabled',
 			},
 			{
 				displayName: 'Observer User IDs',
@@ -6539,6 +6680,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setDue'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -6557,13 +6711,20 @@ export const nodeProperties: INodeProperties[] = [
 				type: 'dateTime',
 				default: '',
 			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setObservers'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -6579,12 +6740,6 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Observer User IDs',
 				name: 'observer_user_ids',
 				type: 'string',
@@ -6597,9 +6752,22 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'replace_mode',
 				type: 'boolean',
 				default: false,
-				description: 'Whether replace Mode is enabled',
+				description: 'Whether replace mode is enabled',
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setProject'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -6615,18 +6783,25 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Project ID',
 				name: 'project_id',
 				type: 'number',
 				default: 0,
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setResponsible'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -6642,18 +6817,25 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Responsible User ID',
 				name: 'responsible_user_id',
 				type: 'number',
 				default: 0,
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setStatus'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -6668,12 +6850,6 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
 			{
 				displayName: 'Status',
 				name: 'status',
@@ -6719,73 +6895,65 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Cancel Payment',
 				value: 'cancelPayment',
 				action: 'Cancel payment promo bonus',
-				description: 'Call PromoBonus/CancelPayment',
+				description: 'Cancel payment for a promo bonus',
 			},
 			{
 				name: 'Create Enrollment',
 				value: 'createEnrollment',
 				action: 'Create enrollment promo bonus',
-				description: 'Call PromoBonus/CreateEnrollment',
+				description: 'Create enrollment for a promo bonus',
 			},
 			{
 				name: 'Create Manual Income Operation',
 				value: 'createManualIncomeOperation',
 				action: 'Create manual income operation promo bonus',
-				description: 'Call PromoBonus/CreateManualIncomeOperation',
+				description: 'Create manual income operation for a promo bonus',
 			},
 			{
 				name: 'Create Manual Outcome Operation',
 				value: 'createManualOutcomeOperation',
 				action: 'Create manual outcome operation promo bonus',
-				description: 'Call PromoBonus/CreateManualOutcomeOperation',
+				description: 'Create manual outcome operation for a promo bonus',
 			},
 			{
 				name: 'Create Payment',
 				value: 'createPayment',
 				action: 'Create payment promo bonus',
-				description: 'Call PromoBonus/CreatePayment',
+				description: 'Create payment for a promo bonus',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get promo bonus',
-				description: 'Call PromoBonus/Get',
+				description: 'Retrieve a promo bonus by ID',
 			},
 			{
 				name: 'Perform Enrollment',
 				value: 'performEnrollment',
 				action: 'Perform enrollment promo bonus',
-				description: 'Call PromoBonus/PerformEnrollment',
+				description: 'Perform enrollment for a promo bonus',
 			},
 			{
 				name: 'Perform Payment',
 				value: 'performPayment',
 				action: 'Perform payment promo bonus',
-				description: 'Call PromoBonus/PerformPayment',
+				description: 'Perform payment for a promo bonus',
 			},
 		],
 		default: 'get',
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['promoBonus'],
 				operation: ['cancelPayment'],
 			},
 		},
-		options: [
-			{
-				displayName: 'UUID',
-				name: 'uuid',
-				type: 'string',
-				default: '',
-			},
-		],
 	},
 	{
 		displayName: 'Additional Fields',
@@ -6823,7 +6991,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'is_return',
 				type: 'boolean',
 				default: false,
-				description: 'Whether is Return is enabled',
+				description: 'Whether is return is enabled',
 			},
 			{
 				displayName: 'Promo ID',
@@ -6953,7 +7121,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'is_return',
 				type: 'boolean',
 				default: false,
-				description: 'Whether is Return is enabled',
+				description: 'Whether is return is enabled',
 			},
 			{
 				displayName: 'Promo ID',
@@ -6970,67 +7138,43 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['promoBonus'],
 				operation: ['get'],
 			},
 		},
-		options: [
-			{
-				displayName: 'UUID',
-				name: 'uuid',
-				type: 'string',
-				default: '',
-			},
-		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['promoBonus'],
 				operation: ['performEnrollment'],
 			},
 		},
-		options: [
-			{
-				displayName: 'UUID',
-				name: 'uuid',
-				type: 'string',
-				default: '',
-			},
-		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['promoBonus'],
 				operation: ['performPayment'],
 			},
 		},
-		options: [
-			{
-				displayName: 'UUID',
-				name: 'uuid',
-				type: 'string',
-				default: '',
-			},
-		],
 	},
 	{
 		displayName: 'Operation',
@@ -7047,25 +7191,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add promo program',
-				description: 'Call PromoProgram/Add',
+				description: 'Create a promo program',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete promo program',
-				description: 'Call PromoProgram/Delete',
+				description: 'Delete a promo program',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit promo program',
-				description: 'Call PromoProgram/Edit',
+				description: 'Update a promo program',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get promo program',
-				description: 'Call PromoProgram/Get',
+				description: 'Retrieve promo program data',
 			},
 		],
 		default: 'get',
@@ -7155,25 +7299,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['promoProgram'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['promoProgram'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -7233,12 +7382,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'end_time',
 				type: 'string',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Name',
@@ -7332,31 +7475,31 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add promo program setting',
-				description: 'Call PromoProgramSetting/Add',
+				description: 'Create a promo program setting',
 			},
 			{
 				name: 'Add Single',
 				value: 'addSingle',
 				action: 'Add single promo program setting',
-				description: 'Call PromoProgramSetting/AddSingle',
+				description: 'Add single for a promo program setting',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete promo program setting',
-				description: 'Call PromoProgramSetting/Delete',
+				description: 'Delete a promo program setting',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit promo program setting',
-				description: 'Call PromoProgramSetting/Edit',
+				description: 'Update a promo program setting',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get promo program setting',
-				description: 'Call PromoProgramSetting/Get',
+				description: 'Retrieve a promo program setting by ID',
 			},
 		],
 		default: 'get',
@@ -7395,25 +7538,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['promoProgramSetting'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['promoProgramSetting'],
+				operation: ['get'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -7428,12 +7576,6 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
 			{
 				displayName: 'IDs',
 				name: 'ids',
@@ -7487,19 +7629,19 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete promo program stock',
-				description: 'Call PromoProgramStock/Delete',
+				description: 'Delete a promo program stock',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get promo program stock',
-				description: 'Call PromoProgramStock/Get',
+				description: 'Retrieve promo program stock data',
 			},
 			{
 				name: 'Set',
 				value: 'set',
 				action: 'Set promo program stock',
-				description: 'Call PromoProgramStock/Set',
+				description: 'Set for a promo program stock',
 			},
 		],
 		default: 'get',
@@ -7540,7 +7682,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Get',
 				value: 'get',
 				action: 'Get promo program type',
-				description: 'Call PromoProgramType/Get',
+				description: 'Retrieve promo program type data',
 			},
 		],
 		default: 'get',
@@ -7583,19 +7725,19 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add quick reply',
-				description: 'Call QuickReply/Add',
+				description: 'Create a quick reply',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete quick reply',
-				description: 'Call QuickReply/Delete',
+				description: 'Delete a quick reply',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get quick reply',
-				description: 'Call QuickReply/Get',
+				description: 'Retrieve many quick reply records',
 			},
 		],
 		default: 'get',
@@ -7622,25 +7764,17 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['quickReply'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-		],
 	},
 	{
 		displayName: 'Return All',
@@ -7716,49 +7850,49 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add retail card',
-				description: 'Call RetailCard/Add',
+				description: 'Create a retail card',
 			},
 			{
 				name: 'Add With Customer',
 				value: 'addWithCustomer',
 				action: 'Add with customer retail card',
-				description: 'Call RetailCard/AddWithCustomer',
+				description: 'Add with customer for a retail card',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete retail card',
-				description: 'Call RetailCard/Delete',
+				description: 'Delete a retail card',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit retail card',
-				description: 'Call RetailCard/Edit',
+				description: 'Update a retail card',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get retail card',
-				description: 'Call RetailCard/Get',
+				description: 'Retrieve many retail card records',
 			},
 			{
 				name: 'Get Balance',
 				value: 'getBalance',
 				action: 'Get balance retail card',
-				description: 'Call RetailCard/GetBalance',
+				description: 'Get balance for a retail card',
 			},
 			{
 				name: 'Get Migration History',
 				value: 'getMigrationHistory',
 				action: 'Get migration history retail card',
-				description: 'Call RetailCard/GetMigrationHistory',
+				description: 'Get migration history for a retail card',
 			},
 			{
 				name: 'Get Operations',
 				value: 'getOperations',
 				action: 'Get operations retail card',
-				description: 'Call RetailCard/GetOperations',
+				description: 'Get operations for a retail card',
 			},
 		],
 		default: 'get',
@@ -7984,25 +8118,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['retailCard'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -8064,12 +8203,6 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				displayName: 'Group ID',
 				name: 'group_id',
-				type: 'number',
-				default: 0,
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
 				type: 'number',
 				default: 0,
 			},
@@ -8361,25 +8494,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add retail card group',
-				description: 'Call RetailCardGroup/Add',
+				description: 'Create a retail card group',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete retail card group',
-				description: 'Call RetailCardGroup/Delete',
+				description: 'Delete a retail card group',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit retail card group',
-				description: 'Call RetailCardGroup/Edit',
+				description: 'Update a retail card group',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get retail card group',
-				description: 'Call RetailCardGroup/Get',
+				description: 'Retrieve retail card group data',
 			},
 		],
 		default: 'get',
@@ -8412,25 +8545,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['retailCardGroup'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCardGroup'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -8445,12 +8583,6 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
 			{
 				displayName: 'Name',
 				name: 'name',
@@ -8511,67 +8643,67 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Setting Condition Add',
 				value: 'settingConditionAdd',
 				action: 'Setting condition add retail card migration',
-				description: 'Call RetailCardMigration/SettingCondition/Add',
+				description: 'Setting condition add for a retail card migration',
 			},
 			{
 				name: 'Setting Condition Delete',
 				value: 'settingConditionDelete',
 				action: 'Setting condition delete retail card migration',
-				description: 'Call RetailCardMigration/SettingCondition/Delete',
+				description: 'Setting condition delete for a retail card migration',
 			},
 			{
 				name: 'Setting Condition Get',
 				value: 'settingConditionGet',
 				action: 'Setting condition get retail card migration',
-				description: 'Call RetailCardMigration/SettingCondition/Get',
+				description: 'Setting condition get for a retail card migration',
 			},
 			{
 				name: 'Settings Add',
 				value: 'settingsAdd',
 				action: 'Settings add retail card migration',
-				description: 'Call RetailCardMigration/Settings/Add',
+				description: 'Settings add for a retail card migration',
 			},
 			{
 				name: 'Settings Delete',
 				value: 'settingsDelete',
 				action: 'Settings delete retail card migration',
-				description: 'Call RetailCardMigration/Settings/Delete',
+				description: 'Settings delete for a retail card migration',
 			},
 			{
 				name: 'Settings Edit',
 				value: 'settingsEdit',
 				action: 'Settings edit retail card migration',
-				description: 'Call RetailCardMigration/Settings/Edit',
+				description: 'Settings edit for a retail card migration',
 			},
 			{
 				name: 'Settings Get',
 				value: 'settingsGet',
 				action: 'Settings get retail card migration',
-				description: 'Call RetailCardMigration/Settings/Get',
+				description: 'Settings get for a retail card migration',
 			},
 			{
 				name: 'Tasks Add',
 				value: 'tasksAdd',
 				action: 'Tasks add retail card migration',
-				description: 'Call RetailCardMigration/Tasks/Add',
+				description: 'Tasks add for a retail card migration',
 			},
 			{
 				name: 'Tasks Delete',
 				value: 'tasksDelete',
 				action: 'Tasks delete retail card migration',
-				description: 'Call RetailCardMigration/Tasks/Delete',
+				description: 'Tasks delete for a retail card migration',
 			},
 			{
 				name: 'Tasks Edit',
 				value: 'tasksEdit',
 				action: 'Tasks edit retail card migration',
-				description: 'Call RetailCardMigration/Tasks/Edit',
+				description: 'Tasks edit for a retail card migration',
 			},
 			{
 				name: 'Tasks Get',
 				value: 'tasksGet',
 				action: 'Tasks get retail card migration',
-				description: 'Call RetailCardMigration/Tasks/Get',
+				description: 'Tasks get for a retail card migration',
 			},
 		],
 		default: 'settingConditionAdd',
@@ -8635,25 +8767,17 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['retailCardMigration'],
 				operation: ['settingConditionDelete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-		],
 	},
 	{
 		displayName: 'Additional Fields',
@@ -8816,25 +8940,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['retailCardMigration'],
 				operation: ['settingsDelete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['settingsEdit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -8880,12 +9009,6 @@ export const nodeProperties: INodeProperties[] = [
 					},
 				],
 				default: 'Default',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Order',
@@ -9056,25 +9179,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['retailCardMigration'],
 				operation: ['tasksDelete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['tasksEdit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -9094,12 +9222,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'end_date',
 				type: 'dateTime',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Order',
@@ -9261,85 +9383,85 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add retail customer',
-				description: 'Call RetailCustomer/Add',
+				description: 'Create a retail customer',
 			},
 			{
 				name: 'Add Debt',
 				value: 'addDebt',
 				action: 'Add debt retail customer',
-				description: 'Call RetailCustomer/AddDebt',
+				description: 'Add debt for a retail customer',
 			},
 			{
 				name: 'Add Debt Payment',
 				value: 'addDebtPayment',
 				action: 'Add debt payment retail customer',
-				description: 'Call RetailCustomer/AddDebtPayment',
+				description: 'Add debt payment for a retail customer',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete retail customer',
-				description: 'Call RetailCustomer/Delete',
+				description: 'Delete a retail customer',
 			},
 			{
 				name: 'Delete Mark',
 				value: 'deleteMark',
 				action: 'Delete mark retail customer',
-				description: 'Call RetailCustomer/DeleteMark',
+				description: 'Mark a retail customer for deletion',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit retail customer',
-				description: 'Call RetailCustomer/Edit',
+				description: 'Update a retail customer',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get retail customer',
-				description: 'Call RetailCustomer/Get',
+				description: 'Retrieve many retail customer records',
 			},
 			{
 				name: 'Get Avg Cheque Amount',
 				value: 'getAvgChequeAmount',
 				action: 'Get avg cheque amount retail customer',
-				description: 'Call RetailCustomer/GetAvgChequeAmount',
+				description: 'Get avg cheque amount for a retail customer',
 			},
 			{
 				name: 'Get Cheque Count',
 				value: 'getChequeCount',
 				action: 'Get cheque count retail customer',
-				description: 'Call RetailCustomer/GetChequeCount',
+				description: 'Get cheque count for a retail customer',
 			},
 			{
 				name: 'Get Debts',
 				value: 'getDebts',
 				action: 'Get debts retail customer',
-				description: 'Call RetailCustomer/GetDebts',
+				description: 'Get debts for a retail customer',
 			},
 			{
 				name: 'Get Debts Payment History',
 				value: 'getDebtsPaymentHistory',
 				action: 'Get debts payment history retail customer',
-				description: 'Call RetailCustomer/GetDebtsPaymentHistory',
+				description: 'Get debts payment history for a retail customer',
 			},
 			{
 				name: 'Get Favorite Purchases',
 				value: 'getFavoritePurchases',
 				action: 'Get favorite purchases retail customer',
-				description: 'Call RetailCustomer/GetFavoritePurchases',
+				description: 'Get favorite purchases for a retail customer',
 			},
 			{
 				name: 'Get Last Purchase Date',
 				value: 'getLastPurchaseDate',
 				action: 'Get last purchase date retail customer',
-				description: 'Call RetailCustomer/GetLastPurchaseDate',
+				description: 'Get last purchase date for a retail customer',
 			},
 			{
 				name: 'Get Purchase Info',
 				value: 'getPurchaseInfo',
 				action: 'Get purchase info retail customer',
-				description: 'Call RetailCustomer/GetPurchaseInfo',
+				description: 'Get purchase info for a retail customer',
 			},
 		],
 		default: 'get',
@@ -9459,6 +9581,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['addDebt'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -9494,12 +9629,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'paid',
 				type: 'number',
 				default: 0,
-			},
-			{
-				displayName: 'UUID',
-				name: 'uuid',
-				type: 'string',
-				default: '',
 			},
 		],
 	},
@@ -9549,46 +9678,43 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['retailCustomer'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['retailCustomer'],
 				operation: ['deleteMark'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -9643,12 +9769,6 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				displayName: 'Group ID',
 				name: 'group_id',
-				type: 'number',
-				default: 0,
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
 				type: 'number',
 				default: 0,
 			},
@@ -10169,25 +10289,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add retail customer group',
-				description: 'Call RetailCustomerGroup/Add',
+				description: 'Create a retail customer group',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete retail customer group',
-				description: 'Call RetailCustomerGroup/Delete',
+				description: 'Delete a retail customer group',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit retail customer group',
-				description: 'Call RetailCustomerGroup/Edit',
+				description: 'Update a retail customer group',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get retail customer group',
-				description: 'Call RetailCustomerGroup/Get',
+				description: 'Retrieve retail customer group data',
 			},
 		],
 		default: 'get',
@@ -10220,25 +10340,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['retailCustomerGroup'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCustomerGroup'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -10253,12 +10378,6 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
 			{
 				displayName: 'Name',
 				name: 'name',
@@ -10319,19 +10438,19 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add sms',
-				description: 'Call Sms/Add',
+				description: 'Create a SMS',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get sms',
-				description: 'Call Sms/Get',
+				description: 'Retrieve many SMS records',
 			},
 			{
 				name: 'Set Status',
 				value: 'setStatus',
 				action: 'Set status sms',
-				description: 'Call Sms/SetStatus',
+				description: 'Set status for a SMS',
 			},
 		],
 		default: 'get',
@@ -10491,6 +10610,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['sms'],
+				operation: ['setStatus'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -10508,12 +10640,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'error_message',
 				type: 'string',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Status',
@@ -10560,31 +10686,31 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add target',
-				description: 'Call Target/Add',
+				description: 'Create a target',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete target',
-				description: 'Call Target/Delete',
+				description: 'Delete a target',
 			},
 			{
 				name: 'Finish',
 				value: 'finish',
 				action: 'Finish target',
-				description: 'Call Target/Finish',
+				description: 'Finish for a target',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get target',
-				description: 'Call Target/Get',
+				description: 'Retrieve target data',
 			},
 			{
 				name: 'Get History',
 				value: 'getHistory',
 				action: 'Get history target',
-				description: 'Call Target/GetHistory',
+				description: 'Get history for a target',
 			},
 		],
 		default: 'get',
@@ -10730,46 +10856,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['target'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['target'],
 				operation: ['finish'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-		],
 	},
 	{
 		displayName: 'Additional Fields',
@@ -10851,25 +10961,17 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['target'],
 				operation: ['getHistory'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-		],
 	},
 	{
 		displayName: 'Operation',
@@ -10886,25 +10988,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add target setting',
-				description: 'Call TargetSetting/Add',
+				description: 'Create a target setting',
 			},
 			{
 				name: 'Add Single',
 				value: 'addSingle',
 				action: 'Add single target setting',
-				description: 'Call TargetSetting/AddSingle',
+				description: 'Add single for a target setting',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete target setting',
-				description: 'Call TargetSetting/Delete',
+				description: 'Delete a target setting',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get target setting',
-				description: 'Call TargetSetting/Get',
+				description: 'Retrieve target setting data',
 			},
 		],
 		default: 'get',
@@ -10972,25 +11074,17 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['targetSetting'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-		],
 	},
 	{
 		displayName: 'Additional Fields',
@@ -11064,7 +11158,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Get',
 				value: 'get',
 				action: 'Get target type',
-				description: 'Call TargetType/Get',
+				description: 'Retrieve target type data',
 			},
 		],
 		default: 'get',
@@ -11084,61 +11178,61 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add ticket',
-				description: 'Call Ticket/Add',
+				description: 'Create a ticket',
 			},
 			{
 				name: 'Close',
 				value: 'close',
 				action: 'Close ticket',
-				description: 'Call Ticket/Close',
+				description: 'Close for a ticket',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete ticket',
-				description: 'Call Ticket/Delete',
+				description: 'Delete a ticket',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit ticket',
-				description: 'Call Ticket/Edit',
+				description: 'Update a ticket',
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get ticket',
-				description: 'Call Ticket/Get',
+				description: 'Retrieve many ticket records',
 			},
 			{
 				name: 'Set Client Sentiment',
 				value: 'setClientSentiment',
 				action: 'Set client sentiment ticket',
-				description: 'Call Ticket/SetClientSentiment',
+				description: 'Set client sentiment for a ticket',
 			},
 			{
 				name: 'Set Participants',
 				value: 'setParticipants',
 				action: 'Set participants ticket',
-				description: 'Call Ticket/SetParticipants',
+				description: 'Set participants for a ticket',
 			},
 			{
 				name: 'Set Rating',
 				value: 'setRating',
 				action: 'Set rating ticket',
-				description: 'Call Ticket/SetRating',
+				description: 'Set rating for a ticket',
 			},
 			{
 				name: 'Set Responsible',
 				value: 'setResponsible',
 				action: 'Set responsible ticket',
-				description: 'Call Ticket/SetResponsible',
+				description: 'Set responsible for a ticket',
 			},
 			{
 				name: 'Set Status',
 				value: 'setStatus',
 				action: 'Set status ticket',
-				description: 'Call Ticket/SetStatus',
+				description: 'Set status for a ticket',
 			},
 		],
 		default: 'get',
@@ -11241,6 +11335,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['close'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -11254,12 +11361,6 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Resolved Date',
 				name: 'resolved_date',
 				type: 'dateTime',
@@ -11268,25 +11369,30 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		placeholder: 'Add Field',
-		default: {},
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
 		displayOptions: {
 			show: {
 				resource: ['ticket'],
 				operation: ['delete'],
 			},
 		},
-		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['edit'],
 			},
-		],
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -11338,12 +11444,6 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'fields',
 				type: 'json',
 				default: '',
-			},
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
 			},
 			{
 				displayName: 'Mention Options',
@@ -11548,7 +11648,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'include_mentions',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include Mentions is enabled',
+				description: 'Whether include mentions is enabled',
 			},
 			{
 				displayName: 'Responsible User IDs',
@@ -11585,6 +11685,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setClientSentiment'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -11597,12 +11710,6 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
 			{
 				displayName: 'Sentiment Comment',
 				name: 'sentiment_comment',
@@ -11618,6 +11725,19 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setParticipants'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -11631,12 +11751,6 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Participant User IDs',
 				name: 'participant_user_ids',
 				type: 'string',
@@ -11649,9 +11763,22 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'replace_mode',
 				type: 'boolean',
 				default: false,
-				description: 'Whether replace Mode is enabled',
+				description: 'Whether replace mode is enabled',
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setRating'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -11667,12 +11794,6 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Rating',
 				name: 'rating',
 				type: 'number',
@@ -11685,6 +11806,19 @@ export const nodeProperties: INodeProperties[] = [
 				default: '',
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setResponsible'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -11700,18 +11834,25 @@ export const nodeProperties: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
-			{
 				displayName: 'Responsible User ID',
 				name: 'responsible_user_id',
 				type: 'number',
 				default: 0,
 			},
 		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setStatus'],
+			},
+		},
 	},
 	{
 		displayName: 'Additional Fields',
@@ -11726,12 +11867,6 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'ID',
-				name: 'id',
-				type: 'number',
-				default: 0,
-			},
 			{
 				displayName: 'Status',
 				name: 'status',
