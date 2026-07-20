@@ -18,7 +18,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/norches/n8n-nodes-regos.git"
+		"url": "git+https://github.com/norches/n8n-nodes-regos.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",
