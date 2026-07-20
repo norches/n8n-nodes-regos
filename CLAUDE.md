@@ -4,7 +4,7 @@ n8n community node package for the REGOS SaaS ERP (Uzbekistan retail/ERP). Targe
 
 ## Current phase
 
-**Published (2026-07-20).** `n8n-nodes-regos@0.1.2` live on npm with SLSA provenance via the OIDC publish workflow (0.1.1 was a token-based bootstrap publish — npm Trusted Publisher can only be configured on an existing package). Smoke tested against a real gateway. Releases: `npm run release` (never `npm publish` directly — prerelease guard). Remaining: n8n Creator Portal submission for verified status. Post-release check: run the "Scan published package" workflow from the Actions tab (the scanner CLI is broken on Windows — tar path escaping). Keep this section current when phases change.
+**Published (2026-07-20).** `n8n-nodes-regos@0.1.3` live on npm with SLSA provenance via the OIDC publish workflow, and passing `@n8n/scan-community-package` (0.1.1 was a token-based bootstrap publish — npm Trusted Publisher can only be configured on an existing package). Smoke tested against a real gateway. Releases: `npm run release` (never `npm publish` directly — prerelease guard). Remaining: n8n Creator Portal submission for verified status. Post-release check: run the "Scan published package" workflow from the Actions tab (the scanner CLI is broken on Windows — tar path escaping); it lints with inline eslint configs disabled, so scanner-enforced rules must be satisfied, never suppressed. Keep this section current when phases change.
 
 Local environment notes:
 - Local dev needs **Node >= 20.19** (`@n8n/node-cli` uses `require(esm)`); machine runs Node 24.
