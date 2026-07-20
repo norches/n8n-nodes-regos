@@ -150,7 +150,7 @@ export async function regosApiRequest(
 		return fail(
 			{ response },
 			`REGOS error ${errorResult.error ?? 'unknown'}: ${errorResult.description ?? 'no description'}`,
-			`POST ${path} — REGOS returns application errors with HTTP 200. Error catalog: https://docs.regos.uz/ru/api/intro/errors`,
+			`POST ${path} — REGOS returns application errors with HTTP 200, and the description above is the message returned by the REGOS API. Error code reference: https://github.com/norches/n8n-nodes-regos?tab=readme-ov-file#regos-error-codes (full catalog, in Russian: https://docs.regos.uz/ru/api/intro/errors)`,
 		);
 	}
 
