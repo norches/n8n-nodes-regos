@@ -33,7 +33,7 @@ The integration key is the only secret — it authenticates every call. Use the 
 | **Regos Reports** | Reports, dashboards, widgets, logs |
 | **Regos Trigger** | Webhook trigger with a selector over all 297 REGOS events |
 
-**Why five action nodes?** REGOS is a single service with a very large API. Putting all 176 resources in one node would produce a node description with ~9,000 parameters, which makes the n8n node detail view slow and unusable. The API is therefore split along REGOS's own product boundaries. All six nodes share one credential and one gateway. The reasoning is recorded in [ADR-0001](docs/adr/0001-project-scope-and-architecture.md).
+**Why five action nodes?** REGOS is a single service with a very large API: 919 operations across 175 resources. Combined into one node, that is 1,380 top-level parameters (4,172 counting the fields nested inside collections) in a single node description, which makes the n8n node detail view slow to open and hard to navigate. The API is therefore split along REGOS's own product boundaries. All six nodes share one credential, one gateway and one HTTP client. The reasoning is recorded in [ADR-0001](docs/adr/0001-project-scope-and-architecture.md).
 
 ## Operations
 

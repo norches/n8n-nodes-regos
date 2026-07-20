@@ -1089,7 +1089,7 @@ export const operationsMeta = {
 					api: 'id',
 					param: 'id',
 					kind: 'string',
-					required: true,
+					required: false,
 				},
 				{
 					api: 'include_staff_private',
@@ -3810,7 +3810,7 @@ export const operationsMeta = {
 					api: 'id',
 					param: 'id',
 					kind: 'number',
-					required: true,
+					required: false,
 				},
 				{
 					api: 'ids',

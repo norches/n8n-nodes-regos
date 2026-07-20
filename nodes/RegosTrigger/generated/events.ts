@@ -1064,11 +1064,6 @@ export const webhookEvents = [
 		description: 'Operating Cash event (REGOS action "OperatingCashEdited")',
 	},
 	{
-		name: 'POS Cheque Pay Debt',
-		value: 'POSChequePayDebt',
-		description: 'REGOS event "POSChequePayDebt"',
-	},
-	{
 		name: 'Partner Added',
 		value: 'PartnerAdded',
 		description: 'Partner event (REGOS action "PartnerAdded")',
@@ -1117,6 +1112,11 @@ export const webhookEvents = [
 		name: 'Payment Type Edited',
 		value: 'PaymentTypeEdited',
 		description: 'Payment Type event (REGOS action "PaymentTypeEdited")',
+	},
+	{
+		name: 'POS Cheque Pay Debt',
+		value: 'POSChequePayDebt',
+		description: 'REGOS event "POSChequePayDebt"',
 	},
 	{
 		name: 'Price Type Added',
@@ -1304,16 +1304,6 @@ export const webhookEvents = [
 		description: 'Retail Return Reason event (REGOS action "RetailReturnReasonEdited")',
 	},
 	{
-		name: 'SMS Added',
-		value: 'SMSAdded',
-		description: 'REGOS event "SMSAdded"',
-	},
-	{
-		name: 'SMS Status Set',
-		value: 'SMSStatusSet',
-		description: 'REGOS event "SMSStatusSet"',
-	},
-	{
 		name: 'Size Chart Added',
 		value: 'SizeChartAdded',
 		description: 'Size Chart event (REGOS action "SizeChartAdded")',
@@ -1327,6 +1317,16 @@ export const webhookEvents = [
 		name: 'Size Chart Edited',
 		value: 'SizeChartEdited',
 		description: 'Size Chart event (REGOS action "SizeChartEdited")',
+	},
+	{
+		name: 'SMS Added',
+		value: 'SMSAdded',
+		description: 'REGOS event "SMSAdded"',
+	},
+	{
+		name: 'SMS Status Set',
+		value: 'SMSStatusSet',
+		description: 'REGOS event "SMSStatusSet"',
 	},
 	{
 		name: 'Stock Added',

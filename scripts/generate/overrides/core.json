@@ -93,5 +93,23 @@
 	},
 	"Currency.get": {
 		"description": "Retrieve many currencies with their exchange rates"
+	},
+	"WidgetData.get": {
+		"required": [
+			"id"
+		],
+		"description": "Retrieve the data behind a dashboard widget by widget ID"
+	},
+	"PosDocCheque.getcurrent": {
+		"displayName": "Get Current",
+		"description": "Retrieve the currently open cheque for the cashier's session"
+	},
+	"ChequePaymentOperation.posGet": {
+		"displayName": "Get From POS",
+		"description": "Retrieve cheque payment operations directly from the POS"
+	},
+	"PosDocSession.getCurrent": {
+		"displayName": "Get Current",
+		"description": "Retrieve the currently open cash session for the register"
 	}
 }

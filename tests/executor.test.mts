@@ -15,6 +15,17 @@ import type { NodeOperationsMeta } from '../nodes/shared/types';
 
 const node = { name: 'Regos', type: 'n8n-nodes-regos.regos', typeVersion: 1, position: [0, 0], parameters: {} };
 
+const metaWithRequired: NodeOperationsMeta = {
+	account: {
+		delete: {
+			path: 'Account/Delete',
+			envelope: 'object',
+			paginated: false,
+			fields: [{ api: 'id', param: 'id', kind: 'number', required: true }],
+		},
+	},
+};
+
 const meta: NodeOperationsMeta = {
 	item: {
 		get: {
@@ -145,6 +156,30 @@ describe('executeRegosNode', () => {
 		const output = await executeRegosNode(ctx as never, meta);
 		expect(output[0]).toHaveLength(1);
 		expect(output[0][0].json.error).toMatch(/1044/);
+	});
+
+	it('reads required fields as top-level parameters, not from additionalFields', async () => {
+		vi.mocked(regosApiRequest).mockResolvedValueOnce({ ok: true, result: { row_affected: 1 } });
+
+		// Mirrors n8n: getNodeParameter throws when the parameter is absent and no
+		// fallback is supplied. This is what a required-field/property mismatch looks like.
+		const parameters: Record<string, unknown> = { resource: 'account', operation: 'delete', id: 42 };
+		const ctx = {
+			getNode: () => node,
+			getInputData: () => [{ json: {} }],
+			continueOnFail: () => false,
+			getNodeParameter: (name: string, _index: number, ...rest: unknown[]) => {
+				if (name in parameters) return parameters[name];
+				if (rest.length > 0) return rest[0];
+				throw new Error(`Could not get parameter "${name}"`);
+			},
+		};
+
+		const output = await executeRegosNode(ctx as never, metaWithRequired);
+
+		expect(vi.mocked(regosApiRequest).mock.calls[0][0]).toBe('Account/Delete');
+		expect(vi.mocked(regosApiRequest).mock.calls[0][1]).toEqual({ id: 42 });
+		expect(output[0]).toHaveLength(1);
 	});
 
 	it('includes request/response debug context in continueOnFail items when available', async () => {

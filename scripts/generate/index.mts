@@ -168,10 +168,28 @@ function capitalizeFirst(value: string): string {
 	return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
-/** "account" -> "an account", "stock" -> "a stock". */
+// Words whose article does not follow the bare vowel rule ("a user", not "an user").
+const CONSONANT_SOUND = /^(user|unit|uuid|url|uz)\b/i;
+
+/** "account" -> "an account", "user" -> "a user". */
 function withArticle(noun: string): string {
-	return `${/^[aeiou]/i.test(noun) ? 'an' : 'a'} ${noun}`;
+	const vowelSound = /^[aeiou]/i.test(noun) && !CONSONANT_SOUND.test(noun);
+	return `${vowelSound ? 'an' : 'a'} ${noun}`;
 }
+
+// REGOS verbs whose generated wording would otherwise be unreadable. Each entry
+// builds the whole sentence, because the article placement differs per phrasing.
+const VERB_PHRASES: Record<string, (resource: string) => string> = {
+	storno: (r) => `Reverse an operation on ${withArticle(r)}`,
+	getcurrent: (r) => `Get the currently open ${r}`,
+	getCurrent: (r) => `Get the currently open ${r}`,
+	isCanDo: (r) => `Check whether the action is allowed for ${withArticle(r)}`,
+	deleteMark: (r) => `Mark ${withArticle(r)} for deletion`,
+	performCancel: (r) => `Cancel the posting of ${withArticle(r)}`,
+	xReport: (r) => `Print an X report for ${withArticle(r)}`,
+	zReport: (r) => `Print a Z report for ${withArticle(r)}`,
+	posGet: (r) => `Retrieve ${r} data from the POS`,
+};
 
 /**
  * Human-readable operation description. The swagger carries no summaries or
@@ -197,21 +215,88 @@ function describeOperation(
 	if (verb === 'add' && !rest) return `Create ${withArticle(resource)}`;
 	if (verb === 'edit' && !rest) return `Update ${withArticle(resource)}`;
 	if (verb === 'delete' && !rest) return `Delete ${withArticle(resource)}`;
-	if (value === 'deleteMark') return `Mark ${withArticle(resource)} for deletion`;
-	if (value === 'perform') return `Perform ${withArticle(resource)}`;
-	if (value === 'performCancel') return `Cancel a performed ${resource}`;
+	if (value === 'perform') return `Post ${withArticle(resource)}`;
 
-	const phrase = `${verb}${rest ? ` ${rest}` : ''}`;
-	return capitalizeFirst(`${phrase} for ${withArticle(resource)}`);
+	const phrase = VERB_PHRASES[value];
+	if (phrase) return phrase(resource);
+
+	// A bare verb reads as an action on the record ("Close a deal"); a verb with a
+	// qualifier reads as an action on part of it ("Add participant for a chat").
+	if (!rest) return capitalizeFirst(`${verb} ${withArticle(resource)}`);
+	return capitalizeFirst(`${verb} ${rest} for ${withArticle(resource)}`);
+}
+
+// Boolean flags whose meaning the generic template cannot express. Anything not
+// listed falls back to "Whether <field> is enabled" with is_/_enabled stripped.
+const BOOLEAN_DESCRIPTIONS: Record<string, string> = {
+	access_all: 'Whether access is granted to all records',
+	blocked: 'Whether the record is blocked',
+	booked: 'Whether stock is reserved by this document',
+	closed: 'Whether the record is closed',
+	compress_data: 'Whether to compress the response payload',
+	deleted_mark: 'Whether the record is marked for deletion',
+	exclude: 'Whether to exclude the listed records instead of including them',
+	exclude_storno: 'Whether to exclude reversed operations',
+	finished: 'Whether the record is finished',
+	forced: 'Whether to force the operation, ignoring soft checks',
+	has_child: 'Whether the record has child records',
+	has_image: 'Whether the record has an image',
+	hidden: 'Whether the record is hidden',
+	in_base_currency: 'Whether amounts are expressed in the base currency',
+	include: 'Whether to include the listed records',
+	include_data: 'Whether to include the related data in the response',
+	include_mentions: 'Whether to include mentions',
+	include_name: 'Whether to include names in the response',
+	include_schedule: 'Whether to include schedule information',
+	include_staff_private: 'Whether to include private staff information',
+	is_return: 'Whether this is a return',
+	muted: 'Whether notifications are muted',
+	only_deviation: 'Whether to return only records that deviate',
+	performed: 'Whether the document is posted',
+	pinned: 'Whether the record is pinned',
+	positive: 'Whether only positive values are returned',
+	rating_enabled: 'Whether rating is enabled',
+	replace_mode: 'Whether existing values are replaced instead of merged',
+	required: 'Whether the field is mandatory',
+	run_immediately: 'Whether to run the task immediately',
+	save: 'Whether to persist the result',
+	unlimited: 'Whether the value is unlimited',
+	update_actual_quantity: 'Whether to update the actual quantity',
+	value: 'Whether the flag is set',
+	virtual: 'Whether the record is virtual',
+	zero_price: 'Whether records with a zero price are included',
+	zero_quantity: 'Whether records with a zero quantity are included',
+};
+
+function booleanDescription(api: string): string {
+	const known = BOOLEAN_DESCRIPTIONS[api];
+	if (known) return known;
+	// "is_default" / "auto_close_enabled" -> "default" / "auto close"
+	const stripped = api.replace(/^is_/, '').replace(/_enabled$/, '');
+	return `Whether ${sentenceCase(stripped)} is enabled`;
 }
 
 /**
  * A scalar `id`/`uuid` on a non-list endpoint identifies the record being acted
  * on, so it is surfaced as a required top-level parameter instead of hiding in
  * Additional Fields. Array filters (`ids`) stay optional — they narrow a list.
+ *
+ * Reads that return a list are excluded: there the `id`/`uuid` is one more filter,
+ * and requiring it makes the search unusable (REGOS marks nothing as required in
+ * the swagger, so the shape of the response is the only reliable signal). Both
+ * halves of the test are load-bearing: `pos/DocCheque/AddRetailCard` also returns
+ * an Array-shaped envelope but genuinely needs its key, and `Tag/Get` is a list
+ * read whose only sibling field is `include_data`. Endpoints that need the key
+ * back can opt in via `required` in scripts/generate/overrides.
  */
-function isPrimaryKeyField(field: FieldModel, paginated: boolean): boolean {
+function isPrimaryKeyField(
+	field: FieldModel,
+	paginated: boolean,
+	responseName: string,
+	value: string,
+): boolean {
 	if (paginated) return false;
+	if (/Array/.test(responseName) && /^get/i.test(value)) return false;
 	if (field.api !== 'id' && field.api !== 'uuid') return false;
 	return field.kind === 'number' || field.kind === 'string';
 }
@@ -296,11 +381,16 @@ function classifyField(spec: OpenApiSpec, apiName: string, rawSchema: JsonSchema
 	return { api: apiName, param: apiName, kind, required: false, enumValues };
 }
 
-function envelopeOf(responseSchema: JsonSchema | undefined): OperationModel['envelope'] {
+/** Name of the success (non-ErrorResult) 200 response schema, e.g. "ChequeArrayRegosObjectResult". */
+function responseSchemaName(responseSchema: JsonSchema | undefined): string {
 	const refs = (responseSchema?.oneOf ?? [responseSchema ?? {}])
 		.map((s) => s?.$ref ?? '')
 		.filter((r) => r !== '' && !r.endsWith('/ErrorResult'));
-	const name = refs[0]?.replace('#/components/schemas/', '') ?? '';
+	return refs[0]?.replace('#/components/schemas/', '') ?? '';
+}
+
+function envelopeOf(responseSchema: JsonSchema | undefined): OperationModel['envelope'] {
+	const name = responseSchemaName(responseSchema);
 	if (name.endsWith('RegosOffsettedArrayResult')) return 'offsettedArray';
 	if (name.endsWith('RegosArrayResult')) return 'array';
 	if (name.endsWith('RegosObjectResult')) return 'object';
@@ -352,6 +442,7 @@ function buildModel(spec: OpenApiSpec, domains: DomainsConfig): Map<string, Oper
 		const { schema: resolved } = resolveRef(spec, requestSchema);
 		const responseSchema = item.post.responses?.['200']?.content?.['application/json']?.schema;
 		const envelope = envelopeOf(responseSchema);
+		const responseName = responseSchemaName(responseSchema);
 
 		const properties = resolved.properties ?? {};
 		const paginated =
@@ -361,7 +452,7 @@ function buildModel(spec: OpenApiSpec, domains: DomainsConfig): Map<string, Oper
 		for (const [apiName, propSchema] of Object.entries(properties).sort(([a], [b]) => a.localeCompare(b))) {
 			if (paginated && (apiName === 'limit' || apiName === 'offset')) continue;
 			const field = classifyField(spec, apiName, propSchema);
-			field.required = isPrimaryKeyField(field, paginated);
+			field.required = isPrimaryKeyField(field, paginated, responseName, value);
 			fields.push(field);
 		}
 
@@ -426,6 +517,18 @@ function applyOverrides(byNode: Map<string, OperationModel[]>, overrides: Record
 				for (const field of op.fields) {
 					if (patch.required.includes(field.api)) field.required = true;
 				}
+				// The generated sentence depends on whether the operation has a required key,
+				// and descriptions are built before overrides run — so rebuild it here unless
+				// the patch supplies its own wording.
+				if (!patch.description) {
+					op.description = describeOperation(
+						op.resource,
+						op.value,
+						op.display,
+						op.paginated,
+						op.fields.some((f) => f.required),
+					);
+				}
 			}
 		}
 	}
@@ -453,14 +556,11 @@ function fieldToProperty(field: FieldModel, show: { resource: string[]; operatio
 					description: 'Max number of results to return',
 				};
 			}
+			// Required keys are real record IDs, so the UI should reject 0 before execution.
+			if (field.required) return { ...base, type: 'number', typeOptions: { minValue: 1 }, default: 0 };
 			return { ...base, type: 'number', default: 0 };
 		case 'boolean':
-			return {
-				...base,
-				type: 'boolean',
-				default: false,
-				description: `Whether ${sentenceCase(field.api)} is enabled`,
-			};
+			return { ...base, type: 'boolean', default: false, description: booleanDescription(field.api) };
 		case 'triBoolean':
 			return {
 				...base,
@@ -557,7 +657,10 @@ function buildProperties(ops: OperationModel[], config: NodeEmitConfig): object[
 		const resourceOps = ops.filter((op) => op.resource === tag).sort((a, b) => a.display.localeCompare(b.display));
 
 		const operationOptions = resourceOps.map((op) => {
-			const raw = `${op.display} ${resourceDisplay(tag)}`.toLowerCase();
+			// Sentence case, but acronyms keep their casing — otherwise the action reads
+			// "Add retail card pos doc cheque" under a "POS Doc Cheque" resource label.
+			// n8n's isSentenceCase() skips all-caps words, so this stays lint-clean.
+			const raw = sentenceCase(`${op.display} ${resourceDisplay(tag)}`);
 			const action =
 				ACTION_FIXES[`${tag}.${op.value}`] ?? raw.charAt(0).toUpperCase() + raw.slice(1);
 			return {
@@ -568,7 +671,15 @@ function buildProperties(ops: OperationModel[], config: NodeEmitConfig): object[
 			};
 		});
 
-		const defaultOp = resourceOps.find((op) => op.value === 'get')?.value ?? resourceOps[0]?.value ?? '';
+		// Never default a resource to a destructive operation — a user opening the node
+		// should land on a read, or at worst on something that does not delete.
+		const isDestructive = (value: string) => /^(delete|remove|cancel|storno)/i.test(value);
+		const defaultOp =
+			resourceOps.find((op) => op.value === 'get')?.value ??
+			resourceOps.find((op) => /^get/i.test(op.value))?.value ??
+			resourceOps.find((op) => !isDestructive(op.value))?.value ??
+			resourceOps[0]?.value ??
+			'';
 
 		properties.push({
 			displayName: 'Operation',
@@ -687,6 +798,10 @@ function buildEvents(
 		});
 		if (group && resolvableTags.has(group)) resolveMap[event] = `${group}/Get`;
 	}
+
+	// n8n sorts multiOptions by label, so sort by the humanized name rather than the
+	// raw enum value the labels were derived from.
+	options.sort((a, b) => (a as { name: string }).name.localeCompare((b as { name: string }).name));
 
 	return { options, resolveMap };
 }

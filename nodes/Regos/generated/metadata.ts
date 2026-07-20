@@ -5494,7 +5494,7 @@ export const operationsMeta = {
 					api: 'id',
 					param: 'id',
 					kind: 'number',
-					required: true,
+					required: false,
 				},
 				{
 					api: 'include_data',

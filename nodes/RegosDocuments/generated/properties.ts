@@ -375,13 +375,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Perform',
 				value: 'perform',
 				action: 'Perform doc account movement',
-				description: 'Perform a doc account movement',
+				description: 'Post a doc account movement',
 			},
 			{
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc account movement',
-				description: 'Cancel a performed doc account movement',
+				description: 'Cancel the posting of a doc account movement',
 			},
 		],
 		default: 'get',
@@ -459,6 +459,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -472,6 +475,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -485,6 +491,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -767,6 +776,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -780,6 +792,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -834,25 +849,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc additional expense',
-				description: 'Lock for a doc additional expense',
+				description: 'Lock a doc additional expense',
 			},
 			{
 				name: 'Perform',
 				value: 'perform',
 				action: 'Perform doc additional expense',
-				description: 'Perform a doc additional expense',
+				description: 'Post a doc additional expense',
 			},
 			{
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc additional expense',
-				description: 'Cancel a performed doc additional expense',
+				description: 'Cancel the posting of a doc additional expense',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc additional expense',
-				description: 'Unlock for a doc additional expense',
+				description: 'Unlock a doc additional expense',
 			},
 		],
 		default: 'get',
@@ -950,6 +965,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -963,6 +981,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -976,6 +997,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1290,6 +1314,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1303,6 +1330,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2220,13 +2250,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc commercial offer',
-				description: 'Lock for a doc commercial offer',
+				description: 'Lock a doc commercial offer',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc commercial offer',
-				description: 'Unlock for a doc commercial offer',
+				description: 'Unlock a doc commercial offer',
 			},
 		],
 		default: 'get',
@@ -2306,6 +2336,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2319,6 +2352,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2332,6 +2368,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2800,6 +2839,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2813,6 +2855,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2826,6 +2871,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3320,6 +3368,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3433,25 +3484,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc in out',
-				description: 'Lock for a doc in out',
+				description: 'Lock a doc in out',
 			},
 			{
 				name: 'Perform',
 				value: 'perform',
 				action: 'Perform doc in out',
-				description: 'Perform a doc in out',
+				description: 'Post a doc in out',
 			},
 			{
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc in out',
-				description: 'Cancel a performed doc in out',
+				description: 'Cancel the posting of a doc in out',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc in out',
-				description: 'Unlock for a doc in out',
+				description: 'Unlock a doc in out',
 			},
 		],
 		default: 'get',
@@ -3519,6 +3570,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3532,6 +3586,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3545,6 +3602,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3841,6 +3901,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3854,6 +3917,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3937,19 +4003,19 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc inventory',
-				description: 'Lock for a doc inventory',
+				description: 'Lock a doc inventory',
 			},
 			{
 				name: 'Open',
 				value: 'open',
 				action: 'Open doc inventory',
-				description: 'Open for a doc inventory',
+				description: 'Open a doc inventory',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc inventory',
-				description: 'Unlock for a doc inventory',
+				description: 'Unlock a doc inventory',
 			},
 		],
 		default: 'get',
@@ -4043,6 +4109,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4056,6 +4125,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4069,6 +4141,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4082,6 +4157,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4402,6 +4480,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4497,25 +4578,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc invoice',
-				description: 'Lock for a doc invoice',
+				description: 'Lock a doc invoice',
 			},
 			{
 				name: 'Perform',
 				value: 'perform',
 				action: 'Perform doc invoice',
-				description: 'Perform a doc invoice',
+				description: 'Post a doc invoice',
 			},
 			{
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc invoice',
-				description: 'Cancel a performed doc invoice',
+				description: 'Cancel the posting of a doc invoice',
 			},
 			{
 				name: 'Send',
 				value: 'send',
 				action: 'Send doc invoice',
-				description: 'Send for a doc invoice',
+				description: 'Send a doc invoice',
 			},
 			{
 				name: 'Set External Data',
@@ -4533,7 +4614,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc invoice',
-				description: 'Unlock for a doc invoice',
+				description: 'Unlock a doc invoice',
 			},
 		],
 		default: 'get',
@@ -4742,6 +4823,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4755,6 +4839,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4768,6 +4855,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5233,6 +5323,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5246,6 +5339,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5468,25 +5564,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc movement',
-				description: 'Lock for a doc movement',
+				description: 'Lock a doc movement',
 			},
 			{
 				name: 'Perform',
 				value: 'perform',
 				action: 'Perform doc movement',
-				description: 'Perform a doc movement',
+				description: 'Post a doc movement',
 			},
 			{
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc movement',
-				description: 'Cancel a performed doc movement',
+				description: 'Cancel the posting of a doc movement',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc movement',
-				description: 'Unlock for a doc movement',
+				description: 'Unlock a doc movement',
 			},
 		],
 		default: 'get',
@@ -5540,6 +5636,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5553,6 +5652,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5566,6 +5668,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5824,6 +5929,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5837,6 +5945,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5914,13 +6025,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Perform',
 				value: 'perform',
 				action: 'Perform doc opening balance',
-				description: 'Perform a doc opening balance',
+				description: 'Post a doc opening balance',
 			},
 			{
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc opening balance',
-				description: 'Cancel a performed doc opening balance',
+				description: 'Cancel the posting of a doc opening balance',
 			},
 		],
 		default: 'get',
@@ -5986,6 +6097,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5999,6 +6113,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -6012,6 +6129,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -6215,6 +6335,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -6228,6 +6351,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -6252,7 +6378,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Actualize',
 				value: 'actualize',
 				action: 'Actualize doc order delivery',
-				description: 'Actualize for a doc order delivery',
+				description: 'Actualize a doc order delivery',
 			},
 			{
 				name: 'Add',
@@ -6301,13 +6427,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc order delivery',
-				description: 'Lock for a doc order delivery',
+				description: 'Lock a doc order delivery',
 			},
 			{
 				name: 'Return',
 				value: 'return',
 				action: 'Return doc order delivery',
-				description: 'Return for a doc order delivery',
+				description: 'Return a doc order delivery',
 			},
 			{
 				name: 'Set Courier',
@@ -6355,7 +6481,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc order delivery',
-				description: 'Unlock for a doc order delivery',
+				description: 'Unlock a doc order delivery',
 			},
 		],
 		default: 'get',
@@ -6529,6 +6655,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -6542,6 +6671,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -6555,6 +6687,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7053,6 +7188,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7087,6 +7225,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7121,6 +7262,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7155,6 +7299,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7189,6 +7336,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7261,6 +7411,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7295,6 +7448,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7372,13 +7528,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc order from partner',
-				description: 'Lock for a doc order from partner',
+				description: 'Lock a doc order from partner',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc order from partner',
-				description: 'Unlock for a doc order from partner',
+				description: 'Unlock a doc order from partner',
 			},
 		],
 		default: 'get',
@@ -7496,6 +7652,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7509,6 +7668,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7522,6 +7684,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7916,13 +8081,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc order to movement',
-				description: 'Lock for a doc order to movement',
+				description: 'Lock a doc order to movement',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc order to movement',
-				description: 'Unlock for a doc order to movement',
+				description: 'Unlock a doc order to movement',
 			},
 		],
 		default: 'get',
@@ -7970,6 +8135,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7983,6 +8151,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7996,6 +8167,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -8284,13 +8458,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc order to partner',
-				description: 'Lock for a doc order to partner',
+				description: 'Lock a doc order to partner',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc order to partner',
-				description: 'Unlock for a doc order to partner',
+				description: 'Unlock a doc order to partner',
 			},
 		],
 		default: 'get',
@@ -8382,6 +8556,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -8395,6 +8572,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -8408,6 +8588,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -8760,13 +8943,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Perform',
 				value: 'perform',
 				action: 'Perform doc payment',
-				description: 'Perform a doc payment',
+				description: 'Post a doc payment',
 			},
 			{
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc payment',
-				description: 'Cancel a performed doc payment',
+				description: 'Cancel the posting of a doc payment',
 			},
 		],
 		default: 'get',
@@ -8868,6 +9051,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -8881,6 +9067,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -8894,6 +9083,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9266,6 +9458,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9279,6 +9474,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9452,7 +9650,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Is Can Do',
 				value: 'isCanDo',
 				action: 'Is can do doc period closing',
-				description: 'Is can do for a doc period closing',
+				description: 'Check whether the action is allowed for a doc period closing',
 			},
 		],
 		default: 'get',
@@ -9500,6 +9698,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9513,6 +9714,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9526,6 +9730,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9733,7 +9940,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Prepare',
 				value: 'prepare',
 				action: 'Prepare doc print form',
-				description: 'Prepare for a doc print form',
+				description: 'Prepare a doc print form',
 			},
 		],
 		default: 'get',
@@ -9742,6 +9949,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9872,25 +10082,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc production',
-				description: 'Lock for a doc production',
+				description: 'Lock a doc production',
 			},
 			{
 				name: 'Perform',
 				value: 'perform',
 				action: 'Perform doc production',
-				description: 'Perform a doc production',
+				description: 'Post a doc production',
 			},
 			{
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc production',
-				description: 'Cancel a performed doc production',
+				description: 'Cancel the posting of a doc production',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc production',
-				description: 'Unlock for a doc production',
+				description: 'Unlock a doc production',
 			},
 		],
 		default: 'get',
@@ -9958,6 +10168,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9971,6 +10184,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10202,6 +10418,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10215,6 +10434,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10228,6 +10450,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10241,6 +10466,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10295,7 +10523,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc purchase',
-				description: 'Lock for a doc purchase',
+				description: 'Lock a doc purchase',
 			},
 			{
 				name: 'Perform',
@@ -10313,7 +10541,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc purchase',
-				description: 'Unlock for a doc purchase',
+				description: 'Unlock a doc purchase',
 			},
 		],
 		default: 'get',
@@ -10417,6 +10645,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10430,6 +10661,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10443,6 +10677,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10856,6 +11093,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10869,6 +11109,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10946,25 +11189,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc returns to partner',
-				description: 'Lock for a doc returns to partner',
+				description: 'Lock a doc returns to partner',
 			},
 			{
 				name: 'Perform',
 				value: 'perform',
 				action: 'Perform doc returns to partner',
-				description: 'Perform a doc returns to partner',
+				description: 'Post a doc returns to partner',
 			},
 			{
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc returns to partner',
-				description: 'Cancel a performed doc returns to partner',
+				description: 'Cancel the posting of a doc returns to partner',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc returns to partner',
-				description: 'Unlock for a doc returns to partner',
+				description: 'Unlock a doc returns to partner',
 			},
 		],
 		default: 'get',
@@ -11056,6 +11299,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11069,6 +11315,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11082,6 +11331,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11398,6 +11650,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11411,6 +11666,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11488,7 +11746,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc set price',
-				description: 'Lock for a doc set price',
+				description: 'Lock a doc set price',
 			},
 			{
 				name: 'Perform',
@@ -11500,13 +11758,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc set price',
-				description: 'Cancel a performed doc set price',
+				description: 'Cancel the posting of a doc set price',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc set price',
-				description: 'Unlock for a doc set price',
+				description: 'Unlock a doc set price',
 			},
 		],
 		default: 'get',
@@ -11548,6 +11806,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11561,6 +11822,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11574,6 +11838,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11796,6 +12063,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11809,6 +12079,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11979,25 +12252,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc tech map',
-				description: 'Lock for a doc tech map',
+				description: 'Lock a doc tech map',
 			},
 			{
 				name: 'Perform',
 				value: 'perform',
 				action: 'Perform doc tech map',
-				description: 'Perform a doc tech map',
+				description: 'Post a doc tech map',
 			},
 			{
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc tech map',
-				description: 'Cancel a performed doc tech map',
+				description: 'Cancel the posting of a doc tech map',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc tech map',
-				description: 'Unlock for a doc tech map',
+				description: 'Unlock a doc tech map',
 			},
 		],
 		default: 'get',
@@ -12066,6 +12339,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12079,6 +12355,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12292,6 +12571,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12305,6 +12587,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12318,6 +12603,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12331,6 +12619,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12385,7 +12676,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc whole sale',
-				description: 'Lock for a doc whole sale',
+				description: 'Lock a doc whole sale',
 			},
 			{
 				name: 'Perform',
@@ -12397,13 +12688,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc whole sale',
-				description: 'Cancel a performed doc whole sale',
+				description: 'Cancel the posting of a doc whole sale',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc whole sale',
-				description: 'Unlock for a doc whole sale',
+				description: 'Unlock a doc whole sale',
 			},
 		],
 		default: 'get',
@@ -12507,6 +12798,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12520,6 +12814,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12533,6 +12830,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12861,6 +13161,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12874,6 +13177,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12951,25 +13257,25 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Lock',
 				value: 'lock',
 				action: 'Lock doc whole sale return',
-				description: 'Lock for a doc whole sale return',
+				description: 'Lock a doc whole sale return',
 			},
 			{
 				name: 'Perform',
 				value: 'perform',
 				action: 'Perform doc whole sale return',
-				description: 'Perform a doc whole sale return',
+				description: 'Post a doc whole sale return',
 			},
 			{
 				name: 'Perform Cancel',
 				value: 'performCancel',
 				action: 'Perform cancel doc whole sale return',
-				description: 'Cancel a performed doc whole sale return',
+				description: 'Cancel the posting of a doc whole sale return',
 			},
 			{
 				name: 'Unlock',
 				value: 'unlock',
 				action: 'Unlock doc whole sale return',
-				description: 'Unlock for a doc whole sale return',
+				description: 'Unlock a doc whole sale return',
 			},
 		],
 		default: 'get',
@@ -13061,6 +13367,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13074,6 +13383,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13087,6 +13399,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13403,6 +13718,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13416,6 +13734,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13475,7 +13796,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Reset',
 				value: 'reset',
 				action: 'Reset document enumerator',
-				description: 'Reset for a document enumerator',
+				description: 'Reset a document enumerator',
 			},
 		],
 		default: 'get',
@@ -13484,6 +13805,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13549,6 +13873,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -14034,7 +14361,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'only_deviation',
 				type: 'boolean',
 				default: false,
-				description: 'Whether only deviation is enabled',
+				description: 'Whether to return only records that deviate',
 			},
 			{
 				displayName: 'Search',
@@ -14898,6 +15225,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -15635,6 +15965,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -15900,6 +16233,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -16288,6 +16624,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -17221,6 +17560,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -17582,6 +17924,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {

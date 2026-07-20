@@ -19,7 +19,7 @@ We are building an n8n community node package for the REGOS SaaS ERP, targeting 
 ## Considered Options
 
 1. Hand-curated subset of popular resources — rejected: contradicts owner decision; endless "please add endpoint X" churn.
-2. Single `Regos` node with all 169 resources — rejected: ~9,000+ generated `INodeProperties` in one node description; real NDV performance risk; no n8n precedent (largest native nodes ≈ 25 resources); red flag in verified review.
+2. Single `Regos` node with all 175 resources — rejected: the combined node description is **1,380 top-level `INodeProperties`** (4,172 counting fields nested inside collections), measured from the generated output; real NDV performance risk; no n8n precedent (largest native nodes ≈ 25 resources); red flag in verified review. *(Corrected 2026-07-20: this ADR originally estimated "~9,000+", which overstated the real figure by roughly 6.5×.)*
 3. **Domain-split node family, fully generated** — chosen.
 
 ## Decision Outcome

@@ -75,6 +75,26 @@ describe('generator invariants', () => {
 		expect(docPurchaseGet?.fields.find((f) => f.api === 'start_date')?.kind).toBe('dateTime');
 	});
 
+	it('never requires a key on a list-shaped read (it is a filter there, not a key)', () => {
+		// REGOS marks nothing required in the swagger, so the response shape plus the verb is
+		// the only signal. Requiring a filter makes the whole search unusable in the editor.
+		const listReads = ['pos/DocCheque/get', 'pos/DocSession/get', 'Tag/Get', 'PromoProgramSetting/Get'];
+		for (const path of listReads) {
+			const op = allOps.find((o) => o.path === path);
+			expect(op, path).toBeDefined();
+			expect(op?.fields.filter((f) => f.required), path).toHaveLength(0);
+		}
+
+		// ...while a mutation on the same list-shaped envelope keeps its key.
+		const addRetailCard = allOps.find((o) => o.path === 'pos/DocCheque/AddRetailCard');
+		expect(addRetailCard?.fields.some((f) => f.required && f.api === 'uuid')).toBe(true);
+
+		// An override can opt a read back in (exercises the patch.required branch).
+		const widgetData = allOps.find((o) => o.path === 'WidgetData/Get');
+		expect(widgetData?.fields.some((f) => f.required && f.api === 'id')).toBe(true);
+		expect(widgetData?.description).toContain('widget ID');
+	});
+
 	it('marks the scalar primary key required on non-list operations', () => {
 		const accountDelete = allOps.find((op) => op.path === 'Account/Delete');
 		const id = accountDelete?.fields.find((f) => f.api === 'id');
@@ -95,6 +115,21 @@ describe('generator invariants', () => {
 		expect(allOps.find((op) => op.path === 'Item/GetExt')?.description).toContain(
 			'prices, stock quantities',
 		);
+	});
+
+	it('emits a matching top-level property for every required metadata field', async () => {
+		// The executor reads required fields with getNodeParameter(name, itemIndex) and no
+		// fallback, so a required field without a matching property throws at runtime.
+		const { generateOutputs } = await import('../scripts/generate/index.mts');
+		const outputs = await generateOutputs();
+
+		for (const node of ['Regos', 'RegosDocuments', 'RegosPos', 'RegosCrm', 'RegosReports']) {
+			const metadata = outputs.get(`nodes/${node}/generated/metadata.ts`) ?? '';
+			const properties = outputs.get(`nodes/${node}/generated/properties.ts`) ?? '';
+			const requiredInMetadata = (metadata.match(/required: true/g) ?? []).length;
+			const requiredInProperties = (properties.match(/required: true/g) ?? []).length;
+			expect(requiredInProperties, node).toBe(requiredInMetadata);
+		}
 	});
 
 	it('emits 297 trigger events (enum minus the Default sentinel) with a resolve map', () => {

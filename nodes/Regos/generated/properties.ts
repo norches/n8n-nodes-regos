@@ -362,6 +362,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -375,6 +378,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -684,6 +690,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -697,6 +706,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1110,7 +1122,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'forced',
 				type: 'boolean',
 				default: false,
-				description: 'Whether forced is enabled',
+				description: 'Whether to force the operation, ignoring soft checks',
 			},
 			{
 				displayName: 'Item ID',
@@ -1151,6 +1163,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1201,6 +1216,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1320,6 +1338,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1333,6 +1354,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1529,6 +1553,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1542,6 +1569,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1555,6 +1585,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1609,6 +1642,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1718,6 +1754,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1731,6 +1770,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -1841,13 +1883,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Check',
 				value: 'check',
 				action: 'Check connected integration',
-				description: 'Check for a connected integration',
+				description: 'Check a connected integration',
 			},
 			{
 				name: 'Disconnect',
 				value: 'disconnect',
 				action: 'Disconnect connected integration',
-				description: 'Disconnect for a connected integration',
+				description: 'Disconnect a connected integration',
 			},
 			{
 				name: 'Edit',
@@ -1871,7 +1913,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Reconnect',
 				value: 'reconnect',
 				action: 'Reconnect connected integration',
-				description: 'Reconnect for a connected integration',
+				description: 'Reconnect a connected integration',
 			},
 		],
 		default: 'get',
@@ -2068,14 +2110,14 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'include_name',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include name is enabled',
+				description: 'Whether to include names in the response',
 			},
 			{
 				displayName: 'Include Schedule',
 				name: 'include_schedule',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include schedule is enabled',
+				description: 'Whether to include schedule information',
 			},
 			{
 				displayName: 'Is Public',
@@ -2306,6 +2348,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2319,6 +2364,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2526,6 +2574,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2539,6 +2590,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2585,6 +2639,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2769,6 +2826,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2782,6 +2842,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2946,6 +3009,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -2959,6 +3025,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3117,6 +3186,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3130,6 +3202,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3288,6 +3363,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3301,6 +3379,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3630,7 +3711,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'required',
 				type: 'boolean',
 				default: false,
-				description: 'Whether required is enabled',
+				description: 'Whether the field is mandatory',
 			},
 		],
 	},
@@ -3638,6 +3719,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3651,6 +3735,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3875,6 +3962,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -3888,6 +3978,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4335,6 +4428,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4348,6 +4444,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4382,6 +4481,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4395,6 +4497,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4408,6 +4513,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4621,7 +4729,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'compress_data',
 				type: 'boolean',
 				default: false,
-				description: 'Whether compress data is enabled',
+				description: 'Whether to compress the response payload',
 			},
 			{
 				displayName: 'Firm ID',
@@ -4642,7 +4750,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'include_data',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include data is enabled',
+				description: 'Whether to include the related data in the response',
 			},
 		],
 	},
@@ -4736,6 +4844,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4749,6 +4860,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4905,6 +5019,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -4918,6 +5035,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5092,7 +5212,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Connect',
 				value: 'connect',
 				action: 'Connect integration',
-				description: 'Connect for an integration',
+				description: 'Connect an integration',
 			},
 			{
 				name: 'Delete',
@@ -5393,7 +5513,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Copy',
 				value: 'copy',
 				action: 'Copy item',
-				description: 'Copy for an item',
+				description: 'Copy an item',
 			},
 			{
 				name: 'Delete',
@@ -5422,7 +5542,7 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				name: 'Fill ICPS By Barcode',
 				value: 'fillICPSByBarcode',
-				action: 'Fill icps by barcode item',
+				action: 'Fill ICPS by barcode item',
 				description: 'Fill ICPS by barcode for an item',
 			},
 			{
@@ -5458,7 +5578,7 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				name: 'Get Packages By ICPS',
 				value: 'getPackagesByICPS',
-				action: 'Get packages by icps item',
+				action: 'Get packages by ICPS item',
 				description: 'Get packages by ICPS for an item',
 			},
 			{
@@ -5470,7 +5590,7 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				name: 'Get Quantity POS',
 				value: 'getQuantityPos',
-				action: 'Get quantity pos item',
+				action: 'Get quantity POS item',
 				description: 'Get quantity POS for an item',
 			},
 			{
@@ -5482,7 +5602,7 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				name: 'Get Without ICPS',
 				value: 'getWithoutICPS',
-				action: 'Get without icps item',
+				action: 'Get without ICPS item',
 				description: 'Get without ICPS for an item',
 			},
 			{
@@ -5495,30 +5615,30 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Match',
 				value: 'match',
 				action: 'Match item',
-				description: 'Match for an item',
+				description: 'Match an item',
 			},
 			{
 				name: 'Replace ICPS',
 				value: 'replaceIcps',
-				action: 'Replace icps item',
+				action: 'Replace ICPS item',
 				description: 'Replace ICPS for an item',
 			},
 			{
 				name: 'Search',
 				value: 'search',
 				action: 'Search item',
-				description: 'Search for an item',
+				description: 'Search an item',
 			},
 			{
 				name: 'Set ICPS',
 				value: 'setIcps',
-				action: 'Set icps item',
+				action: 'Set ICPS item',
 				description: 'Set ICPS for an item',
 			},
 			{
 				name: 'Set ICPS From Server',
 				value: 'setICPSFromServer',
-				action: 'Set icps from server item',
+				action: 'Set ICPS from server item',
 				description: 'Set ICPS from server for an item',
 			},
 			{
@@ -5861,6 +5981,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5874,6 +5997,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5914,6 +6040,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -5927,6 +6056,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -6969,14 +7101,14 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'zero_price',
 				type: 'boolean',
 				default: false,
-				description: 'Whether zero price is enabled',
+				description: 'Whether records with a zero price are included',
 			},
 			{
 				displayName: 'Zero Quantity',
 				name: 'zero_quantity',
 				type: 'boolean',
 				default: false,
-				description: 'Whether zero quantity is enabled',
+				description: 'Whether records with a zero quantity are included',
 			},
 		],
 	},
@@ -7835,6 +7967,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7848,6 +7983,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7954,7 +8092,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Save',
 				value: 'save',
 				action: 'Save item image',
-				description: 'Save for an item image',
+				description: 'Save an item image',
 			},
 		],
 		default: 'get',
@@ -7963,6 +8101,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -7990,7 +8131,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'compress_data',
 				type: 'boolean',
 				default: false,
-				description: 'Whether compress data is enabled',
+				description: 'Whether to compress the response payload',
 			},
 			{
 				displayName: 'IDs',
@@ -8005,7 +8146,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'include_data',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include data is enabled',
+				description: 'Whether to include the related data in the response',
 			},
 			{
 				displayName: 'Item IDs',
@@ -8309,6 +8450,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -8322,6 +8466,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -8335,6 +8482,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -8672,6 +8822,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -8881,6 +9034,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -8894,6 +9050,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9104,6 +9263,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9117,6 +9279,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9130,6 +9295,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9464,6 +9632,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9477,6 +9648,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9631,13 +9805,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Remove',
 				value: 'remove',
 				action: 'Remove print form type',
-				description: 'Remove for a print form type',
+				description: 'Remove a print form type',
 			},
 			{
 				name: 'Set',
 				value: 'set',
 				action: 'Set print form type',
-				description: 'Set for a print form type',
+				description: 'Set a print form type',
 			},
 		],
 		default: 'get',
@@ -9691,6 +9865,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9796,6 +9973,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -9809,6 +9989,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10031,6 +10214,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10044,6 +10230,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10284,6 +10473,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10297,6 +10489,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10453,6 +10648,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10466,6 +10664,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10676,6 +10877,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10689,6 +10893,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10974,6 +11181,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -10987,6 +11197,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11181,6 +11394,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11194,6 +11410,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11228,6 +11447,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11241,6 +11463,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11397,7 +11622,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Cleanup',
 				value: 'cleanup',
 				action: 'Cleanup storage',
-				description: 'Cleanup for a storage',
+				description: 'Cleanup a storage',
 			},
 			{
 				name: 'Get',
@@ -11543,7 +11768,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Get',
 				value: 'get',
 				action: 'Get tag',
-				description: 'Retrieve a tag by ID',
+				description: 'Retrieve tag data',
 			},
 		],
 		default: 'get',
@@ -11579,6 +11804,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11592,6 +11820,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11629,19 +11860,6 @@ export const nodeProperties: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'ID',
-		name: 'id',
-		type: 'number',
-		default: 0,
-		required: true,
-		displayOptions: {
-			show: {
-				resource: ['tag'],
-				operation: ['get'],
-			},
-		},
-	},
-	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -11654,6 +11872,12 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		},
 		options: [
+			{
+				displayName: 'ID',
+				name: 'id',
+				type: 'number',
+				default: 0,
+			},
 			{
 				displayName: 'Include Data',
 				name: 'include_data',
@@ -11690,25 +11914,25 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				name: 'Add',
 				value: 'add',
-				action: 'Add tax vat',
+				action: 'Add tax VAT',
 				description: 'Create a tax VAT',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
-				action: 'Delete tax vat',
+				action: 'Delete tax VAT',
 				description: 'Delete a tax VAT',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
-				action: 'Edit tax vat',
+				action: 'Edit tax VAT',
 				description: 'Update a tax VAT',
 			},
 			{
 				name: 'Get',
 				value: 'get',
-				action: 'Get tax vat',
+				action: 'Get tax VAT',
 				description: 'Retrieve tax VAT data',
 			},
 		],
@@ -11765,6 +11989,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11778,6 +12005,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -11960,19 +12190,19 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add unit',
-				description: 'Create an unit',
+				description: 'Create a unit',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete unit',
-				description: 'Delete an unit',
+				description: 'Delete a unit',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit unit',
-				description: 'Update an unit',
+				description: 'Update a unit',
 			},
 			{
 				name: 'Get',
@@ -12040,6 +12270,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12053,6 +12286,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12215,43 +12451,43 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add user',
-				description: 'Create an user',
+				description: 'Create a user',
 			},
 			{
 				name: 'Add Global',
 				value: 'addGlobal',
 				action: 'Add global user',
-				description: 'Add global for an user',
+				description: 'Add global for a user',
 			},
 			{
 				name: 'Add Image',
 				value: 'addImage',
 				action: 'Add image user',
-				description: 'Add image for an user',
+				description: 'Add image for a user',
 			},
 			{
 				name: 'Check Login',
 				value: 'checkLogin',
 				action: 'Check login user',
-				description: 'Check login for an user',
+				description: 'Check login for a user',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete user',
-				description: 'Delete an user',
+				description: 'Delete a user',
 			},
 			{
 				name: 'Delete Image',
 				value: 'deleteImage',
 				action: 'Delete image user',
-				description: 'Delete image for an user',
+				description: 'Delete image for a user',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit user',
-				description: 'Update an user',
+				description: 'Update a user',
 			},
 			{
 				name: 'Get',
@@ -12263,31 +12499,31 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Get Image',
 				value: 'getImage',
 				action: 'Get image user',
-				description: 'Get image for an user',
+				description: 'Get image for a user',
 			},
 			{
 				name: 'Get Permissions',
 				value: 'getPermissions',
 				action: 'Get permissions user',
-				description: 'Get permissions for an user',
+				description: 'Get permissions for a user',
 			},
 			{
 				name: 'Password Change',
 				value: 'passwordChange',
 				action: 'Password change user',
-				description: 'Password change for an user',
+				description: 'Password change for a user',
 			},
 			{
 				name: 'Phone Change',
 				value: 'phoneChange',
 				action: 'Phone change user',
-				description: 'Phone change for an user',
+				description: 'Phone change for a user',
 			},
 			{
 				name: 'Phone Change Confirm',
 				value: 'phoneChangeConfirm',
 				action: 'Phone change confirm user',
-				description: 'Phone change confirm for an user',
+				description: 'Phone change confirm for a user',
 			},
 		],
 		default: 'get',
@@ -12510,6 +12746,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12523,6 +12762,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12536,6 +12778,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -12959,7 +13204,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'compress_data',
 				type: 'boolean',
 				default: false,
-				description: 'Whether compress data is enabled',
+				description: 'Whether to compress the response payload',
 			},
 			{
 				displayName: 'IDs',
@@ -12974,7 +13219,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'include_data',
 				type: 'boolean',
 				default: false,
-				description: 'Whether include data is enabled',
+				description: 'Whether to include the related data in the response',
 			},
 			{
 				displayName: 'User ID',
@@ -13058,6 +13303,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13092,6 +13340,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13149,13 +13400,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Remove',
 				value: 'remove',
 				action: 'Remove user account',
-				description: 'Remove for an user account',
+				description: 'Remove a user account',
 			},
 			{
 				name: 'Set',
 				value: 'set',
 				action: 'Set user account',
-				description: 'Set for an user account',
+				description: 'Set a user account',
 			},
 		],
 		default: 'get',
@@ -13185,6 +13436,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13236,19 +13490,19 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Add',
 				value: 'add',
 				action: 'Add user group',
-				description: 'Create an user group',
+				description: 'Create a user group',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
 				action: 'Delete user group',
-				description: 'Delete an user group',
+				description: 'Delete a user group',
 			},
 			{
 				name: 'Edit',
 				value: 'edit',
 				action: 'Edit user group',
-				description: 'Update an user group',
+				description: 'Update a user group',
 			},
 			{
 				name: 'Get',
@@ -13290,6 +13544,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13303,6 +13560,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13391,13 +13651,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Remove',
 				value: 'remove',
 				action: 'Remove user group role',
-				description: 'Remove for an user group role',
+				description: 'Remove a user group role',
 			},
 			{
 				name: 'Set',
 				value: 'set',
 				action: 'Set user group role',
-				description: 'Set for an user group role',
+				description: 'Set a user group role',
 			},
 		],
 		default: 'get',
@@ -13427,6 +13687,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13484,7 +13747,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Set',
 				value: 'set',
 				action: 'Set user notify',
-				description: 'Set for an user notify',
+				description: 'Set a user notify',
 			},
 		],
 		default: 'get',
@@ -13525,7 +13788,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Get Ext',
 				value: 'getExt',
 				action: 'Get ext user permission',
-				description: 'Get ext for an user permission',
+				description: 'Get ext for a user permission',
 			},
 		],
 		default: 'getExt',
@@ -13578,13 +13841,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Remove',
 				value: 'remove',
 				action: 'Remove user role',
-				description: 'Remove for an user role',
+				description: 'Remove a user role',
 			},
 			{
 				name: 'Set',
 				value: 'set',
 				action: 'Set user role',
-				description: 'Set for an user role',
+				description: 'Set a user role',
 			},
 		],
 		default: 'get',
@@ -13614,6 +13877,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13671,13 +13937,13 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Remove',
 				value: 'remove',
 				action: 'Remove user stock',
-				description: 'Remove for an user stock',
+				description: 'Remove a user stock',
 			},
 			{
 				name: 'Set',
 				value: 'set',
 				action: 'Set user stock',
-				description: 'Set for an user stock',
+				description: 'Set a user stock',
 			},
 		],
 		default: 'get',
@@ -13707,6 +13973,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -13808,7 +14077,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'Status',
 				value: 'status',
 				action: 'Status work attendance',
-				description: 'Status for a work attendance',
+				description: 'Status a work attendance',
 			},
 		],
 		default: 'breakEnd',
@@ -14075,7 +14344,7 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'is_account_default',
 				type: 'boolean',
 				default: false,
-				description: 'Whether is account default is enabled',
+				description: 'Whether account default is enabled',
 			},
 			{
 				displayName: 'Name',
@@ -14109,6 +14378,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -14122,6 +14394,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -14336,6 +14611,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -14447,12 +14725,15 @@ export const nodeProperties: INodeProperties[] = [
 				description: 'Set users for a work schedule assignment',
 			},
 		],
-		default: 'deleteGroup',
+		default: 'getGroups',
 	},
 	{
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
@@ -14466,6 +14747,9 @@ export const nodeProperties: INodeProperties[] = [
 		displayName: 'ID',
 		name: 'id',
 		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
 		default: 0,
 		required: true,
 		displayOptions: {
