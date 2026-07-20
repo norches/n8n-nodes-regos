@@ -7,6 +7,11 @@ name: Scan published package
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to scan (blank = latest)'
+        required: false
+        default: ''
 
 jobs:
   scan:
@@ -18,4 +23,7 @@ jobs:
           node-version: 'lts/*'
 
       - name: Scan
-        run: npx -y @n8n/scan-community-package n8n-nodes-regos
+        run: |
+          SPEC="n8n-nodes-regos${{ inputs.version && format('@{0}', inputs.version) || '' }}"
+          echo "Scanning $SPEC"
+          npx -y @n8n/scan-community-package "$SPEC"
