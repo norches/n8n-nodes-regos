@@ -25,10 +25,15 @@ All 920 operations across 5 action nodes (plus the trigger's Resolve Data / GetW
 ### Transport
 
 - Always `POST`, `Content-Type: application/json;charset=utf-8`.
-- The request helper calls `this.helpers.httpRequest` directly with a single documented
-  `eslint-disable` for `@n8n/community-nodes/no-http-request-with-manual-auth`: REGOS auth is the
-  integration key embedded in the URL path, so there is nothing a credential `authenticate` block
-  could inject and `httpRequestWithAuthentication` is not applicable.
+- Requests go through `this.helpers.httpRequestWithAuthentication('regosApi', options)`. The
+  credential is still read directly to build the gateway URL — the integration key is a path
+  segment, which no `authenticate` block can inject — but the request itself stays on the
+  authenticated helper so credential handling remains n8n's.
+  - *Amended 2026-07-20:* the first attempt used plain `httpRequest` with an `eslint-disable` for
+    `@n8n/community-nodes/no-http-request-with-manual-auth`. `@n8n/scan-community-package` lints
+    with inline configs disabled, so the suppression was void and verification failed. The
+    credential now carries a minimal `authenticate` block (Content-Type only) and the helper call
+    satisfies the rule as written.
 - URL = `{baseUrl}/{integrationKey}/v1/{literal path}` — path strings come only from the generated metadata map, preserving **literal swagger casing** (`/Item/Get`, but `/batch` and all `/pos/*` endpoints keep their lowercase prefix and mixed-case actions). Casing is never normalized anywhere.
 
 ### Envelope and errors

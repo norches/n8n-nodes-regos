@@ -22,13 +22,16 @@ function mockContext(responses: Array<unknown | Error>) {
 			baseUrl: 'https://integration.regos.uz/gateway/out',
 		})),
 		helpers: {
-			httpRequest: vi.fn(async (options: { url: string; body: unknown }) => {
-				calls.push({ url: options.url, body: options.body });
-				const response = responses[Math.min(index, responses.length - 1)];
-				index += 1;
-				if (response instanceof Error) throw response;
-				return response;
-			}),
+			httpRequestWithAuthentication: vi.fn(
+				async (credentialType: string, options: { url: string; body: unknown }) => {
+					expect(credentialType).toBe('regosApi');
+					calls.push({ url: options.url, body: options.body });
+					const response = responses[Math.min(index, responses.length - 1)];
+					index += 1;
+					if (response instanceof Error) throw response;
+					return response;
+				},
+			),
 		},
 	};
 }
@@ -81,13 +84,13 @@ describe('regosApiRequest', () => {
 		]);
 		const envelope = await regosApiRequest.call(ctx as never, 'Item/Get', {});
 		expect(envelope.ok).toBe(true);
-		expect(ctx.helpers.httpRequest).toHaveBeenCalledTimes(2);
+		expect(ctx.helpers.httpRequestWithAuthentication).toHaveBeenCalledTimes(2);
 	}, 15_000);
 
 	it('gives up after bounded attempts on persistent 8213', async () => {
 		const ctx = mockContext([{ ok: false, result: { error: 8213, description: 'rate limited' } }]);
 		await expect(regosApiRequest.call(ctx as never, 'Item/Get', {})).rejects.toThrow(/after 5 attempts/);
-		expect(ctx.helpers.httpRequest).toHaveBeenCalledTimes(5);
+		expect(ctx.helpers.httpRequestWithAuthentication).toHaveBeenCalledTimes(5);
 	}, 60_000);
 });
 
@@ -99,7 +102,7 @@ describe('regosApiRequestAllItems', () => {
 		]);
 		const items = await regosApiRequestAllItems.call(ctx as never, 'Item/Get', {});
 		expect(items).toHaveLength(3);
-		expect(ctx.helpers.httpRequest).toHaveBeenCalledTimes(2);
+		expect(ctx.helpers.httpRequestWithAuthentication).toHaveBeenCalledTimes(2);
 	});
 
 	it('stops on an empty page', async () => {

@@ -90,7 +90,7 @@ export async function regosApiRequest(
 	const options: IHttpRequestOptions = {
 		method: 'POST',
 		url,
-		headers: { 'Content-Type': 'application/json;charset=utf-8' },
+		// Content-Type comes from the credential's authenticate block.
 		// Serialized by us, not by the helper: n8n's httpRequest drops empty-object bodies
 		// entirely, but REGOS requires a JSON body ("{}") on every call.
 		body: JSON.stringify(body),
@@ -120,11 +120,14 @@ export async function regosApiRequest(
 
 		let response: RegosEnvelope;
 		try {
-			// REGOS auth is the integration key embedded in the URL path — there is nothing an
-			// `authenticate` block could inject, so httpRequestWithAuthentication is not applicable.
-			// Recorded in ADR-0004.
-			// eslint-disable-next-line @n8n/community-nodes/no-http-request-with-manual-auth
-			response = (await this.helpers.httpRequest(options)) as RegosEnvelope;
+			// The credential is read above only to build the gateway URL (the integration key is a
+			// path segment); the request itself goes through the authenticated helper so credential
+			// handling stays with n8n. See ADR-0004.
+			response = (await this.helpers.httpRequestWithAuthentication.call(
+				this,
+				'regosApi',
+				options,
+			)) as RegosEnvelope;
 		} catch (error) {
 			lastError = error;
 			if (isRetryableHttpError(error)) continue;

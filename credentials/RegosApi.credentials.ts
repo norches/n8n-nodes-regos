@@ -1,4 +1,10 @@
-import type { Icon, ICredentialTestRequest, ICredentialType, INodeProperties } from 'n8n-workflow';
+import type {
+	Icon,
+	IAuthenticateGeneric,
+	ICredentialTestRequest,
+	ICredentialType,
+	INodeProperties,
+} from 'n8n-workflow';
 
 export class RegosApi implements ICredentialType {
 	name = 'regosApi';
@@ -28,6 +34,18 @@ export class RegosApi implements ICredentialType {
 			description: 'Gateway base URL. Only change this if REGOS gives you a different gateway host.',
 		},
 	];
+
+	// The REGOS gateway authenticates by the integration key embedded in the URL path, which
+	// nodes build from `baseUrl` + `integrationKey` above. Nothing can be injected into the
+	// path from here, so this block only carries the content type REGOS requires on every call.
+	authenticate: IAuthenticateGeneric = {
+		type: 'generic',
+		properties: {
+			headers: {
+				'Content-Type': 'application/json;charset=utf-8',
+			},
+		},
+	};
 
 	// REGOS returns application errors as HTTP 200 with { ok: false, result: { error, description } },
 	// so the test must fail on ok:false, not only on HTTP errors.
