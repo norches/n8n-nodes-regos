@@ -9,8 +9,9 @@
 | [0003](0003-trigger-node-design.md) | Trigger node design | Accepted | 2026-07-18 |
 | [0004](0004-regos-api-client-conventions.md) | REGOS API client conventions | Accepted | 2026-07-18 |
 | [0005](0005-codegen-pipeline-and-implementation-style.md) | Codegen pipeline and programmatic implementation style | Accepted | 2026-07-18 |
+| [0006](0006-consolidate-to-single-action-node.md) | Consolidate the action-node family into a single node | Accepted | 2026-07-22 |
 
-Read [ADR-0001](0001-project-scope-and-architecture.md) first — it frames everything else.
+Read [ADR-0001](0001-project-scope-and-architecture.md) first — it frames everything else. Note its node-family decision is superseded by [ADR-0006](0006-consolidate-to-single-action-node.md) (one action node, not five).
 
 ## Process
 

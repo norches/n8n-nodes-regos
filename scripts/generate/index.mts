@@ -88,12 +88,10 @@ const SPEC_PATH = join(ROOT, 'openapi', 'regos_api_swagger.json');
 const DOMAINS_PATH = join(HERE, 'domains.json');
 const OVERRIDES_DIR = join(HERE, 'overrides');
 
+// One regular node per package (n8n verified-node rule): every REGOS resource is a
+// Resource on the single Regos node. See ADR-0006 (supersedes ADR-0001's node family).
 const NODE_DIRS: Record<string, string> = {
 	Regos: 'nodes/Regos/generated',
-	RegosDocuments: 'nodes/RegosDocuments/generated',
-	RegosPos: 'nodes/RegosPos/generated',
-	RegosCrm: 'nodes/RegosCrm/generated',
-	RegosReports: 'nodes/RegosReports/generated',
 };
 
 const GENERATED_HEADER =

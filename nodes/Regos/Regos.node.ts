@@ -20,7 +20,8 @@ export class Regos implements INodeType {
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Core REGOS ERP master data: items, partners, accounts, dictionaries, batch calls',
+		description:
+			'REGOS SaaS ERP: items, partners, accounts, documents, POS, CRM, reports and batch calls — full REGOS Public API surface',
 		defaults: { name: 'Regos' },
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],

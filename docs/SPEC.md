@@ -14,15 +14,11 @@ Living document. Facts about *what* we build live here; *why* lives in [docs/adr
 
 ## Deliverables
 
-Node family (reasoning: [ADR-0001](adr/0001-project-scope-and-architecture.md)):
+Nodes (one action node + one trigger; reasoning: [ADR-0006](adr/0006-consolidate-to-single-action-node.md), which supersedes ADR-0001's five-node family):
 
 | Node | Contents |
 |---|---|
-| `Regos` | Core master data (Item, Partner, Account, dictionaries) + Batch + utility (CurrentTimeStamp, Event, Webhook info) |
-| `Regos Documents` | All `Doc*` document families + their `*Operation` counterparts |
-| `Regos POS` | `/pos/*` (51 endpoints) + Cheque/Session families |
-| `Regos CRM` | Lead, Deal, Chat, ChatMessage, Ticket, Campaign, Channel, Client, loyalty/bonus |
-| `Regos Reports` | Report/analytics, ActionLog |
+| `Regos` | The full REGOS Public API — all 175 resources as Resources: core master data + dictionaries, `Doc*` families + their `*Operation` counterparts, `/pos/*`, CRM/loyalty, reports/analytics/logs — plus a hand-written **Batch** resource |
 | `Regos Trigger` | Webhook trigger, 298-event selector ([ADR-0003](adr/0003-trigger-node-design.md)) |
 
 One credential: `RegosApi` — masked `integrationKey` + `baseUrl`, test via `/CurrentTimeStamp/Get` ([ADR-0005](adr/0005-codegen-pipeline-and-implementation-style.md)).
@@ -57,10 +53,10 @@ n8n verified-program requirements (details in [CLAUDE.md](../CLAUDE.md) and [ADR
 1. `npm run lint` and `npx @n8n/scan-community-package` pass.
 2. `npm run generate --check` proves committed generated output matches `openapi/regos_api_swagger.json`.
 3. Unit tests green (executor, helpers, generator invariants, trigger normalization).
-4. Package installs into self-hosted n8n via community-nodes UI; all 6 nodes appear; credential test works against a real gateway key.
+4. Package installs into self-hosted n8n via community-nodes UI; both nodes (Regos + Regos Trigger) appear; credential test works against a real gateway key.
 5. Published to npm with provenance via GitHub Actions.
 6. Submitted through the n8n Creator Portal.
 
 ## Decision log
 
-See [docs/adr/README.md](adr/README.md) — ADR-0001…0005 accepted 2026-07-18.
+See [docs/adr/README.md](adr/README.md) — ADR-0001…0005 accepted 2026-07-18; [ADR-0006](adr/0006-consolidate-to-single-action-node.md) (single action node) accepted 2026-07-22.

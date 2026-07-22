@@ -2,7 +2,7 @@
 	"node": "n8n-nodes-regos.regos",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
-	"categories": ["Sales", "Finance & Accounting"],
+	"categories": ["Sales", "Finance & Accounting", "Marketing", "Analytics"],
 	"resources": {
 		"credentialDocumentation": [
 			{ "url": "https://github.com/norches/n8n-nodes-regos?tab=readme-ov-file#credentials" }

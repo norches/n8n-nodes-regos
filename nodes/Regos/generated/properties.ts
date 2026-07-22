@@ -21,6 +21,10 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'accountOperationCategory',
 			},
 			{
+				name: 'Action Log',
+				value: 'actionLog',
+			},
+			{
 				name: 'Application Setting',
 				value: 'applicationSetting',
 			},
@@ -41,12 +45,52 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'brand',
 			},
 			{
+				name: 'Campaign',
+				value: 'campaign',
+			},
+			{
+				name: 'Cash Operation',
+				value: 'cashOperation',
+			},
+			{
 				name: 'Cash Server',
 				value: 'cashServer',
 			},
 			{
+				name: 'Channel',
+				value: 'channel',
+			},
+			{
+				name: 'Chat',
+				value: 'chat',
+			},
+			{
+				name: 'Chat Message',
+				value: 'chatMessage',
+			},
+			{
+				name: 'Cheque Item Operation',
+				value: 'chequeItemOperation',
+			},
+			{
+				name: 'Cheque Operation',
+				value: 'chequeOperation',
+			},
+			{
+				name: 'Cheque Payment Operation',
+				value: 'chequePaymentOperation',
+			},
+			{
+				name: 'Client',
+				value: 'client',
+			},
+			{
 				name: 'Color',
 				value: 'color',
+			},
+			{
+				name: 'Commercial Offer Operation',
+				value: 'commercialOfferOperation',
 			},
 			{
 				name: 'Connected Integration',
@@ -69,6 +113,22 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'currentTimeStamp',
 			},
 			{
+				name: 'Customer Personal Document',
+				value: 'customerPersonalDocument',
+			},
+			{
+				name: 'Dashboard',
+				value: 'dashboard',
+			},
+			{
+				name: 'Deal',
+				value: 'deal',
+			},
+			{
+				name: 'Deal Type',
+				value: 'dealType',
+			},
+			{
 				name: 'Delivery Courier',
 				value: 'deliveryCourier',
 			},
@@ -85,12 +145,152 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'department',
 			},
 			{
+				name: 'Doc Account Movement',
+				value: 'docAccountMovement',
+			},
+			{
+				name: 'Doc Additional Expense',
+				value: 'docAdditionalExpenses',
+			},
+			{
+				name: 'Doc Additional Expenses Operation',
+				value: 'docAdditionalExpensesOperation',
+			},
+			{
+				name: 'Doc Cash Session',
+				value: 'docCashSession',
+			},
+			{
+				name: 'Doc Cheque',
+				value: 'docCheque',
+			},
+			{
+				name: 'Doc Commercial Offer',
+				value: 'docCommercialOffer',
+			},
+			{
+				name: 'Doc Contract',
+				value: 'docContract',
+			},
+			{
+				name: 'Doc Contract File',
+				value: 'docContractFile',
+			},
+			{
+				name: 'Doc In Out',
+				value: 'docInOut',
+			},
+			{
+				name: 'Doc Inventory',
+				value: 'docInventory',
+			},
+			{
+				name: 'Doc Invoice',
+				value: 'docInvoice',
+			},
+			{
+				name: 'Doc Movement',
+				value: 'docMovement',
+			},
+			{
+				name: 'Doc Opening Balance',
+				value: 'docOpeningBalance',
+			},
+			{
+				name: 'Doc Order Delivery',
+				value: 'docOrderDelivery',
+			},
+			{
+				name: 'Doc Order From Partner',
+				value: 'docOrderFromPartner',
+			},
+			{
+				name: 'Doc Order To Movement',
+				value: 'docOrderToMovement',
+			},
+			{
+				name: 'Doc Order To Partner',
+				value: 'docOrderToPartner',
+			},
+			{
+				name: 'Doc Payment',
+				value: 'docPayment',
+			},
+			{
+				name: 'Doc Payment Aggregation',
+				value: 'docPaymentAggregation',
+			},
+			{
+				name: 'Doc Period Closing',
+				value: 'docPeriodClosing',
+			},
+			{
+				name: 'Doc Print Form',
+				value: 'docPrintForm',
+			},
+			{
+				name: 'Doc Production',
+				value: 'docProduction',
+			},
+			{
+				name: 'Doc Purchase',
+				value: 'docPurchase',
+			},
+			{
+				name: 'Doc Returns To Partner',
+				value: 'docReturnsToPartner',
+			},
+			{
+				name: 'Doc Set Price',
+				value: 'docSetPrice',
+			},
+			{
+				name: 'Doc Stock Aggregation',
+				value: 'docStockAggregation',
+			},
+			{
+				name: 'Doc Tech Map',
+				value: 'docTechMap',
+			},
+			{
+				name: 'Doc Whole Sale',
+				value: 'docWholeSale',
+			},
+			{
+				name: 'Doc Whole Sale Return',
+				value: 'docWholeSaleReturn',
+			},
+			{
+				name: 'Document Enumerator',
+				value: 'documentEnumerator',
+			},
+			{
+				name: 'Document Status',
+				value: 'documentStatus',
+			},
+			{
+				name: 'Document Type',
+				value: 'documentType',
+			},
+			{
+				name: 'Edited Exchange Rate Log',
+				value: 'editedExchangeRateLog',
+			},
+			{
 				name: 'Entity Type',
 				value: 'entityType',
 			},
 			{
 				name: 'Event',
 				value: 'event',
+			},
+			{
+				name: 'Fast Group',
+				value: 'fastGroup',
+			},
+			{
+				name: 'Fast Item',
+				value: 'fastItem',
 			},
 			{
 				name: 'Field',
@@ -117,6 +317,10 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'folder',
 			},
 			{
+				name: 'In Out Operation',
+				value: 'inOutOperation',
+			},
+			{
 				name: 'Integration',
 				value: 'integration',
 			},
@@ -127,6 +331,14 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				name: 'Integration Webhook',
 				value: 'integrationWebhook',
+			},
+			{
+				name: 'Inventory Operation',
+				value: 'inventoryOperation',
+			},
+			{
+				name: 'Invoice Operation',
+				value: 'invoiceOperation',
 			},
 			{
 				name: 'Item',
@@ -141,12 +353,48 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'itemImage',
 			},
 			{
+				name: 'Item Operation',
+				value: 'itemOperation',
+			},
+			{
 				name: 'Item Price',
 				value: 'itemPrice',
 			},
 			{
+				name: 'Item Price Log',
+				value: 'itemPriceLog',
+			},
+			{
 				name: 'Language',
 				value: 'language',
+			},
+			{
+				name: 'Lead',
+				value: 'lead',
+			},
+			{
+				name: 'Movement Operation',
+				value: 'movementOperation',
+			},
+			{
+				name: 'Operating Cash',
+				value: 'operatingCash',
+			},
+			{
+				name: 'Order Delivery Operation',
+				value: 'orderDeliveryOperation',
+			},
+			{
+				name: 'Order From Partner Operation',
+				value: 'orderFromPartnerOperation',
+			},
+			{
+				name: 'Order To Movement Operation',
+				value: 'orderToMovementOperation',
+			},
+			{
+				name: 'Order To Partner Operation',
+				value: 'orderToPartnerOperation',
 			},
 			{
 				name: 'Partner',
@@ -169,6 +417,34 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'permissionGroup',
 			},
 			{
+				name: 'Personal Doc Type',
+				value: 'personalDocType',
+			},
+			{
+				name: 'Pipeline',
+				value: 'pipeline',
+			},
+			{
+				name: 'POS Cash Operation',
+				value: 'posCashOperation',
+			},
+			{
+				name: 'POS Doc Cheque',
+				value: 'posDocCheque',
+			},
+			{
+				name: 'POS Doc Order Delivery',
+				value: 'posDocOrderDelivery',
+			},
+			{
+				name: 'POS Doc Session',
+				value: 'posDocSession',
+			},
+			{
+				name: 'POS Operating Cash',
+				value: 'posOperatingCash',
+			},
+			{
 				name: 'Price Type',
 				value: 'priceType',
 			},
@@ -181,6 +457,46 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'producer',
 			},
 			{
+				name: 'Production Operation',
+				value: 'productionOperation',
+			},
+			{
+				name: 'Project',
+				value: 'project',
+			},
+			{
+				name: 'Project Task',
+				value: 'projectTask',
+			},
+			{
+				name: 'Promo Bonus',
+				value: 'promoBonus',
+			},
+			{
+				name: 'Promo Program',
+				value: 'promoProgram',
+			},
+			{
+				name: 'Promo Program Setting',
+				value: 'promoProgramSetting',
+			},
+			{
+				name: 'Promo Program Stock',
+				value: 'promoProgramStock',
+			},
+			{
+				name: 'Promo Program Type',
+				value: 'promoProgramType',
+			},
+			{
+				name: 'Purchase Operation',
+				value: 'purchaseOperation',
+			},
+			{
+				name: 'Quick Reply',
+				value: 'quickReply',
+			},
+			{
 				name: 'Redefinition',
 				value: 'redefinition',
 			},
@@ -189,8 +505,56 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'region',
 			},
 			{
+				name: 'Report',
+				value: 'report',
+			},
+			{
+				name: 'Report Prepared',
+				value: 'reportPrepared',
+			},
+			{
+				name: 'Report Request',
+				value: 'reportRequest',
+			},
+			{
+				name: 'Retail Card',
+				value: 'retailCard',
+			},
+			{
+				name: 'Retail Card Group',
+				value: 'retailCardGroup',
+			},
+			{
+				name: 'Retail Card Migration',
+				value: 'retailCardMigration',
+			},
+			{
+				name: 'Retail Customer',
+				value: 'retailCustomer',
+			},
+			{
+				name: 'Retail Customer Group',
+				value: 'retailCustomerGroup',
+			},
+			{
+				name: 'Retail Operation List',
+				value: 'retailOperationList',
+			},
+			{
+				name: 'Retail Payment Report',
+				value: 'retailPaymentReport',
+			},
+			{
+				name: 'Retail Report',
+				value: 'retailReport',
+			},
+			{
 				name: 'Retail Return Reason',
 				value: 'retailReturnReason',
+			},
+			{
+				name: 'Returns To Partner Operation',
+				value: 'returnsToPartnerOperation',
 			},
 			{
 				name: 'Role',
@@ -201,12 +565,28 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'rolePermission',
 			},
 			{
+				name: 'Session',
+				value: 'session',
+			},
+			{
+				name: 'Set Price Operation',
+				value: 'setPriceOperation',
+			},
+			{
 				name: 'Size Chart',
 				value: 'sizeChart',
 			},
 			{
+				name: 'SMS',
+				value: 'sms',
+			},
+			{
 				name: 'Stock',
 				value: 'stock',
+			},
+			{
+				name: 'Stock Agregation Operation',
+				value: 'stockAgregationOperation',
 			},
 			{
 				name: 'Storage',
@@ -225,8 +605,28 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'tag',
 			},
 			{
+				name: 'Target',
+				value: 'target',
+			},
+			{
+				name: 'Target Setting',
+				value: 'targetSetting',
+			},
+			{
+				name: 'Target Type',
+				value: 'targetType',
+			},
+			{
 				name: 'Tax VAT',
 				value: 'taxVat',
+			},
+			{
+				name: 'Tech Map Operation',
+				value: 'techMapOperation',
+			},
+			{
+				name: 'Ticket',
+				value: 'ticket',
 			},
 			{
 				name: 'Translation',
@@ -245,6 +645,10 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'userAccount',
 			},
 			{
+				name: 'User Dashboard',
+				value: 'userDashboard',
+			},
+			{
 				name: 'User Group',
 				value: 'userGroup',
 			},
@@ -255,6 +659,10 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				name: 'User Notify',
 				value: 'userNotify',
+			},
+			{
+				name: 'User Operating Cash',
+				value: 'userOperatingCash',
 			},
 			{
 				name: 'User Permission',
@@ -271,6 +679,26 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				name: 'Webhook',
 				value: 'webhook',
+			},
+			{
+				name: 'Whole Sale Operation',
+				value: 'wholeSaleOperation',
+			},
+			{
+				name: 'Whole Sale Return Operation',
+				value: 'wholeSaleReturnOperation',
+			},
+			{
+				name: 'Widget',
+				value: 'widget',
+			},
+			{
+				name: 'Widget Data',
+				value: 'widgetData',
+			},
+			{
+				name: 'Widget Type',
+				value: 'widgetType',
 			},
 			{
 				name: 'Work Attendance',
@@ -841,6 +1269,643 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'sort_orders',
 				type: 'json',
 				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['actionLog'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get action log',
+				description: 'Retrieve many action log records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['actionLog'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['actionLog'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['actionLog'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Entity ID',
+				name: 'entity_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Entity Type',
+				name: 'entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Access App',
+						value: 'AccessApp',
+					},
+					{
+						name: 'Access Token',
+						value: 'AccessToken',
+					},
+					{
+						name: 'Account',
+						value: 'Account',
+					},
+					{
+						name: 'Account Operation Category',
+						value: 'AccountOperationCategory',
+					},
+					{
+						name: 'Barcode',
+						value: 'Barcode',
+					},
+					{
+						name: 'Brand',
+						value: 'Brand',
+					},
+					{
+						name: 'Campaign',
+						value: 'Campaign',
+					},
+					{
+						name: 'Cash Server',
+						value: 'CashServer',
+					},
+					{
+						name: 'Channel',
+						value: 'Channel',
+					},
+					{
+						name: 'Channel Interval',
+						value: 'ChannelInterval',
+					},
+					{
+						name: 'Channel Operator',
+						value: 'ChannelOperator',
+					},
+					{
+						name: 'Chat',
+						value: 'Chat',
+					},
+					{
+						name: 'Chat Message',
+						value: 'ChatMessage',
+					},
+					{
+						name: 'Client',
+						value: 'Client',
+					},
+					{
+						name: 'Color',
+						value: 'Color',
+					},
+					{
+						name: 'Commercial Offer Operation',
+						value: 'CommercialOfferOperation',
+					},
+					{
+						name: 'Country',
+						value: 'Country',
+					},
+					{
+						name: 'Currency',
+						value: 'Currency',
+					},
+					{
+						name: 'Customer Personal Document',
+						value: 'CustomerPersonalDocument',
+					},
+					{
+						name: 'Dashboard',
+						value: 'Dashboard',
+					},
+					{
+						name: 'Deal',
+						value: 'Deal',
+					},
+					{
+						name: 'Deal Type',
+						value: 'DealType',
+					},
+					{
+						name: 'Deal User',
+						value: 'DealUser',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Delivery Courier',
+						value: 'DeliveryCourier',
+					},
+					{
+						name: 'Delivery From',
+						value: 'DeliveryFrom',
+					},
+					{
+						name: 'Delivery Type',
+						value: 'DeliveryType',
+					},
+					{
+						name: 'Department',
+						value: 'Department',
+					},
+					{
+						name: 'Doc Account Movement',
+						value: 'DocAccountMovement',
+					},
+					{
+						name: 'Doc Additional Expenses',
+						value: 'DocAdditionalExpenses',
+					},
+					{
+						name: 'Doc Additional Expenses Operation',
+						value: 'DocAdditionalExpensesOperation',
+					},
+					{
+						name: 'Doc Commercial Offer',
+						value: 'DocCommercialOffer',
+					},
+					{
+						name: 'Doc Contract',
+						value: 'DocContract',
+					},
+					{
+						name: 'Doc Contract File',
+						value: 'DocContractFile',
+					},
+					{
+						name: 'Doc Enumerator',
+						value: 'DocEnumerator',
+					},
+					{
+						name: 'Doc In Out',
+						value: 'DocInOut',
+					},
+					{
+						name: 'Doc Inventory',
+						value: 'DocInventory',
+					},
+					{
+						name: 'Doc Movement',
+						value: 'DocMovement',
+					},
+					{
+						name: 'Doc Opening Balance',
+						value: 'DocOpeningBalance',
+					},
+					{
+						name: 'Doc Order From Partner',
+						value: 'DocOrderFromPartner',
+					},
+					{
+						name: 'Doc Order To Movement',
+						value: 'DocOrderToMovement',
+					},
+					{
+						name: 'Doc Order To Partner',
+						value: 'DocOrderToPartner',
+					},
+					{
+						name: 'Doc Payment',
+						value: 'DocPayment',
+					},
+					{
+						name: 'Doc Payment Aggregation',
+						value: 'DocPaymentAggregation',
+					},
+					{
+						name: 'Doc Period Closing',
+						value: 'DocPeriodClosing',
+					},
+					{
+						name: 'Doc Print Form',
+						value: 'DocPrintForm',
+					},
+					{
+						name: 'Doc Purchase',
+						value: 'DocPurchase',
+					},
+					{
+						name: 'Doc Returns To Partner',
+						value: 'DocReturnsToPartner',
+					},
+					{
+						name: 'Doc Set Price',
+						value: 'DocSetPrice',
+					},
+					{
+						name: 'Doc Stock Aggregation',
+						value: 'DocStockAggregation',
+					},
+					{
+						name: 'Doc Whole Sale',
+						value: 'DocWholeSale',
+					},
+					{
+						name: 'Doc Whole Sale Return',
+						value: 'DocWholeSaleReturn',
+					},
+					{
+						name: 'Field',
+						value: 'Field',
+					},
+					{
+						name: 'Firm',
+						value: 'Firm',
+					},
+					{
+						name: 'Firm Group',
+						value: 'FirmGroup',
+					},
+					{
+						name: 'In Out Operation',
+						value: 'InOutOperation',
+					},
+					{
+						name: 'Inventory Operation',
+						value: 'InventoryOperation',
+					},
+					{
+						name: 'Invoice Operation',
+						value: 'InvoiceOperation',
+					},
+					{
+						name: 'Item',
+						value: 'Item',
+					},
+					{
+						name: 'Item Group',
+						value: 'ItemGroup',
+					},
+					{
+						name: 'Lead',
+						value: 'Lead',
+					},
+					{
+						name: 'Lead User',
+						value: 'LeadUser',
+					},
+					{
+						name: 'Mention',
+						value: 'Mention',
+					},
+					{
+						name: 'Movement Operation',
+						value: 'MovementOperation',
+					},
+					{
+						name: 'Operating Cash',
+						value: 'OperatingCash',
+					},
+					{
+						name: 'Operating Cash Accepted',
+						value: 'OperatingCashAccepted',
+					},
+					{
+						name: 'Operating Cash Receipt Template',
+						value: 'OperatingCashReceiptTemplate',
+					},
+					{
+						name: 'Order Delivery Operation',
+						value: 'OrderDeliveryOperation',
+					},
+					{
+						name: 'Order From Partner Operation',
+						value: 'OrderFromPartnerOperation',
+					},
+					{
+						name: 'Order To Movement Operation',
+						value: 'OrderToMovementOperation',
+					},
+					{
+						name: 'Order To Partner Operation',
+						value: 'OrderToPartnerOperation',
+					},
+					{
+						name: 'Partner',
+						value: 'Partner',
+					},
+					{
+						name: 'Partner Group',
+						value: 'PartnerGroup',
+					},
+					{
+						name: 'Payment Type',
+						value: 'PaymentType',
+					},
+					{
+						name: 'Personal Doc Type',
+						value: 'PersonalDocType',
+					},
+					{
+						name: 'Pipeline',
+						value: 'Pipeline',
+					},
+					{
+						name: 'Pipeline Group',
+						value: 'PipelineGroup',
+					},
+					{
+						name: 'Pipeline Stage',
+						value: 'PipelineStage',
+					},
+					{
+						name: 'Pipeline User',
+						value: 'PipelineUser',
+					},
+					{
+						name: 'Price Type',
+						value: 'PriceType',
+					},
+					{
+						name: 'Producer',
+						value: 'Producer',
+					},
+					{
+						name: 'Production Operation',
+						value: 'ProductionOperation',
+					},
+					{
+						name: 'Project',
+						value: 'Project',
+					},
+					{
+						name: 'Promo Program',
+						value: 'PromoProgram',
+					},
+					{
+						name: 'Purchase Operation',
+						value: 'PurchaseOperation',
+					},
+					{
+						name: 'Quick Reply',
+						value: 'QuickReply',
+					},
+					{
+						name: 'Redefinition',
+						value: 'Redefinition',
+					},
+					{
+						name: 'Region',
+						value: 'Region',
+					},
+					{
+						name: 'Report',
+						value: 'Report',
+					},
+					{
+						name: 'Retail Card',
+						value: 'RetailCard',
+					},
+					{
+						name: 'Retail Card Group',
+						value: 'RetailCardGroup',
+					},
+					{
+						name: 'Retail Card Migration Task',
+						value: 'RetailCardMigrationTask',
+					},
+					{
+						name: 'Retail Customer',
+						value: 'RetailCustomer',
+					},
+					{
+						name: 'Retail Customer Group',
+						value: 'RetailCustomerGroup',
+					},
+					{
+						name: 'Retail Return Reason',
+						value: 'RetailReturnReason',
+					},
+					{
+						name: 'Returns To Partner Operation',
+						value: 'ReturnsToPartnerOperation',
+					},
+					{
+						name: 'Role',
+						value: 'Role',
+					},
+					{
+						name: 'Role Permission',
+						value: 'RolePermission',
+					},
+					{
+						name: 'Set Price Operation',
+						value: 'SetPriceOperation',
+					},
+					{
+						name: 'Size Chart',
+						value: 'SizeChart',
+					},
+					{
+						name: 'Stock',
+						value: 'Stock',
+					},
+					{
+						name: 'Stock Agregation Operation',
+						value: 'StockAgregationOperation',
+					},
+					{
+						name: 'Sys Config',
+						value: 'SysConfig',
+					},
+					{
+						name: 'Target',
+						value: 'Target',
+					},
+					{
+						name: 'Task',
+						value: 'Task',
+					},
+					{
+						name: 'Tax VAT',
+						value: 'TaxVat',
+					},
+					{
+						name: 'Tech Map Operation',
+						value: 'TechMapOperation',
+					},
+					{
+						name: 'Telegram Bot Payment Type',
+						value: 'TelegramBotPaymentType',
+					},
+					{
+						name: 'Ticket',
+						value: 'Ticket',
+					},
+					{
+						name: 'Ticket User',
+						value: 'TicketUser',
+					},
+					{
+						name: 'Translation',
+						value: 'Translation',
+					},
+					{
+						name: 'Unit',
+						value: 'Unit',
+					},
+					{
+						name: 'User',
+						value: 'User',
+					},
+					{
+						name: 'User Account',
+						value: 'UserAccount',
+					},
+					{
+						name: 'User Dashboard',
+						value: 'UserDashboard',
+					},
+					{
+						name: 'User Group',
+						value: 'UserGroup',
+					},
+					{
+						name: 'User Group Role',
+						value: 'UserGroupRole',
+					},
+					{
+						name: 'User Operating Cash',
+						value: 'UserOperatingCash',
+					},
+					{
+						name: 'User Role',
+						value: 'UserRole',
+					},
+					{
+						name: 'User Stock',
+						value: 'UserStock',
+					},
+					{
+						name: 'Whole Sale Operation',
+						value: 'WholeSaleOperation',
+					},
+					{
+						name: 'Whole Sale Return Operation',
+						value: 'WholeSaleReturnOperation',
+					},
+					{
+						name: 'Widget',
+						value: 'Widget',
+					},
+					{
+						name: 'Work Availability',
+						value: 'WorkAvailability',
+					},
+					{
+						name: 'Work Break',
+						value: 'WorkBreak',
+					},
+					{
+						name: 'Work Group Schedule',
+						value: 'WorkGroupSchedule',
+					},
+					{
+						name: 'Work Schedule',
+						value: 'WorkSchedule',
+					},
+					{
+						name: 'Work Schedule Exception',
+						value: 'WorkScheduleException',
+					},
+					{
+						name: 'Work Schedule Interval',
+						value: 'WorkScheduleInterval',
+					},
+					{
+						name: 'Work Session',
+						value: 'WorkSession',
+					},
+					{
+						name: 'Work User Schedule',
+						value: 'WorkUserSchedule',
+					},
+				],
+				default: 'AccessApp',
+			},
+			{
+				displayName: 'Record ID',
+				name: 'record_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Table IDs',
+				name: 'table_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'User IDs',
+				name: 'user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
 			},
 		],
 	},
@@ -1459,6 +2524,640 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['campaign'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add campaign',
+				description: 'Create a campaign',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete campaign',
+				description: 'Delete a campaign',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit campaign',
+				description: 'Update a campaign',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get campaign',
+				description: 'Retrieve many campaign records',
+			},
+			{
+				name: 'Get Recipients',
+				value: 'getRecipients',
+				action: 'Get recipients campaign',
+				description: 'Get recipients for a campaign',
+			},
+			{
+				name: 'Set Recipients Status',
+				value: 'setRecipientsStatus',
+				action: 'Set recipients status campaign',
+				description: 'Set recipients status for a campaign',
+			},
+			{
+				name: 'Set Status',
+				value: 'setStatus',
+				action: 'Set status campaign',
+				description: 'Set status for a campaign',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Connected Integration ID',
+				name: 'connected_integration_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'File',
+				name: 'file',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Integration Key',
+				name: 'integration_key',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Message',
+				name: 'message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Recepients',
+				name: 'recepients',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Run Date',
+				name: 'run_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Run Immediately',
+				name: 'run_immediately',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to run the task immediately',
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Email',
+						value: 'Email',
+					},
+					{
+						name: 'SMS',
+						value: 'SMS',
+					},
+					{
+						name: 'Telegram',
+						value: 'Telegram',
+					},
+				],
+				default: 'Default',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Connected Integration ID',
+				name: 'connected_integration_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'File',
+				name: 'file',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Integration Key',
+				name: 'integration_key',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Message',
+				name: 'message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Run Date',
+				name: 'run_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Run Immediately',
+				name: 'run_immediately',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Status',
+				name: 'status',
+				type: 'options',
+				options: [
+					{
+						name: 'Completed',
+						value: 'Completed',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Error',
+						value: 'Error',
+					},
+					{
+						name: 'New',
+						value: 'New',
+					},
+					{
+						name: 'Progress',
+						value: 'Progress',
+					},
+					{
+						name: 'Waiting',
+						value: 'Waiting',
+					},
+				],
+				default: 'Completed',
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Email',
+						value: 'Email',
+					},
+					{
+						name: 'SMS',
+						value: 'SMS',
+					},
+					{
+						name: 'Telegram',
+						value: 'Telegram',
+					},
+				],
+				default: 'Default',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['getRecipients'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['getRecipients'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['getRecipients'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Campaign ID',
+				name: 'campaign_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'State',
+				name: 'state',
+				type: 'options',
+				options: [
+					{
+						name: 'Delivered',
+						value: 'Delivered',
+					},
+					{
+						name: 'Error',
+						value: 'Error',
+					},
+					{
+						name: 'New',
+						value: 'New',
+					},
+					{
+						name: 'Sended',
+						value: 'Sended',
+					},
+				],
+				default: 'Delivered',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['setStatus'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['campaign'],
+				operation: ['setStatus'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Error Message',
+				name: 'error_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Status',
+				name: 'status',
+				type: 'options',
+				options: [
+					{
+						name: 'Completed',
+						value: 'Completed',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Error',
+						value: 'Error',
+					},
+					{
+						name: 'New',
+						value: 'New',
+					},
+					{
+						name: 'Progress',
+						value: 'Progress',
+					},
+					{
+						name: 'Waiting',
+						value: 'Waiting',
+					},
+				],
+				default: 'Completed',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['cashOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get cash operation',
+				description: 'Retrieve many cash operation records',
+			},
+			{
+				name: 'Get Amount Details',
+				value: 'getAmountDetails',
+				action: 'Get amount details cash operation',
+				description: 'Get amount details for a cash operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['cashOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['cashOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['cashOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['cashOperation'],
+				operation: ['getAmountDetails'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['cashServer'],
 			},
 		},
@@ -1698,6 +3397,3451 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['channel'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add channel',
+				description: 'Create a channel',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete channel',
+				description: 'Delete a channel',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit channel',
+				description: 'Update a channel',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get channel',
+				description: 'Retrieve many channel records',
+			},
+			{
+				name: 'Set Intervals',
+				value: 'setIntervals',
+				action: 'Set intervals channel',
+				description: 'Set intervals for a channel',
+			},
+			{
+				name: 'Set Operators',
+				value: 'setOperators',
+				action: 'Set operators channel',
+				description: 'Set operators for a channel',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['channel'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'boolean',
+				default: false,
+				description: 'Whether active is enabled',
+			},
+			{
+				displayName: 'End Message',
+				name: 'end_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'First Response Sec',
+				name: 'first_response_sec',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Next Response Sec',
+				name: 'next_response_sec',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Off Hours Message',
+				name: 'off_hours_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Pause On Waiting Client',
+				name: 'pause_on_waiting_client',
+				type: 'boolean',
+				default: false,
+				description: 'Whether pause on waiting client is enabled',
+			},
+			{
+				displayName: 'Queue Mode',
+				name: 'queue_mode',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Direct',
+						value: 'Direct',
+					},
+					{
+						name: 'Pool',
+						value: 'Pool',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Rating Enabled',
+				name: 'rating_enabled',
+				type: 'boolean',
+				default: false,
+				description: 'Whether rating is enabled',
+			},
+			{
+				displayName: 'Rating Message',
+				name: 'rating_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Rating Negative Message',
+				name: 'rating_negative_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Rating Positive Message',
+				name: 'rating_positive_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Resolve Sec',
+				name: 'resolve_sec',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Routing Strategy',
+				name: 'routing_strategy',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Least Loaded',
+						value: 'LeastLoaded',
+					},
+					{
+						name: 'Manual',
+						value: 'Manual',
+					},
+					{
+						name: 'Round Robin',
+						value: 'RoundRobin',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Start Message',
+				name: 'start_message',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['channel'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['channel'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['channel'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Message',
+				name: 'end_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'First Response Sec',
+				name: 'first_response_sec',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Next Response Sec',
+				name: 'next_response_sec',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Off Hours Message',
+				name: 'off_hours_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Pause On Waiting Client',
+				name: 'pause_on_waiting_client',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Queue Mode',
+				name: 'queue_mode',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Direct',
+						value: 'Direct',
+					},
+					{
+						name: 'Pool',
+						value: 'Pool',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Rating Enabled',
+				name: 'rating_enabled',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Rating Message',
+				name: 'rating_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Rating Negative Message',
+				name: 'rating_negative_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Rating Positive Message',
+				name: 'rating_positive_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Resolve Sec',
+				name: 'resolve_sec',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Routing Strategy',
+				name: 'routing_strategy',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Least Loaded',
+						value: 'LeastLoaded',
+					},
+					{
+						name: 'Manual',
+						value: 'Manual',
+					},
+					{
+						name: 'Round Robin',
+						value: 'RoundRobin',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Start Message',
+				name: 'start_message',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['channel'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['channel'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['channel'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['channel'],
+				operation: ['setIntervals'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Channel ID',
+				name: 'channel_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Intervals',
+				name: 'intervals',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['channel'],
+				operation: ['setOperators'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Channel ID',
+				name: 'channel_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Operators',
+				name: 'operators',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add chat',
+				description: 'Create a chat',
+			},
+			{
+				name: 'Add Bot',
+				value: 'addBot',
+				action: 'Add bot chat',
+				description: 'Add bot for a chat',
+			},
+			{
+				name: 'Add Participant',
+				value: 'addParticipant',
+				action: 'Add participant chat',
+				description: 'Add participant for a chat',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit chat',
+				description: 'Update a chat',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get chat',
+				description: 'Retrieve many chat records',
+			},
+			{
+				name: 'Get Available Reactions',
+				value: 'getAvailableReactions',
+				action: 'Get available reactions chat',
+				description: 'Get available reactions for a chat',
+			},
+			{
+				name: 'Get Unread Count',
+				value: 'getUnreadCount',
+				action: 'Get unread count chat',
+				description: 'Get unread count for a chat',
+			},
+			{
+				name: 'Get Unread Counts',
+				value: 'getUnreadCounts',
+				action: 'Get unread counts chat',
+				description: 'Get unread counts for a chat',
+			},
+			{
+				name: 'Get User Presence',
+				value: 'getUserPresence',
+				action: 'Get user presence chat',
+				description: 'Get user presence for a chat',
+			},
+			{
+				name: 'Join',
+				value: 'join',
+				action: 'Join chat',
+				description: 'Join a chat',
+			},
+			{
+				name: 'Leave',
+				value: 'leave',
+				action: 'Leave chat',
+				description: 'Leave a chat',
+			},
+			{
+				name: 'Remove Participants',
+				value: 'removeParticipants',
+				action: 'Remove participants chat',
+				description: 'Remove participants for a chat',
+			},
+			{
+				name: 'Set Archived',
+				value: 'setArchived',
+				action: 'Set archived chat',
+				description: 'Set archived for a chat',
+			},
+			{
+				name: 'Set Available Reactions',
+				value: 'setAvailableReactions',
+				action: 'Set available reactions chat',
+				description: 'Set available reactions for a chat',
+			},
+			{
+				name: 'Set Muted',
+				value: 'setMuted',
+				action: 'Set muted chat',
+				description: 'Set muted for a chat',
+			},
+			{
+				name: 'Set Participants',
+				value: 'setParticipants',
+				action: 'Set participants chat',
+				description: 'Set participants for a chat',
+			},
+			{
+				name: 'Set Pinned',
+				value: 'setPinned',
+				action: 'Set pinned chat',
+				description: 'Set pinned for a chat',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Chat Type',
+				name: 'chat_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Channel',
+						value: 'Channel',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Group',
+						value: 'Group',
+					},
+					{
+						name: 'Individual',
+						value: 'Individual',
+					},
+				],
+				default: 'Channel',
+			},
+			{
+				displayName: 'External ID',
+				name: 'external_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Logo URL',
+				name: 'logo_url',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Participants',
+				name: 'participants',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['addBot'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Connected Integration ID',
+				name: 'connected_integration_id',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['addParticipant'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Participant',
+				name: 'participant',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'External ID',
+				name: 'external_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Logo URL',
+				name: 'logo_url',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Archived',
+				name: 'archived',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Chat Type',
+				name: 'chat_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Channel',
+						value: 'Channel',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Group',
+						value: 'Group',
+					},
+					{
+						name: 'Individual',
+						value: 'Individual',
+					},
+				],
+				default: 'Channel',
+			},
+			{
+				displayName: 'Closed',
+				name: 'closed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Entity Bound',
+				name: 'entity_bound',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Entity Type',
+				name: 'entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Deal',
+						value: 'Deal',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Lead',
+						value: 'Lead',
+					},
+					{
+						name: 'Task',
+						value: 'Task',
+					},
+					{
+						name: 'Ticket',
+						value: 'Ticket',
+					},
+				],
+				default: 'Deal',
+			},
+			{
+				displayName: 'External ID',
+				name: 'external_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+			{
+				displayName: 'Participant Entity ID',
+				name: 'participant_entity_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Participant Entity Type',
+				name: 'participant_entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Chat Bot',
+						value: 'ChatBot',
+					},
+					{
+						name: 'Client',
+						value: 'Client',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'User',
+						value: 'User',
+					},
+				],
+				default: 'ChatBot',
+			},
+			{
+				displayName: 'Pinned',
+				name: 'pinned',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['getAvailableReactions'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['getUnreadCounts'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Filters',
+				name: 'filters',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Participant Entity ID',
+				name: 'participant_entity_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Participant Entity Type',
+				name: 'participant_entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Chat Bot',
+						value: 'ChatBot',
+					},
+					{
+						name: 'Client',
+						value: 'Client',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'User',
+						value: 'User',
+					},
+				],
+				default: 'ChatBot',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['getUserPresence'],
+			},
+		},
+		options: [
+			{
+				displayName: 'User IDs',
+				name: 'user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['join'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['leave'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['removeParticipants'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['removeParticipants'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Participants',
+				name: 'participants',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setArchived'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setArchived'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Archived',
+				name: 'archived',
+				type: 'boolean',
+				default: false,
+				description: 'Whether archived is enabled',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setAvailableReactions'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Reactions',
+				name: 'reactions',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setMuted'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setMuted'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Muted',
+				name: 'muted',
+				type: 'boolean',
+				default: false,
+				description: 'Whether notifications are muted',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setParticipants'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setParticipants'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Participants',
+				name: 'participants',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setPinned'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chat'],
+				operation: ['setPinned'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Pinned',
+				name: 'pinned',
+				type: 'boolean',
+				default: false,
+				description: 'Whether the record is pinned',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add chat message',
+				description: 'Create a chat message',
+			},
+			{
+				name: 'Add File',
+				value: 'addFile',
+				action: 'Add file chat message',
+				description: 'Add file for a chat message',
+			},
+			{
+				name: 'Callback',
+				value: 'callback',
+				action: 'Callback chat message',
+				description: 'Callback a chat message',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete chat message',
+				description: 'Delete a chat message',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit chat message',
+				description: 'Update a chat message',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get chat message',
+				description: 'Retrieve many chat message records',
+			},
+			{
+				name: 'Get Around',
+				value: 'getAround',
+				action: 'Get around chat message',
+				description: 'Get around for a chat message',
+			},
+			{
+				name: 'Get Files',
+				value: 'getFiles',
+				action: 'Get files chat message',
+				description: 'Get files for a chat message',
+			},
+			{
+				name: 'Get Pinned',
+				value: 'getPinned',
+				action: 'Get pinned chat message',
+				description: 'Get pinned for a chat message',
+			},
+			{
+				name: 'Get Reactions',
+				value: 'getReactions',
+				action: 'Get reactions chat message',
+				description: 'Get reactions for a chat message',
+			},
+			{
+				name: 'Get Read Users',
+				value: 'getReadUsers',
+				action: 'Get read users chat message',
+				description: 'Get read users for a chat message',
+			},
+			{
+				name: 'Mark Read',
+				value: 'markRead',
+				action: 'Mark read chat message',
+				description: 'Mark read for a chat message',
+			},
+			{
+				name: 'Mark Sent',
+				value: 'markSent',
+				action: 'Mark sent chat message',
+				description: 'Mark sent for a chat message',
+			},
+			{
+				name: 'Search',
+				value: 'search',
+				action: 'Search chat message',
+				description: 'Search a chat message',
+			},
+			{
+				name: 'Set Pinned',
+				value: 'setPinned',
+				action: 'Set pinned chat message',
+				description: 'Set pinned for a chat message',
+			},
+			{
+				name: 'Set Reaction',
+				value: 'setReaction',
+				action: 'Set reaction chat message',
+				description: 'Set reaction for a chat message',
+			},
+			{
+				name: 'Suggest',
+				value: 'suggest',
+				action: 'Suggest chat message',
+				description: 'Suggest a chat message',
+			},
+			{
+				name: 'Writing',
+				value: 'writing',
+				action: 'Writing chat message',
+				description: 'Writing a chat message',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Actions',
+				name: 'actions',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Author Entity ID',
+				name: 'author_entity_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Author Entity Type',
+				name: 'author_entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Chat Bot',
+						value: 'ChatBot',
+					},
+					{
+						name: 'Client',
+						value: 'Client',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'User',
+						value: 'User',
+					},
+				],
+				default: 'ChatBot',
+			},
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'External Message ID',
+				name: 'external_message_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'File IDs',
+				name: 'file_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Mention Options',
+				name: 'mention_options',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Mentions',
+				name: 'mentions',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Message Type',
+				name: 'message_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Private',
+						value: 'Private',
+					},
+					{
+						name: 'Regular',
+						value: 'Regular',
+					},
+					{
+						name: 'System',
+						value: 'System',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Replay Text',
+				name: 'replay_text',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Reply ID',
+				name: 'reply_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Text',
+				name: 'text',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['callback'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Action ID',
+				name: 'action_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Message ID',
+				name: 'message_id',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'File IDs',
+				name: 'file_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Mention Options',
+				name: 'mention_options',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Mentions',
+				name: 'mentions',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Text',
+				name: 'text',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'From Date',
+				name: 'from_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+			{
+				displayName: 'Include Staff Private',
+				name: 'include_staff_private',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to include private staff information',
+			},
+			{
+				displayName: 'To Date',
+				name: 'to_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getAround'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'ID',
+				name: 'id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Include Staff Private',
+				name: 'include_staff_private',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to include private staff information',
+			},
+			{
+				displayName: 'Limit After',
+				name: 'limit_after',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Limit Before',
+				name: 'limit_before',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getFiles'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getFiles'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getFiles'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Author Entity ID',
+				name: 'author_entity_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Author Entity Type',
+				name: 'author_entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Chat Bot',
+						value: 'ChatBot',
+					},
+					{
+						name: 'Client',
+						value: 'Client',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'User',
+						value: 'User',
+					},
+				],
+				default: 'ChatBot',
+			},
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'From Date',
+				name: 'from_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Include Staff Private',
+				name: 'include_staff_private',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to include private staff information',
+			},
+			{
+				displayName: 'Kind',
+				name: 'kind',
+				type: 'options',
+				options: [
+					{
+						name: 'All',
+						value: 'All',
+					},
+					{
+						name: 'Audio',
+						value: 'Audio',
+					},
+					{
+						name: 'File',
+						value: 'File',
+					},
+					{
+						name: 'Image',
+						value: 'Image',
+					},
+					{
+						name: 'Media',
+						value: 'Media',
+					},
+					{
+						name: 'Video',
+						value: 'Video',
+					},
+				],
+				default: 'All',
+			},
+			{
+				displayName: 'To Date',
+				name: 'to_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getPinned'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getPinned'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getPinned'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Include Staff Private',
+				name: 'include_staff_private',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to include private staff information',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getReactions'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getReactions'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getReactions'],
+			},
+		},
+		options: [
+			{
+				displayName: 'ID',
+				name: 'id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Reaction',
+				name: 'reaction',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getReadUsers'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getReadUsers'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['getReadUsers'],
+			},
+		},
+		options: [
+			{
+				displayName: 'ID',
+				name: 'id',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['markRead'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Last Read Message ID',
+				name: 'last_read_message_id',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['markSent'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['markSent'],
+			},
+		},
+		options: [
+			{
+				displayName: 'External Message ID',
+				name: 'external_message_id',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['search'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['search'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['search'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'From Date',
+				name: 'from_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Include Staff Private',
+				name: 'include_staff_private',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to include private staff information',
+			},
+			{
+				displayName: 'Query',
+				name: 'query',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'To Date',
+				name: 'to_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['setPinned'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['setPinned'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Pinned',
+				name: 'pinned',
+				type: 'boolean',
+				default: false,
+				description: 'Whether the record is pinned',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['setReaction'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['setReaction'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Reaction',
+				name: 'reaction',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['suggest'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Author Entity ID',
+				name: 'author_entity_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Author Entity Type',
+				name: 'author_entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Chat Bot',
+						value: 'ChatBot',
+					},
+					{
+						name: 'Client',
+						value: 'Client',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'User',
+						value: 'User',
+					},
+				],
+				default: 'ChatBot',
+			},
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Source Message ID',
+				name: 'source_message_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Suggestions',
+				name: 'suggestions',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chatMessage'],
+				operation: ['writing'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Author Entity ID',
+				name: 'author_entity_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Author Entity Type',
+				name: 'author_entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Chat Bot',
+						value: 'ChatBot',
+					},
+					{
+						name: 'Client',
+						value: 'Client',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'User',
+						value: 'User',
+					},
+				],
+				default: 'ChatBot',
+			},
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['chequeItemOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get cheque item operation',
+				description: 'Retrieve cheque item operation data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chequeItemOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc Sale UUID',
+				name: 'doc_sale_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'UUIDs',
+				name: 'uuids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['chequeOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add cheque operation',
+				description: 'Create a cheque operation',
+			},
+			{
+				name: 'Add By Barcode',
+				value: 'addByBarcode',
+				action: 'Add by barcode cheque operation',
+				description: 'Add by barcode for a cheque operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit cheque operation',
+				description: 'Update a cheque operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get cheque operation',
+				description: 'Retrieve cheque operation data',
+			},
+			{
+				name: 'Set Percent Discount',
+				value: 'setPercentDiscount',
+				action: 'Set percent discount cheque operation',
+				description: 'Set percent discount for a cheque operation',
+			},
+			{
+				name: 'Storno',
+				value: 'storno',
+				action: 'Storno cheque operation',
+				description: 'Reverse an operation on a cheque operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chequeOperation'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document UUID',
+				name: 'document_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Item ID',
+				name: 'item_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Label',
+				name: 'label',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Quantity',
+				name: 'quantity',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chequeOperation'],
+				operation: ['addByBarcode'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Barcode',
+				name: 'barcode',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Document UUID',
+				name: 'document_uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chequeOperation'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chequeOperation'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Label',
+				name: 'label',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Price',
+				name: 'price',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Quantity',
+				name: 'quantity',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chequeOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document UUID',
+				name: 'document_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exclude Storno',
+				name: 'exclude_storno',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to exclude reversed operations',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'UUIDs',
+				name: 'uuids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chequeOperation'],
+				operation: ['setPercentDiscount'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chequeOperation'],
+				operation: ['setPercentDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Percent',
+				name: 'percent',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chequeOperation'],
+				operation: ['storno'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chequeOperation'],
+				operation: ['storno'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document UUID',
+				name: 'document_uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['chequePaymentOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add cheque payment operation',
+				description: 'Create a cheque payment operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get cheque payment operation',
+				description: 'Retrieve cheque payment operation data',
+			},
+			{
+				name: 'Get From POS',
+				value: 'posGet',
+				action: 'Get from POS cheque payment operation',
+				description: 'Retrieve cheque payment operations directly from the POS',
+			},
+			{
+				name: 'Get Payment System ID',
+				value: 'getPaymentSystemId',
+				action: 'Get payment system ID cheque payment operation',
+				description: 'Get payment system ID for a cheque payment operation',
+			},
+			{
+				name: 'Storno',
+				value: 'storno',
+				action: 'Storno cheque payment operation',
+				description: 'Reverse an operation on a cheque payment operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chequePaymentOperation'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Data',
+				name: 'data',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Document UUID',
+				name: 'document_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Type ID',
+				name: 'type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chequePaymentOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc Sale UUID',
+				name: 'doc_sale_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'UUIDs',
+				name: 'uuids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chequePaymentOperation'],
+				operation: ['posGet'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document UUID',
+				name: 'document_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exclude Storno',
+				name: 'exclude_storno',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to exclude reversed operations',
+			},
+			{
+				displayName: 'Payment Type IDs',
+				name: 'payment_type_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'UUIDs',
+				name: 'uuids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chequePaymentOperation'],
+				operation: ['getPaymentSystemId'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document UUID',
+				name: 'document_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Payment Type ID',
+				name: 'payment_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['chequePaymentOperation'],
+				operation: ['storno'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['chequePaymentOperation'],
+				operation: ['storno'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document UUID',
+				name: 'document_uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['client'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add client',
+				description: 'Create a client',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete client',
+				description: 'Delete a client',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit client',
+				description: 'Update a client',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get client',
+				description: 'Retrieve many client records',
+			},
+			{
+				name: 'Merge',
+				value: 'merge',
+				action: 'Merge client',
+				description: 'Merge a client',
+			},
+			{
+				name: 'Set Responsible',
+				value: 'setResponsible',
+				action: 'Set responsible client',
+				description: 'Set responsible for a client',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['client'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Email',
+				name: 'email',
+				type: 'string',
+				default: '',
+				placeholder: 'name@email.com',
+			},
+			{
+				displayName: 'External ID',
+				name: 'external_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Phone',
+				name: 'phone',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Photo URL',
+				name: 'photo_url',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['client'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['client'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['client'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Email',
+				name: 'email',
+				type: 'string',
+				default: '',
+				placeholder: 'name@email.com',
+			},
+			{
+				displayName: 'External ID',
+				name: 'external_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Phone',
+				name: 'phone',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Photo URL',
+				name: 'photo_url',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['client'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['client'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['client'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Emails',
+				name: 'emails',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+			{
+				displayName: 'External IDs',
+				name: 'external_ids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+			{
+				displayName: 'Filters',
+				name: 'filters',
+				type: 'fixedCollection',
+				typeOptions: {
+					multipleValues: true,
+				},
+				default: {},
+				options: [
+					{
+						name: 'filter',
+						displayName: 'Filter',
+						values: [
+							{
+								displayName: 'Field',
+								name: 'field',
+								type: 'string',
+								default: '',
+							},
+							{
+								displayName: 'Operator',
+								name: 'operator',
+								type: 'options',
+								options: [
+									{
+										name: 'Default',
+										value: 'Default',
+									},
+									{
+										name: 'Equal',
+										value: 'Equal',
+									},
+									{
+										name: 'Exists',
+										value: 'Exists',
+									},
+									{
+										name: 'Greater',
+										value: 'Greater',
+									},
+									{
+										name: 'Greater Or Equal',
+										value: 'GreaterOrEqual',
+									},
+									{
+										name: 'In',
+										value: 'In',
+									},
+									{
+										name: 'Less',
+										value: 'Less',
+									},
+									{
+										name: 'Less Or Equal',
+										value: 'LessOrEqual',
+									},
+									{
+										name: 'Like',
+										value: 'Like',
+									},
+									{
+										name: 'Not Equal',
+										value: 'NotEqual',
+									},
+									{
+										name: 'Not Exists',
+										value: 'NotExists',
+									},
+									{
+										name: 'Not In',
+										value: 'NotIn',
+									},
+								],
+								default: 'Default',
+							},
+							{
+								displayName: 'Value',
+								name: 'value',
+								type: 'string',
+								default: '',
+							},
+						],
+					},
+				],
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Phones',
+				name: 'phones',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+			{
+				displayName: 'Responsible User IDs',
+				name: 'responsible_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['client'],
+				operation: ['merge'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Comment',
+				name: 'comment',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Source Client ID',
+				name: 'source_client_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Target Client ID',
+				name: 'target_client_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['client'],
+				operation: ['setResponsible'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['client'],
+				operation: ['setResponsible'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['color'],
 			},
 		},
@@ -1849,6 +6993,125 @@ export const nodeProperties: INodeProperties[] = [
 			{
 				displayName: 'IDs',
 				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['commercialOfferOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add commercial offer operation',
+				description: 'Create a commercial offer operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete commercial offer operation',
+				description: 'Delete a commercial offer operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit commercial offer operation',
+				description: 'Update a commercial offer operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get commercial offer operation',
+				description: 'Retrieve many commercial offer operation records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['commercialOfferOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['commercialOfferOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['commercialOfferOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
 				type: 'string',
 				default: '',
 				placeholder: 'e.g. 1,2,3',
@@ -2764,6 +8027,1309 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['customerPersonalDocument'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add customer personal document',
+				description: 'Create a customer personal document',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete customer personal document',
+				description: 'Delete a customer personal document',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit customer personal document',
+				description: 'Update a customer personal document',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get customer personal document',
+				description: 'Retrieve customer personal document data',
+			},
+			{
+				name: 'Remove File',
+				value: 'removeFile',
+				action: 'Remove file customer personal document',
+				description: 'Remove file for a customer personal document',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['customerPersonalDocument'],
+				operation: ['delete'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Personal Doc Type ID',
+				name: 'personal_doc_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['customerPersonalDocument'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Include Data',
+				name: 'include_data',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Personal Doc Type ID',
+				name: 'personal_doc_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['customerPersonalDocument'],
+				operation: ['removeFile'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Personal Doc Type ID',
+				name: 'personal_doc_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['dashboard'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add dashboard',
+				description: 'Create a dashboard',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete dashboard',
+				description: 'Delete a dashboard',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit dashboard',
+				description: 'Update a dashboard',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get dashboard',
+				description: 'Retrieve dashboard data',
+			},
+			{
+				name: 'Set Filters',
+				value: 'setFilters',
+				action: 'Set filters dashboard',
+				description: 'Set filters for a dashboard',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['dashboard'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['dashboard'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['dashboard'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['dashboard'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Is Fixed',
+				name: 'is_fixed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['dashboard'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['dashboard'],
+				operation: ['setFilters'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['dashboard'],
+				operation: ['setFilters'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Period',
+				name: 'period',
+				type: 'options',
+				options: [
+					{
+						name: 'Month',
+						value: 'Month',
+					},
+					{
+						name: 'None',
+						value: 'None',
+					},
+					{
+						name: 'Today',
+						value: 'Today',
+					},
+					{
+						name: 'Week',
+						value: 'Week',
+					},
+					{
+						name: 'Yesterday',
+						value: 'Yesterday',
+					},
+				],
+				default: 'Month',
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add deal',
+				description: 'Create a deal',
+			},
+			{
+				name: 'Close',
+				value: 'close',
+				action: 'Close deal',
+				description: 'Close a deal',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete deal',
+				description: 'Delete a deal',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit deal',
+				description: 'Update a deal',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get deal',
+				description: 'Retrieve many deal records',
+			},
+			{
+				name: 'Set Participants',
+				value: 'setParticipants',
+				action: 'Set participants deal',
+				description: 'Set participants for a deal',
+			},
+			{
+				name: 'Set Responsible',
+				value: 'setResponsible',
+				action: 'Set responsible deal',
+				description: 'Set responsible for a deal',
+			},
+			{
+				name: 'Set Stage',
+				value: 'setStage',
+				action: 'Set stage deal',
+				description: 'Set stage for a deal',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Client ID',
+				name: 'client_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Deal Type ID',
+				name: 'deal_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Description Mentions',
+				name: 'description_mentions',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Lead ID',
+				name: 'lead_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Mention Options',
+				name: 'mention_options',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Participant User IDs',
+				name: 'participant_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Pipeline ID',
+				name: 'pipeline_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Source Deal ID',
+				name: 'source_deal_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Source Lead ID',
+				name: 'source_lead_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stage ID',
+				name: 'stage_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Task ID',
+				name: 'task_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Ticket ID',
+				name: 'ticket_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Title',
+				name: 'title',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['close'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['close'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Stage ID',
+				name: 'stage_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Deal Type ID',
+				name: 'deal_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Description Mentions',
+				name: 'description_mentions',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Mention Options',
+				name: 'mention_options',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Pipeline ID',
+				name: 'pipeline_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stage ID',
+				name: 'stage_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Task ID',
+				name: 'task_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Title',
+				name: 'title',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Client IDs',
+				name: 'client_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Filters',
+				name: 'filters',
+				type: 'fixedCollection',
+				typeOptions: {
+					multipleValues: true,
+				},
+				default: {},
+				options: [
+					{
+						name: 'filter',
+						displayName: 'Filter',
+						values: [
+							{
+								displayName: 'Field',
+								name: 'field',
+								type: 'string',
+								default: '',
+							},
+							{
+								displayName: 'Operator',
+								name: 'operator',
+								type: 'options',
+								options: [
+									{
+										name: 'Default',
+										value: 'Default',
+									},
+									{
+										name: 'Equal',
+										value: 'Equal',
+									},
+									{
+										name: 'Exists',
+										value: 'Exists',
+									},
+									{
+										name: 'Greater',
+										value: 'Greater',
+									},
+									{
+										name: 'Greater Or Equal',
+										value: 'GreaterOrEqual',
+									},
+									{
+										name: 'In',
+										value: 'In',
+									},
+									{
+										name: 'Less',
+										value: 'Less',
+									},
+									{
+										name: 'Less Or Equal',
+										value: 'LessOrEqual',
+									},
+									{
+										name: 'Like',
+										value: 'Like',
+									},
+									{
+										name: 'Not Equal',
+										value: 'NotEqual',
+									},
+									{
+										name: 'Not Exists',
+										value: 'NotExists',
+									},
+									{
+										name: 'Not In',
+										value: 'NotIn',
+									},
+								],
+								default: 'Default',
+							},
+							{
+								displayName: 'Value',
+								name: 'value',
+								type: 'string',
+								default: '',
+							},
+						],
+					},
+				],
+			},
+			{
+				displayName: 'From Date',
+				name: 'from_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Include Mentions',
+				name: 'include_mentions',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to include mentions',
+			},
+			{
+				displayName: 'Lead IDs',
+				name: 'lead_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Pipeline ID',
+				name: 'pipeline_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Responsible User IDs',
+				name: 'responsible_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Stage IDs',
+				name: 'stage_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Task IDs',
+				name: 'task_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'To Date',
+				name: 'to_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['setParticipants'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['setParticipants'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Participant User IDs',
+				name: 'participant_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Replace Mode',
+				name: 'replace_mode',
+				type: 'boolean',
+				default: false,
+				description: 'Whether existing values are replaced instead of merged',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['setResponsible'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['setResponsible'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['setStage'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['deal'],
+				operation: ['setStage'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Comment',
+				name: 'comment',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stage ID',
+				name: 'stage_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['dealType'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add deal type',
+				description: 'Create a deal type',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete deal type',
+				description: 'Delete a deal type',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit deal type',
+				description: 'Update a deal type',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get deal type',
+				description: 'Retrieve many deal type records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['dealType'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'boolean',
+				default: false,
+				description: 'Whether active is enabled',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['dealType'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['dealType'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['dealType'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['dealType'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['dealType'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['dealType'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['deliveryCourier'],
 			},
 		},
@@ -3484,6 +10050,13724 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['docAccountMovement'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc account movement',
+				description: 'Create a doc account movement',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc account movement',
+				description: 'Delete a doc account movement',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc account movement',
+				description: 'Mark a doc account movement for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc account movement',
+				description: 'Update a doc account movement',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc account movement',
+				description: 'Retrieve many doc account movement records',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc account movement',
+				description: 'Post a doc account movement',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc account movement',
+				description: 'Cancel the posting of a doc account movement',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docAccountMovement'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Account Receiver ID',
+				name: 'account_receiver_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Account Sender ID',
+				name: 'account_sender_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Amount Received',
+				name: 'amount_received',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Amount Sended',
+				name: 'amount_sended',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docAccountMovement'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docAccountMovement'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docAccountMovement'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docAccountMovement'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Amount Received',
+				name: 'amount_received',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Amount Sended',
+				name: 'amount_sended',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docAccountMovement'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docAccountMovement'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docAccountMovement'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Filters',
+				name: 'filters',
+				type: 'fixedCollection',
+				typeOptions: {
+					multipleValues: true,
+				},
+				default: {},
+				options: [
+					{
+						name: 'filter',
+						displayName: 'Filter',
+						values: [
+							{
+								displayName: 'Field',
+								name: 'field',
+								type: 'string',
+								default: '',
+							},
+							{
+								displayName: 'Operator',
+								name: 'operator',
+								type: 'options',
+								options: [
+									{
+										name: 'Default',
+										value: 'Default',
+									},
+									{
+										name: 'Equal',
+										value: 'Equal',
+									},
+									{
+										name: 'Exists',
+										value: 'Exists',
+									},
+									{
+										name: 'Greater',
+										value: 'Greater',
+									},
+									{
+										name: 'Greater Or Equal',
+										value: 'GreaterOrEqual',
+									},
+									{
+										name: 'In',
+										value: 'In',
+									},
+									{
+										name: 'Less',
+										value: 'Less',
+									},
+									{
+										name: 'Less Or Equal',
+										value: 'LessOrEqual',
+									},
+									{
+										name: 'Like',
+										value: 'Like',
+									},
+									{
+										name: 'Not Equal',
+										value: 'NotEqual',
+									},
+									{
+										name: 'Not Exists',
+										value: 'NotExists',
+									},
+									{
+										name: 'Not In',
+										value: 'NotIn',
+									},
+								],
+								default: 'Default',
+							},
+							{
+								displayName: 'Value',
+								name: 'value',
+								type: 'string',
+								default: '',
+							},
+						],
+					},
+				],
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docAccountMovement'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docAccountMovement'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc additional expense',
+				description: 'Create a doc additional expense',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc additional expense',
+				description: 'Delete a doc additional expense',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc additional expense',
+				description: 'Mark a doc additional expense for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc additional expense',
+				description: 'Update a doc additional expense',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc additional expense',
+				description: 'Retrieve many doc additional expense records',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc additional expense',
+				description: 'Lock a doc additional expense',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc additional expense',
+				description: 'Post a doc additional expense',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc additional expense',
+				description: 'Cancel the posting of a doc additional expense',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc additional expense',
+				description: 'Unlock a doc additional expense',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Parent Doc ID',
+				name: 'parent_doc_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Parent Doc Type ID',
+				name: 'parent_doc_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Contract IDs',
+				name: 'contract_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Parent Doc ID',
+				name: 'parent_doc_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Parent Doc Type ID',
+				name: 'parent_doc_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpenses'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpensesOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc additional expenses operation',
+				description: 'Create a doc additional expenses operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc additional expenses operation',
+				description: 'Delete a doc additional expenses operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc additional expenses operation',
+				description: 'Update a doc additional expenses operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc additional expenses operation',
+				description: 'Retrieve many doc additional expenses operation records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpensesOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpensesOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docAdditionalExpensesOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docCashSession'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc cash session',
+				description: 'Retrieve many doc cash session records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docCashSession'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docCashSession'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docCashSession'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Close User ID',
+				name: 'close_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Is Agregated',
+				name: 'is_agregated',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Is Close',
+				name: 'is_close',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Open User ID',
+				name: 'open_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Operating Cash IDs',
+				name: 'operating_cash_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'UUIDs',
+				name: 'uuids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docCheque'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc cheque',
+				description: 'Retrieve many doc cheque records',
+			},
+			{
+				name: 'Get Favorite Period',
+				value: 'getFavoritePeriod',
+				action: 'Get favorite period doc cheque',
+				description: 'Get favorite period for a doc cheque',
+			},
+			{
+				name: 'Get Short',
+				value: 'getShort',
+				action: 'Get short doc cheque',
+				description: 'Get short for a doc cheque',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docCheque'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docCheque'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docCheque'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Card IDs',
+				name: 'card_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Cashier IDs',
+				name: 'cashier_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Customer IDs',
+				name: 'customer_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Is Fiscal',
+				name: 'is_fiscal',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Is Return',
+				name: 'is_return',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Seller IDs',
+				name: 'seller_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Session UUID',
+				name: 'session_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Status',
+				name: 'status',
+				type: 'options',
+				options: [
+					{
+						name: 'Canceled',
+						value: 'Canceled',
+					},
+					{
+						name: 'Closed',
+						value: 'Closed',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Delayed',
+						value: 'Delayed',
+					},
+					{
+						name: 'Delayed Payment',
+						value: 'DelayedPayment',
+					},
+					{
+						name: 'Opened',
+						value: 'Opened',
+					},
+					{
+						name: 'Paying',
+						value: 'Paying',
+					},
+				],
+				default: 'Canceled',
+			},
+			{
+				displayName: 'UUIDs',
+				name: 'uuids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docCheque'],
+				operation: ['getFavoritePeriod'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docCheque'],
+				operation: ['getFavoritePeriod'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docCheque'],
+				operation: ['getFavoritePeriod'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Card IDs',
+				name: 'card_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Cashier IDs',
+				name: 'cashier_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Customer IDs',
+				name: 'customer_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Is Fiscal',
+				name: 'is_fiscal',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Is Return',
+				name: 'is_return',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Seller IDs',
+				name: 'seller_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Session UUID',
+				name: 'session_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Status',
+				name: 'status',
+				type: 'options',
+				options: [
+					{
+						name: 'Canceled',
+						value: 'Canceled',
+					},
+					{
+						name: 'Closed',
+						value: 'Closed',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Delayed',
+						value: 'Delayed',
+					},
+					{
+						name: 'Delayed Payment',
+						value: 'DelayedPayment',
+					},
+					{
+						name: 'Opened',
+						value: 'Opened',
+					},
+					{
+						name: 'Paying',
+						value: 'Paying',
+					},
+				],
+				default: 'Canceled',
+			},
+			{
+				displayName: 'UUIDs',
+				name: 'uuids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docCheque'],
+				operation: ['getShort'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docCheque'],
+				operation: ['getShort'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docCheque'],
+				operation: ['getShort'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Customer IDs',
+				name: 'customer_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Is Return',
+				name: 'is_return',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Operating Cash IDs',
+				name: 'operating_cash_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Sale Status',
+				name: 'sale_status',
+				type: 'options',
+				options: [
+					{
+						name: 'Canceled',
+						value: 'Canceled',
+					},
+					{
+						name: 'Closed',
+						value: 'Closed',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Delayed',
+						value: 'Delayed',
+					},
+					{
+						name: 'Delayed Payment',
+						value: 'DelayedPayment',
+					},
+					{
+						name: 'Opened',
+						value: 'Opened',
+					},
+					{
+						name: 'Paying',
+						value: 'Paying',
+					},
+				],
+				default: 'Canceled',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Session UUIDs',
+				name: 'session_uuids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'UUIDs',
+				name: 'uuids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docCommercialOffer'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc commercial offer',
+				description: 'Create a doc commercial offer',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc commercial offer',
+				description: 'Delete a doc commercial offer',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc commercial offer',
+				description: 'Mark a doc commercial offer for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc commercial offer',
+				description: 'Update a doc commercial offer',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc commercial offer',
+				description: 'Retrieve many doc commercial offer records',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc commercial offer',
+				description: 'Lock a doc commercial offer',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc commercial offer',
+				description: 'Unlock a doc commercial offer',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docCommercialOffer'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docCommercialOffer'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docCommercialOffer'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docCommercialOffer'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docCommercialOffer'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docCommercialOffer'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docCommercialOffer'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docCommercialOffer'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Currency IDs',
+				name: 'currency_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docCommercialOffer'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docCommercialOffer'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docContract'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc contract',
+				description: 'Create a doc contract',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc contract',
+				description: 'Delete a doc contract',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc contract',
+				description: 'Mark a doc contract for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc contract',
+				description: 'Update a doc contract',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc contract',
+				description: 'Retrieve many doc contract records',
+			},
+			{
+				name: 'Get Short',
+				value: 'getShort',
+				action: 'Get short doc contract',
+				description: 'Get short for a doc contract',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docContract'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Code',
+				name: 'code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Details',
+				name: 'details',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Direction',
+				name: 'direction',
+				type: 'options',
+				options: [
+					{
+						name: 'All',
+						value: 'All',
+					},
+					{
+						name: 'Income',
+						value: 'Income',
+					},
+					{
+						name: 'Outcome',
+						value: 'Outcome',
+					},
+				],
+				default: 'All',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docContract'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docContract'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docContract'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docContract'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Code',
+				name: 'code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Details',
+				name: 'details',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Direction',
+				name: 'direction',
+				type: 'options',
+				options: [
+					{
+						name: 'All',
+						value: 'All',
+					},
+					{
+						name: 'Income',
+						value: 'Income',
+					},
+					{
+						name: 'Outcome',
+						value: 'Outcome',
+					},
+				],
+				default: 'All',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docContract'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docContract'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docContract'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Direction',
+				name: 'direction',
+				type: 'options',
+				options: [
+					{
+						name: 'All',
+						value: 'All',
+					},
+					{
+						name: 'Income',
+						value: 'Income',
+					},
+					{
+						name: 'Outcome',
+						value: 'Outcome',
+					},
+				],
+				default: 'All',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docContract'],
+				operation: ['getShort'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docContract'],
+				operation: ['getShort'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docContract'],
+				operation: ['getShort'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Direction',
+				name: 'direction',
+				type: 'options',
+				options: [
+					{
+						name: 'All',
+						value: 'All',
+					},
+					{
+						name: 'Income',
+						value: 'Income',
+					},
+					{
+						name: 'Outcome',
+						value: 'Outcome',
+					},
+				],
+				default: 'All',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docContractFile'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc contract file',
+				description: 'Create a doc contract file',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc contract file',
+				description: 'Delete a doc contract file',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc contract file',
+				description: 'Retrieve doc contract file data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docContractFile'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docContractFile'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Contract IDs',
+				name: 'contract_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'File IDs',
+				name: 'file_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Include Data',
+				name: 'include_data',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc in out',
+				description: 'Create a doc in out',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc in out',
+				description: 'Delete a doc in out',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc in out',
+				description: 'Mark a doc in out for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc in out',
+				description: 'Update a doc in out',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc in out',
+				description: 'Retrieve many doc in out records',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc in out',
+				description: 'Lock a doc in out',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc in out',
+				description: 'Post a doc in out',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc in out',
+				description: 'Cancel the posting of a doc in out',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc in out',
+				description: 'Unlock a doc in out',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Inout Type',
+				name: 'inout_type',
+				type: 'options',
+				options: [
+					{
+						name: 'All',
+						value: 'all',
+					},
+					{
+						name: 'Income',
+						value: 'income',
+					},
+					{
+						name: 'Outcome',
+						value: 'outcome',
+					},
+				],
+				default: 'all',
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Inout Type',
+				name: 'inout_type',
+				type: 'options',
+				options: [
+					{
+						name: 'All',
+						value: 'all',
+					},
+					{
+						name: 'Income',
+						value: 'income',
+					},
+					{
+						name: 'Outcome',
+						value: 'outcome',
+					},
+				],
+				default: 'all',
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Auto',
+				name: 'auto',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Inout Type',
+				name: 'inout_type',
+				type: 'options',
+				options: [
+					{
+						name: 'All',
+						value: 'all',
+					},
+					{
+						name: 'Income',
+						value: 'income',
+					},
+					{
+						name: 'Outcome',
+						value: 'outcome',
+					},
+				],
+				default: 'all',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInOut'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc inventory',
+				description: 'Create a doc inventory',
+			},
+			{
+				name: 'Close',
+				value: 'close',
+				action: 'Close doc inventory',
+				description: 'Close a stocktaking document and apply its differences',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc inventory',
+				description: 'Delete a doc inventory',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc inventory',
+				description: 'Mark a doc inventory for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc inventory',
+				description: 'Update a doc inventory',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc inventory',
+				description: 'Retrieve many stocktaking documents',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc inventory',
+				description: 'Lock a doc inventory',
+			},
+			{
+				name: 'Open',
+				value: 'open',
+				action: 'Open doc inventory',
+				description: 'Open a doc inventory',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc inventory',
+				description: 'Unlock a doc inventory',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Compare Type',
+				name: 'compare_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Close Date',
+						value: 'close_date',
+					},
+					{
+						name: 'Open Date',
+						value: 'open_date',
+					},
+					{
+						name: 'Operation Date',
+						value: 'operation_date',
+					},
+				],
+				default: 'close_date',
+			},
+			{
+				displayName: 'Create Docinout',
+				name: 'create_docinout',
+				type: 'boolean',
+				default: false,
+				description: 'Whether create docinout is enabled',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'External ID',
+				name: 'external_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Full',
+				name: 'full',
+				type: 'boolean',
+				default: false,
+				description: 'Whether full is enabled',
+			},
+			{
+				displayName: 'Open Date',
+				name: 'open_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+				operation: ['close'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Compare Type',
+				name: 'compare_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Close Date',
+						value: 'close_date',
+					},
+					{
+						name: 'Open Date',
+						value: 'open_date',
+					},
+					{
+						name: 'Operation Date',
+						value: 'operation_date',
+					},
+				],
+				default: 'close_date',
+			},
+			{
+				displayName: 'Create Docinout',
+				name: 'create_docinout',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'External ID',
+				name: 'external_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Full',
+				name: 'full',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Open Date',
+				name: 'open_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Closed',
+				name: 'closed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Compare Type',
+				name: 'compare_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Close Date',
+						value: 'close_date',
+					},
+					{
+						name: 'Open Date',
+						value: 'open_date',
+					},
+					{
+						name: 'Operation Date',
+						value: 'operation_date',
+					},
+				],
+				default: 'close_date',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+				operation: ['open'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInventory'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc invoice',
+				description: 'Create a doc invoice',
+			},
+			{
+				name: 'Add On Base',
+				value: 'addOnBase',
+				action: 'Add on base doc invoice',
+				description: 'Add on base for a doc invoice',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc invoice',
+				description: 'Delete a doc invoice',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc invoice',
+				description: 'Mark a doc invoice for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc invoice',
+				description: 'Update a doc invoice',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc invoice',
+				description: 'Retrieve many invoices',
+			},
+			{
+				name: 'Get Documents From Roaming',
+				value: 'getDocumentsFromRoaming',
+				action: 'Get documents from roaming doc invoice',
+				description: 'Get documents from roaming for a doc invoice',
+			},
+			{
+				name: 'Import Document From Roaming',
+				value: 'importDocumentFromRoaming',
+				action: 'Import document from roaming doc invoice',
+				description: 'Import document from roaming for a doc invoice',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc invoice',
+				description: 'Lock a doc invoice',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc invoice',
+				description: 'Post a doc invoice',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc invoice',
+				description: 'Cancel the posting of a doc invoice',
+			},
+			{
+				name: 'Send',
+				value: 'send',
+				action: 'Send doc invoice',
+				description: 'Send a doc invoice',
+			},
+			{
+				name: 'Set External Data',
+				value: 'setExternalData',
+				action: 'Set external data doc invoice',
+				description: 'Set external data for a doc invoice',
+			},
+			{
+				name: 'Set Status',
+				value: 'setStatus',
+				action: 'Set status doc invoice',
+				description: 'Set status for a doc invoice',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc invoice',
+				description: 'Unlock a doc invoice',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Code',
+				name: 'code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Corrected Code',
+				name: 'corrected_code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Corrected Date',
+				name: 'corrected_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document Type ID',
+				name: 'document_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Invoice Type',
+				name: 'invoice_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Corrective',
+						value: 'Corrective',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Income',
+						value: 'Income',
+					},
+					{
+						name: 'Outcome',
+						value: 'Outcome',
+					},
+				],
+				default: 'Corrective',
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['addOnBase'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Code',
+				name: 'code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Corrected Code',
+				name: 'corrected_code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Corrected Date',
+				name: 'corrected_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document Type ID',
+				name: 'document_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Code',
+				name: 'code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Corrected Code',
+				name: 'corrected_code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Corrected Date',
+				name: 'corrected_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document Type ID',
+				name: 'document_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Contract IDs',
+				name: 'contract_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'External Code',
+				name: 'external_code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Invoice Type',
+				name: 'invoice_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Corrective',
+						value: 'Corrective',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Income',
+						value: 'Income',
+					},
+					{
+						name: 'Outcome',
+						value: 'Outcome',
+					},
+				],
+				default: 'Corrective',
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['getDocumentsFromRoaming'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['getDocumentsFromRoaming'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['getDocumentsFromRoaming'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['importDocumentFromRoaming'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['importDocumentFromRoaming'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['send'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['setExternalData'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Connected Integration ID',
+				name: 'connected_integration_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'External ID',
+				name: 'external_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Integration Key',
+				name: 'integration_key',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Roaming ID',
+				name: 'roaming_id',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['setStatus'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Error Message',
+				name: 'error_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Status',
+				name: 'status',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Error Received',
+						value: 'ErrorReceived',
+					},
+					{
+						name: 'Error Sent',
+						value: 'ErrorSent',
+					},
+					{
+						name: 'In Received Progress',
+						value: 'InReceivedProgress',
+					},
+					{
+						name: 'In Sent Progress',
+						value: 'InSentProgress',
+					},
+					{
+						name: 'New',
+						value: 'New',
+					},
+					{
+						name: 'Received',
+						value: 'Received',
+					},
+					{
+						name: 'Sent',
+						value: 'Sent',
+					},
+					{
+						name: 'Unknown',
+						value: 'Unknown',
+					},
+				],
+				default: 'Default',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docInvoice'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc movement',
+				description: 'Create a doc movement',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc movement',
+				description: 'Delete a doc movement',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc movement',
+				description: 'Mark a doc movement for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc movement',
+				description: 'Update a doc movement',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc movement',
+				description: 'Retrieve many stock transfer documents',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc movement',
+				description: 'Lock a doc movement',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc movement',
+				description: 'Post a doc movement',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc movement',
+				description: 'Cancel the posting of a doc movement',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc movement',
+				description: 'Unlock a doc movement',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stock Receiver ID',
+				name: 'stock_receiver_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock Sender ID',
+				name: 'stock_sender_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stock Receiver ID',
+				name: 'stock_receiver_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock Sender ID',
+				name: 'stock_sender_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm Receiver IDs',
+				name: 'firm_receiver_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Firm Sender IDs',
+				name: 'firm_sender_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock Receiver IDs',
+				name: 'stock_receiver_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Stock Sender IDs',
+				name: 'stock_sender_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docMovement'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docOpeningBalance'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc opening balance',
+				description: 'Create a doc opening balance',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc opening balance',
+				description: 'Delete a doc opening balance',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc opening balance',
+				description: 'Mark a doc opening balance for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc opening balance',
+				description: 'Update a doc opening balance',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc opening balance',
+				description: 'Retrieve many doc opening balance records',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc opening balance',
+				description: 'Post a doc opening balance',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc opening balance',
+				description: 'Cancel the posting of a doc opening balance',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOpeningBalance'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Credit',
+				name: 'credit',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Debit',
+				name: 'debit',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOpeningBalance'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOpeningBalance'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOpeningBalance'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOpeningBalance'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Credit',
+				name: 'credit',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Debit',
+				name: 'debit',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docOpeningBalance'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docOpeningBalance'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOpeningBalance'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOpeningBalance'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOpeningBalance'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+			},
+		},
+		options: [
+			{
+				name: 'Actualize',
+				value: 'actualize',
+				action: 'Actualize doc order delivery',
+				description: 'Actualize a doc order delivery',
+			},
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc order delivery',
+				description: 'Create a doc order delivery',
+			},
+			{
+				name: 'Create Complete Order',
+				value: 'addFull',
+				action: 'Create complete order doc order delivery',
+				description:
+					'Create a retail delivery order together with all of its line items in one call',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc order delivery',
+				description: 'Delete a doc order delivery',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc order delivery',
+				description: 'Mark a doc order delivery for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc order delivery',
+				description: 'Update a doc order delivery',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc order delivery',
+				description: 'Retrieve many retail delivery orders',
+			},
+			{
+				name: 'Get Count',
+				value: 'getCount',
+				action: 'Get count doc order delivery',
+				description: 'Get count for a doc order delivery',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc order delivery',
+				description: 'Lock a doc order delivery',
+			},
+			{
+				name: 'Return',
+				value: 'return',
+				action: 'Return doc order delivery',
+				description: 'Return a doc order delivery',
+			},
+			{
+				name: 'Set Courier',
+				value: 'setCourier',
+				action: 'Set courier doc order delivery',
+				description: 'Assign a courier to a retail delivery order',
+			},
+			{
+				name: 'Set Fiscal Info',
+				value: 'setFiscalInfo',
+				action: 'Set fiscal info doc order delivery',
+				description: 'Set fiscal info for a doc order delivery',
+			},
+			{
+				name: 'Set Operating Cash',
+				value: 'setOperatingCash',
+				action: 'Set operating cash doc order delivery',
+				description: 'Set operating cash for a doc order delivery',
+			},
+			{
+				name: 'Set Retail Card',
+				value: 'setRetailCard',
+				action: 'Set retail card doc order delivery',
+				description: 'Set retail card for a doc order delivery',
+			},
+			{
+				name: 'Set Status',
+				value: 'setStatus',
+				action: 'Set status doc order delivery',
+				description: 'Change the fulfilment status of a retail delivery order',
+			},
+			{
+				name: 'Set Stock',
+				value: 'setStock',
+				action: 'Set stock doc order delivery',
+				description: 'Assign the fulfilling warehouse to a retail delivery order',
+			},
+			{
+				name: 'To Beginning',
+				value: 'toBeginning',
+				action: 'To beginning doc order delivery',
+				description: 'To beginning for a doc order delivery',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc order delivery',
+				description: 'Unlock a doc order delivery',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['actualize'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Data',
+				name: 'data',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Address',
+				name: 'address',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Card ID',
+				name: 'card_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Courier ID',
+				name: 'courier_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Delivery Date',
+				name: 'delivery_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Delivery Type ID',
+				name: 'delivery_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'External Code',
+				name: 'external_code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'From ID',
+				name: 'from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Location',
+				name: 'location',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Payment Type ID',
+				name: 'payment_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Phone',
+				name: 'phone',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Qrcodeurl',
+				name: 'qrcodeurl',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['addFull'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document',
+				name: 'document',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Operations',
+				name: 'operations',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Address',
+				name: 'address',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Card ID',
+				name: 'card_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Courier ID',
+				name: 'courier_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Delivery Date',
+				name: 'delivery_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Delivery Type ID',
+				name: 'delivery_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'External Code',
+				name: 'external_code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'From ID',
+				name: 'from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Location',
+				name: 'location',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Payment Type ID',
+				name: 'payment_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Phone',
+				name: 'phone',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Qrcodeurl',
+				name: 'qrcodeurl',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Code',
+				name: 'code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Customer IDs',
+				name: 'customer_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'External Code',
+				name: 'external_code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'From IDs',
+				name: 'from_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Operating Cash IDs',
+				name: 'operating_cash_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Status IDs',
+				name: 'status_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['getCount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Code',
+				name: 'code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Customer IDs',
+				name: 'customer_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'External Code',
+				name: 'external_code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'From IDs',
+				name: 'from_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				typeOptions: {
+					minValue: 1,
+				},
+				default: 50,
+				description: 'Max number of results to return',
+			},
+			{
+				displayName: 'Offset',
+				name: 'offset',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Operating Cash IDs',
+				name: 'operating_cash_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Status IDs',
+				name: 'status_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['return'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Data',
+				name: 'data',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['setCourier'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['setCourier'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Courier ID',
+				name: 'courier_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['setFiscalInfo'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['setFiscalInfo'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Qrcodeurl',
+				name: 'qrcodeurl',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['setOperatingCash'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['setOperatingCash'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['setRetailCard'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['setRetailCard'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Card ID',
+				name: 'card_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['setStatus'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['setStatus'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Status',
+				name: 'status',
+				type: 'options',
+				options: [
+					{
+						name: 'Approved',
+						value: 'Approved',
+					},
+					{
+						name: 'Canceled',
+						value: 'Canceled',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Finished',
+						value: 'Finished',
+					},
+					{
+						name: 'New',
+						value: 'New',
+					},
+					{
+						name: 'Paying',
+						value: 'Paying',
+					},
+					{
+						name: 'Processing',
+						value: 'Processing',
+					},
+					{
+						name: 'Return Paying',
+						value: 'ReturnPaying',
+					},
+					{
+						name: 'Return Processing',
+						value: 'ReturnProcessing',
+					},
+				],
+				default: 'Approved',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['setStock'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['setStock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['toBeginning'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderDelivery'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderFromPartner'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc order from partner',
+				description: 'Create a doc order from partner',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc order from partner',
+				description: 'Delete a doc order from partner',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc order from partner',
+				description: 'Mark a doc order from partner for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc order from partner',
+				description: 'Update a doc order from partner',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc order from partner',
+				description: 'Retrieve many doc order from partner records',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc order from partner',
+				description: 'Lock a doc order from partner',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc order from partner',
+				description: 'Unlock a doc order from partner',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderFromPartner'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Booked',
+				name: 'booked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Status ID',
+				name: 'status_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderFromPartner'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderFromPartner'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderFromPartner'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderFromPartner'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Booked',
+				name: 'booked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Status ID',
+				name: 'status_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docOrderFromPartner'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docOrderFromPartner'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderFromPartner'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Contract IDs',
+				name: 'contract_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Status IDs',
+				name: 'status_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderFromPartner'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderFromPartner'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderToMovement'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc order to movement',
+				description: 'Create a doc order to movement',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc order to movement',
+				description: 'Delete a doc order to movement',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc order to movement',
+				description: 'Mark a doc order to movement for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc order to movement',
+				description: 'Update a doc order to movement',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc order to movement',
+				description: 'Retrieve many doc order to movement records',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc order to movement',
+				description: 'Lock a doc order to movement',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc order to movement',
+				description: 'Unlock a doc order to movement',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderToMovement'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Status ID',
+				name: 'status_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock Receiver ID',
+				name: 'stock_receiver_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderToMovement'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderToMovement'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderToMovement'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderToMovement'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Status ID',
+				name: 'status_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock Receiver ID',
+				name: 'stock_receiver_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docOrderToMovement'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docOrderToMovement'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderToMovement'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm Receiver IDs',
+				name: 'firm_receiver_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Status IDs',
+				name: 'status_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Stock Receiver IDs',
+				name: 'stock_receiver_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderToMovement'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderToMovement'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderToPartner'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc order to partner',
+				description: 'Create a doc order to partner',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc order to partner',
+				description: 'Delete a doc order to partner',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc order to partner',
+				description: 'Mark a doc order to partner for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc order to partner',
+				description: 'Update a doc order to partner',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc order to partner',
+				description: 'Retrieve many doc order to partner records',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc order to partner',
+				description: 'Lock a doc order to partner',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc order to partner',
+				description: 'Unlock a doc order to partner',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderToPartner'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Status ID',
+				name: 'status_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderToPartner'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderToPartner'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docOrderToPartner'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderToPartner'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Status ID',
+				name: 'status_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docOrderToPartner'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docOrderToPartner'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderToPartner'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Contract IDs',
+				name: 'contract_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Status IDs',
+				name: 'status_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderToPartner'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docOrderToPartner'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docPayment'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc payment',
+				description: 'Create a doc payment',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc payment',
+				description: 'Delete a doc payment',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc payment',
+				description: 'Mark a doc payment for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc payment',
+				description: 'Update a doc payment',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc payment',
+				description: 'Retrieve many payment documents',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc payment',
+				description: 'Post a doc payment',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc payment',
+				description: 'Cancel the posting of a doc payment',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPayment'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Category ID',
+				name: 'category_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Document',
+				name: 'document',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document Type ID',
+				name: 'document_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type ID',
+				name: 'type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPayment'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPayment'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPayment'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPayment'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Category ID',
+				name: 'category_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type ID',
+				name: 'type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docPayment'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docPayment'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPayment'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Category IDs',
+				name: 'category_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Contract IDs',
+				name: 'contract_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Document Type IDs',
+				name: 'document_type_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Filters',
+				name: 'filters',
+				type: 'fixedCollection',
+				typeOptions: {
+					multipleValues: true,
+				},
+				default: {},
+				options: [
+					{
+						name: 'filter',
+						displayName: 'Filter',
+						values: [
+							{
+								displayName: 'Field',
+								name: 'field',
+								type: 'string',
+								default: '',
+							},
+							{
+								displayName: 'Operator',
+								name: 'operator',
+								type: 'options',
+								options: [
+									{
+										name: 'Default',
+										value: 'Default',
+									},
+									{
+										name: 'Equal',
+										value: 'Equal',
+									},
+									{
+										name: 'Exists',
+										value: 'Exists',
+									},
+									{
+										name: 'Greater',
+										value: 'Greater',
+									},
+									{
+										name: 'Greater Or Equal',
+										value: 'GreaterOrEqual',
+									},
+									{
+										name: 'In',
+										value: 'In',
+									},
+									{
+										name: 'Less',
+										value: 'Less',
+									},
+									{
+										name: 'Less Or Equal',
+										value: 'LessOrEqual',
+									},
+									{
+										name: 'Like',
+										value: 'Like',
+									},
+									{
+										name: 'Not Equal',
+										value: 'NotEqual',
+									},
+									{
+										name: 'Not Exists',
+										value: 'NotExists',
+									},
+									{
+										name: 'Not In',
+										value: 'NotIn',
+									},
+								],
+								default: 'Default',
+							},
+							{
+								displayName: 'Value',
+								name: 'value',
+								type: 'string',
+								default: '',
+							},
+						],
+					},
+				],
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Payment Direction',
+				name: 'payment_direction',
+				type: 'options',
+				options: [
+					{
+						name: 'All',
+						value: 'All',
+					},
+					{
+						name: 'Income',
+						value: 'Income',
+					},
+					{
+						name: 'Outcome',
+						value: 'Outcome',
+					},
+				],
+				default: 'All',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPayment'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPayment'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docPaymentAggregation'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc payment aggregation',
+				description: 'Retrieve many doc payment aggregation records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docPaymentAggregation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docPaymentAggregation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPaymentAggregation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docPeriodClosing'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc period closing',
+				description: 'Create a doc period closing',
+			},
+			{
+				name: 'Cancel Close',
+				value: 'cancelClose',
+				action: 'Cancel close doc period closing',
+				description: 'Cancel close for a doc period closing',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc period closing',
+				description: 'Delete a doc period closing',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc period closing',
+				description: 'Update a doc period closing',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc period closing',
+				description: 'Retrieve many doc period closing records',
+			},
+			{
+				name: 'Is Can Do',
+				value: 'isCanDo',
+				action: 'Is can do doc period closing',
+				description: 'Check whether the action is allowed for a doc period closing',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPeriodClosing'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Close Date',
+				name: 'close_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Run Date',
+				name: 'run_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPeriodClosing'],
+				operation: ['cancelClose'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPeriodClosing'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPeriodClosing'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPeriodClosing'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Close Date',
+				name: 'close_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Run Date',
+				name: 'run_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Scheduler UUID',
+				name: 'scheduler_uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docPeriodClosing'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docPeriodClosing'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPeriodClosing'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Order',
+				name: 'sort_order',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Status IDs',
+				name: 'status_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPeriodClosing'],
+				operation: ['isCanDo'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Close Date',
+				name: 'close_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docPrintForm'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc print form',
+				description: 'Create a doc print form',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc print form',
+				description: 'Delete a doc print form',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc print form',
+				description: 'Update a doc print form',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc print form',
+				description: 'Retrieve doc print form data',
+			},
+			{
+				name: 'Prepare',
+				value: 'prepare',
+				action: 'Prepare doc print form',
+				description: 'Prepare a doc print form',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPrintForm'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPrintForm'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Include Data',
+				name: 'include_data',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Version',
+				name: 'version',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPrintForm'],
+				operation: ['prepare'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Data',
+				name: 'data',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Print Form Type ID',
+				name: 'print_form_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Version',
+				name: 'version',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docProduction'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc production',
+				description: 'Create a doc production',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc production',
+				description: 'Delete a doc production',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc production',
+				description: 'Update a doc production',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc production',
+				description: 'Retrieve many doc production records',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc production',
+				description: 'Lock a doc production',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc production',
+				description: 'Post a doc production',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc production',
+				description: 'Cancel the posting of a doc production',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc production',
+				description: 'Unlock a doc production',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docProduction'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Assemblable',
+						value: 'Assemblable',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Disassemblable',
+						value: 'Disassemblable',
+					},
+				],
+				default: 'Assemblable',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docProduction'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docProduction'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docProduction'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docProduction'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docProduction'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docProduction'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Code',
+				name: 'code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Assemblable',
+						value: 'Assemblable',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Disassemblable',
+						value: 'Disassemblable',
+					},
+				],
+				default: 'Assemblable',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docProduction'],
+				operation: ['lock'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docProduction'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docProduction'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docProduction'],
+				operation: ['unlock'],
+			},
+		},
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc purchase',
+				description: 'Create a purchase document header, then add lines with Purchase Operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc purchase',
+				description: 'Delete a doc purchase',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc purchase',
+				description: 'Mark a doc purchase for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc purchase',
+				description: 'Update a doc purchase',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc purchase',
+				description: 'Retrieve many purchase documents (goods received from partners)',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc purchase',
+				description: 'Lock a doc purchase',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc purchase',
+				description: 'Post a purchase document so it affects stock and balances',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc purchase',
+				description: 'Unpost a purchase document, reverting its effect on stock and balances',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc purchase',
+				description: 'Unlock a doc purchase',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Contract IDs',
+				name: 'contract_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Filters',
+				name: 'filters',
+				type: 'fixedCollection',
+				typeOptions: {
+					multipleValues: true,
+				},
+				default: {},
+				options: [
+					{
+						name: 'filter',
+						displayName: 'Filter',
+						values: [
+							{
+								displayName: 'Field',
+								name: 'field',
+								type: 'string',
+								default: '',
+							},
+							{
+								displayName: 'Operator',
+								name: 'operator',
+								type: 'options',
+								options: [
+									{
+										name: 'Default',
+										value: 'Default',
+									},
+									{
+										name: 'Equal',
+										value: 'Equal',
+									},
+									{
+										name: 'Exists',
+										value: 'Exists',
+									},
+									{
+										name: 'Greater',
+										value: 'Greater',
+									},
+									{
+										name: 'Greater Or Equal',
+										value: 'GreaterOrEqual',
+									},
+									{
+										name: 'In',
+										value: 'In',
+									},
+									{
+										name: 'Less',
+										value: 'Less',
+									},
+									{
+										name: 'Less Or Equal',
+										value: 'LessOrEqual',
+									},
+									{
+										name: 'Like',
+										value: 'Like',
+									},
+									{
+										name: 'Not Equal',
+										value: 'NotEqual',
+									},
+									{
+										name: 'Not Exists',
+										value: 'NotExists',
+									},
+									{
+										name: 'Not In',
+										value: 'NotIn',
+									},
+								],
+								default: 'Default',
+							},
+							{
+								displayName: 'Value',
+								name: 'value',
+								type: 'string',
+								default: '',
+							},
+						],
+					},
+				],
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docPurchase'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc returns to partner',
+				description: 'Create a doc returns to partner',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc returns to partner',
+				description: 'Delete a doc returns to partner',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc returns to partner',
+				description: 'Mark a doc returns to partner for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc returns to partner',
+				description: 'Update a doc returns to partner',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc returns to partner',
+				description: 'Retrieve many doc returns to partner records',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc returns to partner',
+				description: 'Lock a doc returns to partner',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc returns to partner',
+				description: 'Post a doc returns to partner',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc returns to partner',
+				description: 'Cancel the posting of a doc returns to partner',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc returns to partner',
+				description: 'Unlock a doc returns to partner',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Contract IDs',
+				name: 'contract_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docReturnsToPartner'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc set price',
+				description: 'Create a doc set price',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc set price',
+				description: 'Delete a doc set price',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc set price',
+				description: 'Mark a doc set price for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc set price',
+				description: 'Update a doc set price',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc set price',
+				description: 'Retrieve many price-setting documents',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc set price',
+				description: 'Lock a doc set price',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc set price',
+				description: 'Post a price-setting document so its prices take effect',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc set price',
+				description: 'Cancel the posting of a doc set price',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc set price',
+				description: 'Unlock a doc set price',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Price Type IDs',
+				name: 'price_type_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docSetPrice'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docStockAggregation'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc stock aggregation',
+				description: 'Retrieve many doc stock aggregation records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docStockAggregation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docStockAggregation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docStockAggregation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docTechMap'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc tech map',
+				description: 'Create a doc tech map',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc tech map',
+				description: 'Delete a doc tech map',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc tech map',
+				description: 'Update a doc tech map',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc tech map',
+				description: 'Retrieve many doc tech map records',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc tech map',
+				description: 'Lock a doc tech map',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc tech map',
+				description: 'Post a doc tech map',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc tech map',
+				description: 'Cancel the posting of a doc tech map',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc tech map',
+				description: 'Unlock a doc tech map',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docTechMap'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Autocalculate Part Cost',
+				name: 'autocalculate_part_cost',
+				type: 'boolean',
+				default: false,
+				description: 'Whether autocalculate part cost is enabled',
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Item ID',
+				name: 'item_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Assemblable',
+						value: 'Assemblable',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Disassemblable',
+						value: 'Disassemblable',
+					},
+				],
+				default: 'Assemblable',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docTechMap'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docTechMap'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docTechMap'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Autocalculate Part Cost',
+				name: 'autocalculate_part_cost',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Item ID',
+				name: 'item_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docTechMap'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docTechMap'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docTechMap'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Assemblable',
+						value: 'Assemblable',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Disassemblable',
+						value: 'Disassemblable',
+					},
+				],
+				default: 'Assemblable',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docTechMap'],
+				operation: ['lock'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docTechMap'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docTechMap'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docTechMap'],
+				operation: ['unlock'],
+			},
+		},
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc whole sale',
+				description: 'Create a doc whole sale',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc whole sale',
+				description: 'Delete a doc whole sale',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc whole sale',
+				description: 'Mark a doc whole sale for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc whole sale',
+				description: 'Update a doc whole sale',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc whole sale',
+				description: 'Retrieve many shipment documents (goods sold to partners)',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc whole sale',
+				description: 'Lock a doc whole sale',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc whole sale',
+				description: 'Post a shipment document so it affects stock and balances',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc whole sale',
+				description: 'Cancel the posting of a doc whole sale',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc whole sale',
+				description: 'Unlock a doc whole sale',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Seller ID',
+				name: 'seller_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Seller ID',
+				name: 'seller_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Contract IDs',
+				name: 'contract_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docWholeSale'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add doc whole sale return',
+				description: 'Create a doc whole sale return',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete doc whole sale return',
+				description: 'Delete a doc whole sale return',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark doc whole sale return',
+				description: 'Mark a doc whole sale return for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit doc whole sale return',
+				description: 'Update a doc whole sale return',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get doc whole sale return',
+				description: 'Retrieve many doc whole sale return records',
+			},
+			{
+				name: 'Lock',
+				value: 'lock',
+				action: 'Lock doc whole sale return',
+				description: 'Lock a doc whole sale return',
+			},
+			{
+				name: 'Perform',
+				value: 'perform',
+				action: 'Perform doc whole sale return',
+				description: 'Post a doc whole sale return',
+			},
+			{
+				name: 'Perform Cancel',
+				value: 'performCancel',
+				action: 'Perform cancel doc whole sale return',
+				description: 'Cancel the posting of a doc whole sale return',
+			},
+			{
+				name: 'Unlock',
+				value: 'unlock',
+				action: 'Unlock doc whole sale return',
+				description: 'Unlock a doc whole sale return',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User ID',
+				name: 'attached_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Contract ID',
+				name: 'contract_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exchange Rate',
+				name: 'exchange_rate',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attached User IDs',
+				name: 'attached_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Contract IDs',
+				name: 'contract_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Performed',
+				name: 'performed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'VAT Calculation Type',
+				name: 'vat_calculation_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Exclude',
+						value: 'Exclude',
+					},
+					{
+						name: 'Include',
+						value: 'Include',
+					},
+					{
+						name: 'No',
+						value: 'No',
+					},
+				],
+				default: 'Exclude',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+				operation: ['lock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+				operation: ['perform'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+				operation: ['performCancel'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['docWholeSaleReturn'],
+				operation: ['unlock'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['documentEnumerator'],
+			},
+		},
+		options: [
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit document enumerator',
+				description: 'Update a document enumerator',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get document enumerator',
+				description: 'Retrieve document enumerator data',
+			},
+			{
+				name: 'Reset',
+				value: 'reset',
+				action: 'Reset document enumerator',
+				description: 'Reset a document enumerator',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['documentEnumerator'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['documentEnumerator'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Mask',
+				name: 'mask',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['documentEnumerator'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Table IDs',
+				name: 'table_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['documentEnumerator'],
+				operation: ['reset'],
+			},
+		},
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['documentStatus'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get document status',
+				description: 'Retrieve document status data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['documentStatus'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document Type ID',
+				name: 'document_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['documentType'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get document type',
+				description: 'Retrieve document type data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['documentType'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['editedExchangeRateLog'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get edited exchange rate log',
+				description: 'Retrieve many edited exchange rate log records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['editedExchangeRateLog'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['editedExchangeRateLog'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['editedExchangeRateLog'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['entityType'],
 			},
 		},
@@ -3564,6 +23848,263 @@ export const nodeProperties: INodeProperties[] = [
 				},
 				default: 50,
 				description: 'Max number of results to return',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['fastGroup'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add fast group',
+				description: 'Create a fast group',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete fast group',
+				description: 'Delete a fast group',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit fast group',
+				description: 'Update a fast group',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get fast group',
+				description: 'Retrieve fast group data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['fastGroup'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['fastGroup'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['fastGroup'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['fastGroup'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['fastGroup'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['fastItem'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add fast item',
+				description: 'Create a fast item',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete fast item',
+				description: 'Delete a fast item',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get fast item',
+				description: 'Retrieve fast item data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['fastItem'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Group ID',
+				name: 'group_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Item ID',
+				name: 'item_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['fastItem'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['fastItem'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Group IDs',
+				name: 'group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
 			},
 		],
 	},
@@ -5198,6 +25739,199 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['inOutOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add in out operation',
+				description: 'Create an in out operation',
+			},
+			{
+				name: 'Copy Operations From Doc Inventory',
+				value: 'copyOperationsFromDocInventory',
+				action: 'Copy operations from doc inventory in out operation',
+				description: 'Copy operations from doc inventory for an in out operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete in out operation',
+				description: 'Delete an in out operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit in out operation',
+				description: 'Update an in out operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get in out operation',
+				description: 'Retrieve many in out operation records',
+			},
+			{
+				name: 'Move Operations',
+				value: 'moveOperations',
+				action: 'Move operations in out operation',
+				description: 'Move operations for an in out operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['inOutOperation'],
+				operation: ['copyOperationsFromDocInventory'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['inOutOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['inOutOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['inOutOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['inOutOperation'],
+				operation: ['moveOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['integration'],
 			},
 		},
@@ -5479,6 +26213,501 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		],
 		default: 'get',
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['inventoryOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add inventory operation',
+				description: 'Create an inventory operation',
+			},
+			{
+				name: 'Add Bulk',
+				value: 'addBulk',
+				action: 'Add bulk inventory operation',
+				description: 'Add bulk for an inventory operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete inventory operation',
+				description: 'Delete an inventory operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit inventory operation',
+				description: 'Update an inventory operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get inventory operation',
+				description: 'Retrieve many inventory operation records',
+			},
+			{
+				name: 'Move Operations',
+				value: 'moveOperations',
+				action: 'Move operations inventory operation',
+				description: 'Move operations for an inventory operation',
+			},
+			{
+				name: 'Set Price By Price Type',
+				value: 'setPriceByPriceType',
+				action: 'Set price by price type inventory operation',
+				description: 'Set price by price type for an inventory operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['inventoryOperation'],
+				operation: ['addBulk'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Actual Quantity',
+				name: 'actual_quantity',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Department IDs',
+				name: 'department_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Group IDs',
+				name: 'group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Update Actual Quantity',
+				name: 'update_actual_quantity',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['inventoryOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['inventoryOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['inventoryOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Only Deviation',
+				name: 'only_deviation',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to return only records that deviate',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['inventoryOperation'],
+				operation: ['moveOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['inventoryOperation'],
+				operation: ['setPriceByPriceType'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['invoiceOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add invoice operation',
+				description: 'Create an invoice operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete invoice operation',
+				description: 'Delete an invoice operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit invoice operation',
+				description: 'Update an invoice operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get invoice operation',
+				description: 'Retrieve many invoice operation records',
+			},
+			{
+				name: 'Get Operations From Roaming',
+				value: 'getOperationsFromRoaming',
+				action: 'Get operations from roaming invoice operation',
+				description: 'Get operations from roaming for an invoice operation',
+			},
+			{
+				name: 'Move Operations',
+				value: 'moveOperations',
+				action: 'Move operations invoice operation',
+				description: 'Move operations for an invoice operation',
+			},
+			{
+				name: 'Set Price By Price Type',
+				value: 'setPriceByPriceType',
+				action: 'Set price by price type invoice operation',
+				description: 'Set price by price type for an invoice operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['invoiceOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['invoiceOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['invoiceOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['invoiceOperation'],
+				operation: ['getOperationsFromRoaming'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['invoiceOperation'],
+				operation: ['moveOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['invoiceOperation'],
+				operation: ['setPriceByPriceType'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
 	},
 	{
 		displayName: 'Operation',
@@ -8165,6 +29394,111 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['itemOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get item operation',
+				description: 'Retrieve many item operation records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['itemOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['itemOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['itemOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item ID',
+				name: 'item_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['itemPrice'],
 			},
 		},
@@ -8257,6 +29591,57 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['itemPriceLog'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get item price log',
+				description: 'Retrieve item price log data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['itemPriceLog'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Price Type IDs',
+				name: 'price_type_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['language'],
 			},
 		},
@@ -8269,6 +29654,2359 @@ export const nodeProperties: INodeProperties[] = [
 			},
 		],
 		default: 'get',
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add lead',
+				description: 'Create a lead',
+			},
+			{
+				name: 'Close',
+				value: 'close',
+				action: 'Close lead',
+				description: 'Close a lead',
+			},
+			{
+				name: 'Convert',
+				value: 'convert',
+				action: 'Convert lead',
+				description: 'Convert a lead',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete lead',
+				description: 'Delete a lead',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit lead',
+				description: 'Update a lead',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get lead',
+				description: 'Retrieve many lead records',
+			},
+			{
+				name: 'Set Participants',
+				value: 'setParticipants',
+				action: 'Set participants lead',
+				description: 'Set participants for a lead',
+			},
+			{
+				name: 'Set Responsible',
+				value: 'setResponsible',
+				action: 'Set responsible lead',
+				description: 'Set responsible for a lead',
+			},
+			{
+				name: 'Set Stage',
+				value: 'setStage',
+				action: 'Set stage lead',
+				description: 'Set stage for a lead',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Chat ID',
+				name: 'chat_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Client ID',
+				name: 'client_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Description Mentions',
+				name: 'description_mentions',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Mention Options',
+				name: 'mention_options',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Participant User IDs',
+				name: 'participant_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Pipeline ID',
+				name: 'pipeline_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stage ID',
+				name: 'stage_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Ticket ID',
+				name: 'ticket_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Title',
+				name: 'title',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['close'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['close'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Stage ID',
+				name: 'stage_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['convert'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['convert'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Deal Title',
+				name: 'deal_title',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Deal Type ID',
+				name: 'deal_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Participant User IDs',
+				name: 'participant_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Pipeline ID',
+				name: 'pipeline_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stage ID',
+				name: 'stage_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Target Entity Type',
+				name: 'target_entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Client',
+						value: 'Client',
+					},
+					{
+						name: 'Deal',
+						value: 'Deal',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Lead',
+						value: 'Lead',
+					},
+					{
+						name: 'Ticket',
+						value: 'Ticket',
+					},
+				],
+				default: 'Client',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Description Mentions',
+				name: 'description_mentions',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Mention Options',
+				name: 'mention_options',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Stage ID',
+				name: 'stage_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Title',
+				name: 'title',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Client IDs',
+				name: 'client_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Filters',
+				name: 'filters',
+				type: 'fixedCollection',
+				typeOptions: {
+					multipleValues: true,
+				},
+				default: {},
+				options: [
+					{
+						name: 'filter',
+						displayName: 'Filter',
+						values: [
+							{
+								displayName: 'Field',
+								name: 'field',
+								type: 'string',
+								default: '',
+							},
+							{
+								displayName: 'Operator',
+								name: 'operator',
+								type: 'options',
+								options: [
+									{
+										name: 'Default',
+										value: 'Default',
+									},
+									{
+										name: 'Equal',
+										value: 'Equal',
+									},
+									{
+										name: 'Exists',
+										value: 'Exists',
+									},
+									{
+										name: 'Greater',
+										value: 'Greater',
+									},
+									{
+										name: 'Greater Or Equal',
+										value: 'GreaterOrEqual',
+									},
+									{
+										name: 'In',
+										value: 'In',
+									},
+									{
+										name: 'Less',
+										value: 'Less',
+									},
+									{
+										name: 'Less Or Equal',
+										value: 'LessOrEqual',
+									},
+									{
+										name: 'Like',
+										value: 'Like',
+									},
+									{
+										name: 'Not Equal',
+										value: 'NotEqual',
+									},
+									{
+										name: 'Not Exists',
+										value: 'NotExists',
+									},
+									{
+										name: 'Not In',
+										value: 'NotIn',
+									},
+								],
+								default: 'Default',
+							},
+							{
+								displayName: 'Value',
+								name: 'value',
+								type: 'string',
+								default: '',
+							},
+						],
+					},
+				],
+			},
+			{
+				displayName: 'From Date',
+				name: 'from_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Include Mentions',
+				name: 'include_mentions',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to include mentions',
+			},
+			{
+				displayName: 'Responsible User IDs',
+				name: 'responsible_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stage IDs',
+				name: 'stage_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'To Date',
+				name: 'to_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['setParticipants'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['setParticipants'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Participant User IDs',
+				name: 'participant_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Replace Mode',
+				name: 'replace_mode',
+				type: 'boolean',
+				default: false,
+				description: 'Whether existing values are replaced instead of merged',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['setResponsible'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['setResponsible'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['setStage'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['lead'],
+				operation: ['setStage'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Comment',
+				name: 'comment',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stage ID',
+				name: 'stage_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['movementOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add movement operation',
+				description: 'Create a movement operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete movement operation',
+				description: 'Delete a movement operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit movement operation',
+				description: 'Update a movement operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get movement operation',
+				description: 'Retrieve many movement operation records',
+			},
+			{
+				name: 'Move Operations',
+				value: 'moveOperations',
+				action: 'Move operations movement operation',
+				description: 'Move operations for a movement operation',
+			},
+			{
+				name: 'Set Price By Price Type',
+				value: 'setPriceByPriceType',
+				action: 'Set price by price type movement operation',
+				description: 'Set price by price type for a movement operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['movementOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['movementOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['movementOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['movementOperation'],
+				operation: ['moveOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['movementOperation'],
+				operation: ['setPriceByPriceType'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+			},
+		},
+		options: [
+			{
+				name: 'Accept',
+				value: 'accept',
+				action: 'Accept operating cash',
+				description: 'Accept an operating cash',
+			},
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add operating cash',
+				description: 'Create an operating cash',
+			},
+			{
+				name: 'Add Image',
+				value: 'addImage',
+				action: 'Add image operating cash',
+				description: 'Add image for an operating cash',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete operating cash',
+				description: 'Delete an operating cash',
+			},
+			{
+				name: 'Delete Image',
+				value: 'deleteImage',
+				action: 'Delete image operating cash',
+				description: 'Delete image for an operating cash',
+			},
+			{
+				name: 'Discard',
+				value: 'discard',
+				action: 'Discard operating cash',
+				description: 'Discard an operating cash',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit operating cash',
+				description: 'Update an operating cash',
+			},
+			{
+				name: 'Edit Cheque Template',
+				value: 'editChequeTemplate',
+				action: 'Edit cheque template operating cash',
+				description: 'Edit cheque template for an operating cash',
+			},
+			{
+				name: 'Edit Settings',
+				value: 'editSettings',
+				action: 'Edit settings operating cash',
+				description: 'Edit settings for an operating cash',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get operating cash',
+				description: 'Retrieve many operating cash records',
+			},
+			{
+				name: 'Get Cheque Template',
+				value: 'getChequeTemplate',
+				action: 'Get cheque template operating cash',
+				description: 'Get cheque template for an operating cash',
+			},
+			{
+				name: 'Get Image',
+				value: 'getImage',
+				action: 'Get image operating cash',
+				description: 'Get image for an operating cash',
+			},
+			{
+				name: 'Get Settings',
+				value: 'getSettings',
+				action: 'Get settings operating cash',
+				description: 'Get settings for an operating cash',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['accept'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Auto Close',
+				name: 'auto_close',
+				type: 'boolean',
+				default: false,
+				description: 'Whether auto close is enabled',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Key',
+				name: 'key',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Max Cheque Quantity In Session',
+				name: 'max_cheque_quantity_in_session',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Virtual',
+				name: 'virtual',
+				type: 'boolean',
+				default: false,
+				description: 'Whether the record is virtual',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['deleteImage'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['discard'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Auto Close',
+				name: 'auto_close',
+				type: 'boolean',
+				default: false,
+				description: 'Whether auto close is enabled',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Key',
+				name: 'key',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Max Cheque Quantity In Session',
+				name: 'max_cheque_quantity_in_session',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['editChequeTemplate'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['editChequeTemplate'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Logo',
+				name: 'logo',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Logo Height',
+				name: 'logo_height',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Logo Width',
+				name: 'logo_width',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Template',
+				name: 'template',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Accepted User ID',
+				name: 'accepted_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Filters',
+				name: 'filters',
+				type: 'fixedCollection',
+				typeOptions: {
+					multipleValues: true,
+				},
+				default: {},
+				options: [
+					{
+						name: 'filter',
+						displayName: 'Filter',
+						values: [
+							{
+								displayName: 'Field',
+								name: 'field',
+								type: 'string',
+								default: '',
+							},
+							{
+								displayName: 'Operator',
+								name: 'operator',
+								type: 'options',
+								options: [
+									{
+										name: 'Default',
+										value: 'Default',
+									},
+									{
+										name: 'Equal',
+										value: 'Equal',
+									},
+									{
+										name: 'Exists',
+										value: 'Exists',
+									},
+									{
+										name: 'Greater',
+										value: 'Greater',
+									},
+									{
+										name: 'Greater Or Equal',
+										value: 'GreaterOrEqual',
+									},
+									{
+										name: 'In',
+										value: 'In',
+									},
+									{
+										name: 'Less',
+										value: 'Less',
+									},
+									{
+										name: 'Less Or Equal',
+										value: 'LessOrEqual',
+									},
+									{
+										name: 'Like',
+										value: 'Like',
+									},
+									{
+										name: 'Not Equal',
+										value: 'NotEqual',
+									},
+									{
+										name: 'Not Exists',
+										value: 'NotExists',
+									},
+									{
+										name: 'Not In',
+										value: 'NotIn',
+									},
+								],
+								default: 'Default',
+							},
+							{
+								displayName: 'Value',
+								name: 'value',
+								type: 'string',
+								default: '',
+							},
+						],
+					},
+				],
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Is Virtual',
+				name: 'is_virtual',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Price Type IDs',
+				name: 'price_type_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['getChequeTemplate'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Cheque Type IDs',
+				name: 'cheque_type_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Operating Cash IDs',
+				name: 'operating_cash_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['getImage'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Compress Data',
+				name: 'compress_data',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to compress the response payload',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Include Data',
+				name: 'include_data',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to include the related data in the response',
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['operatingCash'],
+				operation: ['getSettings'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['orderDeliveryOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add order delivery operation',
+				description: 'Create an order delivery operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete order delivery operation',
+				description: 'Delete an order delivery operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit order delivery operation',
+				description: 'Update an order delivery operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get order delivery operation',
+				description: 'Retrieve many order delivery operation records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['orderDeliveryOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['orderDeliveryOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['orderDeliveryOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['orderFromPartnerOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add order from partner operation',
+				description: 'Create an order from partner operation',
+			},
+			{
+				name: 'Add Discount',
+				value: 'addDiscount',
+				action: 'Add discount order from partner operation',
+				description: 'Add discount for an order from partner operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete order from partner operation',
+				description: 'Delete an order from partner operation',
+			},
+			{
+				name: 'Delete Discount',
+				value: 'deleteDiscount',
+				action: 'Delete discount order from partner operation',
+				description: 'Delete discount for an order from partner operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit order from partner operation',
+				description: 'Update an order from partner operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get order from partner operation',
+				description: 'Retrieve many order from partner operation records',
+			},
+			{
+				name: 'Get Discount',
+				value: 'getDiscount',
+				action: 'Get discount order from partner operation',
+				description: 'Get discount for an order from partner operation',
+			},
+			{
+				name: 'Move Operations',
+				value: 'moveOperations',
+				action: 'Move operations order from partner operation',
+				description: 'Move operations for an order from partner operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['orderFromPartnerOperation'],
+				operation: ['addDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Action',
+				name: 'action',
+				type: 'options',
+				options: [
+					{
+						name: 'Allowance',
+						value: 'Allowance',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Discount',
+						value: 'Discount',
+					},
+				],
+				default: 'Allowance',
+			},
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Percent',
+				name: 'percent',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Amount',
+						value: 'Amount',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Percent',
+						value: 'Percent',
+					},
+				],
+				default: 'Amount',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['orderFromPartnerOperation'],
+				operation: ['deleteDiscount'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['orderFromPartnerOperation'],
+				operation: ['deleteDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['orderFromPartnerOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['orderFromPartnerOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['orderFromPartnerOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['orderFromPartnerOperation'],
+				operation: ['getDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['orderFromPartnerOperation'],
+				operation: ['moveOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['orderToMovementOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add order to movement operation',
+				description: 'Create an order to movement operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete order to movement operation',
+				description: 'Delete an order to movement operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit order to movement operation',
+				description: 'Update an order to movement operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get order to movement operation',
+				description: 'Retrieve many order to movement operation records',
+			},
+			{
+				name: 'Move Operations',
+				value: 'moveOperations',
+				action: 'Move operations order to movement operation',
+				description: 'Move operations for an order to movement operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['orderToMovementOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['orderToMovementOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['orderToMovementOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['orderToMovementOperation'],
+				operation: ['moveOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['orderToPartnerOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add order to partner operation',
+				description: 'Create an order to partner operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete order to partner operation',
+				description: 'Delete an order to partner operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit order to partner operation',
+				description: 'Update an order to partner operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get order to partner operation',
+				description: 'Retrieve many order to partner operation records',
+			},
+			{
+				name: 'Move Operations',
+				value: 'moveOperations',
+				action: 'Move operations order to partner operation',
+				description: 'Move operations for an order to partner operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['orderToPartnerOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['orderToPartnerOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['orderToPartnerOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['orderToPartnerOperation'],
+				operation: ['moveOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
 	},
 	{
 		displayName: 'Operation',
@@ -9546,6 +33284,1925 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['personalDocType'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add personal doc type',
+				description: 'Create a personal doc type',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete personal doc type',
+				description: 'Delete a personal doc type',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit personal doc type',
+				description: 'Update a personal doc type',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get personal doc type',
+				description: 'Retrieve personal doc type data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['personalDocType'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Mask',
+				name: 'mask',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['personalDocType'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['personalDocType'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['personalDocType'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Mask',
+				name: 'mask',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['personalDocType'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add pipeline',
+				description: 'Create a pipeline',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete pipeline',
+				description: 'Delete a pipeline',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit pipeline',
+				description: 'Update a pipeline',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get pipeline',
+				description: 'Retrieve many pipeline records',
+			},
+			{
+				name: 'Set Access',
+				value: 'setAccess',
+				action: 'Set access pipeline',
+				description: 'Set access for a pipeline',
+			},
+			{
+				name: 'Set Stages',
+				value: 'setStages',
+				action: 'Set stages pipeline',
+				description: 'Set stages for a pipeline',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Access All',
+				name: 'access_all',
+				type: 'boolean',
+				default: false,
+				description: 'Whether access is granted to all records',
+			},
+			{
+				displayName: 'Access Group IDs',
+				name: 'access_group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Access User IDs',
+				name: 'access_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'boolean',
+				default: false,
+				description: 'Whether active is enabled',
+			},
+			{
+				displayName: 'Entity Type',
+				name: 'entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Client',
+						value: 'Client',
+					},
+					{
+						name: 'Deal',
+						value: 'Deal',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Lead',
+						value: 'Lead',
+					},
+					{
+						name: 'Ticket',
+						value: 'Ticket',
+					},
+				],
+				default: 'Client',
+			},
+			{
+				displayName: 'Is Default',
+				name: 'is_default',
+				type: 'boolean',
+				default: false,
+				description: 'Whether default is enabled',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Is Default',
+				name: 'is_default',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Entity Type',
+				name: 'entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Client',
+						value: 'Client',
+					},
+					{
+						name: 'Deal',
+						value: 'Deal',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Lead',
+						value: 'Lead',
+					},
+					{
+						name: 'Ticket',
+						value: 'Ticket',
+					},
+				],
+				default: 'Client',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+				operation: ['setAccess'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+				operation: ['setAccess'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Access All',
+				name: 'access_all',
+				type: 'boolean',
+				default: false,
+				description: 'Whether access is granted to all records',
+			},
+			{
+				displayName: 'Access Group IDs',
+				name: 'access_group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Access User IDs',
+				name: 'access_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Replace Mode',
+				name: 'replace_mode',
+				type: 'boolean',
+				default: false,
+				description: 'Whether existing values are replaced instead of merged',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['pipeline'],
+				operation: ['setStages'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Pipeline ID',
+				name: 'pipeline_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stages',
+				name: 'stages',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['posCashOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get POS cash operation',
+				description: 'Retrieve many POS cash operation records',
+			},
+			{
+				name: 'Get Amount Details',
+				value: 'getAmountDetails',
+				action: 'Get amount details POS cash operation',
+				description: 'Get amount details for a POS cash operation',
+			},
+			{
+				name: 'Income Add',
+				value: 'incomeAdd',
+				action: 'Income add POS cash operation',
+				description: 'Income add for a POS cash operation',
+			},
+			{
+				name: 'Outcome Add',
+				value: 'outcomeAdd',
+				action: 'Outcome add POS cash operation',
+				description: 'Outcome add for a POS cash operation',
+			},
+			{
+				name: 'Payment Add',
+				value: 'paymentAdd',
+				action: 'Payment add POS cash operation',
+				description: 'Payment add for a POS cash operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['posCashOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['posCashOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posCashOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posCashOperation'],
+				operation: ['getAmountDetails'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posCashOperation'],
+				operation: ['incomeAdd'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Payment Type ID',
+				name: 'payment_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posCashOperation'],
+				operation: ['outcomeAdd'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Payment Type ID',
+				name: 'payment_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posCashOperation'],
+				operation: ['paymentAdd'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Category ID',
+				name: 'category_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Partner ID',
+				name: 'partner_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Payment Type ID',
+				name: 'payment_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+			},
+		},
+		options: [
+			{
+				name: 'Add Retail Card',
+				value: 'addRetailCard',
+				action: 'Add retail card POS doc cheque',
+				description: 'Add retail card for a POS doc cheque',
+			},
+			{
+				name: 'Add Seller',
+				value: 'addSeller',
+				action: 'Add seller POS doc cheque',
+				description: 'Add seller for a POS doc cheque',
+			},
+			{
+				name: 'Back To Operations',
+				value: 'backToOperations',
+				action: 'Back to operations POS doc cheque',
+				description: 'Back to operations for a POS doc cheque',
+			},
+			{
+				name: 'Cancel',
+				value: 'cancel',
+				action: 'Cancel POS doc cheque',
+				description: 'Cancel a POS doc cheque',
+			},
+			{
+				name: 'Close',
+				value: 'close',
+				action: 'Close POS doc cheque',
+				description: 'Close a POS doc cheque',
+			},
+			{
+				name: 'Continue Delayed',
+				value: 'continueDelayed',
+				action: 'Continue delayed POS doc cheque',
+				description: 'Continue delayed for a POS doc cheque',
+			},
+			{
+				name: 'Create',
+				value: 'create',
+				action: 'Create POS doc cheque',
+				description: 'Create a POS doc cheque',
+			},
+			{
+				name: 'Delay',
+				value: 'delay',
+				action: 'Delay POS doc cheque',
+				description: 'Delay a POS doc cheque',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get POS doc cheque',
+				description: 'Retrieve POS doc cheque data',
+			},
+			{
+				name: 'Get Closed',
+				value: 'getClosed',
+				action: 'Get closed POS doc cheque',
+				description: 'Get closed for a POS doc cheque',
+			},
+			{
+				name: 'Get Current',
+				value: 'getcurrent',
+				action: 'Get current POS doc cheque',
+				description: "Retrieve the currently open cheque for the cashier's session",
+			},
+			{
+				name: 'Get Printed',
+				value: 'getPrinted',
+				action: 'Get printed POS doc cheque',
+				description: 'Get printed for a POS doc cheque',
+			},
+			{
+				name: 'Get Test Printed',
+				value: 'getTestPrinted',
+				action: 'Get test printed POS doc cheque',
+				description: 'Get test printed for a POS doc cheque',
+			},
+			{
+				name: 'Pay',
+				value: 'pay',
+				action: 'Pay POS doc cheque',
+				description: 'Pay a POS doc cheque',
+			},
+			{
+				name: 'Pay Debt',
+				value: 'payDebt',
+				action: 'Pay debt POS doc cheque',
+				description: 'Pay debt for a POS doc cheque',
+			},
+			{
+				name: 'Remove Seller',
+				value: 'removeSeller',
+				action: 'Remove seller POS doc cheque',
+				description: 'Remove seller for a POS doc cheque',
+			},
+			{
+				name: 'Set Amount Discount',
+				value: 'setAmountDiscount',
+				action: 'Set amount discount POS doc cheque',
+				description: 'Set amount discount for a POS doc cheque',
+			},
+			{
+				name: 'Set Doc Order Delivery',
+				value: 'setDocOrderDelivery',
+				action: 'Set doc order delivery POS doc cheque',
+				description: 'Set doc order delivery for a POS doc cheque',
+			},
+			{
+				name: 'Set Percent Discount',
+				value: 'setPercentDiscount',
+				action: 'Set percent discount POS doc cheque',
+				description: 'Set percent discount for a POS doc cheque',
+			},
+			{
+				name: 'Set Qr Code URL',
+				value: 'setQrCodeUrl',
+				action: 'Set qr code URL POS doc cheque',
+				description: 'Set qr code URL for a POS doc cheque',
+			},
+			{
+				name: 'Set Refund Info',
+				value: 'setRefundInfo',
+				action: 'Set refund info POS doc cheque',
+				description: 'Set refund info for a POS doc cheque',
+			},
+			{
+				name: 'Set Return',
+				value: 'setReturn',
+				action: 'Set return POS doc cheque',
+				description: 'Set return for a POS doc cheque',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['addRetailCard'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['addRetailCard'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Barcode Value',
+				name: 'barcode_value',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Card ID',
+				name: 'card_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['addSeller'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['addSeller'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Barcode',
+				name: 'barcode',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['backToOperations'],
+			},
+		},
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['cancel'],
+			},
+		},
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['close'],
+			},
+		},
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['continueDelayed'],
+			},
+		},
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['delay'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Card ID',
+				name: 'card_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Cashier ID',
+				name: 'cashier_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Code',
+				name: 'code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Doc Order Delivery ID',
+				name: 'doc_order_delivery_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Is Return',
+				name: 'is_return',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Return Reason',
+				name: 'return_reason',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Seller ID',
+				name: 'seller_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Session UUID',
+				name: 'session_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Statuses',
+				name: 'statuses',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'UUID',
+				name: 'uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['getPrinted'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document UUID',
+				name: 'document_uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['getTestPrinted'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['pay'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['payDebt'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Debt UUID',
+				name: 'debt_uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['removeSeller'],
+			},
+		},
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['setAmountDiscount'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['setAmountDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['setDocOrderDelivery'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['setDocOrderDelivery'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc Order Delivery ID',
+				name: 'doc_order_delivery_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['setPercentDiscount'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['setPercentDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Percent',
+				name: 'percent',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['setQrCodeUrl'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['setQrCodeUrl'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Qrcode URL',
+				name: 'qrcode_url',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['setRefundInfo'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['setRefundInfo'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Datetime',
+				name: 'datetime',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Fiscal Sign',
+				name: 'fiscal_sign',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Qrcode URL',
+				name: 'qrcode_url',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Receipt No',
+				name: 'receipt_no',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Terminal ID',
+				name: 'terminal_id',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['setReturn'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocCheque'],
+				operation: ['setReturn'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Is Return',
+				name: 'is_return',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Return Reason ID',
+				name: 'return_reason_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocOrderDelivery'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get POS doc order delivery',
+				description: 'Retrieve many POS doc order delivery records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['posDocOrderDelivery'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['posDocOrderDelivery'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocOrderDelivery'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Blocked',
+				name: 'blocked',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Code',
+				name: 'code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Customer IDs',
+				name: 'customer_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deleted Mark',
+				name: 'deleted_mark',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'External Code',
+				name: 'external_code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'From IDs',
+				name: 'from_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Operating Cash IDs',
+				name: 'operating_cash_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Status IDs',
+				name: 'status_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['posDocSession'],
+			},
+		},
+		options: [
+			{
+				name: 'Close',
+				value: 'close',
+				action: 'Close POS doc session',
+				description: 'Close a POS doc session',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get POS doc session',
+				description: 'Retrieve POS doc session data',
+			},
+			{
+				name: 'Get Current',
+				value: 'getCurrent',
+				action: 'Get current POS doc session',
+				description: 'Retrieve the currently open cash session for the register',
+			},
+			{
+				name: 'Open',
+				value: 'open',
+				action: 'Open POS doc session',
+				description: 'Open a POS doc session',
+			},
+			{
+				name: 'X Report',
+				value: 'xReport',
+				action: 'Print x report',
+				description: 'Print an X report for a POS doc session',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocSession'],
+				operation: ['close'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Session UUID',
+				name: 'session_uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posDocSession'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Close Date1',
+				name: 'close_date1',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Close Date2',
+				name: 'close_date2',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Close User',
+				name: 'close_user',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Closed',
+				name: 'closed',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Code',
+				name: 'code',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Operating Cash IDs',
+				name: 'operating_cash_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Start Date1',
+				name: 'start_date1',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date2',
+				name: 'start_date2',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start User',
+				name: 'start_user',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'UUID',
+				name: 'uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['posOperatingCash'],
+			},
+		},
+		options: [
+			{
+				name: 'Get Settings',
+				value: 'getSettings',
+				action: 'Get settings POS operating cash',
+				description: 'Get settings for a POS operating cash',
+			},
+		],
+		default: 'getSettings',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['posOperatingCash'],
+				operation: ['getSettings'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['priceType'],
 			},
 		},
@@ -10094,6 +35751,2815 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['productionOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add production operation',
+				description: 'Create a production operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete production operation',
+				description: 'Delete a production operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit production operation',
+				description: 'Update a production operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get production operation',
+				description: 'Retrieve many production operation records',
+			},
+			{
+				name: 'Move Operations',
+				value: 'moveOperations',
+				action: 'Move operations production operation',
+				description: 'Move operations for a production operation',
+			},
+			{
+				name: 'Replace Opr Tech Map',
+				value: 'replaceOprTechMap',
+				action: 'Replace opr tech map production operation',
+				description: 'Replace opr tech map for a production operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['productionOperation'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Data',
+				name: 'data',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['productionOperation'],
+				operation: ['delete'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['productionOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['productionOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['productionOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Tech Map IDs',
+				name: 'tech_map_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['productionOperation'],
+				operation: ['moveOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['productionOperation'],
+				operation: ['replaceOprTechMap'],
+			},
+		},
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['project'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add project',
+				description: 'Create a project',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete project',
+				description: 'Delete a project',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit project',
+				description: 'Update a project',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get project',
+				description: 'Retrieve many project records',
+			},
+			{
+				name: 'Set Access',
+				value: 'setAccess',
+				action: 'Set access project',
+				description: 'Set access for a project',
+			},
+			{
+				name: 'Set Responsible',
+				value: 'setResponsible',
+				action: 'Set responsible project',
+				description: 'Set responsible for a project',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Access All',
+				name: 'access_all',
+				type: 'boolean',
+				default: false,
+				description: 'Whether access is granted to all records',
+			},
+			{
+				displayName: 'Access Group IDs',
+				name: 'access_group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Access User IDs',
+				name: 'access_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Logo File ID',
+				name: 'logo_file_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Access All',
+				name: 'access_all',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Access Group IDs',
+				name: 'access_group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Access User IDs',
+				name: 'access_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Logo File ID',
+				name: 'logo_file_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Responsible User IDs',
+				name: 'responsible_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['setAccess'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['setAccess'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Access All',
+				name: 'access_all',
+				type: 'boolean',
+				default: false,
+				description: 'Whether access is granted to all records',
+			},
+			{
+				displayName: 'Access Group IDs',
+				name: 'access_group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Access User IDs',
+				name: 'access_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Replace Mode',
+				name: 'replace_mode',
+				type: 'boolean',
+				default: false,
+				description: 'Whether existing values are replaced instead of merged',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['setResponsible'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['project'],
+				operation: ['setResponsible'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add project task',
+				description: 'Create a project task',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete project task',
+				description: 'Delete a project task',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit project task',
+				description: 'Update a project task',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get project task',
+				description: 'Retrieve many project task records',
+			},
+			{
+				name: 'Set Due',
+				value: 'setDue',
+				action: 'Set due project task',
+				description: 'Set due for a project task',
+			},
+			{
+				name: 'Set Observers',
+				value: 'setObservers',
+				action: 'Set observers project task',
+				description: 'Set observers for a project task',
+			},
+			{
+				name: 'Set Project',
+				value: 'setProject',
+				action: 'Set project project task',
+				description: 'Set project for a project task',
+			},
+			{
+				name: 'Set Responsible',
+				value: 'setResponsible',
+				action: 'Set responsible project task',
+				description: 'Set responsible for a project task',
+			},
+			{
+				name: 'Set Status',
+				value: 'setStatus',
+				action: 'Set status project task',
+				description: 'Set status for a project task',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attachment File IDs',
+				name: 'attachment_file_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Client ID',
+				name: 'client_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Deal ID',
+				name: 'deal_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Description Mentions',
+				name: 'description_mentions',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Due Date',
+				name: 'due_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Inline File IDs',
+				name: 'inline_file_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Mention Options',
+				name: 'mention_options',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Observer User IDs',
+				name: 'observer_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Parent Task ID',
+				name: 'parent_task_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Project ID',
+				name: 'project_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Attachment File IDs',
+				name: 'attachment_file_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Client ID',
+				name: 'client_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Deal ID',
+				name: 'deal_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Description Mentions',
+				name: 'description_mentions',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Inline File IDs',
+				name: 'inline_file_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Mention Options',
+				name: 'mention_options',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Parent Task ID',
+				name: 'parent_task_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Client IDs',
+				name: 'client_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Deal IDs',
+				name: 'deal_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Due From',
+				name: 'due_from',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Due To',
+				name: 'due_to',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Filters',
+				name: 'filters',
+				type: 'fixedCollection',
+				typeOptions: {
+					multipleValues: true,
+				},
+				default: {},
+				options: [
+					{
+						name: 'filter',
+						displayName: 'Filter',
+						values: [
+							{
+								displayName: 'Field',
+								name: 'field',
+								type: 'string',
+								default: '',
+							},
+							{
+								displayName: 'Operator',
+								name: 'operator',
+								type: 'options',
+								options: [
+									{
+										name: 'Default',
+										value: 'Default',
+									},
+									{
+										name: 'Equal',
+										value: 'Equal',
+									},
+									{
+										name: 'Exists',
+										value: 'Exists',
+									},
+									{
+										name: 'Greater',
+										value: 'Greater',
+									},
+									{
+										name: 'Greater Or Equal',
+										value: 'GreaterOrEqual',
+									},
+									{
+										name: 'In',
+										value: 'In',
+									},
+									{
+										name: 'Less',
+										value: 'Less',
+									},
+									{
+										name: 'Less Or Equal',
+										value: 'LessOrEqual',
+									},
+									{
+										name: 'Like',
+										value: 'Like',
+									},
+									{
+										name: 'Not Equal',
+										value: 'NotEqual',
+									},
+									{
+										name: 'Not Exists',
+										value: 'NotExists',
+									},
+									{
+										name: 'Not In',
+										value: 'NotIn',
+									},
+								],
+								default: 'Default',
+							},
+							{
+								displayName: 'Value',
+								name: 'value',
+								type: 'string',
+								default: '',
+							},
+						],
+					},
+				],
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Include Mentions',
+				name: 'include_mentions',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to include mentions',
+			},
+			{
+				displayName: 'Observer User IDs',
+				name: 'observer_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Parent Task IDs',
+				name: 'parent_task_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Project IDs',
+				name: 'project_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Responsible User IDs',
+				name: 'responsible_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Statuses',
+				name: 'statuses',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setDue'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setDue'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Due Date',
+				name: 'due_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setObservers'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setObservers'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Observer User IDs',
+				name: 'observer_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Replace Mode',
+				name: 'replace_mode',
+				type: 'boolean',
+				default: false,
+				description: 'Whether existing values are replaced instead of merged',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setProject'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setProject'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Project ID',
+				name: 'project_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setResponsible'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setResponsible'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setStatus'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['projectTask'],
+				operation: ['setStatus'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Status',
+				name: 'status',
+				type: 'options',
+				options: [
+					{
+						name: 'Canceled',
+						value: 'Canceled',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Done',
+						value: 'Done',
+					},
+					{
+						name: 'In Progress',
+						value: 'InProgress',
+					},
+					{
+						name: 'New',
+						value: 'New',
+					},
+				],
+				default: 'Canceled',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['promoBonus'],
+			},
+		},
+		options: [
+			{
+				name: 'Cancel Payment',
+				value: 'cancelPayment',
+				action: 'Cancel payment promo bonus',
+				description: 'Cancel payment for a promo bonus',
+			},
+			{
+				name: 'Create Enrollment',
+				value: 'createEnrollment',
+				action: 'Create enrollment promo bonus',
+				description: 'Create enrollment for a promo bonus',
+			},
+			{
+				name: 'Create Manual Income Operation',
+				value: 'createManualIncomeOperation',
+				action: 'Create manual income operation promo bonus',
+				description: 'Create manual income operation for a promo bonus',
+			},
+			{
+				name: 'Create Manual Outcome Operation',
+				value: 'createManualOutcomeOperation',
+				action: 'Create manual outcome operation promo bonus',
+				description: 'Create manual outcome operation for a promo bonus',
+			},
+			{
+				name: 'Create Payment',
+				value: 'createPayment',
+				action: 'Create payment promo bonus',
+				description: 'Create payment for a promo bonus',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get promo bonus',
+				description: 'Retrieve a promo bonus by ID',
+			},
+			{
+				name: 'Perform Enrollment',
+				value: 'performEnrollment',
+				action: 'Perform enrollment promo bonus',
+				description: 'Perform enrollment for a promo bonus',
+			},
+			{
+				name: 'Perform Payment',
+				value: 'performPayment',
+				action: 'Perform payment promo bonus',
+				description: 'Perform payment for a promo bonus',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['promoBonus'],
+				operation: ['cancelPayment'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['promoBonus'],
+				operation: ['createEnrollment'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Card ID',
+				name: 'card_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document UUID',
+				name: 'document_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Is Return',
+				name: 'is_return',
+				type: 'boolean',
+				default: false,
+				description: 'Whether this is a return',
+			},
+			{
+				displayName: 'Promo ID',
+				name: 'promo_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['promoBonus'],
+				operation: ['createManualIncomeOperation'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Card ID',
+				name: 'card_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exp Date',
+				name: 'exp_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Promo ID',
+				name: 'promo_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['promoBonus'],
+				operation: ['createManualOutcomeOperation'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Card ID',
+				name: 'card_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Exp Date',
+				name: 'exp_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Promo ID',
+				name: 'promo_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['promoBonus'],
+				operation: ['createPayment'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Card ID',
+				name: 'card_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document UUID',
+				name: 'document_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Is Return',
+				name: 'is_return',
+				type: 'boolean',
+				default: false,
+				description: 'Whether this is a return',
+			},
+			{
+				displayName: 'Promo ID',
+				name: 'promo_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['promoBonus'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['promoBonus'],
+				operation: ['performEnrollment'],
+			},
+		},
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['promoBonus'],
+				operation: ['performPayment'],
+			},
+		},
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['promoProgram'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add promo program',
+				description: 'Create a promo program',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete promo program',
+				description: 'Delete a promo program',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit promo program',
+				description: 'Update a promo program',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get promo program',
+				description: 'Retrieve promo program data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['promoProgram'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'boolean',
+				default: false,
+				description: 'Whether active is enabled',
+			},
+			{
+				displayName: 'Days',
+				name: 'days',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'End Time',
+				name: 'end_time',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Priority',
+				name: 'priority',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Start Time',
+				name: 'start_time',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sub Type',
+				name: 'sub_type',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type ID',
+				name: 'type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['promoProgram'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['promoProgram'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['promoProgram'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Active',
+				name: 'active',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Days',
+				name: 'days',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'End Time',
+				name: 'end_time',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Priority',
+				name: 'priority',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Start Time',
+				name: 'start_time',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['promoProgram'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Allowed Retail Card',
+				name: 'allowed_retail_card',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Type IDs',
+				name: 'type_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['promoProgramSetting'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add promo program setting',
+				description: 'Create a promo program setting',
+			},
+			{
+				name: 'Add Single',
+				value: 'addSingle',
+				action: 'Add single promo program setting',
+				description: 'Add single for a promo program setting',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete promo program setting',
+				description: 'Delete a promo program setting',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit promo program setting',
+				description: 'Update a promo program setting',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get promo program setting',
+				description: 'Retrieve promo program setting data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['promoProgramSetting'],
+				operation: ['addSingle'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Key',
+				name: 'key',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Program ID',
+				name: 'program_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['promoProgramSetting'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['promoProgramSetting'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'ID',
+				name: 'id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Key',
+				name: 'key',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Program ID',
+				name: 'program_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Program IDs',
+				name: 'program_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Type IDs',
+				name: 'type_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['promoProgramStock'],
+			},
+		},
+		options: [
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete promo program stock',
+				description: 'Delete a promo program stock',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get promo program stock',
+				description: 'Retrieve promo program stock data',
+			},
+			{
+				name: 'Set',
+				value: 'set',
+				action: 'Set promo program stock',
+				description: 'Set a promo program stock',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['promoProgramStock'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Program ID',
+				name: 'program_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['promoProgramType'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get promo program type',
+				description: 'Retrieve promo program type data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['promoProgramType'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add purchase operation',
+				description: 'Add a line item to a purchase document',
+			},
+			{
+				name: 'Add Discount',
+				value: 'addDiscount',
+				action: 'Add discount purchase operation',
+				description: 'Add discount for a purchase operation',
+			},
+			{
+				name: 'Copy Operations From Doc Invoice',
+				value: 'copyOperationsFromDocInvoice',
+				action: 'Copy operations from doc invoice purchase operation',
+				description: 'Copy operations from doc invoice for a purchase operation',
+			},
+			{
+				name: 'Copy Operations From Doc Order To Partner',
+				value: 'copyOperationsFromDocOrderToPartner',
+				action: 'Copy operations from doc order to partner purchase operation',
+				description: 'Copy operations from doc order to partner for a purchase operation',
+			},
+			{
+				name: 'Copy Operations From Doc Whole Sale',
+				value: 'copyOperationsFromDocWholeSale',
+				action: 'Copy operations from doc whole sale purchase operation',
+				description: 'Copy operations from doc whole sale for a purchase operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete purchase operation',
+				description: 'Delete a purchase operation',
+			},
+			{
+				name: 'Delete Discount',
+				value: 'deleteDiscount',
+				action: 'Delete discount purchase operation',
+				description: 'Delete discount for a purchase operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit purchase operation',
+				description: 'Update a purchase operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get purchase operation',
+				description: 'Retrieve the line items of purchase documents',
+			},
+			{
+				name: 'Get Discount',
+				value: 'getDiscount',
+				action: 'Get discount purchase operation',
+				description: 'Get discount for a purchase operation',
+			},
+			{
+				name: 'Move Operations',
+				value: 'moveOperations',
+				action: 'Move operations purchase operation',
+				description: 'Move operations for a purchase operation',
+			},
+			{
+				name: 'Set Cost By Last Purchase',
+				value: 'setCostByLastPurchase',
+				action: 'Set cost by last purchase purchase operation',
+				description: 'Set cost by last purchase for a purchase operation',
+			},
+			{
+				name: 'Set Price By Price Type',
+				value: 'setPriceByPriceType',
+				action: 'Set price by price type purchase operation',
+				description: 'Set price by price type for a purchase operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['addDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Action',
+				name: 'action',
+				type: 'options',
+				options: [
+					{
+						name: 'Allowance',
+						value: 'Allowance',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Discount',
+						value: 'Discount',
+					},
+				],
+				default: 'Allowance',
+			},
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Percent',
+				name: 'percent',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Amount',
+						value: 'Amount',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Percent',
+						value: 'Percent',
+					},
+				],
+				default: 'Amount',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['copyOperationsFromDocInvoice'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['copyOperationsFromDocOrderToPartner'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['copyOperationsFromDocWholeSale'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['deleteDiscount'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['deleteDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['getDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['moveOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['setCostByLastPurchase'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['purchaseOperation'],
+				operation: ['setPriceByPriceType'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['quickReply'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add quick reply',
+				description: 'Create a quick reply',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete quick reply',
+				description: 'Delete a quick reply',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get quick reply',
+				description: 'Retrieve many quick reply records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['quickReply'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Text',
+				name: 'text',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['quickReply'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['quickReply'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['quickReply'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['quickReply'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['redefinition'],
 			},
 		},
@@ -10566,6 +39032,4854 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['report'],
+			},
+		},
+		options: [
+			{
+				name: 'Add Request',
+				value: 'addRequest',
+				action: 'Add request report',
+				description: 'Add request for a report',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get report',
+				description: 'Retrieve report data',
+			},
+			{
+				name: 'Get Prepared',
+				value: 'getPrepared',
+				action: 'Get prepared report',
+				description: 'Get prepared for a report',
+			},
+			{
+				name: 'Get Request',
+				value: 'getRequest',
+				action: 'Get request report',
+				description: 'Get request for a report',
+			},
+			{
+				name: 'Remove Prepared',
+				value: 'removePrepared',
+				action: 'Remove prepared report',
+				description: 'Remove prepared for a report',
+			},
+			{
+				name: 'Set Error',
+				value: 'setError',
+				action: 'Set error report',
+				description: 'Set error for a report',
+			},
+			{
+				name: 'Set Prepared',
+				value: 'setPrepared',
+				action: 'Set prepared report',
+				description: 'Set prepared for a report',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['report'],
+				operation: ['addRequest'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Report ID',
+				name: 'report_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Request Data',
+				name: 'request_data',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['report'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Group IDs',
+				name: 'group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['report'],
+				operation: ['getPrepared'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Include Data',
+				name: 'include_data',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Report IDs',
+				name: 'report_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Request UUID',
+				name: 'request_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'User IDs',
+				name: 'user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['report'],
+				operation: ['getRequest'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Request UUID',
+				name: 'request_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Statuses',
+				name: 'statuses',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'User IDs',
+				name: 'user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['report'],
+				operation: ['removePrepared'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Request UUID',
+				name: 'request_uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['report'],
+				operation: ['setError'],
+			},
+		},
+		options: [
+			{
+				displayName: 'API Login',
+				name: 'api_login',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Message',
+				name: 'message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Request UUID',
+				name: 'request_uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['report'],
+				operation: ['setPrepared'],
+			},
+		},
+		options: [
+			{
+				displayName: 'API Login',
+				name: 'api_login',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'File',
+				name: 'file',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Request UUID',
+				name: 'request_uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['reportPrepared'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get report prepared',
+				description: 'Retrieve report prepared data',
+			},
+			{
+				name: 'Remove',
+				value: 'remove',
+				action: 'Remove report prepared',
+				description: 'Remove a report prepared',
+			},
+			{
+				name: 'Save',
+				value: 'save',
+				action: 'Save report prepared',
+				description: 'Save a report prepared',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportPrepared'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Include Data',
+				name: 'include_data',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Report IDs',
+				name: 'report_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Request UUID',
+				name: 'request_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'User IDs',
+				name: 'user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportPrepared'],
+				operation: ['remove'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Request UUID',
+				name: 'request_uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportPrepared'],
+				operation: ['save'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Request UUID',
+				name: 'request_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Save',
+				name: 'save',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get report request',
+				description: 'Retrieve report request data',
+			},
+			{
+				name: 'Report0003',
+				value: 'report0003',
+				action: 'Report0003 report request',
+				description: 'Report0003 a report request',
+			},
+			{
+				name: 'Report0005',
+				value: 'report0005',
+				action: 'Report0005 report request',
+				description: 'Report0005 a report request',
+			},
+			{
+				name: 'Report0006',
+				value: 'report0006',
+				action: 'Report0006 report request',
+				description: 'Report0006 a report request',
+			},
+			{
+				name: 'Report0007',
+				value: 'report0007',
+				action: 'Report0007 report request',
+				description: 'Report0007 a report request',
+			},
+			{
+				name: 'Report0009',
+				value: 'report0009',
+				action: 'Report0009 report request',
+				description: 'Report0009 a report request',
+			},
+			{
+				name: 'Report0011',
+				value: 'report0011',
+				action: 'Report0011 report request',
+				description: 'Report0011 a report request',
+			},
+			{
+				name: 'Report0016',
+				value: 'report0016',
+				action: 'Report0016 report request',
+				description: 'Report0016 a report request',
+			},
+			{
+				name: 'Report0017',
+				value: 'report0017',
+				action: 'Report0017 report request',
+				description: 'Report0017 a report request',
+			},
+			{
+				name: 'Report0018',
+				value: 'report0018',
+				action: 'Report0018 report request',
+				description: 'Report0018 a report request',
+			},
+			{
+				name: 'Report0020',
+				value: 'report0020',
+				action: 'Report0020 report request',
+				description: 'Report0020 a report request',
+			},
+			{
+				name: 'Report0021',
+				value: 'report0021',
+				action: 'Report0021 report request',
+				description: 'Report0021 a report request',
+			},
+			{
+				name: 'Report0022',
+				value: 'report0022',
+				action: 'Report0022 report request',
+				description: 'Report0022 a report request',
+			},
+			{
+				name: 'Report0023',
+				value: 'report0023',
+				action: 'Report0023 report request',
+				description: 'Report0023 a report request',
+			},
+			{
+				name: 'Report0024',
+				value: 'report0024',
+				action: 'Report0024 report request',
+				description: 'Report0024 a report request',
+			},
+			{
+				name: 'Report0025',
+				value: 'report0025',
+				action: 'Report0025 report request',
+				description: 'Report0025 a report request',
+			},
+			{
+				name: 'Report0026',
+				value: 'report0026',
+				action: 'Report0026 report request',
+				description: 'Report0026 a report request',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Request UUID',
+				name: 'request_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Statuses',
+				name: 'statuses',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'User IDs',
+				name: 'user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0003'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Currency IDs',
+				name: 'currency_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'In Base Currency',
+				name: 'in_base_currency',
+				type: 'boolean',
+				default: false,
+				description: 'Whether amounts are expressed in the base currency',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0005'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0006'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0007'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0009'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0011'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Cost Type',
+				name: 'cost_type',
+				type: 'options',
+				options: [
+					{
+						name: 'AVG',
+						value: 'AVG',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'LAST',
+						value: 'LAST',
+					},
+				],
+				default: 'AVG',
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Item Group IDs',
+				name: 'item_group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Period Interval',
+				name: 'period_interval',
+				type: 'options',
+				options: [
+					{
+						name: 'Day',
+						value: 'Day',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Month',
+						value: 'Month',
+					},
+					{
+						name: 'Week',
+						value: 'Week',
+					},
+					{
+						name: 'Year',
+						value: 'Year',
+					},
+				],
+				default: 'Day',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Retail',
+						value: 'Retail',
+					},
+					{
+						name: 'Whole Sale',
+						value: 'WholeSale',
+					},
+				],
+				default: 'Default',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0016'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Criterion A',
+				name: 'criterion_a',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Criterion B',
+				name: 'criterion_b',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Data Type',
+				name: 'data_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Marginality',
+						value: 'Marginality',
+					},
+					{
+						name: 'Quantity',
+						value: 'Quantity',
+					},
+					{
+						name: 'Turnover',
+						value: 'Turnover',
+					},
+				],
+				default: 'Marginality',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Item Group IDs',
+				name: 'item_group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'All',
+						value: 'All',
+					},
+					{
+						name: 'Retail',
+						value: 'Retail',
+					},
+					{
+						name: 'Whole Sale',
+						value: 'WholeSale',
+					},
+				],
+				default: 'All',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0017'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Criterion X',
+				name: 'criterion_x',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Criterion Y',
+				name: 'criterion_y',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Data Type',
+				name: 'data_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Marginality',
+						value: 'Marginality',
+					},
+					{
+						name: 'Quantity',
+						value: 'Quantity',
+					},
+					{
+						name: 'Turnover',
+						value: 'Turnover',
+					},
+				],
+				default: 'Marginality',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Interval',
+				name: 'interval',
+				type: 'options',
+				options: [
+					{
+						name: 'Day',
+						value: 'Day',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Month',
+						value: 'Month',
+					},
+					{
+						name: 'Week',
+						value: 'Week',
+					},
+					{
+						name: 'Year',
+						value: 'Year',
+					},
+				],
+				default: 'Day',
+			},
+			{
+				displayName: 'Item Group IDs',
+				name: 'item_group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'All',
+						value: 'All',
+					},
+					{
+						name: 'Retail',
+						value: 'Retail',
+					},
+					{
+						name: 'Whole Sale',
+						value: 'WholeSale',
+					},
+				],
+				default: 'All',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0018'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Criterion A',
+				name: 'criterion_a',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Criterion B',
+				name: 'criterion_b',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Criterion X',
+				name: 'criterion_x',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Criterion Y',
+				name: 'criterion_y',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Data Type',
+				name: 'data_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Marginality',
+						value: 'Marginality',
+					},
+					{
+						name: 'Quantity',
+						value: 'Quantity',
+					},
+					{
+						name: 'Turnover',
+						value: 'Turnover',
+					},
+				],
+				default: 'Marginality',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Interval',
+				name: 'interval',
+				type: 'options',
+				options: [
+					{
+						name: 'Day',
+						value: 'Day',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Month',
+						value: 'Month',
+					},
+					{
+						name: 'Week',
+						value: 'Week',
+					},
+					{
+						name: 'Year',
+						value: 'Year',
+					},
+				],
+				default: 'Day',
+			},
+			{
+				displayName: 'Item Group IDs',
+				name: 'item_group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'All',
+						value: 'All',
+					},
+					{
+						name: 'Retail',
+						value: 'Retail',
+					},
+					{
+						name: 'Whole Sale',
+						value: 'WholeSale',
+					},
+				],
+				default: 'All',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0020'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Cost Type',
+				name: 'cost_type',
+				type: 'options',
+				options: [
+					{
+						name: 'AVG',
+						value: 'AVG',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'LAST',
+						value: 'LAST',
+					},
+				],
+				default: 'AVG',
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Group Type',
+				name: 'group_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Department',
+						value: 'Department',
+					},
+					{
+						name: 'Group',
+						value: 'Group',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0021'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Cost Type',
+				name: 'cost_type',
+				type: 'options',
+				options: [
+					{
+						name: 'AVG',
+						value: 'AVG',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'LAST',
+						value: 'LAST',
+					},
+				],
+				default: 'AVG',
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Grouping',
+				name: 'grouping',
+				type: 'options',
+				options: [
+					{
+						name: 'By Employees',
+						value: 'ByEmployees',
+					},
+					{
+						name: 'By Partners',
+						value: 'ByPartners',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+				],
+				default: 'ByEmployees',
+			},
+			{
+				displayName: 'Report Type',
+				name: 'report_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Retail Sale',
+						value: 'RetailSale',
+					},
+					{
+						name: 'Whole Sale',
+						value: 'WholeSale',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0022'],
+			},
+		},
+		options: [
+			{
+				displayName: 'By Partner',
+				name: 'by_partner',
+				type: 'boolean',
+				default: false,
+				description: 'Whether by partner is enabled',
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Partner IDs',
+				name: 'partner_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0023'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0024'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Cost Type',
+				name: 'cost_type',
+				type: 'options',
+				options: [
+					{
+						name: 'AVG',
+						value: 'AVG',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'LAST',
+						value: 'LAST',
+					},
+				],
+				default: 'AVG',
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Group Type',
+				name: 'group_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Department',
+						value: 'Department',
+					},
+					{
+						name: 'Group',
+						value: 'Group',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Sender Stock ID',
+				name: 'sender_stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0025'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Cost Type',
+				name: 'cost_type',
+				type: 'options',
+				options: [
+					{
+						name: 'AVG',
+						value: 'AVG',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'LAST',
+						value: 'LAST',
+					},
+				],
+				default: 'AVG',
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Item Group IDs',
+				name: 'item_group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Retail',
+						value: 'Retail',
+					},
+					{
+						name: 'Whole Sale',
+						value: 'WholeSale',
+					},
+				],
+				default: 'Default',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['reportRequest'],
+				operation: ['report0026'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Cost Type',
+				name: 'cost_type',
+				type: 'options',
+				options: [
+					{
+						name: 'AVG',
+						value: 'AVG',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'LAST',
+						value: 'LAST',
+					},
+				],
+				default: 'AVG',
+			},
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Item Group IDs',
+				name: 'item_group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Retail',
+						value: 'Retail',
+					},
+					{
+						name: 'Whole Sale',
+						value: 'WholeSale',
+					},
+				],
+				default: 'Default',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add retail card',
+				description: 'Create a retail card',
+			},
+			{
+				name: 'Add With Customer',
+				value: 'addWithCustomer',
+				action: 'Add with customer retail card',
+				description: 'Add with customer for a retail card',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete retail card',
+				description: 'Delete a retail card',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit retail card',
+				description: 'Update a retail card',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get retail card',
+				description: 'Retrieve many retail card records',
+			},
+			{
+				name: 'Get Balance',
+				value: 'getBalance',
+				action: 'Get balance retail card',
+				description: 'Get balance for a retail card',
+			},
+			{
+				name: 'Get Migration History',
+				value: 'getMigrationHistory',
+				action: 'Get migration history retail card',
+				description: 'Get migration history for a retail card',
+			},
+			{
+				name: 'Get Operations',
+				value: 'getOperations',
+				action: 'Get operations retail card',
+				description: 'Get operations for a retail card',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Barcode Type ID',
+				name: 'barcode_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Barcode Value',
+				name: 'barcode_value',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Enabled',
+				name: 'enabled',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Expiry Date',
+				name: 'expiry_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Group ID',
+				name: 'group_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Promo ID',
+				name: 'promo_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Unlimited',
+				name: 'unlimited',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['addWithCustomer'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Barcode Type ID',
+				name: 'barcode_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Barcode Value',
+				name: 'barcode_value',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date Of Birth',
+				name: 'date_of_birth',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Enabled',
+				name: 'enabled',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Expiry Date',
+				name: 'expiry_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'First Name',
+				name: 'first_name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Last Name',
+				name: 'last_name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Main Phone',
+				name: 'main_phone',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Middle Name',
+				name: 'middle_name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sex',
+				name: 'sex',
+				type: 'options',
+				options: [
+					{
+						name: 'Female',
+						value: 'female',
+					},
+					{
+						name: 'Male',
+						value: 'male',
+					},
+					{
+						name: 'None',
+						value: 'none',
+					},
+				],
+				default: 'female',
+			},
+			{
+				displayName: 'Unlimited',
+				name: 'unlimited',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Barcode Type ID',
+				name: 'barcode_type_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Barcode Value',
+				name: 'barcode_value',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Enabled',
+				name: 'enabled',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Expiry Date',
+				name: 'expiry_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Group ID',
+				name: 'group_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Promo ID',
+				name: 'promo_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Unlimited',
+				name: 'unlimited',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Barcode Value',
+				name: 'barcode_value',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Customer IDs',
+				name: 'customer_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Group IDs',
+				name: 'group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Promo IDs',
+				name: 'promo_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['getBalance'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Card ID',
+				name: 'card_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Promo ID',
+				name: 'promo_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['getMigrationHistory'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Card ID',
+				name: 'card_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['getOperations'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['getOperations'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCard'],
+				operation: ['getOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Card ID',
+				name: 'card_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Promo ID',
+				name: 'promo_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Income',
+						value: 'Income',
+					},
+					{
+						name: 'Outcome',
+						value: 'Outcome',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'UUIDs',
+				name: 'uuids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCardGroup'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add retail card group',
+				description: 'Create a retail card group',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete retail card group',
+				description: 'Delete a retail card group',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit retail card group',
+				description: 'Update a retail card group',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get retail card group',
+				description: 'Retrieve retail card group data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCardGroup'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Parent ID',
+				name: 'parent_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCardGroup'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCardGroup'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCardGroup'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Parent ID',
+				name: 'parent_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCardGroup'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Parent IDs',
+				name: 'parent_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+			},
+		},
+		options: [
+			{
+				name: 'Setting Condition Add',
+				value: 'settingConditionAdd',
+				action: 'Setting condition add retail card migration',
+				description: 'Setting condition add for a retail card migration',
+			},
+			{
+				name: 'Setting Condition Delete',
+				value: 'settingConditionDelete',
+				action: 'Setting condition delete retail card migration',
+				description: 'Setting condition delete for a retail card migration',
+			},
+			{
+				name: 'Setting Condition Get',
+				value: 'settingConditionGet',
+				action: 'Setting condition get retail card migration',
+				description: 'Setting condition get for a retail card migration',
+			},
+			{
+				name: 'Settings Add',
+				value: 'settingsAdd',
+				action: 'Settings add retail card migration',
+				description: 'Settings add for a retail card migration',
+			},
+			{
+				name: 'Settings Delete',
+				value: 'settingsDelete',
+				action: 'Settings delete retail card migration',
+				description: 'Settings delete for a retail card migration',
+			},
+			{
+				name: 'Settings Edit',
+				value: 'settingsEdit',
+				action: 'Settings edit retail card migration',
+				description: 'Settings edit for a retail card migration',
+			},
+			{
+				name: 'Settings Get',
+				value: 'settingsGet',
+				action: 'Settings get retail card migration',
+				description: 'Settings get for a retail card migration',
+			},
+			{
+				name: 'Tasks Add',
+				value: 'tasksAdd',
+				action: 'Tasks add retail card migration',
+				description: 'Tasks add for a retail card migration',
+			},
+			{
+				name: 'Tasks Delete',
+				value: 'tasksDelete',
+				action: 'Tasks delete retail card migration',
+				description: 'Tasks delete for a retail card migration',
+			},
+			{
+				name: 'Tasks Edit',
+				value: 'tasksEdit',
+				action: 'Tasks edit retail card migration',
+				description: 'Tasks edit for a retail card migration',
+			},
+			{
+				name: 'Tasks Get',
+				value: 'tasksGet',
+				action: 'Tasks get retail card migration',
+				description: 'Tasks get for a retail card migration',
+			},
+		],
+		default: 'settingConditionAdd',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['settingConditionAdd'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Exclude',
+				name: 'exclude',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to exclude the listed records instead of including them',
+			},
+			{
+				displayName: 'Setting ID',
+				name: 'setting_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Item Groups',
+						value: 'Item_Groups',
+					},
+					{
+						name: 'Items',
+						value: 'Items',
+					},
+					{
+						name: 'Stocks',
+						value: 'Stocks',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['settingConditionDelete'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['settingConditionGet'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Setting ID',
+				name: 'setting_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['settingsAdd'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Comparison',
+				name: 'comparison',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Equal',
+						value: 'Equal',
+					},
+					{
+						name: 'Equal Larger',
+						value: 'EqualLarger',
+					},
+					{
+						name: 'Equal Less',
+						value: 'EqualLess',
+					},
+					{
+						name: 'Larger',
+						value: 'Larger',
+					},
+					{
+						name: 'Less',
+						value: 'Less',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Order',
+				name: 'order',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Period',
+				name: 'period',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Period Type',
+				name: 'period_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Current Month',
+						value: 'Current_Month',
+					},
+					{
+						name: 'Current Quarter',
+						value: 'Current_Quarter',
+					},
+					{
+						name: 'Current Year',
+						value: 'Current_Year',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Month',
+						value: 'Month',
+					},
+					{
+						name: 'Quarter',
+						value: 'Quarter',
+					},
+					{
+						name: 'Year',
+						value: 'Year',
+					},
+				],
+				default: 'Current_Month',
+			},
+			{
+				displayName: 'Task ID',
+				name: 'task_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Item Amount',
+						value: 'ItemAmount',
+					},
+					{
+						name: 'Item Quantity',
+						value: 'ItemQuantity',
+					},
+					{
+						name: 'Sales Count',
+						value: 'SalesCount',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['settingsDelete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['settingsEdit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['settingsEdit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Comparison',
+				name: 'comparison',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Equal',
+						value: 'Equal',
+					},
+					{
+						name: 'Equal Larger',
+						value: 'EqualLarger',
+					},
+					{
+						name: 'Equal Less',
+						value: 'EqualLess',
+					},
+					{
+						name: 'Larger',
+						value: 'Larger',
+					},
+					{
+						name: 'Less',
+						value: 'Less',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Order',
+				name: 'order',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Period',
+				name: 'period',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Period Type',
+				name: 'period_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Current Month',
+						value: 'Current_Month',
+					},
+					{
+						name: 'Current Quarter',
+						value: 'Current_Quarter',
+					},
+					{
+						name: 'Current Year',
+						value: 'Current_Year',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Month',
+						value: 'Month',
+					},
+					{
+						name: 'Quarter',
+						value: 'Quarter',
+					},
+					{
+						name: 'Year',
+						value: 'Year',
+					},
+				],
+				default: 'Current_Month',
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['settingsGet'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Task ID',
+				name: 'task_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['tasksAdd'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Order',
+				name: 'order',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Promo From ID',
+				name: 'promo_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Promo To ID',
+				name: 'promo_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Run Period',
+				name: 'run_period',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Run Period Type',
+				name: 'run_period_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Day',
+						value: 'Day',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Month',
+						value: 'Month',
+					},
+					{
+						name: 'Quarter',
+						value: 'Quarter',
+					},
+					{
+						name: 'Week',
+						value: 'Week',
+					},
+					{
+						name: 'Year',
+						value: 'Year',
+					},
+				],
+				default: 'Day',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['tasksDelete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['tasksEdit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['tasksEdit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Order',
+				name: 'order',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Promo From ID',
+				name: 'promo_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Promo To ID',
+				name: 'promo_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Run Period',
+				name: 'run_period',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Run Period Type',
+				name: 'run_period_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Day',
+						value: 'Day',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Month',
+						value: 'Month',
+					},
+					{
+						name: 'Quarter',
+						value: 'Quarter',
+					},
+					{
+						name: 'Week',
+						value: 'Week',
+					},
+					{
+						name: 'Year',
+						value: 'Year',
+					},
+				],
+				default: 'Day',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['tasksGet'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['tasksGet'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCardMigration'],
+				operation: ['tasksGet'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Promo From IDs',
+				name: 'promo_from_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Promo To IDs',
+				name: 'promo_to_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add retail customer',
+				description: 'Create a retail customer',
+			},
+			{
+				name: 'Add Debt',
+				value: 'addDebt',
+				action: 'Add debt retail customer',
+				description: 'Add debt for a retail customer',
+			},
+			{
+				name: 'Add Debt Payment',
+				value: 'addDebtPayment',
+				action: 'Add debt payment retail customer',
+				description: 'Add debt payment for a retail customer',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete retail customer',
+				description: 'Delete a retail customer',
+			},
+			{
+				name: 'Delete Mark',
+				value: 'deleteMark',
+				action: 'Delete mark retail customer',
+				description: 'Mark a retail customer for deletion',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit retail customer',
+				description: 'Update a retail customer',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get retail customer',
+				description: 'Retrieve many retail customer records',
+			},
+			{
+				name: 'Get Avg Cheque Amount',
+				value: 'getAvgChequeAmount',
+				action: 'Get avg cheque amount retail customer',
+				description: 'Get avg cheque amount for a retail customer',
+			},
+			{
+				name: 'Get Cheque Count',
+				value: 'getChequeCount',
+				action: 'Get cheque count retail customer',
+				description: 'Get cheque count for a retail customer',
+			},
+			{
+				name: 'Get Debts',
+				value: 'getDebts',
+				action: 'Get debts retail customer',
+				description: 'Get debts for a retail customer',
+			},
+			{
+				name: 'Get Debts Payment History',
+				value: 'getDebtsPaymentHistory',
+				action: 'Get debts payment history retail customer',
+				description: 'Get debts payment history for a retail customer',
+			},
+			{
+				name: 'Get Favorite Purchases',
+				value: 'getFavoritePurchases',
+				action: 'Get favorite purchases retail customer',
+				description: 'Get favorite purchases for a retail customer',
+			},
+			{
+				name: 'Get Last Purchase Date',
+				value: 'getLastPurchaseDate',
+				action: 'Get last purchase date retail customer',
+				description: 'Get last purchase date for a retail customer',
+			},
+			{
+				name: 'Get Purchase Info',
+				value: 'getPurchaseInfo',
+				action: 'Get purchase info retail customer',
+				description: 'Get purchase info for a retail customer',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Address',
+				name: 'address',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Date Of Birth',
+				name: 'date_of_birth',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Email',
+				name: 'email',
+				type: 'string',
+				default: '',
+				placeholder: 'name@email.com',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'First Name',
+				name: 'first_name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Group ID',
+				name: 'group_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Last Name',
+				name: 'last_name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Main Phone',
+				name: 'main_phone',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Middle Name',
+				name: 'middle_name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Phones',
+				name: 'phones',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Refer ID',
+				name: 'refer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Region ID',
+				name: 'region_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Sex',
+				name: 'sex',
+				type: 'options',
+				options: [
+					{
+						name: 'Female',
+						value: 'female',
+					},
+					{
+						name: 'Male',
+						value: 'male',
+					},
+					{
+						name: 'None',
+						value: 'none',
+					},
+				],
+				default: 'female',
+			},
+		],
+	},
+	{
+		displayName: 'UUID',
+		name: 'uuid',
+		type: 'string',
+		default: '',
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['addDebt'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['addDebt'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Paid',
+				name: 'paid',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['addDebtPayment'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Date',
+				name: 'date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Debt UUID',
+				name: 'debt_uuid',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Payment UUID',
+				name: 'payment_uuid',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['deleteMark'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Address',
+				name: 'address',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Date Of Birth',
+				name: 'date_of_birth',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Email',
+				name: 'email',
+				type: 'string',
+				default: '',
+				placeholder: 'name@email.com',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'First Name',
+				name: 'first_name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Group ID',
+				name: 'group_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Last Name',
+				name: 'last_name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Main Phone',
+				name: 'main_phone',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Middle Name',
+				name: 'middle_name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Phones',
+				name: 'phones',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Refer ID',
+				name: 'refer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Region ID',
+				name: 'region_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Sex',
+				name: 'sex',
+				type: 'options',
+				options: [
+					{
+						name: 'Female',
+						value: 'female',
+					},
+					{
+						name: 'Male',
+						value: 'male',
+					},
+					{
+						name: 'None',
+						value: 'none',
+					},
+				],
+				default: 'female',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Filters',
+				name: 'filters',
+				type: 'fixedCollection',
+				typeOptions: {
+					multipleValues: true,
+				},
+				default: {},
+				options: [
+					{
+						name: 'filter',
+						displayName: 'Filter',
+						values: [
+							{
+								displayName: 'Field',
+								name: 'field',
+								type: 'string',
+								default: '',
+							},
+							{
+								displayName: 'Operator',
+								name: 'operator',
+								type: 'options',
+								options: [
+									{
+										name: 'Default',
+										value: 'Default',
+									},
+									{
+										name: 'Equal',
+										value: 'Equal',
+									},
+									{
+										name: 'Exists',
+										value: 'Exists',
+									},
+									{
+										name: 'Greater',
+										value: 'Greater',
+									},
+									{
+										name: 'Greater Or Equal',
+										value: 'GreaterOrEqual',
+									},
+									{
+										name: 'In',
+										value: 'In',
+									},
+									{
+										name: 'Less',
+										value: 'Less',
+									},
+									{
+										name: 'Less Or Equal',
+										value: 'LessOrEqual',
+									},
+									{
+										name: 'Like',
+										value: 'Like',
+									},
+									{
+										name: 'Not Equal',
+										value: 'NotEqual',
+									},
+									{
+										name: 'Not Exists',
+										value: 'NotExists',
+									},
+									{
+										name: 'Not In',
+										value: 'NotIn',
+									},
+								],
+								default: 'Default',
+							},
+							{
+								displayName: 'Value',
+								name: 'value',
+								type: 'string',
+								default: '',
+							},
+						],
+					},
+				],
+			},
+			{
+				displayName: 'Gender',
+				name: 'gender',
+				type: 'options',
+				options: [
+					{
+						name: 'Female',
+						value: 'female',
+					},
+					{
+						name: 'Male',
+						value: 'male',
+					},
+					{
+						name: 'None',
+						value: 'none',
+					},
+				],
+				default: 'female',
+			},
+			{
+				displayName: 'Group IDs',
+				name: 'group_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Main Phone',
+				name: 'main_phone',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Refer IDs',
+				name: 'refer_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Region IDs',
+				name: 'region_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['getAvgChequeAmount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['getChequeCount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['getDebts'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Is Debts',
+				name: 'is_debts',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'UUIDs',
+				name: 'uuids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['getDebtsPaymentHistory'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['getFavoritePurchases'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['getLastPurchaseDate'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomer'],
+				operation: ['getPurchaseInfo'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Customer ID',
+				name: 'customer_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCustomerGroup'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add retail customer group',
+				description: 'Create a retail customer group',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete retail customer group',
+				description: 'Delete a retail customer group',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit retail customer group',
+				description: 'Update a retail customer group',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get retail customer group',
+				description: 'Retrieve retail customer group data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomerGroup'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Parent ID',
+				name: 'parent_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCustomerGroup'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['retailCustomerGroup'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomerGroup'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Parent ID',
+				name: 'parent_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailCustomerGroup'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Parent IDs',
+				name: 'parent_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['retailOperationList'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get retail operation list',
+				description: 'Retrieve many retail operation list records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['retailOperationList'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['retailOperationList'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailOperationList'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Customer IDs',
+				name: 'customer_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Operating Cash IDs',
+				name: 'operating_cash_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Retail Card IDs',
+				name: 'retail_card_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['retailPaymentReport'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get retail payment report',
+				description: 'Retrieve retail payment report data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailPaymentReport'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Operating Cash IDs',
+				name: 'operating_cash_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Period Interval',
+				name: 'period_interval',
+				type: 'options',
+				options: [
+					{
+						name: 'Day',
+						value: 'Day',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Month',
+						value: 'Month',
+					},
+					{
+						name: 'Week',
+						value: 'Week',
+					},
+				],
+				default: 'Day',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['retailReport'],
+			},
+		},
+		options: [
+			{
+				name: 'Counts',
+				value: 'counts',
+				action: 'Counts retail report',
+				description: 'Counts a retail report',
+			},
+			{
+				name: 'Operations',
+				value: 'operations',
+				action: 'Operations retail report',
+				description: 'Operations a retail report',
+			},
+			{
+				name: 'Payments',
+				value: 'payments',
+				action: 'Payments retail report',
+				description: 'Payments a retail report',
+			},
+		],
+		default: 'counts',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailReport'],
+				operation: ['counts'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Operating Cash IDs',
+				name: 'operating_cash_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['retailReport'],
+				operation: ['operations'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['retailReport'],
+				operation: ['operations'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailReport'],
+				operation: ['operations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Operating Cash IDs',
+				name: 'operating_cash_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['retailReport'],
+				operation: ['payments'],
+			},
+		},
+		options: [
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'Operating Cash IDs',
+				name: 'operating_cash_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['retailReturnReason'],
 			},
 		},
@@ -10805,6 +44119,370 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'sort_orders',
 				type: 'json',
 				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['returnsToPartnerOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add returns to partner operation',
+				description: 'Create a returns to partner operation',
+			},
+			{
+				name: 'Add Discount',
+				value: 'addDiscount',
+				action: 'Add discount returns to partner operation',
+				description: 'Add discount for a returns to partner operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete returns to partner operation',
+				description: 'Delete a returns to partner operation',
+			},
+			{
+				name: 'Delete Discount',
+				value: 'deleteDiscount',
+				action: 'Delete discount returns to partner operation',
+				description: 'Delete discount for a returns to partner operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit returns to partner operation',
+				description: 'Update a returns to partner operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get returns to partner operation',
+				description: 'Retrieve many returns to partner operation records',
+			},
+			{
+				name: 'Get Discount',
+				value: 'getDiscount',
+				action: 'Get discount returns to partner operation',
+				description: 'Get discount for a returns to partner operation',
+			},
+			{
+				name: 'Move Operations',
+				value: 'moveOperations',
+				action: 'Move operations returns to partner operation',
+				description: 'Move operations for a returns to partner operation',
+			},
+			{
+				name: 'Set Cost By Last Purchase',
+				value: 'setCostByLastPurchase',
+				action: 'Set cost by last purchase returns to partner operation',
+				description: 'Set cost by last purchase for a returns to partner operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['returnsToPartnerOperation'],
+				operation: ['addDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Action',
+				name: 'action',
+				type: 'options',
+				options: [
+					{
+						name: 'Allowance',
+						value: 'Allowance',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Discount',
+						value: 'Discount',
+					},
+				],
+				default: 'Allowance',
+			},
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Percent',
+				name: 'percent',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Amount',
+						value: 'Amount',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Percent',
+						value: 'Percent',
+					},
+				],
+				default: 'Amount',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['returnsToPartnerOperation'],
+				operation: ['deleteDiscount'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['returnsToPartnerOperation'],
+				operation: ['deleteDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['returnsToPartnerOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['returnsToPartnerOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['returnsToPartnerOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['returnsToPartnerOperation'],
+				operation: ['getDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['returnsToPartnerOperation'],
+				operation: ['moveOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['returnsToPartnerOperation'],
+				operation: ['setCostByLastPurchase'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
 			},
 		],
 	},
@@ -11125,6 +44803,266 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['session'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get session',
+				description: 'Retrieve session data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['session'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				description: 'Comma-separated list of values',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['setPriceOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add set price operation',
+				description: 'Create a set price operation',
+			},
+			{
+				name: 'Copy Operations From Doc Purchase',
+				value: 'copyOperationsFromDocPurchase',
+				action: 'Copy operations from doc purchase set price operation',
+				description: 'Copy operations from doc purchase for a set price operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete set price operation',
+				description: 'Delete a set price operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit set price operation',
+				description: 'Update a set price operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get set price operation',
+				description: 'Retrieve many set price operation records',
+			},
+			{
+				name: 'Set Base Price By Price Type',
+				value: 'setBasePriceByPriceType',
+				action: 'Set base price by price type set price operation',
+				description: 'Set base price by price type for a set price operation',
+			},
+			{
+				name: 'Set New Price By Price Type',
+				value: 'setNewPriceByPriceType',
+				action: 'Set new price by price type set price operation',
+				description: 'Set new price by price type for a set price operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['setPriceOperation'],
+				operation: ['copyOperationsFromDocPurchase'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['setPriceOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['setPriceOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['setPriceOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['setPriceOperation'],
+				operation: ['setBasePriceByPriceType'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['setPriceOperation'],
+				operation: ['setNewPriceByPriceType'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['sizeChart'],
 			},
 		},
@@ -11292,6 +45230,257 @@ export const nodeProperties: INodeProperties[] = [
 				name: 'sort_orders',
 				type: 'json',
 				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['sms'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add SMS',
+				description: 'Create a SMS',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get SMS',
+				description: 'Retrieve many SMS records',
+			},
+			{
+				name: 'Set Status',
+				value: 'setStatus',
+				action: 'Set status SMS',
+				description: 'Set status for a SMS',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['sms'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Entity ID',
+				name: 'entity_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Entity Type',
+				name: 'entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Partner',
+						value: 'Partner',
+					},
+					{
+						name: 'Retail Customer',
+						value: 'RetailCustomer',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Message',
+				name: 'message',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['sms'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['sms'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['sms'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Entity ID',
+				name: 'entity_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Entity Type',
+				name: 'entity_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Partner',
+						value: 'Partner',
+					},
+					{
+						name: 'Retail Customer',
+						value: 'RetailCustomer',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Status',
+				name: 'status',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Delivered',
+						value: 'Delivered',
+					},
+					{
+						name: 'Error',
+						value: 'Error',
+					},
+					{
+						name: 'New',
+						value: 'New',
+					},
+					{
+						name: 'Sended',
+						value: 'Sended',
+					},
+				],
+				default: 'Default',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['sms'],
+				operation: ['setStatus'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['sms'],
+				operation: ['setStatus'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Error Message',
+				name: 'error_message',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Status',
+				name: 'status',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Delivered',
+						value: 'Delivered',
+					},
+					{
+						name: 'Error',
+						value: 'Error',
+					},
+					{
+						name: 'New',
+						value: 'New',
+					},
+					{
+						name: 'Sended',
+						value: 'Sended',
+					},
+				],
+				default: 'Default',
 			},
 		],
 	},
@@ -11614,6 +45803,107 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['stockAgregationOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get stock agregation operation',
+				description: 'Retrieve many stock agregation operation records',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['stockAgregationOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['stockAgregationOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['stockAgregationOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['storage'],
 			},
 		},
@@ -11907,6 +46197,510 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['target'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add target',
+				description: 'Create a target',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete target',
+				description: 'Delete a target',
+			},
+			{
+				name: 'Finish',
+				value: 'finish',
+				action: 'Finish target',
+				description: 'Finish a target',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get target',
+				description: 'Retrieve target data',
+			},
+			{
+				name: 'Get History',
+				value: 'getHistory',
+				action: 'Get history target',
+				description: 'Get history for a target',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['target'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Currency ID',
+				name: 'currency_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Owner',
+				name: 'owner',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Firm',
+						value: 'Firm',
+					},
+					{
+						name: 'User',
+						value: 'User',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Period',
+				name: 'period',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Period Type',
+				name: 'period_type',
+				type: 'options',
+				options: [
+					{
+						name: 'Day',
+						value: 'Day',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Month',
+						value: 'Month',
+					},
+					{
+						name: 'Week',
+						value: 'Week',
+					},
+				],
+				default: 'Day',
+			},
+			{
+				displayName: 'Repeateable',
+				name: 'repeateable',
+				type: 'boolean',
+				default: false,
+				description: 'Whether repeateable is enabled',
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Average Receipt',
+						value: 'AverageReceipt',
+					},
+					{
+						name: 'CRM Deal Won Amount',
+						value: 'CrmDealWonAmount',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Receipt Count',
+						value: 'ReceiptCount',
+					},
+					{
+						name: 'Sales Amount',
+						value: 'SalesAmount',
+					},
+					{
+						name: 'Unit Count',
+						value: 'UnitCount',
+					},
+				],
+				default: 'AverageReceipt',
+			},
+			{
+				displayName: 'User ID',
+				name: 'user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['target'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['target'],
+				operation: ['finish'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['target'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Finished',
+				name: 'finished',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Firm IDs',
+				name: 'firm_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Owner',
+				name: 'owner',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Firm',
+						value: 'Firm',
+					},
+					{
+						name: 'User',
+						value: 'User',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'User IDs',
+				name: 'user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['target'],
+				operation: ['getHistory'],
+			},
+		},
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['targetSetting'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add target setting',
+				description: 'Create a target setting',
+			},
+			{
+				name: 'Add Single',
+				value: 'addSingle',
+				action: 'Add single target setting',
+				description: 'Add single for a target setting',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete target setting',
+				description: 'Delete a target setting',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get target setting',
+				description: 'Retrieve target setting data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['targetSetting'],
+				operation: ['addSingle'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Include',
+				name: 'include',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to include the listed records',
+			},
+			{
+				displayName: 'Target ID',
+				name: 'target_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Deal Type',
+						value: 'DealType',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Item',
+						value: 'Item',
+					},
+					{
+						name: 'Item Group',
+						value: 'ItemGroup',
+					},
+					{
+						name: 'Pipeline',
+						value: 'Pipeline',
+					},
+				],
+				default: 'DealType',
+			},
+			{
+				displayName: 'Value',
+				name: 'value',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['targetSetting'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['targetSetting'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Target ID',
+				name: 'target_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Deal Type',
+						value: 'DealType',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Item',
+						value: 'Item',
+					},
+					{
+						name: 'Item Group',
+						value: 'ItemGroup',
+					},
+					{
+						name: 'Pipeline',
+						value: 'Pipeline',
+					},
+				],
+				default: 'DealType',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['targetType'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get target type',
+				description: 'Retrieve target type data',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['taxVat'],
 			},
 		},
@@ -12104,6 +46898,951 @@ export const nodeProperties: INodeProperties[] = [
 				default: '',
 				placeholder: 'e.g. 1,2,3',
 				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['techMapOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add tech map operation',
+				description: 'Create a tech map operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete tech map operation',
+				description: 'Delete a tech map operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit tech map operation',
+				description: 'Update a tech map operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get tech map operation',
+				description: 'Retrieve many tech map operation records',
+			},
+			{
+				name: 'Move Operations',
+				value: 'moveOperations',
+				action: 'Move operations tech map operation',
+				description: 'Move operations for a tech map operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['techMapOperation'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Data',
+				name: 'data',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['techMapOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['techMapOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['techMapOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['techMapOperation'],
+				operation: ['moveOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add ticket',
+				description: 'Create a ticket',
+			},
+			{
+				name: 'Close',
+				value: 'close',
+				action: 'Close ticket',
+				description: 'Close a ticket',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete ticket',
+				description: 'Delete a ticket',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit ticket',
+				description: 'Update a ticket',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get ticket',
+				description: 'Retrieve many ticket records',
+			},
+			{
+				name: 'Set Client Sentiment',
+				value: 'setClientSentiment',
+				action: 'Set client sentiment ticket',
+				description: 'Set client sentiment for a ticket',
+			},
+			{
+				name: 'Set Participants',
+				value: 'setParticipants',
+				action: 'Set participants ticket',
+				description: 'Set participants for a ticket',
+			},
+			{
+				name: 'Set Rating',
+				value: 'setRating',
+				action: 'Set rating ticket',
+				description: 'Set rating for a ticket',
+			},
+			{
+				name: 'Set Responsible',
+				value: 'setResponsible',
+				action: 'Set responsible ticket',
+				description: 'Set responsible for a ticket',
+			},
+			{
+				name: 'Set Status',
+				value: 'setStatus',
+				action: 'Set status ticket',
+				description: 'Set status for a ticket',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['add'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Channel ID',
+				name: 'channel_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Client ID',
+				name: 'client_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Description Mentions',
+				name: 'description_mentions',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Direction',
+				name: 'direction',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Inbound',
+						value: 'Inbound',
+					},
+					{
+						name: 'Outbound',
+						value: 'Outbound',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'External Dialog ID',
+				name: 'external_dialog_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Mention Options',
+				name: 'mention_options',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Participant User IDs',
+				name: 'participant_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Subject',
+				name: 'subject',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['close'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['close'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Resolved Date',
+				name: 'resolved_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['delete'],
+			},
+		},
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Description',
+				name: 'description',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Description Mentions',
+				name: 'description_mentions',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Direction',
+				name: 'direction',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Inbound',
+						value: 'Inbound',
+					},
+					{
+						name: 'Outbound',
+						value: 'Outbound',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'Fields',
+				name: 'fields',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Mention Options',
+				name: 'mention_options',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Subject',
+				name: 'subject',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Channel IDs',
+				name: 'channel_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Client IDs',
+				name: 'client_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Direction',
+				name: 'direction',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Inbound',
+						value: 'Inbound',
+					},
+					{
+						name: 'Outbound',
+						value: 'Outbound',
+					},
+				],
+				default: 'Default',
+			},
+			{
+				displayName: 'External Dialog ID',
+				name: 'external_dialog_id',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Filters',
+				name: 'filters',
+				type: 'fixedCollection',
+				typeOptions: {
+					multipleValues: true,
+				},
+				default: {},
+				options: [
+					{
+						name: 'filter',
+						displayName: 'Filter',
+						values: [
+							{
+								displayName: 'Field',
+								name: 'field',
+								type: 'string',
+								default: '',
+							},
+							{
+								displayName: 'Operator',
+								name: 'operator',
+								type: 'options',
+								options: [
+									{
+										name: 'Default',
+										value: 'Default',
+									},
+									{
+										name: 'Equal',
+										value: 'Equal',
+									},
+									{
+										name: 'Exists',
+										value: 'Exists',
+									},
+									{
+										name: 'Greater',
+										value: 'Greater',
+									},
+									{
+										name: 'Greater Or Equal',
+										value: 'GreaterOrEqual',
+									},
+									{
+										name: 'In',
+										value: 'In',
+									},
+									{
+										name: 'Less',
+										value: 'Less',
+									},
+									{
+										name: 'Less Or Equal',
+										value: 'LessOrEqual',
+									},
+									{
+										name: 'Like',
+										value: 'Like',
+									},
+									{
+										name: 'Not Equal',
+										value: 'NotEqual',
+									},
+									{
+										name: 'Not Exists',
+										value: 'NotExists',
+									},
+									{
+										name: 'Not In',
+										value: 'NotIn',
+									},
+								],
+								default: 'Default',
+							},
+							{
+								displayName: 'Value',
+								name: 'value',
+								type: 'string',
+								default: '',
+							},
+						],
+					},
+				],
+			},
+			{
+				displayName: 'From Date',
+				name: 'from_date',
+				type: 'dateTime',
+				default: '',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Include Mentions',
+				name: 'include_mentions',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to include mentions',
+			},
+			{
+				displayName: 'Responsible User IDs',
+				name: 'responsible_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Statuses',
+				name: 'statuses',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'To Date',
+				name: 'to_date',
+				type: 'dateTime',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setClientSentiment'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setClientSentiment'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Sentiment Comment',
+				name: 'sentiment_comment',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sentiment Score',
+				name: 'sentiment_score',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setParticipants'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setParticipants'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Participant User IDs',
+				name: 'participant_user_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Replace Mode',
+				name: 'replace_mode',
+				type: 'boolean',
+				default: false,
+				description: 'Whether existing values are replaced instead of merged',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setRating'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setRating'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Rating',
+				name: 'rating',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Rating Comment',
+				name: 'rating_comment',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setResponsible'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setResponsible'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Responsible User ID',
+				name: 'responsible_user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setStatus'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['ticket'],
+				operation: ['setStatus'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Status',
+				name: 'status',
+				type: 'options',
+				options: [
+					{
+						name: 'Closed',
+						value: 'Closed',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Open',
+						value: 'Open',
+					},
+					{
+						name: 'Waiting Client',
+						value: 'WaitingClient',
+					},
+					{
+						name: 'Waiting Staff',
+						value: 'WaitingStaff',
+					},
+				],
+				default: 'Closed',
 			},
 		],
 	},
@@ -13482,6 +49221,148 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['userDashboard'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get user dashboard',
+				description: 'Retrieve user dashboard data',
+			},
+			{
+				name: 'Remove',
+				value: 'remove',
+				action: 'Remove user dashboard',
+				description: 'Remove a user dashboard',
+			},
+			{
+				name: 'Set',
+				value: 'set',
+				action: 'Set user dashboard',
+				description: 'Set a user dashboard',
+			},
+			{
+				name: 'Set Default',
+				value: 'setDefault',
+				action: 'Set default user dashboard',
+				description: 'Set default for a user dashboard',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['userDashboard'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Dashboard IDs',
+				name: 'dashboard_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'User ID',
+				name: 'user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['userDashboard'],
+				operation: ['remove'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Dashboard ID',
+				name: 'dashboard_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'User ID',
+				name: 'user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['userDashboard'],
+				operation: ['set'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Dashboard ID',
+				name: 'dashboard_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'User ID',
+				name: 'user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['userDashboard'],
+				operation: ['setDefault'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Dashboard ID',
+				name: 'dashboard_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['userGroup'],
 			},
 		},
@@ -13780,6 +49661,221 @@ export const nodeProperties: INodeProperties[] = [
 		noDataExpression: true,
 		displayOptions: {
 			show: {
+				resource: ['userOperatingCash'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get user operating cash',
+				description: 'Retrieve many user operating cash records',
+			},
+			{
+				name: 'Remove',
+				value: 'remove',
+				action: 'Remove user operating cash',
+				description: 'Remove a user operating cash',
+			},
+			{
+				name: 'Set',
+				value: 'set',
+				action: 'Set user operating cash',
+				description: 'Set a user operating cash',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['userOperatingCash'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['userOperatingCash'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['userOperatingCash'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Is Virtual',
+				name: 'is_virtual',
+				type: 'options',
+				options: [
+					{
+						name: 'Default',
+						value: 'default',
+					},
+					{
+						name: 'No',
+						value: 'false',
+					},
+					{
+						name: 'Yes',
+						value: 'true',
+					},
+				],
+				default: 'default',
+			},
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type IDs',
+				name: 'price_type_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+			{
+				displayName: 'Stock IDs',
+				name: 'stock_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'User ID',
+				name: 'user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['userOperatingCash'],
+				operation: ['remove'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['userOperatingCash'],
+				operation: ['remove'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'User ID',
+				name: 'user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['userOperatingCash'],
+				operation: ['set'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Operating Cash ID',
+				name: 'operating_cash_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'User ID',
+				name: 'user_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
 				resource: ['userPermission'],
 			},
 		},
@@ -14028,6 +50124,994 @@ export const nodeProperties: INodeProperties[] = [
 				value: 'get',
 				action: 'Get webhook',
 				description: 'Retrieve the list of webhook events this integration can subscribe to',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add whole sale operation',
+				description: 'Add a line item to a shipment document',
+			},
+			{
+				name: 'Add Discount',
+				value: 'addDiscount',
+				action: 'Add discount whole sale operation',
+				description: 'Add discount for a whole sale operation',
+			},
+			{
+				name: 'Copy Operations From Doc Order From Partner',
+				value: 'copyOperationsFromDocOrderFromPartner',
+				action: 'Copy operations from doc order from partner whole sale operation',
+				description: 'Copy operations from doc order from partner for a whole sale operation',
+			},
+			{
+				name: 'Copy Operations From Doc Purchase',
+				value: 'copyOperationsFromDocPurchase',
+				action: 'Copy operations from doc purchase whole sale operation',
+				description: 'Copy operations from doc purchase for a whole sale operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete whole sale operation',
+				description: 'Delete a whole sale operation',
+			},
+			{
+				name: 'Delete Discount',
+				value: 'deleteDiscount',
+				action: 'Delete discount whole sale operation',
+				description: 'Delete discount for a whole sale operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit whole sale operation',
+				description: 'Update a whole sale operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get whole sale operation',
+				description: 'Retrieve many whole sale operation records',
+			},
+			{
+				name: 'Get Discount',
+				value: 'getDiscount',
+				action: 'Get discount whole sale operation',
+				description: 'Get discount for a whole sale operation',
+			},
+			{
+				name: 'Move Operations',
+				value: 'moveOperations',
+				action: 'Move operations whole sale operation',
+				description: 'Move operations for a whole sale operation',
+			},
+			{
+				name: 'Set Price By Price Type',
+				value: 'setPriceByPriceType',
+				action: 'Set price by price type whole sale operation',
+				description: 'Set price by price type for a whole sale operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleOperation'],
+				operation: ['addDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Action',
+				name: 'action',
+				type: 'options',
+				options: [
+					{
+						name: 'Allowance',
+						value: 'Allowance',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Discount',
+						value: 'Discount',
+					},
+				],
+				default: 'Allowance',
+			},
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Percent',
+				name: 'percent',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Amount',
+						value: 'Amount',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Percent',
+						value: 'Percent',
+					},
+				],
+				default: 'Amount',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleOperation'],
+				operation: ['copyOperationsFromDocOrderFromPartner'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleOperation'],
+				operation: ['copyOperationsFromDocPurchase'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleOperation'],
+				operation: ['deleteDiscount'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleOperation'],
+				operation: ['deleteDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleOperation'],
+				operation: ['getDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleOperation'],
+				operation: ['moveOperations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleOperation'],
+				operation: ['setPriceByPriceType'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Price Type ID',
+				name: 'price_type_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleReturnOperation'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add whole sale return operation',
+				description: 'Create a whole sale return operation',
+			},
+			{
+				name: 'Add Discount',
+				value: 'addDiscount',
+				action: 'Add discount whole sale return operation',
+				description: 'Add discount for a whole sale return operation',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete whole sale return operation',
+				description: 'Delete a whole sale return operation',
+			},
+			{
+				name: 'Delete Discount',
+				value: 'deleteDiscount',
+				action: 'Delete discount whole sale return operation',
+				description: 'Delete discount for a whole sale return operation',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit whole sale return operation',
+				description: 'Update a whole sale return operation',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get whole sale return operation',
+				description: 'Retrieve many whole sale return operation records',
+			},
+			{
+				name: 'Get Discount',
+				value: 'getDiscount',
+				action: 'Get discount whole sale return operation',
+				description: 'Get discount for a whole sale return operation',
+			},
+			{
+				name: 'Move Oprerations',
+				value: 'moveOprerations',
+				action: 'Move oprerations whole sale return operation',
+				description: 'Move oprerations for a whole sale return operation',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleReturnOperation'],
+				operation: ['addDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Action',
+				name: 'action',
+				type: 'options',
+				options: [
+					{
+						name: 'Allowance',
+						value: 'Allowance',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Discount',
+						value: 'Discount',
+					},
+				],
+				default: 'Allowance',
+			},
+			{
+				displayName: 'Amount',
+				name: 'amount',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document ID',
+				name: 'document_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Percent',
+				name: 'percent',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'options',
+				options: [
+					{
+						name: 'Amount',
+						value: 'Amount',
+					},
+					{
+						name: 'Default',
+						value: 'Default',
+					},
+					{
+						name: 'Percent',
+						value: 'Percent',
+					},
+				],
+				default: 'Amount',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleReturnOperation'],
+				operation: ['deleteDiscount'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleReturnOperation'],
+				operation: ['deleteDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleReturnOperation'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 50,
+		description: 'Max number of results to return',
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleReturnOperation'],
+				operation: ['get'],
+				returnAll: [false],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleReturnOperation'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Item IDs',
+				name: 'item_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Search',
+				name: 'search',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleReturnOperation'],
+				operation: ['getDiscount'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Document IDs',
+				name: 'document_ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Document Type ID',
+				name: '_document_type_id_',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+			{
+				displayName: 'Sort Orders',
+				name: 'sort_orders',
+				type: 'json',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['wholeSaleReturnOperation'],
+				operation: ['moveOprerations'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Doc From ID',
+				name: 'doc_from_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Doc To ID',
+				name: 'doc_to_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['widget'],
+			},
+		},
+		options: [
+			{
+				name: 'Add',
+				value: 'add',
+				action: 'Add widget',
+				description: 'Create a widget',
+			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete widget',
+				description: 'Delete a widget',
+			},
+			{
+				name: 'Edit',
+				value: 'edit',
+				action: 'Edit widget',
+				description: 'Update a widget',
+			},
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get widget',
+				description: 'Retrieve widget data',
+			},
+			{
+				name: 'Set Filters',
+				value: 'setFilters',
+				action: 'Set filters widget',
+				description: 'Set filters for a widget',
+			},
+			{
+				name: 'Set Position',
+				value: 'setPosition',
+				action: 'Set position widget',
+				description: 'Set position for a widget',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['widget'],
+				operation: ['edit'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['widget'],
+				operation: ['edit'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Name',
+				name: 'name',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['widget'],
+				operation: ['get'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Dashboard ID',
+				name: 'dashboard_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'IDs',
+				name: 'ids',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 1,2,3',
+				description: 'Comma-separated list of IDs',
+			},
+		],
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['widget'],
+				operation: ['setFilters'],
+			},
+		},
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
+		displayOptions: {
+			show: {
+				resource: ['widget'],
+				operation: ['setFilters'],
+			},
+		},
+		options: [
+			{
+				displayName: 'Firm ID',
+				name: 'firm_id',
+				type: 'number',
+				default: 0,
+			},
+			{
+				displayName: 'Stock ID',
+				name: 'stock_id',
+				type: 'number',
+				default: 0,
+			},
+		],
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['widgetData'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get widget data',
+				description: 'Retrieve the data behind a dashboard widget by widget ID',
+			},
+		],
+		default: 'get',
+	},
+	{
+		displayName: 'ID',
+		name: 'id',
+		type: 'number',
+		typeOptions: {
+			minValue: 1,
+		},
+		default: 0,
+		required: true,
+		displayOptions: {
+			show: {
+				resource: ['widgetData'],
+				operation: ['get'],
+			},
+		},
+	},
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: {
+			show: {
+				resource: ['widgetType'],
+			},
+		},
+		options: [
+			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get widget type',
+				description: 'Retrieve widget type data',
 			},
 		],
 		default: 'get',

@@ -24,34 +24,32 @@ The integration key is the only secret — it authenticates every call. Use the 
 
 ## Nodes
 
+The package registers **one action node and one trigger node**, sharing a single credential:
+
 | Node | Covers |
 |---|---|
-| **Regos** | Core master data: items, partners, accounts, warehouses, dictionaries + Batch + utilities |
-| **Regos Documents** | All document families (purchases, sales, orders, movements, inventory, invoices) and their line-item operations |
-| **Regos POS** | Point of sale: cheques, cash sessions, cash operations, fast items |
-| **Regos CRM** | Leads, deals, chats, tickets, customers, loyalty cards, campaigns |
-| **Regos Reports** | Reports, dashboards, widgets, logs |
+| **Regos** | The whole REGOS Public API — every resource (items, partners, accounts, warehouses and dictionaries; documents and their line-item operations; POS; CRM and loyalty; reports and dashboards) is a **Resource** on this node, plus a **Batch** resource |
 | **Regos Trigger** | Webhook trigger with a selector over all 297 REGOS events |
 
-**Why five action nodes?** REGOS is a single service with a very large API: 919 operations across 175 resources. Combined into one node, that is 1,380 top-level parameters (4,172 counting the fields nested inside collections) in a single node description, which makes the n8n node detail view slow to open and hard to navigate. The API is therefore split along REGOS's own product boundaries. All six nodes share one credential, one gateway and one HTTP client. The reasoning is recorded in [ADR-0001](docs/adr/0001-project-scope-and-architecture.md).
+**One node, every REGOS resource.** REGOS is a single service with a very large API — 919 operations across 175 resources — so, following n8n's one-node-per-service convention (the shape used by Notion, HubSpot and Airtable), all of it lives on the single **Regos** node. Pick a **Resource**, then an **Operation**; n8n only renders the fields for the resource you select. The consolidation from an earlier five-node layout is recorded in [ADR-0006](docs/adr/0006-consolidate-to-single-action-node.md).
 
 ## Operations
 
-Every node follows n8n's **Resource → Operation** pattern, which maps directly onto REGOS API paths:
+The **Regos** node follows n8n's **Resource → Operation** pattern, which maps directly onto REGOS API paths:
 
-| REGOS API path | Node | Resource | Operation |
-|---|---|---|---|
-| `Item/Get` | Regos | Item | Get Many |
-| `Item/Add` | Regos | Item | Add |
-| `DocPurchase/Perform` | Regos Documents | Doc Purchase | Perform |
-| `pos/DocCheque/Close` | Regos POS | POS Doc Cheque | Close |
+| REGOS API path | Resource | Operation |
+|---|---|---|
+| `Item/Get` | Item | Get Many |
+| `Item/Add` | Item | Add |
+| `DocPurchase/Perform` | Doc Purchase | Perform |
+| `pos/DocCheque/Close` | POS Doc Cheque | Close |
 
 Notes:
 
 - Operations that act on a single record (edit, delete, perform, …) show the record **ID** as a required field. Everything else lives under **Additional Fields**.
 - List operations support **Return All** with automatic pagination, or a **Limit**.
 - Date fields accept normal n8n date values and are converted to REGOS's Unix-epoch-seconds format.
-- The **Regos** node has a **Batch** resource that runs up to 50 REGOS calls in one request, with `${stepKey.result.prop}` placeholders passing values between steps.
+- The **Batch** resource runs up to 50 REGOS calls in one request, with `${stepKey.result.prop}` placeholders passing values between steps.
 
 ## Example workflows
 

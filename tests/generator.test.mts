@@ -21,14 +21,10 @@ describe('generator invariants', () => {
 		expect(allOps).toHaveLength(919);
 	});
 
-	it('covers all five nodes', () => {
-		expect([...byNode.keys()].sort()).toEqual([
-			'Regos',
-			'RegosCrm',
-			'RegosDocuments',
-			'RegosPos',
-			'RegosReports',
-		]);
+	it('emits a single action node (one regular node per package; see ADR-0006)', () => {
+		expect([...byNode.keys()]).toEqual(['Regos']);
+		// Every mapped operation now lives on the one node.
+		expect(byNode.get('Regos')).toHaveLength(919);
 	});
 
 	it('preserves literal path casing, including /pos/* and mixed-case actions', () => {
@@ -123,7 +119,7 @@ describe('generator invariants', () => {
 		const { generateOutputs } = await import('../scripts/generate/index.mts');
 		const outputs = await generateOutputs();
 
-		for (const node of ['Regos', 'RegosDocuments', 'RegosPos', 'RegosCrm', 'RegosReports']) {
+		for (const node of ['Regos']) {
 			const metadata = outputs.get(`nodes/${node}/generated/metadata.ts`) ?? '';
 			const properties = outputs.get(`nodes/${node}/generated/properties.ts`) ?? '';
 			const requiredInMetadata = (metadata.match(/required: true/g) ?? []).length;

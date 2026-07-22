@@ -1,6 +1,6 @@
 # ADR-0001: Project scope and high-level architecture
 
-- **Status:** Accepted
+- **Status:** Accepted — **node-family decision superseded by [ADR-0006](0006-consolidate-to-single-action-node.md)** (2026-07-22: n8n verification requires one regular node per package, so the 5-node split below collapsed into a single `Regos` node). The scope, generation, and shared-infrastructure decisions here still stand.
 - **Date:** 2026-07-18
 - **Deciders:** project owner + Claude (research: swagger surface map, n8n verified-node requirements)
 
@@ -23,6 +23,8 @@ We are building an n8n community node package for the REGOS SaaS ERP, targeting 
 3. **Domain-split node family, fully generated** — chosen.
 
 ## Decision Outcome
+
+> **Superseded by [ADR-0006](0006-consolidate-to-single-action-node.md):** the 5-action-node family below was consolidated into a **single `Regos` action node** (each REGOS resource is a Resource) to meet n8n's one-regular-node-per-package verified rule. Option 2 ("Single `Regos` node") — rejected here — is the shape n8n's reviewer ultimately required. The rest of this decision (full coverage, generation, one credential/transport/executor, committed generated output) is unchanged.
 
 Package **`n8n-nodes-regos`** (unscoped, MIT, English) containing **5 action nodes + 1 trigger node + 1 credential**:
 

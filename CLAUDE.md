@@ -4,7 +4,9 @@ n8n community node package for the REGOS SaaS ERP (Uzbekistan retail/ERP). Targe
 
 ## Current phase
 
-**Published; preparing 0.2.0 for re-submission (2026-07-20).** `0.1.3` is live on npm with SLSA provenance and passes `@n8n/scan-community-package`, but **failed the Creator Portal's automated review**. Root cause identified: `n8n.strict: false` marked the package "NOT eligible for n8n Cloud verification" (`n8n-node cloud-support`), a flag the portal can read from the published manifest but the public scanner never checks. Fixed on main along with a documentation rewrite and an operation-curation pass; ship as **0.2.0**, then deprecate 0.1.1/0.1.2 and resubmit.
+**Published; preparing 0.3.0 for re-submission (2026-07-22).** `0.2.1` is live on npm (strict mode restored, passes the scanner + `n8n-node cloud-support`) but the Creator Portal's **human** review returned one [HIGH] blocker: **multiple regular nodes in one package**. n8n allows only one regular node per package (+ a trigger). Consolidated the former 5 action nodes (`Regos`, `RegosDocuments`, `RegosPos`, `RegosCrm`, `RegosReports`) into a **single `Regos` node** where every REGOS resource is a Resource — full coverage kept ([ADR-0006](docs/adr/0006-consolidate-to-single-action-node.md), supersedes ADR-0001's node family). Ship as **0.3.0** (breaking: 4 node types removed), deprecate 0.1.x/0.2.x, notify the reviewer to re-run.
+
+Earlier (0.2.0) fix, still in effect: `n8n.strict: false` had marked the package "NOT eligible for n8n Cloud verification" — a manifest flag the portal reads but the public scanner never checks; strict mode must stay on.
 
 Release invariants — verify before every release:
 - `npx n8n-node cloud-support` → **ENABLED** (strict mode + stock `eslint.config.mjs`). Never disable it.
@@ -50,7 +52,7 @@ Local environment notes:
 openapi/regos_api_swagger.json    # spec of record, codegen input
 credentials/RegosApi.credentials.ts
 nodes/shared/{GenericFunctions.ts, executor.ts}
-nodes/{Regos,RegosDocuments,RegosPos,RegosCrm,RegosReports}/   # + generated/
+nodes/Regos/                      # single action node + generated/ (all 175 resources)
 nodes/RegosTrigger/
 scripts/generate/                 # index.mts, domains.json, overrides/*.json
 docs/{SPEC.md, adr/, reference/}

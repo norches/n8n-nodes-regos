@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-regos",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"description": "n8n community nodes for the REGOS SaaS ERP (retail, inventory, documents, POS, CRM)",
 	"license": "MIT",
 	"homepage": "https://github.com/norches/n8n-nodes-regos",
@@ -48,10 +48,6 @@
 		],
 		"nodes": [
 			"dist/nodes/Regos/Regos.node.js",
-			"dist/nodes/RegosDocuments/RegosDocuments.node.js",
-			"dist/nodes/RegosPos/RegosPos.node.js",
-			"dist/nodes/RegosCrm/RegosCrm.node.js",
-			"dist/nodes/RegosReports/RegosReports.node.js",
 			"dist/nodes/RegosTrigger/RegosTrigger.node.js"
 		]
 	},
