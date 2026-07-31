@@ -2,7 +2,7 @@
 
 n8n community nodes for the [REGOS](https://regos.uz) SaaS ERP — a retail/ERP platform (inventory, documents, POS, CRM, loyalty) used primarily in Uzbekistan.
 
-Full coverage of the REGOS Public API (920 endpoints) plus a webhook trigger for all 297 REGOS events.
+Full coverage of the REGOS Public API (872 endpoints) plus a webhook trigger for all 297 REGOS events.
 
 ## Installation
 
@@ -31,7 +31,7 @@ The package registers **one action node and one trigger node**, sharing a single
 | **Regos** | The whole REGOS Public API — every resource (items, partners, accounts, warehouses and dictionaries; documents and their line-item operations; POS; CRM and loyalty; reports and dashboards) is a **Resource** on this node, plus a **Batch** resource |
 | **Regos Trigger** | Webhook trigger with a selector over all 297 REGOS events |
 
-**One node, every REGOS resource.** REGOS is a single service with a very large API — 919 operations across 175 resources — so, following n8n's one-node-per-service convention (the shape used by Notion, HubSpot and Airtable), all of it lives on the single **Regos** node. Pick a **Resource**, then an **Operation**; n8n only renders the fields for the resource you select. The consolidation from an earlier five-node layout is recorded in [ADR-0006](docs/adr/0006-consolidate-to-single-action-node.md).
+**One node, every REGOS resource.** REGOS is a single service with a very large API — 871 operations across 170 resources — so, following n8n's one-node-per-service convention (the shape used by Notion, HubSpot and Airtable), all of it lives on the single **Regos** node. Pick a **Resource**, then an **Operation**; n8n only renders the fields for the resource you select. The consolidation from an earlier five-node layout is recorded in [ADR-0006](docs/adr/0006-consolidate-to-single-action-node.md).
 
 ## Operations
 

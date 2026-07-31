@@ -57,9 +57,20 @@ Type mapping: int64 → `number`; epoch date fields → `dateTime` + `dateFields
 - Drift protocol: drop in new swagger → `npm run generate` → review `--diff` summary + git diff → tests → release.
 - Endpoints removed upstream: keep the operation for one minor cycle throwing a clear "removed by REGOS" `NodeOperationError`, then drop in the next major. New event enum entries → regenerated trigger options, minor bump ("All Events" already tolerates unknown events).
 
+### Amendment 2026-07-22 — swagger sync (request-body restructure)
+
+REGOS reshaped its request bodies. The generator adapted; the decisions:
+
+- **`allOf`-aware request resolution.** Request schemas are now declared as `{ required: [...], allOf: [{ $ref }] }` (and array bodies as `{ type: array, items: { … } }`). `resolveRequestSchema` recurses through `$ref` / `allOf` / inline `properties`, merging properties and the declared `required` set. Without this, 553 of 871 operations would generate as empty forms.
+- **Required fields come from the spec, not a heuristic.** REGOS now declares `required` per operation (555 ops). We surface exactly those as required top-level parameters; the earlier "scalar id on a non-list read" heuristic is **retired** (it was a workaround for the spec previously marking nothing required). 618 operations now carry ≥1 required field.
+- **Array (bulk) bodies.** 64 endpoints take a JSON array of items; each is modeled as a required `items` `fixedCollection`, and the executor sends the collection as an array. `OperationMeta.bodyKind` (`object` | `array`) drives this.
+- **Reserved parameter names.** A REGOS field named `resource`/`operation`/`action` collides with n8n's node selectors, so its n8n parameter name is aliased (e.g. `action` → `actionValue`); the wire key is unchanged.
+- **Filters-based Resolve Data.** REGOS replaced every `<Tag>/Get`'s `ids[]` field with a generic `filters` predicate, so the trigger's Resolve Data now fetches one record with `filters: [{ Field: 'id'|'uuid', Operator: 'Equal', Value }]`.
+- Endpoints removed upstream (49 this sync, incl. all `ReportRequest/*`) simply drop from the generated surface — a workflow referencing one gets `Unknown operation`, acceptable for a spec-tracking generated node.
+
 ## Consequences
 
-- Good: all 920 operations behave uniformly through one tested executor; regeneration is mechanical and reviewable; zero runtime deps preserved.
+- Good: all operations behave uniformly through one tested executor; regeneration is mechanical and reviewable; zero runtime deps preserved; required-field UX now matches the API contract exactly.
 - Bad: loses declarative's built-in pagination sugar (reimplemented once in the executor); committed generated code bloats diffs (accepted for reviewability).
 
 ## Links

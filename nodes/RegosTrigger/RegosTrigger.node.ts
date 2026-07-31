@@ -214,10 +214,15 @@ export class RegosTrigger implements INodeType {
 
 		if (options.resolveData === true) {
 			const resolvePath = eventResolveMap[normalized.event];
-			const id = normalized.data.id;
-			if (resolvePath && typeof id === 'number') {
+			// Payloads carry either a numeric `id` or a string `uuid`; REGOS Get endpoints
+			// fetch a single record with a filter on that column.
+			const key = typeof normalized.data.id === 'number' ? 'id' : typeof normalized.data.uuid === 'string' ? 'uuid' : undefined;
+			const keyValue = key ? normalized.data[key] : undefined;
+			if (resolvePath && key !== undefined) {
 				try {
-					const envelope = await regosApiRequest.call(this, resolvePath, { ids: [id] });
+					const envelope = await regosApiRequest.call(this, resolvePath, {
+						filters: [{ Field: key, Operator: 'Equal', Value: String(keyValue) }],
+					});
 					const rows = Array.isArray(envelope.result) ? envelope.result : [];
 					if (rows.length > 0) output = { ...output, resolved: rows[0] as IDataObject };
 				} catch (error) {

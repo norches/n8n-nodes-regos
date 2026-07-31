@@ -31,6 +31,8 @@ export interface OperationMeta {
 	envelope: EnvelopeKind;
 	/** True when the response is an offsetted array and the request supports limit/offset. */
 	paginated: boolean;
+	/** 'object' (default): fields form the request body. 'array': the body is a JSON list of `fields`-shaped items. */
+	bodyKind: 'object' | 'array';
 	fields: FieldMeta[];
 }
 

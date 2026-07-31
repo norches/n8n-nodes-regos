@@ -1,10 +1,10 @@
 # n8n-nodes-regos
 
-n8n community node package for the REGOS SaaS ERP (Uzbekistan retail/ERP). Target: **n8n verified community node**. Full generated coverage of the 920-endpoint REGOS Public API.
+n8n community node package for the REGOS SaaS ERP (Uzbekistan retail/ERP). Target: **n8n verified community node**. Full generated coverage of the 872-endpoint REGOS Public API.
 
 ## Current phase
 
-**Published; preparing 0.3.0 for re-submission (2026-07-22).** `0.2.1` is live on npm (strict mode restored, passes the scanner + `n8n-node cloud-support`) but the Creator Portal's **human** review returned one [HIGH] blocker: **multiple regular nodes in one package**. n8n allows only one regular node per package (+ a trigger). Consolidated the former 5 action nodes (`Regos`, `RegosDocuments`, `RegosPos`, `RegosCrm`, `RegosReports`) into a **single `Regos` node** where every REGOS resource is a Resource — full coverage kept ([ADR-0006](docs/adr/0006-consolidate-to-single-action-node.md), supersedes ADR-0001's node family). Ship as **0.3.0** (breaking: 4 node types removed), deprecate 0.1.x/0.2.x, notify the reviewer to re-run.
+**Published `0.3.2`; preparing 0.4.0 (swagger sync, 2026-07-22).** The five action nodes were consolidated into a **single `Regos` node** after the Creator Portal's human review flagged multiple regular nodes per package ([ADR-0006](docs/adr/0006-consolidate-to-single-action-node.md), supersedes ADR-0001's node family); that shipped as 0.3.x. Now syncing the generator to a major swagger update: request bodies moved to `allOf` wrappers with **explicit `required` declarations** (heuristic retired — required fields now come from the spec), 64 bulk endpoints modeled as array bodies, 49 ops removed upstream, resources 175→170, endpoints 920→872. See the 2026-07-22 amendment in [ADR-0005](docs/adr/0005-codegen-pipeline-and-implementation-style.md). Ship as **0.4.0**.
 
 Earlier (0.2.0) fix, still in effect: `n8n.strict: false` had marked the package "NOT eligible for n8n Cloud verification" — a manifest flag the portal reads but the public scanner never checks; strict mode must stay on.
 
@@ -52,7 +52,7 @@ Local environment notes:
 openapi/regos_api_swagger.json    # spec of record, codegen input
 credentials/RegosApi.credentials.ts
 nodes/shared/{GenericFunctions.ts, executor.ts}
-nodes/Regos/                      # single action node + generated/ (all 175 resources)
+nodes/Regos/                      # single action node + generated/ (all 170 resources)
 nodes/RegosTrigger/
 scripts/generate/                 # index.mts, domains.json, overrides/*.json
 docs/{SPEC.md, adr/, reference/}

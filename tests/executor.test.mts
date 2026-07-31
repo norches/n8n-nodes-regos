@@ -21,7 +21,24 @@ const metaWithRequired: NodeOperationsMeta = {
 			path: 'Account/Delete',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [{ api: 'id', param: 'id', kind: 'number', required: true }],
+		},
+	},
+};
+
+const metaArray: NodeOperationsMeta = {
+	commercialOfferOperation: {
+		add: {
+			path: 'CommercialOfferOperation/Add',
+			envelope: 'insert',
+			paginated: false,
+			bodyKind: 'array',
+			fields: [
+				{ api: 'document_id', param: 'document_id', kind: 'number', required: true },
+				{ api: 'item_id', param: 'item_id', kind: 'number', required: true },
+				{ api: 'quantity', param: 'quantity', kind: 'number', required: true },
+			],
 		},
 	},
 };
@@ -32,6 +49,7 @@ const meta: NodeOperationsMeta = {
 			path: 'Item/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{ api: 'ids', param: 'ids', kind: 'idList', required: false },
 				{ api: 'deleted_mark', param: 'deleted_mark', kind: 'triBoolean', required: false },
@@ -180,6 +198,38 @@ describe('executeRegosNode', () => {
 		expect(vi.mocked(regosApiRequest).mock.calls[0][0]).toBe('Account/Delete');
 		expect(vi.mocked(regosApiRequest).mock.calls[0][1]).toEqual({ id: 42 });
 		expect(output[0]).toHaveLength(1);
+	});
+
+	it('sends an array body for a bulk (array-bodied) operation', async () => {
+		vi.mocked(regosApiRequest).mockResolvedValueOnce({ ok: true, result: { row_affected: 2 } });
+
+		const ctx = mockExecuteContext({
+			resource: 'commercialOfferOperation',
+			operation: 'add',
+			items: {
+				item: [
+					{ document_id: 10, item_id: 1, quantity: 3 },
+					{ document_id: 10, item_id: 2, quantity: 5 },
+				],
+			},
+		});
+
+		await executeRegosNode(ctx as never, metaArray);
+
+		expect(vi.mocked(regosApiRequest).mock.calls[0][0]).toBe('CommercialOfferOperation/Add');
+		expect(vi.mocked(regosApiRequest).mock.calls[0][1]).toEqual([
+			{ document_id: 10, item_id: 1, quantity: 3 },
+			{ document_id: 10, item_id: 2, quantity: 5 },
+		]);
+	});
+
+	it('throws for a bulk operation with no items', async () => {
+		const ctx = mockExecuteContext({
+			resource: 'commercialOfferOperation',
+			operation: 'add',
+			items: {},
+		});
+		await expect(executeRegosNode(ctx as never, metaArray)).rejects.toThrow(/at least one item/);
 	});
 
 	it('includes request/response debug context in continueOnFail items when available', async () => {

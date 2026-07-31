@@ -17,14 +17,14 @@ const allOps = [...byNode.values()].flat();
 
 describe('generator invariants', () => {
 	it('maps every swagger endpoint except the excluded batch', () => {
-		expect(Object.keys(spec.paths)).toHaveLength(920);
-		expect(allOps).toHaveLength(919);
+		expect(Object.keys(spec.paths)).toHaveLength(872);
+		expect(allOps).toHaveLength(871);
 	});
 
 	it('emits a single action node (one regular node per package; see ADR-0006)', () => {
 		expect([...byNode.keys()]).toEqual(['Regos']);
 		// Every mapped operation now lives on the one node.
-		expect(byNode.get('Regos')).toHaveLength(919);
+		expect(byNode.get('Regos')).toHaveLength(871);
 	});
 
 	it('preserves literal path casing, including /pos/* and mixed-case actions', () => {
@@ -56,49 +56,63 @@ describe('generator invariants', () => {
 		const fieldNames = itemGet?.fields.map((f) => f.api) ?? [];
 		expect(fieldNames).not.toContain('limit');
 		expect(fieldNames).not.toContain('offset');
-		expect(fieldNames).toContain('ids');
+		// REGOS reads now filter via a generic `filters` predicate list.
+		expect(fieldNames).toContain('filters');
 	});
 
 	it('classifies field kinds from the swagger schema', () => {
-		const itemGet = allOps.find((op) => op.path === 'Item/Get');
-		const kind = (name: string) => itemGet?.fields.find((f) => f.api === name)?.kind;
-		expect(kind('ids')).toBe('idList');
-		expect(kind('deleted_mark')).toBe('triBoolean');
-		expect(kind('filters')).toBe('filters');
-		expect(kind('type')).toBe('options');
-
-		const docPurchaseGet = allOps.find((op) => op.path === 'DocPurchase/Get');
-		expect(docPurchaseGet?.fields.find((f) => f.api === 'start_date')?.kind).toBe('dateTime');
+		const kindOf = (path: string, name: string) =>
+			allOps.find((op) => op.path === path)?.fields.find((f) => f.api === name)?.kind;
+		expect(kindOf('Item/Get', 'filters')).toBe('filters');
+		expect(kindOf('Account/Edit', 'currency_id')).toBe('number');
+		expect(kindOf('Account/Edit', 'name')).toBe('string');
+		expect(kindOf('Campaign/Add', 'run_date')).toBe('dateTime');
+		expect(kindOf('AccountOperationCategory/Add', 'positive')).toBe('triBoolean');
 	});
 
-	it('never requires a key on a list-shaped read (it is a filter there, not a key)', () => {
-		// REGOS marks nothing required in the swagger, so the response shape plus the verb is
-		// the only signal. Requiring a filter makes the whole search unusable in the editor.
-		const listReads = ['pos/DocCheque/get', 'pos/DocSession/get', 'Tag/Get', 'PromoProgramSetting/Get'];
-		for (const path of listReads) {
-			const op = allOps.find((o) => o.path === path);
-			expect(op, path).toBeDefined();
-			expect(op?.fields.filter((f) => f.required), path).toHaveLength(0);
-		}
+	it('takes required fields from the swagger declaration, not a heuristic', () => {
+		const req = (path: string) =>
+			allOps
+				.find((o) => o.path === path)!
+				.fields.filter((f) => f.required)
+				.map((f) => f.api)
+				.sort();
 
-		// ...while a mutation on the same list-shaped envelope keeps its key.
-		const addRetailCard = allOps.find((o) => o.path === 'pos/DocCheque/AddRetailCard');
-		expect(addRetailCard?.fields.some((f) => f.required && f.api === 'uuid')).toBe(true);
+		// Multi-field required set, straight from the spec's requestBody `required`.
+		expect(req('Account/Add')).toEqual(['code', 'currency_id', 'name']);
+		// Single-key mutation.
+		expect(req('Account/Delete')).toEqual(['id']);
+		// List reads declare no required filter, so the search stays runnable.
+		expect(req('Item/Get')).toEqual([]);
+		expect(req('DocPurchase/Get')).toEqual([]);
+		expect(req('pos/DocCheque/get')).toEqual([]);
 
-		// An override can opt a read back in (exercises the patch.required branch).
-		const widgetData = allOps.find((o) => o.path === 'WidgetData/Get');
-		expect(widgetData?.fields.some((f) => f.required && f.api === 'id')).toBe(true);
-		expect(widgetData?.description).toContain('widget ID');
+		// 618 ops carry at least one required field (was 4 under the retired heuristic).
+		const withRequired = allOps.filter((o) => o.fields.some((f) => f.required));
+		expect(withRequired.length).toBeGreaterThan(500);
 	});
 
-	it('marks the scalar primary key required on non-list operations', () => {
-		const accountDelete = allOps.find((op) => op.path === 'Account/Delete');
-		const id = accountDelete?.fields.find((f) => f.api === 'id');
-		expect(id?.required).toBe(true);
+	it('resolves allOf-wrapped request bodies so operations are not empty', () => {
+		// Item/Edit is `{ required:[id], allOf:[{$ref: ItemEdit}] }` — the fields come from
+		// the referenced schema, which the resolver must unwrap.
+		const itemEdit = allOps.find((o) => o.path === 'Item/Edit')!;
+		expect(itemEdit.fields.length).toBeGreaterThan(5);
+		expect(itemEdit.fields.some((f) => f.api === 'id' && f.required)).toBe(true);
 
-		// `ids` on a paginated list is a filter, not a required key
-		const itemGet = allOps.find((op) => op.path === 'Item/Get');
-		expect(itemGet?.fields.every((f) => !f.required)).toBe(true);
+		// Only genuinely parameterless endpoints have no fields (create-cheque, generate-barcode…).
+		const emptyObjectOps = allOps.filter((o) => o.bodyKind === 'object' && o.fields.length === 0);
+		expect(emptyObjectOps.length).toBeLessThan(10);
+	});
+
+	it('models array request bodies as a bulk item collection', () => {
+		const bulk = allOps.find((o) => o.path === 'CommercialOfferOperation/Add')!;
+		expect(bulk.bodyKind).toBe('array');
+		expect(bulk.fields.map((f) => f.api).sort()).toEqual(
+			expect.arrayContaining(['document_id', 'item_id', 'price', 'quantity']),
+		);
+		expect(bulk.fields.filter((f) => f.required).length).toBeGreaterThan(0);
+		// Object-bodied operations are the default.
+		expect(allOps.find((o) => o.path === 'Account/Add')!.bodyKind).toBe('object');
 	});
 
 	it('gives every operation a human-readable description, never a raw path', () => {
@@ -134,6 +148,8 @@ describe('generator invariants', () => {
 		const values = events.options.map((o) => (o as { value: string }).value);
 		expect(values).not.toContain('Default');
 		expect(values).toContain('DocOrderDeliveryStatusSet');
+		// Resolve Data maps an event to its entity's Get endpoint (filters-based lookup).
 		expect(events.resolveMap.ItemAdded).toBe('Item/Get');
+		expect(Object.keys(events.resolveMap).length).toBeGreaterThan(50);
 	});
 });

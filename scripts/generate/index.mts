@@ -26,7 +26,9 @@ type JsonSchema = {
 	enum?: string[];
 	items?: JsonSchema;
 	properties?: Record<string, JsonSchema>;
+	required?: string[];
 	oneOf?: JsonSchema[];
+	allOf?: JsonSchema[];
 };
 
 interface OpenApiSpec {
@@ -62,6 +64,8 @@ interface OperationModel {
 	path: string; // literal swagger path without leading slash
 	envelope: 'offsettedArray' | 'array' | 'object' | 'insert' | 'raw';
 	paginated: boolean;
+	/** 'object' = the fields form the request body; 'array' = the request body is a list of items, each built from the fields. */
+	bodyKind: 'object' | 'array';
 	fields: FieldModel[];
 }
 
@@ -274,29 +278,50 @@ function booleanDescription(api: string): string {
 	return `Whether ${sentenceCase(stripped)} is enabled`;
 }
 
+interface ResolvedRequest {
+	properties: Record<string, JsonSchema>;
+	required: Set<string>;
+	/** 'array' when the request body is a JSON array of `properties`-shaped items. */
+	bodyKind: 'object' | 'array';
+}
+
 /**
- * A scalar `id`/`uuid` on a non-list endpoint identifies the record being acted
- * on, so it is surfaced as a required top-level parameter instead of hiding in
- * Additional Fields. Array filters (`ids`) stay optional — they narrow a list.
+ * Resolve an operation's request body into its properties and declared required set.
  *
- * Reads that return a list are excluded: there the `id`/`uuid` is one more filter,
- * and requiring it makes the search unusable (REGOS marks nothing as required in
- * the swagger, so the shape of the response is the only reliable signal). Both
- * halves of the test are load-bearing: `pos/DocCheque/AddRetailCard` also returns
- * an Array-shaped envelope but genuinely needs its key, and `Tag/Get` is a list
- * read whose only sibling field is `include_data`. Endpoints that need the key
- * back can opt in via `required` in scripts/generate/overrides.
+ * The REGOS swagger declares request bodies four ways: a bare `$ref`, an
+ * `allOf` wrapper (`{ required: [...], allOf: [{ $ref }] }`) that also carries the
+ * operation-level required list, an inline `type: object` with `properties`, and a
+ * `type: array` of item objects (bulk endpoints). `allOf` members and the array's
+ * `items` are themselves resolved the same way, so this recurses through the wrapping.
+ * The `required` array is authoritative — REGOS now marks required fields explicitly.
  */
-function isPrimaryKeyField(
-	field: FieldModel,
-	paginated: boolean,
-	responseName: string,
-	value: string,
-): boolean {
-	if (paginated) return false;
-	if (/Array/.test(responseName) && /^get/i.test(value)) return false;
-	if (field.api !== 'id' && field.api !== 'uuid') return false;
-	return field.kind === 'number' || field.kind === 'string';
+function resolveRequestSchema(spec: OpenApiSpec, schema: JsonSchema | undefined): ResolvedRequest {
+	if (!schema) return { properties: {}, required: new Set(), bodyKind: 'object' };
+
+	if (schema.type === 'array') {
+		const item = resolveRequestSchema(spec, schema.items);
+		return { ...item, bodyKind: 'array' };
+	}
+
+	const properties: Record<string, JsonSchema> = {};
+	const required = new Set<string>(schema.required ?? []);
+
+	if (schema.$ref) {
+		const { schema: target } = resolveRef(spec, schema);
+		const inner = resolveRequestSchema(spec, target);
+		Object.assign(properties, inner.properties);
+		for (const r of inner.required) required.add(r);
+	}
+	if (schema.allOf) {
+		for (const member of schema.allOf) {
+			const inner = resolveRequestSchema(spec, member);
+			Object.assign(properties, inner.properties);
+			for (const r of inner.required) required.add(r);
+		}
+	}
+	if (schema.properties) Object.assign(properties, schema.properties);
+
+	return { properties, required, bodyKind: 'object' };
 }
 
 function camelCase(segments: string[]): string {
@@ -376,7 +401,15 @@ function classifyField(spec: OpenApiSpec, apiName: string, rawSchema: JsonSchema
 	}
 
 	void refName;
-	return { api: apiName, param: apiName, kind, required: false, enumValues };
+	return { api: apiName, param: safeParam(apiName), kind, required: false, enumValues };
+}
+
+// n8n treats a parameter named `resource`, `operation`, or `action` as a node selector
+// (the `action` field on an operation option), so a REGOS field with one of those names
+// must use a different n8n parameter name. The wire key (`api`) is unchanged.
+const RESERVED_PARAM_NAMES = new Set(['resource', 'operation', 'action']);
+function safeParam(apiName: string): string {
+	return RESERVED_PARAM_NAMES.has(apiName) ? `${apiName}Value` : apiName;
 }
 
 /** Name of the success (non-ErrorResult) 200 response schema, e.g. "ChequeArrayRegosObjectResult". */
@@ -437,38 +470,36 @@ function buildModel(spec: OpenApiSpec, domains: DomainsConfig): Map<string, Oper
 		seen.set(collisionKey, path);
 
 		const requestSchema = item.post.requestBody?.content?.['application/json']?.schema;
-		const { schema: resolved } = resolveRef(spec, requestSchema);
+		const { properties, required, bodyKind } = resolveRequestSchema(spec, requestSchema);
 		const responseSchema = item.post.responses?.['200']?.content?.['application/json']?.schema;
 		const envelope = envelopeOf(responseSchema);
-		const responseName = responseSchemaName(responseSchema);
 
-		const properties = resolved.properties ?? {};
+		// Paginated only applies to object bodies (list reads); array bulk bodies are writes.
 		const paginated =
-			envelope === 'offsettedArray' && 'limit' in properties && 'offset' in properties;
+			bodyKind === 'object' &&
+			envelope === 'offsettedArray' &&
+			'limit' in properties &&
+			'offset' in properties;
 
 		const fields: FieldModel[] = [];
 		for (const [apiName, propSchema] of Object.entries(properties).sort(([a], [b]) => a.localeCompare(b))) {
 			if (paginated && (apiName === 'limit' || apiName === 'offset')) continue;
 			const field = classifyField(spec, apiName, propSchema);
-			field.required = isPrimaryKeyField(field, paginated, responseName, value);
+			field.required = required.has(apiName);
 			fields.push(field);
 		}
 
+		const hasRequiredKey = fields.some((f) => f.required && (f.api === 'id' || f.api === 'uuid'));
 		const display = titleCase(remainder.join(' '));
 		const model: OperationModel = {
 			resource: tag,
 			value,
 			display,
-			description: describeOperation(
-				tag,
-				value,
-				display,
-				paginated,
-				fields.some((f) => f.required),
-			),
+			description: describeOperation(tag, value, display, paginated, hasRequiredKey),
 			path: path.replace(/^\//, ''),
 			envelope,
 			paginated,
+			bodyKind,
 			fields,
 		};
 
@@ -524,7 +555,7 @@ function applyOverrides(byNode: Map<string, OperationModel[]>, overrides: Record
 						op.value,
 						op.display,
 						op.paginated,
-						op.fields.some((f) => f.required),
+						op.fields.some((f) => f.required && (f.api === 'id' || f.api === 'uuid')),
 					);
 				}
 			}
@@ -692,6 +723,34 @@ function buildProperties(ops: OperationModel[], config: NodeEmitConfig): object[
 		for (const op of resourceOps) {
 			const show = { resource: [resourceValue], operation: [op.value] };
 
+			// Array bodies (bulk endpoints) are one repeatable collection of items; the
+			// executor sends the collection as a JSON array rather than an object.
+			if (op.bodyKind === 'array') {
+				const values = op.fields
+					.map((field) => {
+						const property = fieldToProperty(field, show) as Record<string, unknown>;
+						if (field.required) property.required = true;
+						return property;
+					})
+					.sort((a, b) =>
+						(a as { displayName: string }).displayName.localeCompare(
+							(b as { displayName: string }).displayName,
+						),
+					);
+				properties.push({
+					displayName: 'Items',
+					name: 'items',
+					type: 'fixedCollection',
+					typeOptions: { multipleValues: true },
+					placeholder: 'Add Item',
+					default: {},
+					description: 'The list of items sent as the request body',
+					displayOptions: { show },
+					options: [{ name: 'item', displayName: 'Item', values }],
+				});
+				continue;
+			}
+
 			if (op.paginated) {
 				properties.push(
 					{
@@ -755,6 +814,7 @@ function buildMetadata(ops: OperationModel[]): Record<string, Record<string, obj
 			path: op.path,
 			envelope: op.envelope,
 			paginated: op.paginated,
+			bodyKind: op.bodyKind,
 			fields: op.fields.map((f) => ({ api: f.api, param: f.param, kind: f.kind, required: f.required })),
 		};
 	}
@@ -770,14 +830,17 @@ function buildEvents(
 
 	const allTags = Object.values(domains.nodes).flat().sort((a, b) => b.length - a.length);
 
-	// An event is resolvable when its entity tag has a <Tag>/Get endpoint whose request accepts ids[].
+	// An event is resolvable when its entity tag has a <Tag>/Get endpoint that accepts a
+	// `filters` predicate list — the trigger's Resolve Data option fetches the full record with
+	// a filter on the id/uuid from the event payload. (REGOS replaced the old per-Get `ids[]`
+	// field with a generic `filters` model, so this is now the only way to fetch one record.)
 	const resolvableTags = new Set<string>();
 	for (const tag of allTags) {
 		const getPath = spec.paths[`/${tag}/Get`];
 		if (!getPath) continue;
 		const requestSchema = getPath.post.requestBody?.content?.['application/json']?.schema;
-		const { schema } = resolveRef(spec, requestSchema);
-		if (schema.properties && 'ids' in schema.properties) resolvableTags.add(tag);
+		const { properties } = resolveRequestSchema(spec, requestSchema);
+		if ('filters' in properties) resolvableTags.add(tag);
 	}
 
 	const options: object[] = [];

@@ -81,7 +81,7 @@ function isRetryableHttpError(error: unknown): boolean {
 export async function regosApiRequest(
 	this: RegosContext,
 	path: string,
-	body: JsonObject = {},
+	body: JsonObject | JsonObject[] = {},
 ): Promise<RegosEnvelope> {
 	const credentials = (await this.getCredentials('regosApi')) as unknown as RegosCredentials;
 	const baseUrl = credentials.baseUrl.replace(/\/+$/, '');

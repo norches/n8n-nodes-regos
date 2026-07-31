@@ -4,7 +4,7 @@ Living document. Facts about *what* we build live here; *why* lives in [docs/adr
 
 ## Overview
 
-**REGOS** is a SaaS ERP for medium/large retail, used primarily in Uzbekistan. Modules: REGOS Online (web back office), Store Management, CashServer, POS, VCR (fiscal virtual cash register), and a Public API (920 POST endpoints behind a per-integration gateway). See [docs/reference/regos_system_basic_info.html](reference/regos_system_basic_info.html).
+**REGOS** is a SaaS ERP for medium/large retail, used primarily in Uzbekistan. Modules: REGOS Online (web back office), Store Management, CashServer, POS, VCR (fiscal virtual cash register), and a Public API (872 POST endpoints behind a per-integration gateway). See [docs/reference/regos_system_basic_info.html](reference/regos_system_basic_info.html).
 
 **This package** (`n8n-nodes-regos`) lets n8n users automate REGOS: full API coverage as action nodes plus a webhook trigger for REGOS events.
 
@@ -18,14 +18,14 @@ Nodes (one action node + one trigger; reasoning: [ADR-0006](adr/0006-consolidate
 
 | Node | Contents |
 |---|---|
-| `Regos` | The full REGOS Public API — all 175 resources as Resources: core master data + dictionaries, `Doc*` families + their `*Operation` counterparts, `/pos/*`, CRM/loyalty, reports/analytics/logs — plus a hand-written **Batch** resource |
+| `Regos` | The full REGOS Public API — all 170 resources as Resources: core master data + dictionaries, `Doc*` families + their `*Operation` counterparts, `/pos/*`, CRM/loyalty, reports/analytics/logs — plus a hand-written **Batch** resource |
 | `Regos Trigger` | Webhook trigger, 298-event selector ([ADR-0003](adr/0003-trigger-node-design.md)) |
 
 One credential: `RegosApi` — masked `integrationKey` + `baseUrl`, test via `/CurrentTimeStamp/Get` ([ADR-0005](adr/0005-codegen-pipeline-and-implementation-style.md)).
 
 ## Functional requirements
 
-- **Full endpoint coverage** — all 920 swagger operations, generated ([ADR-0005](adr/0005-codegen-pipeline-and-implementation-style.md)); Resource/Operation UX per n8n guidelines.
+- **Full endpoint coverage** — all 871 swagger operations, generated ([ADR-0005](adr/0005-codegen-pipeline-and-implementation-style.md)); Resource/Operation UX per n8n guidelines. Required fields are taken from the swagger's `required` declarations; bulk (array-body) endpoints are exposed as an Items collection.
 - **Pagination** — Return All / Limit on every offsetted-array operation, looping `next_offset` ([ADR-0004](adr/0004-regos-api-client-conventions.md)).
 - **Error surfacing** — REGOS application errors (HTTP 200 + `ok:false`) thrown as `NodeApiError` with REGOS code + description; automatic bounded retry on rate-limit code 8213 and infra 429/5xx.
 - **Rate pacing** — always-on client-side token bucket (2 req/s, burst ~45) per integration key.

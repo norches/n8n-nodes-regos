@@ -95,10 +95,7 @@
 		"description": "Retrieve many currencies with their exchange rates"
 	},
 	"WidgetData.get": {
-		"required": [
-			"id"
-		],
-		"description": "Retrieve the data behind a dashboard widget by widget ID"
+		"description": "Retrieve dashboard widget data, filtered by the widget parameters"
 	},
 	"PosDocCheque.getcurrent": {
 		"displayName": "Get Current",

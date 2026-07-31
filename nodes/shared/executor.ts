@@ -54,25 +54,42 @@ function serializeField(
 	}
 }
 
+/** Build one body object from a source record, mapping each field through serializeField. */
+function serializeFields(
+	context: IExecuteFunctions,
+	fields: OperationMeta['fields'],
+	source: (field: OperationMeta['fields'][number]) => unknown,
+): JsonObject {
+	const body: JsonObject = {};
+	for (const field of fields) {
+		const serialized = serializeField(context, field, source(field));
+		if (serialized !== undefined) body[field.api] = serialized as JsonObject[keyof JsonObject];
+	}
+	return body;
+}
+
 function buildRequestBody(
 	context: IExecuteFunctions,
 	itemIndex: number,
 	operation: OperationMeta,
-): JsonObject {
-	const body: JsonObject = {};
-
-	const additionalFields = context.getNodeParameter('additionalFields', itemIndex, {}) as JsonObject;
-
-	for (const field of operation.fields) {
-		const rawValue = field.required
-			? context.getNodeParameter(field.param, itemIndex)
-			: additionalFields[field.param];
-
-		const serialized = serializeField(context, field, rawValue);
-		if (serialized !== undefined) body[field.api] = serialized as JsonObject[keyof JsonObject];
+): JsonObject | JsonObject[] {
+	// Bulk endpoints take a JSON array of items, built from the `items` collection.
+	if (operation.bodyKind === 'array') {
+		const collection = context.getNodeParameter('items', itemIndex, {}) as {
+			item?: Array<Record<string, unknown>>;
+		};
+		const entries = collection.item ?? [];
+		if (entries.length === 0) {
+			throw new NodeOperationError(context.getNode(), 'Add at least one item', { itemIndex });
+		}
+		return entries.map((entry) => serializeFields(context, operation.fields, (field) => entry[field.param]));
 	}
 
-	return body;
+	// Required fields come from top-level parameters; the rest live in Additional Fields.
+	const additionalFields = context.getNodeParameter('additionalFields', itemIndex, {}) as JsonObject;
+	return serializeFields(context, operation.fields, (field) =>
+		field.required ? context.getNodeParameter(field.param, itemIndex) : additionalFields[field.param],
+	);
 }
 
 function envelopeToItems(result: unknown, envelope: OperationMeta['envelope']): JsonObject[] {
@@ -162,14 +179,16 @@ export async function executeRegosNode(
 				const body = buildRequestBody(context, itemIndex, operation);
 
 				if (operation.paginated) {
+					// Paginated operations always have an object body (a list read).
+					const listBody = body as JsonObject;
 					const returnAll = context.getNodeParameter('returnAll', itemIndex, false) as boolean;
 					if (returnAll) {
-						const all = await regosApiRequestAllItems.call(context, operation.path, body);
+						const all = await regosApiRequestAllItems.call(context, operation.path, listBody);
 						outputs = envelopeToItems(all, 'array');
 					} else {
 						const limit = context.getNodeParameter('limit', itemIndex, 50) as number;
-						body.limit = limit;
-						const envelope = await regosApiRequest.call(context, operation.path, body);
+						listBody.limit = limit;
+						const envelope = await regosApiRequest.call(context, operation.path, listBody);
 						outputs = envelopeToItems(envelope.result, operation.envelope);
 					}
 				} else {

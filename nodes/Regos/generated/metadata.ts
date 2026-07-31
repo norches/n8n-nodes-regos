@@ -7,24 +7,25 @@ export const operationsMeta = {
 			path: 'Account/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'code',
 					param: 'code',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -32,6 +33,7 @@ export const operationsMeta = {
 			path: 'Account/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -45,6 +47,7 @@ export const operationsMeta = {
 			path: 'Account/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'code',
@@ -76,29 +79,12 @@ export const operationsMeta = {
 			path: 'Account/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'currency_ids',
-					param: 'currency_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -115,29 +101,12 @@ export const operationsMeta = {
 			path: 'AccountBalance/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'currency_ids',
-					param: 'currency_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -154,12 +123,13 @@ export const operationsMeta = {
 			path: 'AccountOperationCategory/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'parent_id',
@@ -171,7 +141,7 @@ export const operationsMeta = {
 					api: 'positive',
 					param: 'positive',
 					kind: 'triBoolean',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -179,6 +149,7 @@ export const operationsMeta = {
 			path: 'AccountOperationCategory/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -192,6 +163,7 @@ export const operationsMeta = {
 			path: 'AccountOperationCategory/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -217,6 +189,7 @@ export const operationsMeta = {
 			path: 'AccountOperationCategory/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'child_count',
@@ -225,27 +198,9 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'parent_ids',
-					param: 'parent_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'positive',
-					param: 'positive',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -262,47 +217,12 @@ export const operationsMeta = {
 			path: 'ActionLog/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'entity_id',
-					param: 'entity_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'entity_type',
-					param: 'entity_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'record_id',
-					param: 'record_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'table_ids',
-					param: 'table_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'user_ids',
-					param: 'user_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -313,18 +233,19 @@ export const operationsMeta = {
 			path: 'ApplicationSetting/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'app_id',
 					param: 'app_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'dataType',
 					param: 'dataType',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'default_value',
@@ -336,13 +257,13 @@ export const operationsMeta = {
 					api: 'key',
 					param: 'key',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name_var',
 					param: 'name_var',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -350,6 +271,27 @@ export const operationsMeta = {
 			path: 'ApplicationSetting/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'app_id',
+					param: 'app_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'key',
+					param: 'key',
+					kind: 'string',
+					required: true,
+				},
+			],
+		},
+		editValues: {
+			path: 'ApplicationSetting/EditValues',
+			envelope: 'raw',
+			paginated: false,
+			bodyKind: 'array',
 			fields: [
 				{
 					api: 'app_id',
@@ -363,29 +305,24 @@ export const operationsMeta = {
 					kind: 'string',
 					required: false,
 				},
+				{
+					api: 'value',
+					param: 'value',
+					kind: 'string',
+					required: true,
+				},
 			],
-		},
-		editValues: {
-			path: 'ApplicationSetting/EditValues',
-			envelope: 'raw',
-			paginated: false,
-			fields: [],
 		},
 		get: {
 			path: 'ApplicationSetting/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'app_id',
-					param: 'app_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'keys',
-					param: 'keys',
-					kind: 'stringList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -394,23 +331,12 @@ export const operationsMeta = {
 			path: 'ApplicationSetting/GetValues',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'app_id',
-					param: 'app_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'keys',
-					param: 'keys',
-					kind: 'stringList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -421,12 +347,13 @@ export const operationsMeta = {
 			path: 'Barcode/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'barcode_type_id',
 					param: 'barcode_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'forced',
@@ -438,26 +365,13 @@ export const operationsMeta = {
 					api: 'item_id',
 					param: 'item_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'value',
 					param: 'value',
 					kind: 'string',
-					required: false,
-				},
-			],
-		},
-		addEAN13: {
-			path: 'Barcode/AddEAN13',
-			envelope: 'insert',
-			paginated: false,
-			fields: [
-				{
-					api: 'item_id',
-					param: 'item_id',
-					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -465,6 +379,7 @@ export const operationsMeta = {
 			path: 'Barcode/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -474,39 +389,23 @@ export const operationsMeta = {
 				},
 			],
 		},
-		fillEmptyBarcodeItems: {
-			path: 'Barcode/FillEmptyBarcodeItems',
-			envelope: 'raw',
-			paginated: false,
-			fields: [],
-		},
 		generateEan13: {
 			path: 'Barcode/GenerateEan13',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [],
 		},
 		get: {
 			path: 'Barcode/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'value',
-					param: 'value',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -515,12 +414,13 @@ export const operationsMeta = {
 			path: 'Barcode/SetBase',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
 					param: 'id',
 					kind: 'number',
-					required: true,
+					required: false,
 				},
 				{
 					api: 'item_id',
@@ -542,7 +442,15 @@ export const operationsMeta = {
 			path: 'BarcodeType/Get',
 			envelope: 'array',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 	},
 	brand: {
@@ -550,12 +458,13 @@ export const operationsMeta = {
 			path: 'Brand/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -563,6 +472,7 @@ export const operationsMeta = {
 			path: 'Brand/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -576,6 +486,7 @@ export const operationsMeta = {
 			path: 'Brand/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -587,7 +498,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -595,17 +506,12 @@ export const operationsMeta = {
 			path: 'Brand/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -622,6 +528,7 @@ export const operationsMeta = {
 			path: 'Campaign/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'connected_integration_id',
@@ -636,22 +543,16 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'integration_key',
-					param: 'integration_key',
-					kind: 'string',
-					required: false,
-				},
-				{
 					api: 'message',
 					param: 'message',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'recepients',
@@ -669,13 +570,13 @@ export const operationsMeta = {
 					api: 'run_immediately',
 					param: 'run_immediately',
 					kind: 'boolean',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -683,6 +584,7 @@ export const operationsMeta = {
 			path: 'Campaign/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -696,6 +598,7 @@ export const operationsMeta = {
 			path: 'Campaign/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'connected_integration_id',
@@ -714,12 +617,6 @@ export const operationsMeta = {
 					param: 'id',
 					kind: 'number',
 					required: true,
-				},
-				{
-					api: 'integration_key',
-					param: 'integration_key',
-					kind: 'string',
-					required: false,
 				},
 				{
 					api: 'message',
@@ -751,17 +648,12 @@ export const operationsMeta = {
 			path: 'Campaign/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -770,35 +662,18 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'status',
-					param: 'status',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
-					required: false,
-				},
 			],
 		},
 		getRecipients: {
 			path: 'Campaign/GetRecipients',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'campaign_id',
-					param: 'campaign_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'state',
-					param: 'state',
-					kind: 'options',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -807,12 +682,27 @@ export const operationsMeta = {
 			path: 'Campaign/SetRecipientsStatus',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'state',
+					param: 'state',
+					kind: 'options',
+					required: true,
+				},
+			],
 		},
 		setStatus: {
 			path: 'Campaign/SetStatus',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'error_message',
@@ -830,7 +720,7 @@ export const operationsMeta = {
 					api: 'status',
 					param: 'status',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -840,23 +730,12 @@ export const operationsMeta = {
 			path: 'CashOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -865,23 +744,12 @@ export const operationsMeta = {
 			path: 'CashOperation/GetAmountDetails',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -892,24 +760,25 @@ export const operationsMeta = {
 			path: 'CashServer/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
 					param: 'active',
 					kind: 'triBoolean',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -917,6 +786,7 @@ export const operationsMeta = {
 			path: 'CashServer/BeginSync',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -930,6 +800,7 @@ export const operationsMeta = {
 			path: 'CashServer/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -943,6 +814,7 @@ export const operationsMeta = {
 			path: 'CashServer/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -968,6 +840,7 @@ export const operationsMeta = {
 			path: 'CashServer/EndSync',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -981,23 +854,12 @@ export const operationsMeta = {
 			path: 'CashServer/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -1008,6 +870,7 @@ export const operationsMeta = {
 			path: 'Channel/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -1031,7 +894,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'next_response_sec',
@@ -1055,7 +918,7 @@ export const operationsMeta = {
 					api: 'queue_mode',
 					param: 'queue_mode',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'rating_enabled',
@@ -1091,7 +954,7 @@ export const operationsMeta = {
 					api: 'routing_strategy',
 					param: 'routing_strategy',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'start_message',
@@ -1105,6 +968,7 @@ export const operationsMeta = {
 			path: 'Channel/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -1118,6 +982,7 @@ export const operationsMeta = {
 			path: 'Channel/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -1221,23 +1086,12 @@ export const operationsMeta = {
 			path: 'Channel/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'active',
-					param: 'active',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -1246,18 +1100,19 @@ export const operationsMeta = {
 			path: 'Channel/SetIntervals',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'channel_id',
 					param: 'channel_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'intervals',
 					param: 'intervals',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -1265,12 +1120,13 @@ export const operationsMeta = {
 			path: 'Channel/SetOperators',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'channel_id',
 					param: 'channel_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'operators',
@@ -1286,6 +1142,7 @@ export const operationsMeta = {
 			path: 'Chat/Add',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'chat_type',
@@ -1323,18 +1180,19 @@ export const operationsMeta = {
 			path: 'Chat/AddBot',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'chat_id',
 					param: 'chat_id',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'connected_integration_id',
 					param: 'connected_integration_id',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -1342,18 +1200,19 @@ export const operationsMeta = {
 			path: 'Chat/AddParticipant',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'chat_id',
 					param: 'chat_id',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'participant',
 					param: 'participant',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -1361,6 +1220,7 @@ export const operationsMeta = {
 			path: 'Chat/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'external_id',
@@ -1392,71 +1252,12 @@ export const operationsMeta = {
 			path: 'Chat/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'archived',
-					param: 'archived',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'chat_type',
-					param: 'chat_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'closed',
-					param: 'closed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'entity_bound',
-					param: 'entity_bound',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'entity_type',
-					param: 'entity_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'external_id',
-					param: 'external_id',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'stringList',
-					required: false,
-				},
-				{
-					api: 'participant_entity_id',
-					param: 'participant_entity_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'participant_entity_type',
-					param: 'participant_entity_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'pinned',
-					param: 'pinned',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -1471,11 +1272,12 @@ export const operationsMeta = {
 			path: 'Chat/GetAvailableReactions',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'chat_id',
-					param: 'chat_id',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -1484,29 +1286,32 @@ export const operationsMeta = {
 			path: 'Chat/GetUnreadCount',
 			envelope: 'object',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 		getUnreadCounts: {
 			path: 'Chat/GetUnreadCounts',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
+				{
+					api: 'count_filters',
+					param: 'count_filters',
+					kind: 'json',
+					required: true,
+				},
 				{
 					api: 'filters',
 					param: 'filters',
-					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'participant_entity_id',
-					param: 'participant_entity_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'participant_entity_type',
-					param: 'participant_entity_type',
-					kind: 'options',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -1515,11 +1320,12 @@ export const operationsMeta = {
 			path: 'Chat/GetUserPresence',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'user_ids',
-					param: 'user_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -1528,6 +1334,7 @@ export const operationsMeta = {
 			path: 'Chat/Join',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -1541,6 +1348,7 @@ export const operationsMeta = {
 			path: 'Chat/Leave',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -1554,6 +1362,7 @@ export const operationsMeta = {
 			path: 'Chat/RemoveParticipants',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -1565,7 +1374,7 @@ export const operationsMeta = {
 					api: 'participants',
 					param: 'participants',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -1573,12 +1382,13 @@ export const operationsMeta = {
 			path: 'Chat/SetArchived',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'archived',
 					param: 'archived',
 					kind: 'boolean',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'id',
@@ -1592,18 +1402,19 @@ export const operationsMeta = {
 			path: 'Chat/SetAvailableReactions',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'chat_id',
 					param: 'chat_id',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'reactions',
 					param: 'reactions',
 					kind: 'stringList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -1611,6 +1422,7 @@ export const operationsMeta = {
 			path: 'Chat/SetMuted',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -1622,7 +1434,7 @@ export const operationsMeta = {
 					api: 'muted',
 					param: 'muted',
 					kind: 'boolean',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -1630,6 +1442,7 @@ export const operationsMeta = {
 			path: 'Chat/SetParticipants',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -1641,7 +1454,7 @@ export const operationsMeta = {
 					api: 'participants',
 					param: 'participants',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -1649,6 +1462,7 @@ export const operationsMeta = {
 			path: 'Chat/SetPinned',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -1660,7 +1474,7 @@ export const operationsMeta = {
 					api: 'pinned',
 					param: 'pinned',
 					kind: 'boolean',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -1670,6 +1484,7 @@ export const operationsMeta = {
 			path: 'ChatMessage/Add',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'actions',
@@ -1693,7 +1508,7 @@ export const operationsMeta = {
 					api: 'chat_id',
 					param: 'chat_id',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'external_message_id',
@@ -1749,24 +1564,69 @@ export const operationsMeta = {
 			path: 'ChatMessage/AddFile',
 			envelope: 'object',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'chat_id',
+					param: 'chat_id',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'data',
+					param: 'data',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'duration_ms',
+					param: 'duration_ms',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'extension',
+					param: 'extension',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'height',
+					param: 'height',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'name',
+					param: 'name',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'width',
+					param: 'width',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		callback: {
 			path: 'ChatMessage/Callback',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'action_id',
 					param: 'action_id',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'message_id',
 					param: 'message_id',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -1774,6 +1634,7 @@ export const operationsMeta = {
 			path: 'ChatMessage/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -1787,6 +1648,7 @@ export const operationsMeta = {
 			path: 'ChatMessage/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'file_ids',
@@ -1824,23 +1686,12 @@ export const operationsMeta = {
 			path: 'ChatMessage/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'chat_id',
-					param: 'chat_id',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'from_date',
-					param: 'from_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'stringList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -1849,29 +1700,18 @@ export const operationsMeta = {
 					kind: 'boolean',
 					required: false,
 				},
-				{
-					api: 'to_date',
-					param: 'to_date',
-					kind: 'dateTime',
-					required: false,
-				},
 			],
 		},
 		getAround: {
 			path: 'ChatMessage/GetAround',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'chat_id',
-					param: 'chat_id',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'id',
-					param: 'id',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -1898,29 +1738,12 @@ export const operationsMeta = {
 			path: 'ChatMessage/GetFiles',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'author_entity_id',
-					param: 'author_entity_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'author_entity_type',
-					param: 'author_entity_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'chat_id',
-					param: 'chat_id',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'from_date',
-					param: 'from_date',
-					kind: 'dateTime',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -1929,29 +1752,18 @@ export const operationsMeta = {
 					kind: 'boolean',
 					required: false,
 				},
-				{
-					api: 'kind',
-					param: 'kind',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'to_date',
-					param: 'to_date',
-					kind: 'dateTime',
-					required: false,
-				},
 			],
 		},
 		getPinned: {
 			path: 'ChatMessage/GetPinned',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'chat_id',
-					param: 'chat_id',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -1966,17 +1778,12 @@ export const operationsMeta = {
 			path: 'ChatMessage/GetReactions',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'id',
-					param: 'id',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'reaction',
-					param: 'reaction',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -1985,11 +1792,12 @@ export const operationsMeta = {
 			path: 'ChatMessage/GetReadUsers',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'id',
-					param: 'id',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -1998,12 +1806,13 @@ export const operationsMeta = {
 			path: 'ChatMessage/MarkRead',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'chat_id',
 					param: 'chat_id',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'last_read_message_id',
@@ -2017,12 +1826,13 @@ export const operationsMeta = {
 			path: 'ChatMessage/MarkSent',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'external_message_id',
 					param: 'external_message_id',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'id',
@@ -2036,17 +1846,12 @@ export const operationsMeta = {
 			path: 'ChatMessage/Search',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'chat_id',
-					param: 'chat_id',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'from_date',
-					param: 'from_date',
-					kind: 'dateTime',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -2055,24 +1860,13 @@ export const operationsMeta = {
 					kind: 'boolean',
 					required: false,
 				},
-				{
-					api: 'query',
-					param: 'query',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'to_date',
-					param: 'to_date',
-					kind: 'dateTime',
-					required: false,
-				},
 			],
 		},
 		setPinned: {
 			path: 'ChatMessage/SetPinned',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -2084,7 +1878,7 @@ export const operationsMeta = {
 					api: 'pinned',
 					param: 'pinned',
 					kind: 'boolean',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -2092,6 +1886,7 @@ export const operationsMeta = {
 			path: 'ChatMessage/SetReaction',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -2103,7 +1898,7 @@ export const operationsMeta = {
 					api: 'reaction',
 					param: 'reaction',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -2111,24 +1906,25 @@ export const operationsMeta = {
 			path: 'ChatMessage/Suggest',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'author_entity_id',
 					param: 'author_entity_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'author_entity_type',
 					param: 'author_entity_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'chat_id',
 					param: 'chat_id',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'source_message_id',
@@ -2140,7 +1936,7 @@ export const operationsMeta = {
 					api: 'suggestions',
 					param: 'suggestions',
 					kind: 'stringList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -2148,6 +1944,7 @@ export const operationsMeta = {
 			path: 'ChatMessage/Writing',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'author_entity_id',
@@ -2165,7 +1962,7 @@ export const operationsMeta = {
 					api: 'chat_id',
 					param: 'chat_id',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -2175,23 +1972,18 @@ export const operationsMeta = {
 			path: 'ChequeItemOperation/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'doc_sale_uuid',
-					param: 'doc_sale_uuid',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'uuids',
-					param: 'uuids',
-					kind: 'stringList',
 					required: false,
 				},
 			],
@@ -2202,18 +1994,19 @@ export const operationsMeta = {
 			path: 'pos/ChequeItemOperation/add',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_uuid',
 					param: 'document_uuid',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'item_id',
 					param: 'item_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'label',
@@ -2225,7 +2018,7 @@ export const operationsMeta = {
 					api: 'quantity',
 					param: 'quantity',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -2233,18 +2026,19 @@ export const operationsMeta = {
 			path: 'pos/ChequeItemOperation/AddByBarcode',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'barcode',
 					param: 'barcode',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'document_uuid',
 					param: 'document_uuid',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -2252,6 +2046,7 @@ export const operationsMeta = {
 			path: 'pos/ChequeItemOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'label',
@@ -2283,29 +2078,12 @@ export const operationsMeta = {
 			path: 'pos/ChequeItemOperation/get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_uuid',
-					param: 'document_uuid',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'exclude_storno',
-					param: 'exclude_storno',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'uuids',
-					param: 'uuids',
-					kind: 'stringList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -2314,12 +2092,13 @@ export const operationsMeta = {
 			path: 'pos/ChequeItemOperation/SetPercentDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'percent',
 					param: 'percent',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'uuid',
@@ -2333,12 +2112,13 @@ export const operationsMeta = {
 			path: 'pos/ChequeItemOperation/Storno',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_uuid',
 					param: 'document_uuid',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'uuid',
@@ -2354,6 +2134,7 @@ export const operationsMeta = {
 			path: 'pos/ChequePaymentOperation/add',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'data',
@@ -2365,19 +2146,19 @@ export const operationsMeta = {
 					api: 'document_uuid',
 					param: 'document_uuid',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'type_id',
 					param: 'type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'value',
 					param: 'value',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -2385,17 +2166,12 @@ export const operationsMeta = {
 			path: 'ChequePaymentOperation/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'doc_sale_uuid',
-					param: 'doc_sale_uuid',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'uuids',
-					param: 'uuids',
-					kind: 'stringList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -2404,17 +2180,12 @@ export const operationsMeta = {
 			path: 'pos/ChequePaymentOperation/GetPaymentSystemId',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_uuid',
-					param: 'document_uuid',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'payment_type_id',
-					param: 'payment_type_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -2423,29 +2194,12 @@ export const operationsMeta = {
 			path: 'pos/ChequePaymentOperation/get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_uuid',
-					param: 'document_uuid',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'exclude_storno',
-					param: 'exclude_storno',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'payment_type_ids',
-					param: 'payment_type_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'uuids',
-					param: 'uuids',
-					kind: 'stringList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -2454,12 +2208,13 @@ export const operationsMeta = {
 			path: 'pos/ChequePaymentOperation/Storno',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_uuid',
 					param: 'document_uuid',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'uuid',
@@ -2475,6 +2230,7 @@ export const operationsMeta = {
 			path: 'Client/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
@@ -2530,6 +2286,7 @@ export const operationsMeta = {
 			path: 'Client/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -2543,6 +2300,7 @@ export const operationsMeta = {
 			path: 'Client/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
@@ -2604,47 +2362,12 @@ export const operationsMeta = {
 			path: 'Client/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'emails',
-					param: 'emails',
-					kind: 'stringList',
-					required: false,
-				},
-				{
-					api: 'external_ids',
-					param: 'external_ids',
-					kind: 'stringList',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'phones',
-					param: 'phones',
-					kind: 'stringList',
-					required: false,
-				},
-				{
-					api: 'responsible_user_ids',
-					param: 'responsible_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
 					required: false,
 				},
 			],
@@ -2653,6 +2376,7 @@ export const operationsMeta = {
 			path: 'Client/Merge',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'comment',
@@ -2664,13 +2388,13 @@ export const operationsMeta = {
 					api: 'source_client_id',
 					param: 'source_client_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'target_client_id',
 					param: 'target_client_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -2678,6 +2402,7 @@ export const operationsMeta = {
 			path: 'Client/SetResponsible',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -2689,7 +2414,7 @@ export const operationsMeta = {
 					api: 'responsible_user_id',
 					param: 'responsible_user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -2699,12 +2424,13 @@ export const operationsMeta = {
 			path: 'Color/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -2712,6 +2438,7 @@ export const operationsMeta = {
 			path: 'Color/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -2725,6 +2452,7 @@ export const operationsMeta = {
 			path: 'Color/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -2744,17 +2472,12 @@ export const operationsMeta = {
 			path: 'Color/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -2771,47 +2494,96 @@ export const operationsMeta = {
 			path: 'CommercialOfferOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		delete: {
 			path: 'CommercialOfferOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		edit: {
 			path: 'CommercialOfferOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'CommercialOfferOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -2828,6 +2600,7 @@ export const operationsMeta = {
 			path: 'ConnectedIntegration/Check',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'connected_integration_id',
@@ -2841,16 +2614,11 @@ export const operationsMeta = {
 			path: 'ConnectedIntegration/Disconnect',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'connected_integration_id',
 					param: 'connected_integration_id',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'key',
-					param: 'key',
 					kind: 'string',
 					required: false,
 				},
@@ -2860,6 +2628,7 @@ export const operationsMeta = {
 			path: 'ConnectedIntegration/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'alias',
@@ -2870,12 +2639,6 @@ export const operationsMeta = {
 				{
 					api: 'connected_integration_id',
 					param: 'connected_integration_id',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'integration_key',
-					param: 'integration_key',
 					kind: 'string',
 					required: false,
 				},
@@ -2903,53 +2666,12 @@ export const operationsMeta = {
 			path: 'ConnectedIntegration/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'connected_integration_ids',
-					param: 'connected_integration_ids',
-					kind: 'stringList',
-					required: false,
-				},
-				{
-					api: 'handler',
-					param: 'handler',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'handlers',
-					param: 'handlers',
-					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'include_name',
-					param: 'include_name',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'include_schedule',
-					param: 'include_schedule',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'is_public',
-					param: 'is_public',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'keys',
-					param: 'keys',
-					kind: 'stringList',
-					required: false,
-				},
-				{
-					api: 'user_id',
-					param: 'user_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -2958,11 +2680,12 @@ export const operationsMeta = {
 			path: 'ConnectedIntegration/GetWebhookInfo',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'connected_integration_id',
-					param: 'connected_integration_id',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -2971,16 +2694,11 @@ export const operationsMeta = {
 			path: 'ConnectedIntegration/Reconnect',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'connected_integration_id',
 					param: 'connected_integration_id',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'key',
-					param: 'key',
 					kind: 'string',
 					required: false,
 				},
@@ -2992,12 +2710,7 @@ export const operationsMeta = {
 			path: 'ConnectedIntegrationSetting/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
-		},
-		get: {
-			path: 'ConnectedIntegrationSetting/Get',
-			envelope: 'array',
-			paginated: false,
+			bodyKind: 'array',
 			fields: [
 				{
 					api: 'connected_integration_id',
@@ -3012,9 +2725,29 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'integration_key',
-					param: 'integration_key',
+					api: 'key',
+					param: 'key',
 					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'value',
+					param: 'value',
+					kind: 'string',
+					required: true,
+				},
+			],
+		},
+		get: {
+			path: 'ConnectedIntegrationSetting/Get',
+			envelope: 'array',
+			paginated: false,
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -3025,36 +2758,37 @@ export const operationsMeta = {
 			path: 'Country/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'alfa2',
 					param: 'alfa2',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'alfa3',
 					param: 'alfa3',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'code',
 					param: 'code',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'fullname',
 					param: 'fullname',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -3062,6 +2796,7 @@ export const operationsMeta = {
 			path: 'Country/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -3075,6 +2810,7 @@ export const operationsMeta = {
 			path: 'Country/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'alfa2',
@@ -3118,23 +2854,12 @@ export const operationsMeta = {
 			path: 'Country/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'code',
-					param: 'code',
-					kind: 'stringList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -3151,24 +2876,25 @@ export const operationsMeta = {
 			path: 'Currency/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'code_chr',
 					param: 'code_chr',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'code_num',
 					param: 'code_num',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -3176,6 +2902,7 @@ export const operationsMeta = {
 			path: 'Currency/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -3189,6 +2916,7 @@ export const operationsMeta = {
 			path: 'Currency/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'code_chr',
@@ -3220,12 +2948,13 @@ export const operationsMeta = {
 			path: 'Currency/EditExchangeRate',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'exchange_rate',
 					param: 'exchange_rate',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'id',
@@ -3239,17 +2968,12 @@ export const operationsMeta = {
 			path: 'Currency/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -3266,7 +2990,15 @@ export const operationsMeta = {
 			path: 'CurrentTimeStamp/Get',
 			envelope: 'object',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 	},
 	customerPersonalDocument: {
@@ -3274,24 +3006,51 @@ export const operationsMeta = {
 			path: 'CustomerPersonalDocument/Add',
 			envelope: 'insert',
 			paginated: false,
-			fields: [],
-		},
-		delete: {
-			path: 'CustomerPersonalDocument/Delete',
-			envelope: 'raw',
-			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'customer_id',
 					param: 'customer_id',
 					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'file',
+					param: 'file',
+					kind: 'json',
 					required: false,
 				},
 				{
 					api: 'personal_doc_type_id',
 					param: 'personal_doc_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
+				},
+				{
+					api: 'value',
+					param: 'value',
+					kind: 'string',
+					required: true,
+				},
+			],
+		},
+		delete: {
+			path: 'CustomerPersonalDocument/Delete',
+			envelope: 'raw',
+			paginated: false,
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'customer_id',
+					param: 'customer_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'personal_doc_type_id',
+					param: 'personal_doc_type_id',
+					kind: 'number',
+					required: true,
 				},
 			],
 		},
@@ -3299,17 +3058,44 @@ export const operationsMeta = {
 			path: 'CustomerPersonalDocument/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
-		},
-		get: {
-			path: 'CustomerPersonalDocument/Get',
-			envelope: 'array',
-			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'customer_id',
 					param: 'customer_id',
 					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'file',
+					param: 'file',
+					kind: 'json',
+					required: false,
+				},
+				{
+					api: 'personal_doc_type_id',
+					param: 'personal_doc_type_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'value',
+					param: 'value',
+					kind: 'string',
+					required: false,
+				},
+			],
+		},
+		get: {
+			path: 'CustomerPersonalDocument/Get',
+			envelope: 'array',
+			paginated: false,
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -3318,30 +3104,25 @@ export const operationsMeta = {
 					kind: 'triBoolean',
 					required: false,
 				},
-				{
-					api: 'personal_doc_type_id',
-					param: 'personal_doc_type_id',
-					kind: 'number',
-					required: false,
-				},
 			],
 		},
 		removeFile: {
 			path: 'CustomerPersonalDocument/RemoveFile',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'customer_id',
 					param: 'customer_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'personal_doc_type_id',
 					param: 'personal_doc_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -3351,6 +3132,7 @@ export const operationsMeta = {
 			path: 'Dashboard/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'firm_id',
@@ -3362,7 +3144,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_id',
@@ -3376,6 +3158,7 @@ export const operationsMeta = {
 			path: 'Dashboard/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -3389,6 +3172,7 @@ export const operationsMeta = {
 			path: 'Dashboard/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -3414,11 +3198,12 @@ export const operationsMeta = {
 			path: 'Dashboard/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -3433,6 +3218,7 @@ export const operationsMeta = {
 			path: 'Dashboard/SetFilters',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'firm_id',
@@ -3466,12 +3252,13 @@ export const operationsMeta = {
 			path: 'Deal/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'amount',
 					param: 'amount',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'chat_id',
@@ -3489,7 +3276,7 @@ export const operationsMeta = {
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'deal_type_id',
@@ -3579,7 +3366,7 @@ export const operationsMeta = {
 					api: 'title',
 					param: 'title',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -3587,6 +3374,7 @@ export const operationsMeta = {
 			path: 'Deal/Close',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -3598,7 +3386,7 @@ export const operationsMeta = {
 					api: 'stage_id',
 					param: 'stage_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -3606,6 +3394,7 @@ export const operationsMeta = {
 			path: 'Deal/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -3619,6 +3408,7 @@ export const operationsMeta = {
 			path: 'Deal/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'amount',
@@ -3698,35 +3488,12 @@ export const operationsMeta = {
 			path: 'Deal/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'client_ids',
-					param: 'client_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'currency_id',
-					param: 'currency_id',
-					kind: 'number',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'from_date',
-					param: 'from_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
 					required: false,
 				},
 				{
@@ -3735,48 +3502,13 @@ export const operationsMeta = {
 					kind: 'boolean',
 					required: false,
 				},
-				{
-					api: 'lead_ids',
-					param: 'lead_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'pipeline_id',
-					param: 'pipeline_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'responsible_user_ids',
-					param: 'responsible_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'stage_ids',
-					param: 'stage_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'task_ids',
-					param: 'task_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'to_date',
-					param: 'to_date',
-					kind: 'dateTime',
-					required: false,
-				},
 			],
 		},
 		setParticipants: {
 			path: 'Deal/SetParticipants',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -3802,6 +3534,7 @@ export const operationsMeta = {
 			path: 'Deal/SetResponsible',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -3813,7 +3546,7 @@ export const operationsMeta = {
 					api: 'responsible_user_id',
 					param: 'responsible_user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -3821,6 +3554,7 @@ export const operationsMeta = {
 			path: 'Deal/SetStage',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'comment',
@@ -3838,7 +3572,7 @@ export const operationsMeta = {
 					api: 'stage_id',
 					param: 'stage_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -3848,6 +3582,7 @@ export const operationsMeta = {
 			path: 'DealType/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -3865,7 +3600,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -3873,6 +3608,7 @@ export const operationsMeta = {
 			path: 'DealType/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -3886,6 +3622,7 @@ export const operationsMeta = {
 			path: 'DealType/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -3917,23 +3654,12 @@ export const operationsMeta = {
 			path: 'DealType/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'active',
-					param: 'active',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -3944,6 +3670,7 @@ export const operationsMeta = {
 			path: 'DeliveryCourier/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
@@ -3955,7 +3682,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -3963,6 +3690,7 @@ export const operationsMeta = {
 			path: 'DeliveryCourier/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -3976,6 +3704,7 @@ export const operationsMeta = {
 			path: 'DeliveryCourier/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
@@ -4001,17 +3730,12 @@ export const operationsMeta = {
 			path: 'DeliveryCourier/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -4028,12 +3752,13 @@ export const operationsMeta = {
 			path: 'DeliveryFrom/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -4041,6 +3766,7 @@ export const operationsMeta = {
 			path: 'DeliveryFrom/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4054,6 +3780,7 @@ export const operationsMeta = {
 			path: 'DeliveryFrom/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4073,17 +3800,12 @@ export const operationsMeta = {
 			path: 'DeliveryFrom/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -4100,12 +3822,13 @@ export const operationsMeta = {
 			path: 'DeliveryType/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -4113,6 +3836,7 @@ export const operationsMeta = {
 			path: 'DeliveryType/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4126,6 +3850,7 @@ export const operationsMeta = {
 			path: 'DeliveryType/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4137,7 +3862,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -4145,17 +3870,12 @@ export const operationsMeta = {
 			path: 'DeliveryType/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -4172,12 +3892,13 @@ export const operationsMeta = {
 			path: 'Department/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -4185,6 +3906,7 @@ export const operationsMeta = {
 			path: 'Department/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4198,6 +3920,7 @@ export const operationsMeta = {
 			path: 'Department/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4209,7 +3932,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -4217,17 +3940,12 @@ export const operationsMeta = {
 			path: 'Department/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -4244,30 +3962,31 @@ export const operationsMeta = {
 			path: 'DocAccountMovement/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'account_receiver_id',
 					param: 'account_receiver_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'account_sender_id',
 					param: 'account_sender_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'amount_received',
 					param: 'amount_received',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'amount_sended',
 					param: 'amount_sended',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'attached_user_id',
@@ -4279,7 +3998,7 @@ export const operationsMeta = {
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -4297,7 +4016,7 @@ export const operationsMeta = {
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -4305,6 +4024,7 @@ export const operationsMeta = {
 			path: 'DocAccountMovement/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4318,6 +4038,7 @@ export const operationsMeta = {
 			path: 'DocAccountMovement/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4331,6 +4052,7 @@ export const operationsMeta = {
 			path: 'DocAccountMovement/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'amount_received',
@@ -4380,53 +4102,12 @@ export const operationsMeta = {
 			path: 'DocAccountMovement/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
 					required: false,
 				},
 				{
@@ -4435,18 +4116,13 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
 			],
 		},
 		perform: {
 			path: 'DocAccountMovement/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4460,6 +4136,7 @@ export const operationsMeta = {
 			path: 'DocAccountMovement/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4475,6 +4152,7 @@ export const operationsMeta = {
 			path: 'DocAdditionalExpenses/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'contract_id',
@@ -4486,7 +4164,7 @@ export const operationsMeta = {
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
@@ -4522,19 +4200,19 @@ export const operationsMeta = {
 					api: 'partner_id',
 					param: 'partner_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_id',
 					param: 'stock_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'vat_calculation_type',
 					param: 'vat_calculation_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -4542,6 +4220,7 @@ export const operationsMeta = {
 			path: 'DocAdditionalExpenses/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4555,6 +4234,7 @@ export const operationsMeta = {
 			path: 'DocAdditionalExpenses/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4568,6 +4248,7 @@ export const operationsMeta = {
 			path: 'DocAdditionalExpenses/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'contract_id',
@@ -4629,71 +4310,12 @@ export const operationsMeta = {
 			path: 'DocAdditionalExpenses/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'contract_ids',
-					param: 'contract_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'parent_doc_id',
-					param: 'parent_doc_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'parent_doc_type_id',
-					param: 'parent_doc_type_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -4702,36 +4324,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'vat_calculation_type',
-					param: 'vat_calculation_type',
-					kind: 'options',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocAdditionalExpenses/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -4739,6 +4344,7 @@ export const operationsMeta = {
 			path: 'DocAdditionalExpenses/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4752,6 +4358,7 @@ export const operationsMeta = {
 			path: 'DocAdditionalExpenses/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -4765,12 +4372,13 @@ export const operationsMeta = {
 			path: 'DocAdditionalExpenses/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -4780,47 +4388,120 @@ export const operationsMeta = {
 			path: 'DocAdditionalExpensesOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'cost',
+					param: 'cost',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		delete: {
 			path: 'DocAdditionalExpensesOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		edit: {
 			path: 'DocAdditionalExpensesOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'cost',
+					param: 'cost',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'DocAdditionalExpensesOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -4837,59 +4518,18 @@ export const operationsMeta = {
 			path: 'DocCashSession/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'close_user_id',
-					param: 'close_user_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'is_agregated',
-					param: 'is_agregated',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'is_close',
-					param: 'is_close',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'open_user_id',
-					param: 'open_user_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'operating_cash_ids',
-					param: 'operating_cash_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'uuids',
-					param: 'uuids',
-					kind: 'stringList',
 					required: false,
 				},
 			],
@@ -4900,235 +4540,18 @@ export const operationsMeta = {
 			path: 'DocCheque/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'card_ids',
-					param: 'card_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'cashier_ids',
-					param: 'cashier_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'customer_ids',
-					param: 'customer_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'is_fiscal',
-					param: 'is_fiscal',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'is_return',
-					param: 'is_return',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'seller_ids',
-					param: 'seller_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'session_uuid',
-					param: 'session_uuid',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'status',
-					param: 'status',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'uuids',
-					param: 'uuids',
-					kind: 'stringList',
-					required: false,
-				},
-			],
-		},
-		getFavoritePeriod: {
-			path: 'DocCheque/GetFavoritePeriod',
-			envelope: 'offsettedArray',
-			paginated: true,
-			fields: [
-				{
-					api: 'card_ids',
-					param: 'card_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'cashier_ids',
-					param: 'cashier_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'customer_ids',
-					param: 'customer_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'is_fiscal',
-					param: 'is_fiscal',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'is_return',
-					param: 'is_return',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'seller_ids',
-					param: 'seller_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'session_uuid',
-					param: 'session_uuid',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'sort_orders',
-					param: 'sort_orders',
-					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'status',
-					param: 'status',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'uuids',
-					param: 'uuids',
-					kind: 'stringList',
-					required: false,
-				},
-			],
-		},
-		getShort: {
-			path: 'DocCheque/GetShort',
-			envelope: 'offsettedArray',
-			paginated: true,
-			fields: [
-				{
-					api: 'customer_ids',
-					param: 'customer_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'is_return',
-					param: 'is_return',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'operating_cash_ids',
-					param: 'operating_cash_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'sale_status',
-					param: 'sale_status',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'session_uuids',
-					param: 'session_uuids',
-					kind: 'stringList',
-					required: false,
-				},
-				{
-					api: 'sort_orders',
-					param: 'sort_orders',
-					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'uuids',
-					param: 'uuids',
-					kind: 'stringList',
 					required: false,
 				},
 			],
@@ -5139,6 +4562,7 @@ export const operationsMeta = {
 			path: 'DocCommercialOffer/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -5150,13 +4574,13 @@ export const operationsMeta = {
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -5174,7 +4598,7 @@ export const operationsMeta = {
 					api: 'partner_id',
 					param: 'partner_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'vat_calculation_type',
@@ -5188,6 +4612,7 @@ export const operationsMeta = {
 			path: 'DocCommercialOffer/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -5201,6 +4626,7 @@ export const operationsMeta = {
 			path: 'DocCommercialOffer/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -5214,6 +4640,7 @@ export const operationsMeta = {
 			path: 'DocCommercialOffer/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -5269,53 +4696,12 @@ export const operationsMeta = {
 			path: 'DocCommercialOffer/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'currency_ids',
-					param: 'currency_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -5324,30 +4710,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'vat_calculation_type',
-					param: 'vat_calculation_type',
-					kind: 'options',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocCommercialOffer/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -5355,12 +4730,13 @@ export const operationsMeta = {
 			path: 'DocCommercialOffer/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -5370,6 +4746,7 @@ export const operationsMeta = {
 			path: 'DocContract/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -5381,7 +4758,7 @@ export const operationsMeta = {
 					api: 'amount',
 					param: 'amount',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'attached_user_id',
@@ -5393,19 +4770,19 @@ export const operationsMeta = {
 					api: 'code',
 					param: 'code',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -5417,43 +4794,43 @@ export const operationsMeta = {
 					api: 'details',
 					param: 'details',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'direction',
 					param: 'direction',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'end_date',
 					param: 'end_date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'partner_id',
 					param: 'partner_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'start_date',
 					param: 'start_date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -5461,6 +4838,7 @@ export const operationsMeta = {
 			path: 'DocContract/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -5474,6 +4852,7 @@ export const operationsMeta = {
 			path: 'DocContract/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -5487,6 +4866,7 @@ export const operationsMeta = {
 			path: 'DocContract/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -5584,71 +4964,18 @@ export const operationsMeta = {
 			path: 'DocContract/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'active',
-					param: 'active',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'direction',
-					param: 'direction',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
 					required: false,
 				},
 			],
@@ -5657,71 +4984,18 @@ export const operationsMeta = {
 			path: 'DocContract/GetShort',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'active',
-					param: 'active',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'direction',
-					param: 'direction',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
 					required: false,
 				},
 			],
@@ -5732,12 +5006,39 @@ export const operationsMeta = {
 			path: 'DocContractFile/Add',
 			envelope: 'insert',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'contract_id',
+					param: 'contract_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'data',
+					param: 'data',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'extension',
+					param: 'extension',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'name',
+					param: 'name',
+					kind: 'string',
+					required: true,
+				},
+			],
 		},
 		delete: {
 			path: 'DocContractFile/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -5751,23 +5052,12 @@ export const operationsMeta = {
 			path: 'DocContractFile/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'contract_ids',
-					param: 'contract_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'file_ids',
-					param: 'file_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -5784,6 +5074,7 @@ export const operationsMeta = {
 			path: 'DocInOut/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -5795,7 +5086,7 @@ export const operationsMeta = {
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -5807,13 +5098,13 @@ export const operationsMeta = {
 					api: 'inout_type',
 					param: 'inout_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_id',
 					param: 'stock_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -5821,6 +5112,7 @@ export const operationsMeta = {
 			path: 'DocInOut/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -5834,6 +5126,7 @@ export const operationsMeta = {
 			path: 'DocInOut/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -5847,6 +5140,7 @@ export const operationsMeta = {
 			path: 'DocInOut/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -5890,65 +5184,12 @@ export const operationsMeta = {
 			path: 'DocInOut/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'auto',
-					param: 'auto',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'inout_type',
-					param: 'inout_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -5957,30 +5198,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocInOut/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -5988,6 +5218,7 @@ export const operationsMeta = {
 			path: 'DocInOut/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -6001,6 +5232,7 @@ export const operationsMeta = {
 			path: 'DocInOut/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -6014,12 +5246,13 @@ export const operationsMeta = {
 			path: 'DocInOut/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -6029,6 +5262,7 @@ export const operationsMeta = {
 			path: 'DocInventory/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -6040,7 +5274,7 @@ export const operationsMeta = {
 					api: 'compare_type',
 					param: 'compare_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'create_docinout',
@@ -6070,19 +5304,19 @@ export const operationsMeta = {
 					api: 'open_date',
 					param: 'open_date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'price_type_id',
 					param: 'price_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_id',
 					param: 'stock_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -6090,6 +5324,7 @@ export const operationsMeta = {
 			path: 'DocInventory/Close',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -6103,6 +5338,7 @@ export const operationsMeta = {
 			path: 'DocInventory/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -6116,6 +5352,7 @@ export const operationsMeta = {
 			path: 'DocInventory/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -6129,6 +5366,7 @@ export const operationsMeta = {
 			path: 'DocInventory/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -6196,53 +5434,12 @@ export const operationsMeta = {
 			path: 'DocInventory/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'closed',
-					param: 'closed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'compare_type',
-					param: 'compare_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -6251,30 +5448,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocInventory/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -6282,6 +5468,7 @@ export const operationsMeta = {
 			path: 'DocInventory/Open',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -6295,12 +5482,13 @@ export const operationsMeta = {
 			path: 'DocInventory/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -6310,6 +5498,7 @@ export const operationsMeta = {
 			path: 'DocInvoice/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -6345,13 +5534,13 @@ export const operationsMeta = {
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -6381,25 +5570,25 @@ export const operationsMeta = {
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'invoice_type',
 					param: 'invoice_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'partner_id',
 					param: 'partner_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'vat_calculation_type',
 					param: 'vat_calculation_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -6407,6 +5596,7 @@ export const operationsMeta = {
 			path: 'DocInvoice/AddOnBase',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -6448,13 +5638,13 @@ export const operationsMeta = {
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'document_type_id',
 					param: 'document_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -6462,6 +5652,7 @@ export const operationsMeta = {
 			path: 'DocInvoice/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -6475,6 +5666,7 @@ export const operationsMeta = {
 			path: 'DocInvoice/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -6488,6 +5680,7 @@ export const operationsMeta = {
 			path: 'DocInvoice/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -6585,77 +5778,12 @@ export const operationsMeta = {
 			path: 'DocInvoice/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'contract_ids',
-					param: 'contract_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'external_code',
-					param: 'external_code',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'invoice_type',
-					param: 'invoice_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -6664,41 +5792,18 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'vat_calculation_type',
-					param: 'vat_calculation_type',
-					kind: 'options',
-					required: false,
-				},
 			],
 		},
 		getDocumentsFromRoaming: {
 			path: 'DocInvoice/GetDocumentsFromRoaming',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -6707,12 +5812,13 @@ export const operationsMeta = {
 			path: 'DocInvoice/ImportDocumentFromRoaming',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'id',
@@ -6726,12 +5832,13 @@ export const operationsMeta = {
 			path: 'DocInvoice/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -6739,6 +5846,7 @@ export const operationsMeta = {
 			path: 'DocInvoice/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -6752,6 +5860,7 @@ export const operationsMeta = {
 			path: 'DocInvoice/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -6765,18 +5874,19 @@ export const operationsMeta = {
 			path: 'DocInvoice/Send',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_ids',
 					param: 'document_ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -6784,6 +5894,7 @@ export const operationsMeta = {
 			path: 'DocInvoice/SetExternalData',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'connected_integration_id',
@@ -6795,19 +5906,13 @@ export const operationsMeta = {
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'external_id',
 					param: 'external_id',
 					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'integration_key',
-					param: 'integration_key',
-					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'roaming_id',
@@ -6821,12 +5926,13 @@ export const operationsMeta = {
 			path: 'DocInvoice/SetStatus',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'error_message',
@@ -6838,7 +5944,7 @@ export const operationsMeta = {
 					api: 'status',
 					param: 'status',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -6846,12 +5952,13 @@ export const operationsMeta = {
 			path: 'DocInvoice/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -6861,6 +5968,7 @@ export const operationsMeta = {
 			path: 'DocMovement/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -6872,7 +5980,7 @@ export const operationsMeta = {
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -6884,13 +5992,13 @@ export const operationsMeta = {
 					api: 'stock_receiver_id',
 					param: 'stock_receiver_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_sender_id',
 					param: 'stock_sender_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -6898,6 +6006,7 @@ export const operationsMeta = {
 			path: 'DocMovement/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -6911,6 +6020,7 @@ export const operationsMeta = {
 			path: 'DocMovement/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -6924,6 +6034,7 @@ export const operationsMeta = {
 			path: 'DocMovement/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -6967,59 +6078,12 @@ export const operationsMeta = {
 			path: 'DocMovement/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_receiver_ids',
-					param: 'firm_receiver_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'firm_sender_ids',
-					param: 'firm_sender_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -7028,36 +6092,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_receiver_ids',
-					param: 'stock_receiver_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'stock_sender_ids',
-					param: 'stock_sender_ids',
-					kind: 'idList',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocMovement/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -7065,6 +6112,7 @@ export const operationsMeta = {
 			path: 'DocMovement/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7078,6 +6126,7 @@ export const operationsMeta = {
 			path: 'DocMovement/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7091,12 +6140,13 @@ export const operationsMeta = {
 			path: 'DocMovement/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -7106,6 +6156,7 @@ export const operationsMeta = {
 			path: 'DocOpeningBalance/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'credit',
@@ -7117,13 +6168,13 @@ export const operationsMeta = {
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'debit',
@@ -7135,19 +6186,19 @@ export const operationsMeta = {
 					api: 'exchange_rate',
 					param: 'exchange_rate',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'partner_id',
 					param: 'partner_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -7155,6 +6206,7 @@ export const operationsMeta = {
 			path: 'DocOpeningBalance/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7168,6 +6220,7 @@ export const operationsMeta = {
 			path: 'DocOpeningBalance/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7181,6 +6234,7 @@ export const operationsMeta = {
 			path: 'DocOpeningBalance/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'credit',
@@ -7236,47 +6290,12 @@ export const operationsMeta = {
 			path: 'DocOpeningBalance/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -7285,18 +6304,13 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
 			],
 		},
 		perform: {
 			path: 'DocOpeningBalance/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7310,6 +6324,7 @@ export const operationsMeta = {
 			path: 'DocOpeningBalance/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7325,18 +6340,19 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/Actualize',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'data',
 					param: 'data',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -7344,6 +6360,7 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'address',
@@ -7373,7 +6390,7 @@ export const operationsMeta = {
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'delivery_date',
@@ -7403,7 +6420,7 @@ export const operationsMeta = {
 					api: 'from_id',
 					param: 'from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'location',
@@ -7427,7 +6444,7 @@ export const operationsMeta = {
 					api: 'price_type_id',
 					param: 'price_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'qrcodeurl',
@@ -7447,18 +6464,19 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/AddFull',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document',
 					param: 'document',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'operations',
 					param: 'operations',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -7466,6 +6484,7 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7479,6 +6498,7 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7492,6 +6512,7 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'address',
@@ -7601,65 +6622,12 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'code',
-					param: 'code',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'customer_ids',
-					param: 'customer_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'external_code',
-					param: 'external_code',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'from_ids',
-					param: 'from_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'operating_cash_ids',
-					param: 'operating_cash_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -7668,77 +6636,18 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'status_ids',
-					param: 'status_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
 			],
 		},
 		getCount: {
 			path: 'DocOrderDelivery/GetCount',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'code',
-					param: 'code',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'customer_ids',
-					param: 'customer_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'external_code',
-					param: 'external_code',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'from_ids',
-					param: 'from_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -7754,39 +6663,9 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'operating_cash_ids',
-					param: 'operating_cash_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
-					required: false,
-				},
-				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'status_ids',
-					param: 'status_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
 					required: false,
 				},
 			],
@@ -7795,12 +6674,13 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -7808,18 +6688,19 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/Return',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'data',
 					param: 'data',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -7827,12 +6708,13 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/SetCourier',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'courier_id',
 					param: 'courier_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'id',
@@ -7846,6 +6728,7 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/SetFiscalInfo',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7857,7 +6740,7 @@ export const operationsMeta = {
 					api: 'qrcodeurl',
 					param: 'qrcodeurl',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -7865,6 +6748,7 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/SetOperatingCash',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7876,7 +6760,7 @@ export const operationsMeta = {
 					api: 'operating_cash_id',
 					param: 'operating_cash_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -7884,12 +6768,13 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/SetRetailCard',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'card_id',
 					param: 'card_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'id',
@@ -7903,6 +6788,7 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/SetStatus',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7914,7 +6800,7 @@ export const operationsMeta = {
 					api: 'status',
 					param: 'status',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -7922,6 +6808,7 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/SetStock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7933,7 +6820,7 @@ export const operationsMeta = {
 					api: 'stock_id',
 					param: 'stock_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -7941,6 +6828,7 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/ToBeginning',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -7954,12 +6842,13 @@ export const operationsMeta = {
 			path: 'DocOrderDelivery/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -7969,6 +6858,7 @@ export const operationsMeta = {
 			path: 'DocOrderFromPartner/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -7992,13 +6882,13 @@ export const operationsMeta = {
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -8016,25 +6906,25 @@ export const operationsMeta = {
 					api: 'partner_id',
 					param: 'partner_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'status_id',
 					param: 'status_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_id',
 					param: 'stock_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'vat_calculation_type',
 					param: 'vat_calculation_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -8042,6 +6932,7 @@ export const operationsMeta = {
 			path: 'DocOrderFromPartner/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -8055,6 +6946,7 @@ export const operationsMeta = {
 			path: 'DocOrderFromPartner/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -8068,6 +6960,7 @@ export const operationsMeta = {
 			path: 'DocOrderFromPartner/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -8127,7 +7020,7 @@ export const operationsMeta = {
 					api: 'status_id',
 					param: 'status_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_id',
@@ -8147,59 +7040,12 @@ export const operationsMeta = {
 			path: 'DocOrderFromPartner/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'contract_ids',
-					param: 'contract_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -8208,42 +7054,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'status_ids',
-					param: 'status_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'vat_calculation_type',
-					param: 'vat_calculation_type',
-					kind: 'options',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocOrderFromPartner/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -8251,12 +7074,13 @@ export const operationsMeta = {
 			path: 'DocOrderFromPartner/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -8266,6 +7090,7 @@ export const operationsMeta = {
 			path: 'DocOrderToMovement/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -8277,19 +7102,19 @@ export const operationsMeta = {
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'status_id',
 					param: 'status_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_receiver_id',
 					param: 'stock_receiver_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -8297,6 +7122,7 @@ export const operationsMeta = {
 			path: 'DocOrderToMovement/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -8310,6 +7136,7 @@ export const operationsMeta = {
 			path: 'DocOrderToMovement/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -8323,6 +7150,7 @@ export const operationsMeta = {
 			path: 'DocOrderToMovement/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -8346,7 +7174,7 @@ export const operationsMeta = {
 					api: 'status_id',
 					param: 'status_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_receiver_id',
@@ -8360,47 +7188,12 @@ export const operationsMeta = {
 			path: 'DocOrderToMovement/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_receiver_ids',
-					param: 'firm_receiver_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -8409,36 +7202,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'status_ids',
-					param: 'status_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'stock_receiver_ids',
-					param: 'stock_receiver_ids',
-					kind: 'idList',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocOrderToMovement/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -8446,12 +7222,13 @@ export const operationsMeta = {
 			path: 'DocOrderToMovement/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -8461,6 +7238,7 @@ export const operationsMeta = {
 			path: 'DocOrderToPartner/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -8478,13 +7256,13 @@ export const operationsMeta = {
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -8502,19 +7280,19 @@ export const operationsMeta = {
 					api: 'partner_id',
 					param: 'partner_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'status_id',
 					param: 'status_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'vat_calculation_type',
 					param: 'vat_calculation_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -8522,6 +7300,7 @@ export const operationsMeta = {
 			path: 'DocOrderToPartner/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -8535,6 +7314,7 @@ export const operationsMeta = {
 			path: 'DocOrderToPartner/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -8548,6 +7328,7 @@ export const operationsMeta = {
 			path: 'DocOrderToPartner/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -8601,7 +7382,7 @@ export const operationsMeta = {
 					api: 'status_id',
 					param: 'status_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'vat_calculation_type',
@@ -8615,53 +7396,12 @@ export const operationsMeta = {
 			path: 'DocOrderToPartner/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'contract_ids',
-					param: 'contract_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -8670,36 +7410,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'status_ids',
-					param: 'status_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'vat_calculation_type',
-					param: 'vat_calculation_type',
-					kind: 'options',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocOrderToPartner/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -8707,12 +7430,13 @@ export const operationsMeta = {
 			path: 'DocOrderToPartner/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -8722,12 +7446,13 @@ export const operationsMeta = {
 			path: 'DocPayment/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'amount',
 					param: 'amount',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'attached_user_id',
@@ -8739,7 +7464,7 @@ export const operationsMeta = {
 					api: 'category_id',
 					param: 'category_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'contract_id',
@@ -8751,7 +7476,7 @@ export const operationsMeta = {
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -8787,19 +7512,19 @@ export const operationsMeta = {
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'partner_id',
 					param: 'partner_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'type_id',
 					param: 'type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -8807,6 +7532,7 @@ export const operationsMeta = {
 			path: 'DocPayment/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -8820,6 +7546,7 @@ export const operationsMeta = {
 			path: 'DocPayment/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -8833,6 +7560,7 @@ export const operationsMeta = {
 			path: 'DocPayment/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'amount',
@@ -8912,89 +7640,12 @@ export const operationsMeta = {
 			path: 'DocPayment/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'category_ids',
-					param: 'category_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'contract_ids',
-					param: 'contract_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'document_type_ids',
-					param: 'document_type_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'payment_direction',
-					param: 'payment_direction',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
 					required: false,
 				},
 				{
@@ -9003,18 +7654,13 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
 			],
 		},
 		perform: {
 			path: 'DocPayment/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9028,6 +7674,7 @@ export const operationsMeta = {
 			path: 'DocPayment/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9043,41 +7690,18 @@ export const operationsMeta = {
 			path: 'DocPaymentAggregation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
 					required: false,
 				},
 			],
@@ -9088,12 +7712,13 @@ export const operationsMeta = {
 			path: 'DocPeriodClosing/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'close_date',
 					param: 'close_date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -9105,7 +7730,7 @@ export const operationsMeta = {
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'run_date',
@@ -9119,6 +7744,7 @@ export const operationsMeta = {
 			path: 'DocPeriodClosing/cancelClose',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9132,6 +7758,7 @@ export const operationsMeta = {
 			path: 'DocPeriodClosing/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9145,12 +7772,13 @@ export const operationsMeta = {
 			path: 'DocPeriodClosing/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'close_date',
 					param: 'close_date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -9162,7 +7790,7 @@ export const operationsMeta = {
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'id',
@@ -9188,29 +7816,12 @@ export const operationsMeta = {
 			path: 'DocPeriodClosing/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'sort_order',
-					param: 'sort_order',
-					kind: 'json',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -9219,30 +7830,25 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'status_ids',
-					param: 'status_ids',
-					kind: 'idList',
-					required: false,
-				},
 			],
 		},
 		isCanDo: {
 			path: 'DocPeriodClosing/IsCanDo',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'close_date',
 					param: 'close_date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -9252,12 +7858,33 @@ export const operationsMeta = {
 			path: 'DocPrintForm/Add',
 			envelope: 'insert',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'data',
+					param: 'data',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'name',
+					param: 'name',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'version',
+					param: 'version',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		delete: {
 			path: 'DocPrintForm/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9271,17 +7898,38 @@ export const operationsMeta = {
 			path: 'DocPrintForm/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'data',
+					param: 'data',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'name',
+					param: 'name',
+					kind: 'string',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'DocPrintForm/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -9290,30 +7938,25 @@ export const operationsMeta = {
 					kind: 'triBoolean',
 					required: false,
 				},
-				{
-					api: 'version',
-					param: 'version',
-					kind: 'number',
-					required: false,
-				},
 			],
 		},
 		prepare: {
 			path: 'DocPrintForm/Prepare',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'data',
 					param: 'data',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'print_form_type_id',
 					param: 'print_form_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'version',
@@ -9329,6 +7972,7 @@ export const operationsMeta = {
 			path: 'DocProduction/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -9340,7 +7984,7 @@ export const operationsMeta = {
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -9352,13 +7996,13 @@ export const operationsMeta = {
 					api: 'stock_id',
 					param: 'stock_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -9366,6 +8010,7 @@ export const operationsMeta = {
 			path: 'DocProduction/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9379,6 +8024,7 @@ export const operationsMeta = {
 			path: 'DocProduction/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -9416,53 +8062,12 @@ export const operationsMeta = {
 			path: 'DocProduction/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'code',
-					param: 'code',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -9471,30 +8076,13 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocProduction/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9508,6 +8096,7 @@ export const operationsMeta = {
 			path: 'DocProduction/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9521,6 +8110,7 @@ export const operationsMeta = {
 			path: 'DocProduction/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9534,6 +8124,7 @@ export const operationsMeta = {
 			path: 'DocProduction/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9549,6 +8140,7 @@ export const operationsMeta = {
 			path: 'DocPurchase/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -9566,13 +8158,13 @@ export const operationsMeta = {
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -9596,7 +8188,7 @@ export const operationsMeta = {
 					api: 'partner_id',
 					param: 'partner_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'price_type_id',
@@ -9608,13 +8200,13 @@ export const operationsMeta = {
 					api: 'stock_id',
 					param: 'stock_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'vat_calculation_type',
 					param: 'vat_calculation_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -9622,6 +8214,7 @@ export const operationsMeta = {
 			path: 'DocPurchase/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9635,6 +8228,7 @@ export const operationsMeta = {
 			path: 'DocPurchase/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9648,6 +8242,7 @@ export const operationsMeta = {
 			path: 'DocPurchase/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -9727,71 +8322,12 @@ export const operationsMeta = {
 			path: 'DocPurchase/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'contract_ids',
-					param: 'contract_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
 					required: false,
 				},
 				{
@@ -9800,36 +8336,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'vat_calculation_type',
-					param: 'vat_calculation_type',
-					kind: 'options',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocPurchase/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -9837,6 +8356,7 @@ export const operationsMeta = {
 			path: 'DocPurchase/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9850,6 +8370,7 @@ export const operationsMeta = {
 			path: 'DocPurchase/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9863,12 +8384,13 @@ export const operationsMeta = {
 			path: 'DocPurchase/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -9878,6 +8400,7 @@ export const operationsMeta = {
 			path: 'DocReturnsToPartner/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -9895,13 +8418,13 @@ export const operationsMeta = {
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -9919,19 +8442,19 @@ export const operationsMeta = {
 					api: 'partner_id',
 					param: 'partner_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_id',
 					param: 'stock_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'vat_calculation_type',
 					param: 'vat_calculation_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -9939,6 +8462,7 @@ export const operationsMeta = {
 			path: 'DocReturnsToPartner/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9952,6 +8476,7 @@ export const operationsMeta = {
 			path: 'DocReturnsToPartner/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -9965,6 +8490,7 @@ export const operationsMeta = {
 			path: 'DocReturnsToPartner/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -10032,65 +8558,12 @@ export const operationsMeta = {
 			path: 'DocReturnsToPartner/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'contract_ids',
-					param: 'contract_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -10099,36 +8572,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'vat_calculation_type',
-					param: 'vat_calculation_type',
-					kind: 'options',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocReturnsToPartner/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -10136,6 +8592,7 @@ export const operationsMeta = {
 			path: 'DocReturnsToPartner/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10149,6 +8606,7 @@ export const operationsMeta = {
 			path: 'DocReturnsToPartner/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10162,12 +8620,13 @@ export const operationsMeta = {
 			path: 'DocReturnsToPartner/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -10177,6 +8636,7 @@ export const operationsMeta = {
 			path: 'DocSetPrice/add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -10194,7 +8654,7 @@ export const operationsMeta = {
 					api: 'price_type_id',
 					param: 'price_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -10202,6 +8662,7 @@ export const operationsMeta = {
 			path: 'DocSetPrice/delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10215,6 +8676,7 @@ export const operationsMeta = {
 			path: 'DocSetPrice/deleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10228,6 +8690,7 @@ export const operationsMeta = {
 			path: 'DocSetPrice/edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -10259,53 +8722,12 @@ export const operationsMeta = {
 			path: 'DocSetPrice/get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'price_type_ids',
-					param: 'price_type_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -10314,24 +8736,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocSetPrice/lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -10339,6 +8756,7 @@ export const operationsMeta = {
 			path: 'DocSetPrice/perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10352,6 +8770,7 @@ export const operationsMeta = {
 			path: 'DocSetPrice/performCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10365,12 +8784,13 @@ export const operationsMeta = {
 			path: 'DocSetPrice/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -10380,35 +8800,18 @@ export const operationsMeta = {
 			path: 'DocStockAggregation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
 					required: false,
 				},
 			],
@@ -10419,6 +8822,7 @@ export const operationsMeta = {
 			path: 'DocTechMap/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'autocalculate_part_cost',
@@ -10430,25 +8834,25 @@ export const operationsMeta = {
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'item_id',
 					param: 'item_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -10456,6 +8860,7 @@ export const operationsMeta = {
 			path: 'DocTechMap/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10469,6 +8874,7 @@ export const operationsMeta = {
 			path: 'DocTechMap/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'autocalculate_part_cost',
@@ -10500,47 +8906,12 @@ export const operationsMeta = {
 			path: 'DocTechMap/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -10549,24 +8920,13 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocTechMap/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10580,6 +8940,7 @@ export const operationsMeta = {
 			path: 'DocTechMap/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10593,6 +8954,7 @@ export const operationsMeta = {
 			path: 'DocTechMap/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10606,6 +8968,7 @@ export const operationsMeta = {
 			path: 'DocTechMap/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10621,6 +8984,7 @@ export const operationsMeta = {
 			path: 'DocumentEnumerator/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10632,7 +8996,7 @@ export const operationsMeta = {
 					api: 'mask',
 					param: 'mask',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -10640,17 +9004,12 @@ export const operationsMeta = {
 			path: 'DocumentEnumerator/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'table_ids',
-					param: 'table_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -10659,6 +9018,7 @@ export const operationsMeta = {
 			path: 'DocumentEnumerator/Reset',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10674,17 +9034,12 @@ export const operationsMeta = {
 			path: 'DocumentStatus/get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_type_id',
-					param: 'document_type_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -10695,11 +9050,12 @@ export const operationsMeta = {
 			path: 'DocumentType/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -10710,6 +9066,7 @@ export const operationsMeta = {
 			path: 'DocWholeSale/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -10727,13 +9084,13 @@ export const operationsMeta = {
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -10751,7 +9108,7 @@ export const operationsMeta = {
 					api: 'partner_id',
 					param: 'partner_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'price_type_id',
@@ -10769,13 +9126,13 @@ export const operationsMeta = {
 					api: 'stock_id',
 					param: 'stock_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'vat_calculation_type',
 					param: 'vat_calculation_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -10783,6 +9140,7 @@ export const operationsMeta = {
 			path: 'DocWholeSale/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10796,6 +9154,7 @@ export const operationsMeta = {
 			path: 'DocWholeSale/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -10809,6 +9168,7 @@ export const operationsMeta = {
 			path: 'DocWholeSale/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -10888,65 +9248,12 @@ export const operationsMeta = {
 			path: 'DocWholeSale/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'contract_ids',
-					param: 'contract_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -10955,36 +9262,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'vat_calculation_type',
-					param: 'vat_calculation_type',
-					kind: 'options',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocWholeSale/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -10992,6 +9282,7 @@ export const operationsMeta = {
 			path: 'DocWholeSale/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11005,6 +9296,7 @@ export const operationsMeta = {
 			path: 'DocWholeSale/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11018,12 +9310,13 @@ export const operationsMeta = {
 			path: 'DocWholeSale/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -11033,6 +9326,7 @@ export const operationsMeta = {
 			path: 'DocWholeSaleReturn/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -11050,13 +9344,13 @@ export const operationsMeta = {
 					api: 'currency_id',
 					param: 'currency_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -11074,19 +9368,19 @@ export const operationsMeta = {
 					api: 'partner_id',
 					param: 'partner_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_id',
 					param: 'stock_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'vat_calculation_type',
 					param: 'vat_calculation_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -11094,6 +9388,7 @@ export const operationsMeta = {
 			path: 'DocWholeSaleReturn/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11107,6 +9402,7 @@ export const operationsMeta = {
 			path: 'DocWholeSaleReturn/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11120,6 +9416,7 @@ export const operationsMeta = {
 			path: 'DocWholeSaleReturn/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attached_user_id',
@@ -11187,65 +9484,12 @@ export const operationsMeta = {
 			path: 'DocWholeSaleReturn/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'attached_user_ids',
-					param: 'attached_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'contract_ids',
-					param: 'contract_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'performed',
-					param: 'performed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -11254,36 +9498,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'vat_calculation_type',
-					param: 'vat_calculation_type',
-					kind: 'options',
-					required: false,
-				},
 			],
 		},
 		lock: {
 			path: 'DocWholeSaleReturn/Lock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -11291,6 +9518,7 @@ export const operationsMeta = {
 			path: 'DocWholeSaleReturn/Perform',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11304,6 +9532,7 @@ export const operationsMeta = {
 			path: 'DocWholeSaleReturn/PerformCancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11317,12 +9546,13 @@ export const operationsMeta = {
 			path: 'DocWholeSaleReturn/Unlock',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -11332,11 +9562,12 @@ export const operationsMeta = {
 			path: 'EditedExchangeRateLog/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'currency_id',
-					param: 'currency_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -11347,7 +9578,15 @@ export const operationsMeta = {
 			path: 'EntityType/Get',
 			envelope: 'array',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 	},
 	event: {
@@ -11355,29 +9594,12 @@ export const operationsMeta = {
 			path: 'Event/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'actions',
-					param: 'actions',
-					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'connected_integration_id',
-					param: 'connected_integration_id',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'from_date',
-					param: 'from_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'last_event_id',
-					param: 'last_event_id',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -11394,12 +9616,13 @@ export const operationsMeta = {
 			path: 'pos/FastGroup/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'operating_cash_id',
@@ -11413,6 +9636,7 @@ export const operationsMeta = {
 			path: 'pos/FastGroup/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11426,6 +9650,7 @@ export const operationsMeta = {
 			path: 'pos/FastGroup/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11445,17 +9670,12 @@ export const operationsMeta = {
 			path: 'pos/FastGroup/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -11466,18 +9686,19 @@ export const operationsMeta = {
 			path: 'pos/FastItem/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'group_id',
 					param: 'group_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'item_id',
 					param: 'item_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'operating_cash_id',
@@ -11491,6 +9712,7 @@ export const operationsMeta = {
 			path: 'pos/FastItem/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11504,17 +9726,12 @@ export const operationsMeta = {
 			path: 'pos/FastItem/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'group_ids',
-					param: 'group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -11525,24 +9742,25 @@ export const operationsMeta = {
 			path: 'Field/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'data_type',
 					param: 'data_type',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'entity_type',
 					param: 'entity_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'key',
 					param: 'key',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'metadata',
@@ -11554,7 +9772,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'required',
@@ -11568,6 +9786,7 @@ export const operationsMeta = {
 			path: 'Field/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11581,6 +9800,7 @@ export const operationsMeta = {
 			path: 'Field/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11612,35 +9832,12 @@ export const operationsMeta = {
 			path: 'Field/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'entity_type',
-					param: 'entity_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'keys',
-					param: 'keys',
-					kind: 'stringList',
-					required: false,
-				},
-				{
-					api: 'required',
-					param: 'required',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -11657,12 +9854,69 @@ export const operationsMeta = {
 			path: 'File/Add',
 			envelope: 'insert',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'access_level',
+					param: 'access_level',
+					kind: 'options',
+					required: true,
+				},
+				{
+					api: 'data',
+					param: 'data',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'duration_ms',
+					param: 'duration_ms',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'extension',
+					param: 'extension',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'folder_id',
+					param: 'folder_id',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'height',
+					param: 'height',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'name',
+					param: 'name',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'user_id',
+					param: 'user_id',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'width',
+					param: 'width',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		delete: {
 			path: 'File/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11676,6 +9930,7 @@ export const operationsMeta = {
 			path: 'File/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'access_level',
@@ -11725,41 +9980,18 @@ export const operationsMeta = {
 			path: 'File/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'access_level',
-					param: 'access_level',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'folder_id',
-					param: 'folder_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'user_id',
-					param: 'user_id',
-					kind: 'number',
 					required: false,
 				},
 			],
@@ -11770,11 +10002,12 @@ export const operationsMeta = {
 			path: 'Filter/GetFields',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'entity_type',
-					param: 'entity_type',
-					kind: 'options',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -11785,6 +10018,7 @@ export const operationsMeta = {
 			path: 'Firm/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'address',
@@ -11820,7 +10054,7 @@ export const operationsMeta = {
 					api: 'group_id',
 					param: 'group_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'inn',
@@ -11838,7 +10072,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'oked',
@@ -11866,16 +10100,11 @@ export const operationsMeta = {
 				},
 			],
 		},
-		addImage: {
-			path: 'Firm/AddImage',
-			envelope: 'raw',
-			paginated: false,
-			fields: [],
-		},
 		delete: {
 			path: 'Firm/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11889,26 +10118,14 @@ export const operationsMeta = {
 			path: 'Firm/DeleteConfirm',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'confirm_code',
 					param: 'confirm_code',
 					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'id',
-					param: 'id',
-					kind: 'number',
 					required: true,
 				},
-			],
-		},
-		deleteImage: {
-			path: 'Firm/DeleteImage',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
 				{
 					api: 'id',
 					param: 'id',
@@ -11921,6 +10138,7 @@ export const operationsMeta = {
 			path: 'Firm/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -11934,6 +10152,7 @@ export const operationsMeta = {
 			path: 'Firm/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'address',
@@ -12025,35 +10244,32 @@ export const operationsMeta = {
 			path: 'Firm/EditSettings',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'value',
+					param: 'value',
+					kind: 'string',
+					required: true,
+				},
+			],
 		},
 		get: {
 			path: 'Firm/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'group_ids',
-					param: 'group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -12064,46 +10280,16 @@ export const operationsMeta = {
 				},
 			],
 		},
-		getImage: {
-			path: 'Firm/GetImage',
-			envelope: 'array',
-			paginated: false,
-			fields: [
-				{
-					api: 'compress_data',
-					param: 'compress_data',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'include_data',
-					param: 'include_data',
-					kind: 'boolean',
-					required: false,
-				},
-			],
-		},
 		getSettings: {
 			path: 'Firm/GetSettings',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -12114,12 +10300,13 @@ export const operationsMeta = {
 			path: 'FirmGroup/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'parent_id',
@@ -12133,6 +10320,7 @@ export const operationsMeta = {
 			path: 'FirmGroup/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -12146,6 +10334,7 @@ export const operationsMeta = {
 			path: 'FirmGroup/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -12171,17 +10360,12 @@ export const operationsMeta = {
 			path: 'FirmGroup/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'parent_ids',
-					param: 'parent_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -12192,6 +10376,7 @@ export const operationsMeta = {
 			path: 'Folder/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'access_level',
@@ -12203,7 +10388,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'parent_id',
@@ -12217,6 +10402,7 @@ export const operationsMeta = {
 			path: 'Folder/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -12230,6 +10416,7 @@ export const operationsMeta = {
 			path: 'Folder/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'access_level',
@@ -12261,41 +10448,18 @@ export const operationsMeta = {
 			path: 'Folder/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'access_level',
-					param: 'access_level',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'parent_id',
-					param: 'parent_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'user_id',
-					param: 'user_id',
-					kind: 'number',
 					required: false,
 				},
 			],
@@ -12306,24 +10470,57 @@ export const operationsMeta = {
 			path: 'InOutOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		copyOperationsFromDocInventory: {
 			path: 'InOutOperation/CopyOperationsFromDocInventory',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -12331,41 +10528,58 @@ export const operationsMeta = {
 			path: 'InOutOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		edit: {
 			path: 'InOutOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'InOutOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -12380,24 +10594,25 @@ export const operationsMeta = {
 			path: 'InOutOperation/MoveOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -12407,6 +10622,7 @@ export const operationsMeta = {
 			path: 'Integration/Add',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'endpoint',
@@ -12418,13 +10634,13 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'webhooks',
 					param: 'webhooks',
 					kind: 'stringList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -12432,6 +10648,7 @@ export const operationsMeta = {
 			path: 'Integration/Connect',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'key',
@@ -12445,12 +10662,13 @@ export const operationsMeta = {
 			path: 'Integration/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'key',
 					param: 'key',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -12458,6 +10676,7 @@ export const operationsMeta = {
 			path: 'Integration/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'endpoint',
@@ -12469,42 +10688,17 @@ export const operationsMeta = {
 					api: 'key',
 					param: 'key',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'webhooks',
 					param: 'webhooks',
-					kind: 'stringList',
-					required: false,
-				},
-			],
-		},
-		get: {
-			path: 'Integration/Get',
-			envelope: 'offsettedArray',
-			paginated: true,
-			fields: [
-				{
-					api: 'group_ids',
-					param: 'group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'handlers',
-					param: 'handlers',
-					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'keys',
-					param: 'keys',
 					kind: 'stringList',
 					required: false,
 				},
@@ -12516,11 +10710,12 @@ export const operationsMeta = {
 			path: 'IntegrationGroup/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -12531,7 +10726,15 @@ export const operationsMeta = {
 			path: 'IntegrationWebhook/Get',
 			envelope: 'array',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 	},
 	inventoryOperation: {
@@ -12539,12 +10742,45 @@ export const operationsMeta = {
 			path: 'InventoryOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'actual_quantity',
+					param: 'actual_quantity',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'datetime',
+					param: 'datetime',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'update_actual_quantity',
+					param: 'update_actual_quantity',
+					kind: 'triBoolean',
+					required: true,
+				},
+			],
 		},
 		addBulk: {
 			path: 'InventoryOperation/AddBulk',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'actual_quantity',
@@ -12562,7 +10798,7 @@ export const operationsMeta = {
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'group_ids',
@@ -12574,7 +10810,7 @@ export const operationsMeta = {
 					api: 'update_actual_quantity',
 					param: 'update_actual_quantity',
 					kind: 'triBoolean',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -12582,47 +10818,58 @@ export const operationsMeta = {
 			path: 'InventoryOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		edit: {
 			path: 'InventoryOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'actual_quantity',
+					param: 'actual_quantity',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'update_actual_quantity',
+					param: 'update_actual_quantity',
+					kind: 'triBoolean',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'InventoryOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'only_deviation',
-					param: 'only_deviation',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -12637,24 +10884,25 @@ export const operationsMeta = {
 			path: 'InventoryOperation/MoveOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -12662,18 +10910,19 @@ export const operationsMeta = {
 			path: 'InventoryOperation/SetPriceByPriceType',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'price_type_id',
 					param: 'price_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -12683,47 +10932,96 @@ export const operationsMeta = {
 			path: 'InvoiceOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		delete: {
 			path: 'InvoiceOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		edit: {
 			path: 'InvoiceOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'InvoiceOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -12738,17 +11036,12 @@ export const operationsMeta = {
 			path: 'InvoiceOperation/GetOperationsFromRoaming',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_id',
-					param: 'document_id',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -12757,24 +11050,25 @@ export const operationsMeta = {
 			path: 'InvoiceOperation/MoveOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -12782,18 +11076,19 @@ export const operationsMeta = {
 			path: 'InvoiceOperation/SetPriceByPriceType',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'price_type_id',
 					param: 'price_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -12803,6 +11098,7 @@ export const operationsMeta = {
 			path: 'Item/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'articul',
@@ -12886,7 +11182,7 @@ export const operationsMeta = {
 					api: 'group_id',
 					param: 'group_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'icps',
@@ -12901,12 +11197,6 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'kdt',
-					param: 'kdt',
-					kind: 'number',
-					required: false,
-				},
-				{
 					api: 'min_quantity',
 					param: 'min_quantity',
 					kind: 'number',
@@ -12916,7 +11206,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'origin',
@@ -12958,25 +11248,19 @@ export const operationsMeta = {
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'unit_id',
 					param: 'unit_id',
 					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'unit2_id',
-					param: 'unit2_id',
-					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'vat_id',
 					param: 'vat_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -12984,18 +11268,19 @@ export const operationsMeta = {
 			path: 'Item/AddToCompound',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'compound_id',
 					param: 'compound_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'item_id',
 					param: 'item_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'quantity',
@@ -13009,12 +11294,13 @@ export const operationsMeta = {
 			path: 'Item/CheckCode',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'code',
 					param: 'code',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -13022,6 +11308,7 @@ export const operationsMeta = {
 			path: 'Item/Copy',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -13035,6 +11322,7 @@ export const operationsMeta = {
 			path: 'Item/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -13048,18 +11336,19 @@ export const operationsMeta = {
 			path: 'Item/DeleteFromCompound',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'compound_id',
 					param: 'compound_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'item_id',
 					param: 'item_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -13067,6 +11356,7 @@ export const operationsMeta = {
 			path: 'Item/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -13080,6 +11370,7 @@ export const operationsMeta = {
 			path: 'Item/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'articul',
@@ -13178,12 +11469,6 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'kdt',
-					param: 'kdt',
-					kind: 'number',
-					required: false,
-				},
-				{
 					api: 'min_quantity',
 					param: 'min_quantity',
 					kind: 'number',
@@ -13244,12 +11529,6 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'unit2_id',
-					param: 'unit2_id',
-					kind: 'number',
-					required: false,
-				},
-				{
 					api: 'vat_id',
 					param: 'vat_id',
 					kind: 'number',
@@ -13257,93 +11536,16 @@ export const operationsMeta = {
 				},
 			],
 		},
-		fillICPSByBarcode: {
-			path: 'Item/FillICPSByBarcode',
-			envelope: 'array',
-			paginated: false,
-			fields: [],
-		},
 		get: {
 			path: 'Item/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'assemblable',
-					param: 'assemblable',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'codes',
-					param: 'codes',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'compound',
-					param: 'compound',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'department_ids',
-					param: 'department_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'disassemblable',
-					param: 'disassemblable',
-					kind: 'triBoolean',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'group_ids',
-					param: 'group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'has_child',
-					param: 'has_child',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'is_labeled',
-					param: 'is_labeled',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'parent_ids',
-					param: 'parent_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
 					required: false,
 				},
 			],
@@ -13352,11 +11554,12 @@ export const operationsMeta = {
 			path: 'Item/GetCode',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'code',
-					param: 'code',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -13365,17 +11568,18 @@ export const operationsMeta = {
 			path: 'Item/GetCompound',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
 				{
 					api: 'image_size',
 					param: 'image_size',
 					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'item_id',
-					param: 'item_id',
-					kind: 'number',
 					required: false,
 				},
 			],
@@ -13384,17 +11588,12 @@ export const operationsMeta = {
 			path: 'Item/GetCurrentQuantity',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -13403,71 +11602,12 @@ export const operationsMeta = {
 			path: 'Item/GetExt',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'assemblable',
-					param: 'assemblable',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'codes',
-					param: 'codes',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'compound',
-					param: 'compound',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'department_ids',
-					param: 'department_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'disassemblable',
-					param: 'disassemblable',
-					kind: 'triBoolean',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'group_ids',
-					param: 'group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'has_child',
-					param: 'has_child',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'has_image',
-					param: 'has_image',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
 					required: false,
 				},
 				{
@@ -13477,57 +11617,9 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'is_labeled',
-					param: 'is_labeled',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'parent_ids',
-					param: 'parent_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'price_type_id',
-					param: 'price_type_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
-					required: false,
-				},
-				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'stock_id',
-					param: 'stock_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'zero_price',
-					param: 'zero_price',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'zero_quantity',
-					param: 'zero_quantity',
-					kind: 'boolean',
 					required: false,
 				},
 			],
@@ -13536,11 +11628,12 @@ export const operationsMeta = {
 			path: 'Item/GetPackagesByICPS',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'icps',
-					param: 'icps',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -13549,153 +11642,21 @@ export const operationsMeta = {
 			path: 'Item/GetQuantity',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'date',
-					param: 'date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'item_id',
-					param: 'item_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-			],
-		},
-		getQuantityPos: {
-			path: 'Item/GetQuantityPos',
-			envelope: 'array',
-			paginated: false,
-			fields: [
-				{
-					api: 'date',
-					param: 'date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'item_id',
-					param: 'item_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'user_id',
-					param: 'user_id',
-					kind: 'number',
-					required: false,
-				},
-			],
-		},
-		getShort: {
-			path: 'Item/GetShort',
-			envelope: 'offsettedArray',
-			paginated: true,
-			fields: [
-				{
-					api: 'assemblable',
-					param: 'assemblable',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'codes',
-					param: 'codes',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'compound',
-					param: 'compound',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'department_ids',
-					param: 'department_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'disassemblable',
-					param: 'disassemblable',
-					kind: 'triBoolean',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
 					required: false,
 				},
-				{
-					api: 'group_ids',
-					param: 'group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'has_child',
-					param: 'has_child',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'is_labeled',
-					param: 'is_labeled',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'parent_ids',
-					param: 'parent_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
-					required: false,
-				},
 			],
-		},
-		getWithoutICPS: {
-			path: 'Item/GetWithoutICPS',
-			envelope: 'offsettedArray',
-			paginated: true,
-			fields: [],
 		},
 		import: {
 			path: 'Item/Import',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'barcode_separator',
@@ -13713,13 +11674,13 @@ export const operationsMeta = {
 					api: 'data',
 					param: 'data',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'group_id',
 					param: 'group_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'group_separator',
@@ -13731,13 +11692,13 @@ export const operationsMeta = {
 					api: 'unit_id',
 					param: 'unit_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'vat_value_id',
 					param: 'vat_value_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -13745,37 +11706,19 @@ export const operationsMeta = {
 			path: 'Item/Match',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'data',
 					param: 'data',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
-				},
-			],
-		},
-		replaceIcps: {
-			path: 'Item/ReplaceIcps',
-			envelope: 'object',
-			paginated: false,
-			fields: [
-				{
-					api: 'new_icps',
-					param: 'new_icps',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'old_icps',
-					param: 'old_icps',
-					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -13783,99 +11726,15 @@ export const operationsMeta = {
 			path: 'Item/Search',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'articul',
-					param: 'articul',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'assemblable',
-					param: 'assemblable',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'barcode',
-					param: 'barcode',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'code',
-					param: 'code',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'compound',
-					param: 'compound',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'disassemblable',
-					param: 'disassemblable',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'has_child',
-					param: 'has_child',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'name',
-					param: 'name',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
-		},
-		setIcps: {
-			path: 'Item/SetIcps',
-			envelope: 'object',
-			paginated: false,
-			fields: [
-				{
-					api: 'group_id',
-					param: 'group_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'icps',
-					param: 'icps',
-					kind: 'string',
-					required: false,
-				},
-			],
-		},
-		setICPSFromServer: {
-			path: 'Item/SetICPSFromServer',
-			envelope: 'array',
-			paginated: false,
-			fields: [],
-		},
-		setLabeledMark: {
-			path: 'Item/SetLabeledMark',
-			envelope: 'object',
-			paginated: false,
-			fields: [],
 		},
 	},
 	itemGroup: {
@@ -13883,12 +11742,13 @@ export const operationsMeta = {
 			path: 'ItemGroup/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'parent_id',
@@ -13902,6 +11762,7 @@ export const operationsMeta = {
 			path: 'ItemGroup/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -13915,6 +11776,7 @@ export const operationsMeta = {
 			path: 'ItemGroup/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -13940,29 +11802,12 @@ export const operationsMeta = {
 			path: 'ItemGroup/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'name',
-					param: 'name',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'parent_ids',
-					param: 'parent_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'path',
-					param: 'path',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -13973,6 +11818,7 @@ export const operationsMeta = {
 			path: 'ItemImage/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -13986,6 +11832,7 @@ export const operationsMeta = {
 			path: 'ItemImage/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'compress_data',
@@ -13994,9 +11841,9 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -14005,19 +11852,27 @@ export const operationsMeta = {
 					kind: 'boolean',
 					required: false,
 				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
 			],
 		},
 		save: {
 			path: 'ItemImage/Save',
 			envelope: 'insert',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'file',
+					param: 'file',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 	},
 	itemOperation: {
@@ -14025,41 +11880,18 @@ export const operationsMeta = {
 			path: 'ItemOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_id',
-					param: 'item_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
 					required: false,
 				},
 			],
@@ -14070,17 +11902,12 @@ export const operationsMeta = {
 			path: 'ItemPrice/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'price_type_ids',
-					param: 'price_type_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -14089,23 +11916,12 @@ export const operationsMeta = {
 			path: 'ItemPrice/GetPreCost',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'cost_date',
-					param: 'cost_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -14116,17 +11932,12 @@ export const operationsMeta = {
 			path: 'ItemPriceLog/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'price_type_ids',
-					param: 'price_type_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -14137,7 +11948,15 @@ export const operationsMeta = {
 			path: 'Language/Get',
 			envelope: 'array',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 	},
 	lead: {
@@ -14145,6 +11964,7 @@ export const operationsMeta = {
 			path: 'Lead/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'amount',
@@ -14230,6 +12050,7 @@ export const operationsMeta = {
 			path: 'Lead/Close',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -14249,6 +12070,7 @@ export const operationsMeta = {
 			path: 'Lead/Convert',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'amount',
@@ -14266,7 +12088,7 @@ export const operationsMeta = {
 					api: 'deal_title',
 					param: 'deal_title',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'deal_type_id',
@@ -14314,7 +12136,7 @@ export const operationsMeta = {
 					api: 'target_entity_type',
 					param: 'target_entity_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -14322,6 +12144,7 @@ export const operationsMeta = {
 			path: 'Lead/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -14335,6 +12158,7 @@ export const operationsMeta = {
 			path: 'Lead/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'amount',
@@ -14390,29 +12214,12 @@ export const operationsMeta = {
 			path: 'Lead/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'client_ids',
-					param: 'client_ids',
-					kind: 'idList',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'from_date',
-					param: 'from_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
 					required: false,
 				},
 				{
@@ -14421,36 +12228,13 @@ export const operationsMeta = {
 					kind: 'boolean',
 					required: false,
 				},
-				{
-					api: 'responsible_user_ids',
-					param: 'responsible_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'stage_ids',
-					param: 'stage_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'to_date',
-					param: 'to_date',
-					kind: 'dateTime',
-					required: false,
-				},
 			],
 		},
 		setParticipants: {
 			path: 'Lead/SetParticipants',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -14476,6 +12260,7 @@ export const operationsMeta = {
 			path: 'Lead/SetResponsible',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -14487,7 +12272,7 @@ export const operationsMeta = {
 					api: 'responsible_user_id',
 					param: 'responsible_user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -14495,6 +12280,7 @@ export const operationsMeta = {
 			path: 'Lead/SetStage',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'comment',
@@ -14512,7 +12298,7 @@ export const operationsMeta = {
 					api: 'stage_id',
 					param: 'stage_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -14522,47 +12308,102 @@ export const operationsMeta = {
 			path: 'MovementOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		delete: {
 			path: 'MovementOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		edit: {
 			path: 'MovementOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'MovementOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -14577,24 +12418,25 @@ export const operationsMeta = {
 			path: 'MovementOperation/MoveOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -14602,18 +12444,19 @@ export const operationsMeta = {
 			path: 'MovementOperation/SetPriceByPriceType',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'price_type_id',
 					param: 'price_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -14623,12 +12466,13 @@ export const operationsMeta = {
 			path: 'OperatingCash/Accept',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'operating_cash_id',
 					param: 'operating_cash_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -14636,6 +12480,7 @@ export const operationsMeta = {
 			path: 'OperatingCash/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'auto_close',
@@ -14671,13 +12516,13 @@ export const operationsMeta = {
 					api: 'price_type_id',
 					param: 'price_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stock_id',
 					param: 'stock_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'virtual',
@@ -14687,29 +12532,11 @@ export const operationsMeta = {
 				},
 			],
 		},
-		addImage: {
-			path: 'OperatingCash/AddImage',
-			envelope: 'raw',
-			paginated: false,
-			fields: [],
-		},
 		delete: {
 			path: 'OperatingCash/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [
-				{
-					api: 'id',
-					param: 'id',
-					kind: 'number',
-					required: true,
-				},
-			],
-		},
-		deleteImage: {
-			path: 'OperatingCash/DeleteImage',
-			envelope: 'raw',
-			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -14723,6 +12550,7 @@ export const operationsMeta = {
 			path: 'OperatingCash/Discard',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
@@ -14742,6 +12570,7 @@ export const operationsMeta = {
 			path: 'OperatingCash/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'auto_close',
@@ -14797,6 +12626,7 @@ export const operationsMeta = {
 			path: 'OperatingCash/EditChequeTemplate',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -14826,7 +12656,7 @@ export const operationsMeta = {
 					api: 'template',
 					param: 'template',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -14834,53 +12664,32 @@ export const operationsMeta = {
 			path: 'OperatingCash/EditSettings',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'value',
+					param: 'value',
+					kind: 'string',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'OperatingCash/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'accepted_user_id',
-					param: 'accepted_user_id',
-					kind: 'number',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'is_virtual',
-					param: 'is_virtual',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'price_type_ids',
-					param: 'price_type_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
 					required: false,
 				},
 				{
@@ -14889,66 +12698,18 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
 			],
 		},
 		getChequeTemplate: {
 			path: 'OperatingCash/GetChequeTemplate',
 			envelope: 'offsettedArray',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'cheque_type_ids',
-					param: 'cheque_type_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'operating_cash_ids',
-					param: 'operating_cash_ids',
-					kind: 'idList',
-					required: false,
-				},
-			],
-		},
-		getImage: {
-			path: 'OperatingCash/GetImage',
-			envelope: 'array',
-			paginated: false,
-			fields: [
-				{
-					api: 'compress_data',
-					param: 'compress_data',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'include_data',
-					param: 'include_data',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -14957,11 +12718,12 @@ export const operationsMeta = {
 			path: 'OperatingCash/GetSettings',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -14972,47 +12734,90 @@ export const operationsMeta = {
 			path: 'OrderDeliveryOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
-		},
-		delete: {
-			path: 'OrderDeliveryOperation/Delete',
-			envelope: 'raw',
-			paginated: false,
-			fields: [],
-		},
-		edit: {
-			path: 'OrderDeliveryOperation/Edit',
-			envelope: 'raw',
-			paginated: false,
-			fields: [],
-		},
-		get: {
-			path: 'OrderDeliveryOperation/Get',
-			envelope: 'offsettedArray',
-			paginated: true,
+			bodyKind: 'array',
 			fields: [
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_code',
+					param: 'item_code',
+					kind: 'number',
 					required: false,
 				},
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
 					required: false,
 				},
 				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+			],
+		},
+		delete: {
+			path: 'OrderDeliveryOperation/Delete',
+			envelope: 'raw',
+			paginated: false,
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
+		},
+		edit: {
+			path: 'OrderDeliveryOperation/Edit',
+			envelope: 'raw',
+			paginated: false,
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
 					required: false,
 				},
 				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+			],
+		},
+		get: {
+			path: 'OrderDeliveryOperation/Get',
+			envelope: 'offsettedArray',
+			paginated: true,
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -15029,12 +12834,57 @@ export const operationsMeta = {
 			path: 'OrderFromPartnerOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'price2',
+					param: 'price2',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		addDiscount: {
 			path: 'OrderFromPartnerOperation/AddDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: '_document_type_id_',
@@ -15044,9 +12894,9 @@ export const operationsMeta = {
 				},
 				{
 					api: 'action',
-					param: 'action',
+					param: 'actionValue',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'amount',
@@ -15058,7 +12908,7 @@ export const operationsMeta = {
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'percent',
@@ -15070,7 +12920,7 @@ export const operationsMeta = {
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -15078,12 +12928,21 @@ export const operationsMeta = {
 			path: 'OrderFromPartnerOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		deleteDiscount: {
 			path: 'OrderFromPartnerOperation/DeleteDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: '_document_type_id_',
@@ -15103,35 +12962,56 @@ export const operationsMeta = {
 			path: 'OrderFromPartnerOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price2',
+					param: 'price2',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'OrderFromPartnerOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -15146,23 +13026,12 @@ export const operationsMeta = {
 			path: 'OrderFromPartnerOperation/GetDiscount',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: '_document_type_id_',
-					param: '_document_type_id_',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -15177,24 +13046,25 @@ export const operationsMeta = {
 			path: 'OrderFromPartnerOperation/MoveOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -15204,47 +13074,84 @@ export const operationsMeta = {
 			path: 'OrderToMovementOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		delete: {
 			path: 'OrderToMovementOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		edit: {
 			path: 'OrderToMovementOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'OrderToMovementOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -15259,24 +13166,25 @@ export const operationsMeta = {
 			path: 'OrderToMovementOperation/MoveOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -15286,47 +13194,108 @@ export const operationsMeta = {
 			path: 'OrderToPartnerOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'cost',
+					param: 'cost',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		delete: {
 			path: 'OrderToPartnerOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		edit: {
 			path: 'OrderToPartnerOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'cost',
+					param: 'cost',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'OrderToPartnerOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -15341,24 +13310,25 @@ export const operationsMeta = {
 			path: 'OrderToPartnerOperation/MoveOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -15368,6 +13338,7 @@ export const operationsMeta = {
 			path: 'Partner/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'address',
@@ -15415,7 +13386,7 @@ export const operationsMeta = {
 					api: 'group_id',
 					param: 'group_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'inn',
@@ -15427,7 +13398,7 @@ export const operationsMeta = {
 					api: 'legal_status',
 					param: 'legal_status',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'mfo',
@@ -15439,7 +13410,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'oked',
@@ -15471,6 +13442,7 @@ export const operationsMeta = {
 			path: 'Partner/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -15484,6 +13456,7 @@ export const operationsMeta = {
 			path: 'Partner/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -15497,6 +13470,7 @@ export const operationsMeta = {
 			path: 'Partner/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'address',
@@ -15606,41 +13580,12 @@ export const operationsMeta = {
 			path: 'Partner/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'group_ids',
-					param: 'group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'legal_status',
-					param: 'legal_status',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
 					required: false,
 				},
 				{
@@ -15655,18 +13600,13 @@ export const operationsMeta = {
 			path: 'Partner/GetCurrentBalance',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
-				},
-				{
-					api: 'id',
-					param: 'id',
-					kind: 'number',
-					required: true,
 				},
 			],
 		},
@@ -15676,35 +13616,12 @@ export const operationsMeta = {
 			path: 'PartnerBalance/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'currency_id',
-					param: 'currency_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'partner_id',
-					param: 'partner_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -15713,29 +13630,12 @@ export const operationsMeta = {
 			path: 'PartnerBalance/GetInBaseCurrency',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'partner_id',
-					param: 'partner_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -15746,12 +13646,13 @@ export const operationsMeta = {
 			path: 'PartnerGroup/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'parent_id',
@@ -15765,6 +13666,7 @@ export const operationsMeta = {
 			path: 'PartnerGroup/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -15778,6 +13680,7 @@ export const operationsMeta = {
 			path: 'PartnerGroup/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -15803,17 +13706,12 @@ export const operationsMeta = {
 			path: 'PartnerGroup/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'parent_ids',
-					param: 'parent_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -15824,24 +13722,25 @@ export const operationsMeta = {
 			path: 'PaymentType/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'account_id',
 					param: 'account_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'enabled',
 					param: 'enabled',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'is_cash',
 					param: 'is_cash',
 					kind: 'triBoolean',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'kkm_code',
@@ -15853,7 +13752,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'shortkey',
@@ -15867,12 +13766,27 @@ export const operationsMeta = {
 			path: 'PaymentType/AddImage',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'file',
+					param: 'file',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'payment_type_id',
+					param: 'payment_type_id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		delete: {
 			path: 'PaymentType/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -15886,6 +13800,7 @@ export const operationsMeta = {
 			path: 'PaymentType/DeleteImage',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -15899,6 +13814,7 @@ export const operationsMeta = {
 			path: 'PaymentType/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'account_id',
@@ -15948,29 +13864,12 @@ export const operationsMeta = {
 			path: 'PaymentType/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'account_ids',
-					param: 'account_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'enabled',
-					param: 'enabled',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'is_cash',
-					param: 'is_cash',
-					kind: 'triBoolean',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -15979,17 +13878,12 @@ export const operationsMeta = {
 			path: 'PaymentType/GetImage',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'payment_type_ids',
-					param: 'payment_type_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -16000,11 +13894,12 @@ export const operationsMeta = {
 			path: 'PermissionGroup/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -16015,6 +13910,7 @@ export const operationsMeta = {
 			path: 'PersonalDocType/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'mask',
@@ -16026,7 +13922,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -16034,6 +13930,7 @@ export const operationsMeta = {
 			path: 'PersonalDocType/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -16047,6 +13944,7 @@ export const operationsMeta = {
 			path: 'PersonalDocType/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -16072,11 +13970,12 @@ export const operationsMeta = {
 			path: 'PersonalDocType/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -16087,6 +13986,7 @@ export const operationsMeta = {
 			path: 'Pipeline/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'access_all',
@@ -16116,7 +14016,7 @@ export const operationsMeta = {
 					api: 'entity_type',
 					param: 'entity_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'is_default',
@@ -16128,7 +14028,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -16136,6 +14036,7 @@ export const operationsMeta = {
 			path: 'Pipeline/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -16149,6 +14050,7 @@ export const operationsMeta = {
 			path: 'Pipeline/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -16180,23 +14082,12 @@ export const operationsMeta = {
 			path: 'Pipeline/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'active',
-					param: 'active',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'entity_type',
-					param: 'entity_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -16205,6 +14096,7 @@ export const operationsMeta = {
 			path: 'Pipeline/SetAccess',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'access_all',
@@ -16242,18 +14134,19 @@ export const operationsMeta = {
 			path: 'Pipeline/SetStages',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'pipeline_id',
 					param: 'pipeline_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'stages',
 					param: 'stages',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -16263,17 +14156,12 @@ export const operationsMeta = {
 			path: 'pos/CashOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -16282,17 +14170,12 @@ export const operationsMeta = {
 			path: 'pos/CashOperation/GetAmountDetails',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -16301,24 +14184,25 @@ export const operationsMeta = {
 			path: 'pos/CashOperation/IncomeAdd',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
 					param: 'description',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'payment_type_id',
 					param: 'payment_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'value',
 					param: 'value',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -16326,24 +14210,25 @@ export const operationsMeta = {
 			path: 'pos/CashOperation/OutcomeAdd',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
 					param: 'description',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'payment_type_id',
 					param: 'payment_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'value',
 					param: 'value',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -16351,18 +14236,19 @@ export const operationsMeta = {
 			path: 'pos/CashOperation/PaymentAdd',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'category_id',
 					param: 'category_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
 					param: 'description',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'partner_id',
@@ -16374,13 +14260,13 @@ export const operationsMeta = {
 					api: 'payment_type_id',
 					param: 'payment_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'value',
 					param: 'value',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -16390,18 +14276,19 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/AddRetailCard',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'barcode_value',
 					param: 'barcode_value',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'card_id',
 					param: 'card_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'uuid',
@@ -16415,12 +14302,13 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/AddSeller',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'barcode',
 					param: 'barcode',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'uuid',
@@ -16434,6 +14322,7 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/BackToOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'uuid',
@@ -16447,6 +14336,7 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/Cancel',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'uuid',
@@ -16460,6 +14350,7 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/Close',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'uuid',
@@ -16473,6 +14364,7 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/ContinueDelayed',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'uuid',
@@ -16486,12 +14378,14 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/Create',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [],
 		},
 		delay: {
 			path: 'pos/DocCheque/Delay',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'uuid',
@@ -16505,77 +14399,12 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'card_id',
-					param: 'card_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'cashier_id',
-					param: 'cashier_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'code',
-					param: 'code',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'doc_order_delivery_id',
-					param: 'doc_order_delivery_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'is_return',
-					param: 'is_return',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'return_reason',
-					param: 'return_reason',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'seller_id',
-					param: 'seller_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'session_uuid',
-					param: 'session_uuid',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'statuses',
-					param: 'statuses',
-					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'uuid',
-					param: 'uuid',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -16584,23 +14413,40 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/GetClosed',
 			envelope: 'object',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 		getcurrent: {
 			path: 'pos/DocCheque/getcurrent',
 			envelope: 'object',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 		getPrinted: {
 			path: 'pos/DocCheque/getPrinted',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_uuid',
-					param: 'document_uuid',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -16609,11 +14455,12 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/getTestPrinted',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -16622,6 +14469,7 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/Pay',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'uuid',
@@ -16635,18 +14483,19 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/PayDebt',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'amount',
 					param: 'amount',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'debt_uuid',
 					param: 'debt_uuid',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -16654,12 +14503,13 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/RemoveSeller',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'uuid',
 					param: 'uuid',
 					kind: 'string',
-					required: true,
+					required: false,
 				},
 			],
 		},
@@ -16667,6 +14517,7 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/SetAmountDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'uuid',
@@ -16678,7 +14529,7 @@ export const operationsMeta = {
 					api: 'value',
 					param: 'value',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -16686,12 +14537,13 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/SetDocOrderDelivery',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_order_delivery_id',
 					param: 'doc_order_delivery_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'uuid',
@@ -16705,12 +14557,13 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/SetPercentDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'percent',
 					param: 'percent',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'uuid',
@@ -16724,12 +14577,13 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/SetQrCodeUrl',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'qrcode_url',
 					param: 'qrcode_url',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'uuid',
@@ -16743,6 +14597,7 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/SetRefundInfo',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'datetime',
@@ -16778,7 +14633,7 @@ export const operationsMeta = {
 					api: 'uuid',
 					param: 'uuid',
 					kind: 'string',
-					required: true,
+					required: false,
 				},
 			],
 		},
@@ -16786,12 +14641,13 @@ export const operationsMeta = {
 			path: 'pos/DocCheque/SetReturn',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'is_return',
 					param: 'is_return',
 					kind: 'triBoolean',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'return_reason_id',
@@ -16813,89 +14669,18 @@ export const operationsMeta = {
 			path: 'pos/DocOrderDelivery/get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'blocked',
-					param: 'blocked',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'code',
-					param: 'code',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'customer_ids',
-					param: 'customer_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'external_code',
-					param: 'external_code',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'from_ids',
-					param: 'from_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'operating_cash_ids',
-					param: 'operating_cash_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'status_ids',
-					param: 'status_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
 					required: false,
 				},
 			],
@@ -16906,12 +14691,13 @@ export const operationsMeta = {
 			path: 'pos/DocSession/close',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'session_uuid',
 					param: 'session_uuid',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -16919,65 +14705,12 @@ export const operationsMeta = {
 			path: 'pos/DocSession/get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'close_date1',
-					param: 'close_date1',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'close_date2',
-					param: 'close_date2',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'close_user',
-					param: 'close_user',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'closed',
-					param: 'closed',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'code',
-					param: 'code',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'operating_cash_ids',
-					param: 'operating_cash_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'start_date1',
-					param: 'start_date1',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date2',
-					param: 'start_date2',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_user',
-					param: 'start_user',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'uuid',
-					param: 'uuid',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -16986,18 +14719,28 @@ export const operationsMeta = {
 			path: 'pos/DocSession/getCurrent',
 			envelope: 'object',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 		open: {
 			path: 'pos/DocSession/open',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [],
 		},
 		xReport: {
 			path: 'pos/DocSession/XReport',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [],
 		},
 	},
@@ -17006,11 +14749,12 @@ export const operationsMeta = {
 			path: 'pos/OperatingCash/getSettings',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -17021,6 +14765,7 @@ export const operationsMeta = {
 			path: 'PriceType/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'currency_additional_id',
@@ -17050,7 +14795,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'round_to',
@@ -17064,6 +14809,7 @@ export const operationsMeta = {
 			path: 'PriceType/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -17077,6 +14823,7 @@ export const operationsMeta = {
 			path: 'PriceType/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'currency_additional_id',
@@ -17126,23 +14873,12 @@ export const operationsMeta = {
 			path: 'PriceType/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'currency_ids',
-					param: 'currency_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -17159,29 +14895,12 @@ export const operationsMeta = {
 			path: 'PrintFormType/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'printform_ids',
-					param: 'printform_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'type_ids',
-					param: 'type_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'version',
-					param: 'version',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -17190,6 +14909,7 @@ export const operationsMeta = {
 			path: 'PrintFormType/Remove',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -17203,18 +14923,19 @@ export const operationsMeta = {
 			path: 'PrintFormType/Set',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'printform_id',
 					param: 'printform_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'type_id',
 					param: 'type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'version',
@@ -17230,12 +14951,13 @@ export const operationsMeta = {
 			path: 'Producer/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -17243,6 +14965,7 @@ export const operationsMeta = {
 			path: 'Producer/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -17256,6 +14979,7 @@ export const operationsMeta = {
 			path: 'Producer/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -17267,7 +14991,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -17275,17 +14999,12 @@ export const operationsMeta = {
 			path: 'Producer/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -17302,18 +15021,19 @@ export const operationsMeta = {
 			path: 'ProductionOperation/Add',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'data',
 					param: 'data',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -17321,12 +15041,13 @@ export const operationsMeta = {
 			path: 'ProductionOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -17334,35 +15055,32 @@ export const operationsMeta = {
 			path: 'ProductionOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'ProductionOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -17371,36 +15089,31 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'tech_map_ids',
-					param: 'tech_map_ids',
-					kind: 'idList',
-					required: false,
-				},
 			],
 		},
 		moveOperations: {
 			path: 'ProductionOperation/MoveOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -17408,6 +15121,7 @@ export const operationsMeta = {
 			path: 'ProductionOperation/ReplaceOprTechMap',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -17423,6 +15137,7 @@ export const operationsMeta = {
 			path: 'Project/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'access_all',
@@ -17458,13 +15173,13 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'responsible_user_id',
 					param: 'responsible_user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -17472,6 +15187,7 @@ export const operationsMeta = {
 			path: 'Project/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -17485,6 +15201,7 @@ export const operationsMeta = {
 			path: 'Project/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'access_all',
@@ -17540,23 +15257,12 @@ export const operationsMeta = {
 			path: 'Project/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'responsible_user_ids',
-					param: 'responsible_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -17571,6 +15277,7 @@ export const operationsMeta = {
 			path: 'Project/SetAccess',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'access_all',
@@ -17608,6 +15315,7 @@ export const operationsMeta = {
 			path: 'Project/SetResponsible',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -17619,7 +15327,7 @@ export const operationsMeta = {
 					api: 'responsible_user_id',
 					param: 'responsible_user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -17629,6 +15337,7 @@ export const operationsMeta = {
 			path: 'ProjectTask/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attachment_file_ids',
@@ -17688,7 +15397,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'observer_user_ids',
@@ -17706,13 +15415,13 @@ export const operationsMeta = {
 					api: 'project_id',
 					param: 'project_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'responsible_user_id',
 					param: 'responsible_user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -17720,6 +15429,7 @@ export const operationsMeta = {
 			path: 'ProjectTask/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -17733,6 +15443,7 @@ export const operationsMeta = {
 			path: 'ProjectTask/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'attachment_file_ids',
@@ -17806,41 +15517,12 @@ export const operationsMeta = {
 			path: 'ProjectTask/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'client_ids',
-					param: 'client_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'deal_ids',
-					param: 'deal_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'due_from',
-					param: 'due_from',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'due_to',
-					param: 'due_to',
-					kind: 'number',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
 					required: false,
 				},
 				{
@@ -17850,44 +15532,8 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'observer_user_ids',
-					param: 'observer_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'parent_task_ids',
-					param: 'parent_task_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'project_ids',
-					param: 'project_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'responsible_user_ids',
-					param: 'responsible_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
-					required: false,
-				},
-				{
 					api: 'sort_orders',
 					param: 'sort_orders',
-					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'statuses',
-					param: 'statuses',
 					kind: 'json',
 					required: false,
 				},
@@ -17897,6 +15543,7 @@ export const operationsMeta = {
 			path: 'ProjectTask/SetDue',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'due_date',
@@ -17916,6 +15563,7 @@ export const operationsMeta = {
 			path: 'ProjectTask/SetObservers',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -17941,6 +15589,7 @@ export const operationsMeta = {
 			path: 'ProjectTask/SetProject',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -17952,7 +15601,7 @@ export const operationsMeta = {
 					api: 'project_id',
 					param: 'project_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -17960,6 +15609,7 @@ export const operationsMeta = {
 			path: 'ProjectTask/SetResponsible',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -17971,7 +15621,7 @@ export const operationsMeta = {
 					api: 'responsible_user_id',
 					param: 'responsible_user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -17979,6 +15629,7 @@ export const operationsMeta = {
 			path: 'ProjectTask/SetStatus',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -17990,7 +15641,7 @@ export const operationsMeta = {
 					api: 'status',
 					param: 'status',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18000,6 +15651,7 @@ export const operationsMeta = {
 			path: 'PromoBonus/CancelPayment',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'uuid',
@@ -18013,6 +15665,7 @@ export const operationsMeta = {
 			path: 'PromoBonus/CreateEnrollment',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'amount',
@@ -18024,7 +15677,7 @@ export const operationsMeta = {
 					api: 'card_id',
 					param: 'card_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'document_uuid',
@@ -18042,7 +15695,7 @@ export const operationsMeta = {
 					api: 'promo_id',
 					param: 'promo_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18050,12 +15703,13 @@ export const operationsMeta = {
 			path: 'PromoBonus/CreateManualIncomeOperation',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'card_id',
 					param: 'card_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -18073,13 +15727,13 @@ export const operationsMeta = {
 					api: 'promo_id',
 					param: 'promo_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'value',
 					param: 'value',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18087,12 +15741,13 @@ export const operationsMeta = {
 			path: 'PromoBonus/CreateManualOutcomeOperation',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'card_id',
 					param: 'card_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -18110,13 +15765,13 @@ export const operationsMeta = {
 					api: 'promo_id',
 					param: 'promo_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'value',
 					param: 'value',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18124,12 +15779,13 @@ export const operationsMeta = {
 			path: 'PromoBonus/CreatePayment',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'card_id',
 					param: 'card_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'document_uuid',
@@ -18141,19 +15797,19 @@ export const operationsMeta = {
 					api: 'is_return',
 					param: 'is_return',
 					kind: 'boolean',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'promo_id',
 					param: 'promo_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'value',
 					param: 'value',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18161,12 +15817,13 @@ export const operationsMeta = {
 			path: 'PromoBonus/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'uuid',
-					param: 'uuid',
-					kind: 'string',
-					required: true,
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
 				},
 			],
 		},
@@ -18174,6 +15831,7 @@ export const operationsMeta = {
 			path: 'PromoBonus/PerformEnrollment',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'uuid',
@@ -18187,6 +15845,7 @@ export const operationsMeta = {
 			path: 'PromoBonus/PerformPayment',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'uuid',
@@ -18202,6 +15861,7 @@ export const operationsMeta = {
 			path: 'PromoProgram/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -18225,19 +15885,19 @@ export const operationsMeta = {
 					api: 'end_date',
 					param: 'end_date',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'end_time',
 					param: 'end_time',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'priority',
@@ -18249,13 +15909,13 @@ export const operationsMeta = {
 					api: 'start_date',
 					param: 'start_date',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'start_time',
 					param: 'start_time',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'sub_type',
@@ -18267,7 +15927,7 @@ export const operationsMeta = {
 					api: 'type_id',
 					param: 'type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18275,6 +15935,7 @@ export const operationsMeta = {
 			path: 'PromoProgram/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -18288,6 +15949,7 @@ export const operationsMeta = {
 			path: 'PromoProgram/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -18355,23 +16017,12 @@ export const operationsMeta = {
 			path: 'PromoProgram/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'allowed_retail_card',
-					param: 'allowed_retail_card',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'type_ids',
-					param: 'type_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -18382,30 +16033,51 @@ export const operationsMeta = {
 			path: 'PromoProgramSetting/Add',
 			envelope: 'insert',
 			paginated: false,
-			fields: [],
-		},
-		addSingle: {
-			path: 'PromoProgramSetting/AddSingle',
-			envelope: 'insert',
-			paginated: false,
+			bodyKind: 'array',
 			fields: [
 				{
 					api: 'key',
 					param: 'key',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'program_id',
 					param: 'program_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'value',
 					param: 'value',
 					kind: 'string',
-					required: false,
+					required: true,
+				},
+			],
+		},
+		addSingle: {
+			path: 'PromoProgramSetting/AddSingle',
+			envelope: 'insert',
+			paginated: false,
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'key',
+					param: 'key',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'program_id',
+					param: 'program_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'value',
+					param: 'value',
+					kind: 'string',
+					required: true,
 				},
 			],
 		},
@@ -18413,6 +16085,7 @@ export const operationsMeta = {
 			path: 'PromoProgramSetting/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -18426,47 +16099,32 @@ export const operationsMeta = {
 			path: 'PromoProgramSetting/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
-		},
-		get: {
-			path: 'PromoProgramSetting/Get',
-			envelope: 'object',
-			paginated: false,
+			bodyKind: 'array',
 			fields: [
 				{
 					api: 'id',
 					param: 'id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'key',
-					param: 'key',
+					api: 'value',
+					param: 'value',
 					kind: 'string',
 					required: false,
 				},
+			],
+		},
+		get: {
+			path: 'PromoProgramSetting/Get',
+			envelope: 'object',
+			paginated: false,
+			bodyKind: 'object',
+			fields: [
 				{
-					api: 'program_id',
-					param: 'program_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'program_ids',
-					param: 'program_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'type_ids',
-					param: 'type_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -18477,17 +16135,32 @@ export const operationsMeta = {
 			path: 'PromoProgramStock/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
-		},
-		get: {
-			path: 'PromoProgramStock/Get',
-			envelope: 'array',
-			paginated: false,
+			bodyKind: 'array',
 			fields: [
 				{
 					api: 'program_id',
 					param: 'program_id',
 					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'stock_id',
+					param: 'stock_id',
+					kind: 'number',
+					required: true,
+				},
+			],
+		},
+		get: {
+			path: 'PromoProgramStock/Get',
+			envelope: 'array',
+			paginated: false,
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -18496,7 +16169,21 @@ export const operationsMeta = {
 			path: 'PromoProgramStock/Set',
 			envelope: 'insert',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'program_id',
+					param: 'program_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'stock_id',
+					param: 'stock_id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 	},
 	promoProgramType: {
@@ -18504,11 +16191,12 @@ export const operationsMeta = {
 			path: 'PromoProgramType/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -18519,12 +16207,63 @@ export const operationsMeta = {
 			path: 'PurchaseOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'cost',
+					param: 'cost',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		addDiscount: {
 			path: 'PurchaseOperation/AddDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: '_document_type_id_',
@@ -18534,9 +16273,9 @@ export const operationsMeta = {
 				},
 				{
 					api: 'action',
-					param: 'action',
+					param: 'actionValue',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'amount',
@@ -18548,7 +16287,7 @@ export const operationsMeta = {
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'percent',
@@ -18560,7 +16299,7 @@ export const operationsMeta = {
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18568,18 +16307,19 @@ export const operationsMeta = {
 			path: 'PurchaseOperation/CopyOperationsFromDocInvoice',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18587,18 +16327,19 @@ export const operationsMeta = {
 			path: 'PurchaseOperation/CopyOperationsFromDocOrderToPartner',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18606,18 +16347,19 @@ export const operationsMeta = {
 			path: 'PurchaseOperation/CopyOperationsFromDocWholeSale',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18625,12 +16367,21 @@ export const operationsMeta = {
 			path: 'PurchaseOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		deleteDiscount: {
 			path: 'PurchaseOperation/DeleteDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: '_document_type_id_',
@@ -18650,35 +16401,68 @@ export const operationsMeta = {
 			path: 'PurchaseOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'additional_expenses_amount',
+					param: 'additional_expenses_amount',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'cost',
+					param: 'cost',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'PurchaseOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -18693,23 +16477,12 @@ export const operationsMeta = {
 			path: 'PurchaseOperation/GetDiscount',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: '_document_type_id_',
-					param: '_document_type_id_',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -18724,24 +16497,25 @@ export const operationsMeta = {
 			path: 'PurchaseOperation/MoveOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18749,12 +16523,13 @@ export const operationsMeta = {
 			path: 'PurchaseOperation/SetCostByLastPurchase',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18762,18 +16537,19 @@ export const operationsMeta = {
 			path: 'PurchaseOperation/SetPriceByPriceType',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'price_type_id',
 					param: 'price_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18783,12 +16559,13 @@ export const operationsMeta = {
 			path: 'QuickReply/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'text',
 					param: 'text',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -18796,6 +16573,7 @@ export const operationsMeta = {
 			path: 'QuickReply/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -18809,173 +16587,12 @@ export const operationsMeta = {
 			path: 'QuickReply/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
-					required: false,
-				},
-			],
-		},
-	},
-	redefinition: {
-		add: {
-			path: 'Redefinition/Add',
-			envelope: 'insert',
-			paginated: false,
-			fields: [
-				{
-					api: 'active',
-					param: 'active',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'app_id',
-					param: 'app_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'data_id',
-					param: 'data_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'hidden',
-					param: 'hidden',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'lang_id',
-					param: 'lang_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'table_id',
-					param: 'table_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'value',
-					param: 'value',
-					kind: 'string',
-					required: false,
-				},
-			],
-		},
-		delete: {
-			path: 'Redefinition/Delete',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'id',
-					param: 'id',
-					kind: 'number',
-					required: true,
-				},
-			],
-		},
-		edit: {
-			path: 'Redefinition/Edit',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'active',
-					param: 'active',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'app_id',
-					param: 'app_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'hidden',
-					param: 'hidden',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'id',
-					param: 'id',
-					kind: 'number',
-					required: true,
-				},
-				{
-					api: 'lang_id',
-					param: 'lang_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'value',
-					param: 'value',
-					kind: 'string',
-					required: false,
-				},
-			],
-		},
-		get: {
-			path: 'Redefinition/Get',
-			envelope: 'array',
-			paginated: false,
-			fields: [
-				{
-					api: 'active',
-					param: 'active',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'app_id',
-					param: 'app_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'data_id',
-					param: 'data_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'hidden',
-					param: 'hidden',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'lang_id',
-					param: 'lang_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'table_ids',
-					param: 'table_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -18986,12 +16603,13 @@ export const operationsMeta = {
 			path: 'Region/add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'parent_id',
@@ -19005,6 +16623,7 @@ export const operationsMeta = {
 			path: 'Region/delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -19018,6 +16637,7 @@ export const operationsMeta = {
 			path: 'Region/edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -19043,17 +16663,12 @@ export const operationsMeta = {
 			path: 'Region/get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'parent_ids',
-					param: 'parent_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -19064,18 +16679,19 @@ export const operationsMeta = {
 			path: 'Report/AddRequest',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'report_id',
 					param: 'report_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'request_data',
 					param: 'request_data',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -19083,17 +16699,12 @@ export const operationsMeta = {
 			path: 'Report/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'group_ids',
-					param: 'group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -19102,29 +16713,18 @@ export const operationsMeta = {
 			path: 'Report/GetPrepared',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
 				{
 					api: 'include_data',
 					param: 'include_data',
 					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'report_ids',
-					param: 'report_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'request_uuid',
-					param: 'request_uuid',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'user_ids',
-					param: 'user_ids',
-					kind: 'idList',
 					required: false,
 				},
 			],
@@ -19133,23 +16733,12 @@ export const operationsMeta = {
 			path: 'Report/GetRequest',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'request_uuid',
-					param: 'request_uuid',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'statuses',
-					param: 'statuses',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'user_ids',
-					param: 'user_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -19158,12 +16747,13 @@ export const operationsMeta = {
 			path: 'Report/RemovePrepared',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'request_uuid',
 					param: 'request_uuid',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -19171,24 +16761,25 @@ export const operationsMeta = {
 			path: 'Report/SetError',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'api_login',
 					param: 'api_login',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'message',
 					param: 'message',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'request_uuid',
 					param: 'request_uuid',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -19196,870 +16787,25 @@ export const operationsMeta = {
 			path: 'Report/SetPrepared',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'api_login',
 					param: 'api_login',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'file',
 					param: 'file',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'request_uuid',
 					param: 'request_uuid',
 					kind: 'string',
-					required: false,
-				},
-			],
-		},
-	},
-	reportPrepared: {
-		get: {
-			path: 'ReportPrepared/Get',
-			envelope: 'object',
-			paginated: false,
-			fields: [
-				{
-					api: 'include_data',
-					param: 'include_data',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'report_ids',
-					param: 'report_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'request_uuid',
-					param: 'request_uuid',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'user_ids',
-					param: 'user_ids',
-					kind: 'idList',
-					required: false,
-				},
-			],
-		},
-		remove: {
-			path: 'ReportPrepared/Remove',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'request_uuid',
-					param: 'request_uuid',
-					kind: 'string',
-					required: false,
-				},
-			],
-		},
-		save: {
-			path: 'ReportPrepared/Save',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'request_uuid',
-					param: 'request_uuid',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'save',
-					param: 'save',
-					kind: 'triBoolean',
-					required: false,
-				},
-			],
-		},
-	},
-	reportRequest: {
-		get: {
-			path: 'ReportRequest/Get',
-			envelope: 'object',
-			paginated: false,
-			fields: [
-				{
-					api: 'request_uuid',
-					param: 'request_uuid',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'statuses',
-					param: 'statuses',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'user_ids',
-					param: 'user_ids',
-					kind: 'idList',
-					required: false,
-				},
-			],
-		},
-		report0003: {
-			path: 'ReportRequest/Report0003',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'currency_ids',
-					param: 'currency_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'in_base_currency',
-					param: 'in_base_currency',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-			],
-		},
-		report0005: {
-			path: 'ReportRequest/Report0005',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'currency_id',
-					param: 'currency_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-			],
-		},
-		report0006: {
-			path: 'ReportRequest/Report0006',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'currency_id',
-					param: 'currency_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-			],
-		},
-		report0007: {
-			path: 'ReportRequest/Report0007',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-			],
-		},
-		report0009: {
-			path: 'ReportRequest/Report0009',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-			],
-		},
-		report0011: {
-			path: 'ReportRequest/Report0011',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'cost_type',
-					param: 'cost_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'currency_id',
-					param: 'currency_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'item_group_ids',
-					param: 'item_group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'period_interval',
-					param: 'period_interval',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
-					required: false,
-				},
-			],
-		},
-		report0016: {
-			path: 'ReportRequest/Report0016',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'criterion_a',
-					param: 'criterion_a',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'criterion_b',
-					param: 'criterion_b',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'data_type',
-					param: 'data_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'item_group_ids',
-					param: 'item_group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
-					required: false,
-				},
-			],
-		},
-		report0017: {
-			path: 'ReportRequest/Report0017',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'criterion_x',
-					param: 'criterion_x',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'criterion_y',
-					param: 'criterion_y',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'data_type',
-					param: 'data_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'interval',
-					param: 'interval',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'item_group_ids',
-					param: 'item_group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
-					required: false,
-				},
-			],
-		},
-		report0018: {
-			path: 'ReportRequest/Report0018',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'criterion_a',
-					param: 'criterion_a',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'criterion_b',
-					param: 'criterion_b',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'criterion_x',
-					param: 'criterion_x',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'criterion_y',
-					param: 'criterion_y',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'data_type',
-					param: 'data_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'interval',
-					param: 'interval',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'item_group_ids',
-					param: 'item_group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
-					required: false,
-				},
-			],
-		},
-		report0020: {
-			path: 'ReportRequest/Report0020',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'cost_type',
-					param: 'cost_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'currency_id',
-					param: 'currency_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'date',
-					param: 'date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'group_type',
-					param: 'group_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'price_type_id',
-					param: 'price_type_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-			],
-		},
-		report0021: {
-			path: 'ReportRequest/Report0021',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'cost_type',
-					param: 'cost_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'currency_id',
-					param: 'currency_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'grouping',
-					param: 'grouping',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'report_type',
-					param: 'report_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-			],
-		},
-		report0022: {
-			path: 'ReportRequest/Report0022',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'by_partner',
-					param: 'by_partner',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'currency_id',
-					param: 'currency_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'partner_ids',
-					param: 'partner_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-			],
-		},
-		report0023: {
-			path: 'ReportRequest/Report0023',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-			],
-		},
-		report0024: {
-			path: 'ReportRequest/Report0024',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'cost_type',
-					param: 'cost_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'currency_id',
-					param: 'currency_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'group_type',
-					param: 'group_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'price_type_id',
-					param: 'price_type_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'sender_stock_id',
-					param: 'sender_stock_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-			],
-		},
-		report0025: {
-			path: 'ReportRequest/Report0025',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'cost_type',
-					param: 'cost_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'currency_id',
-					param: 'currency_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'item_group_ids',
-					param: 'item_group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
-					required: false,
-				},
-			],
-		},
-		report0026: {
-			path: 'ReportRequest/Report0026',
-			envelope: 'raw',
-			paginated: false,
-			fields: [
-				{
-					api: 'cost_type',
-					param: 'cost_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'currency_id',
-					param: 'currency_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'firm_id',
-					param: 'firm_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'item_group_ids',
-					param: 'item_group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -20069,24 +16815,25 @@ export const operationsMeta = {
 			path: 'RetailCard/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'barcode_type_id',
 					param: 'barcode_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'barcode_value',
 					param: 'barcode_value',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'customer_id',
 					param: 'customer_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'enabled',
@@ -20120,89 +16867,11 @@ export const operationsMeta = {
 				},
 			],
 		},
-		addWithCustomer: {
-			path: 'RetailCard/AddWithCustomer',
-			envelope: 'object',
-			paginated: false,
-			fields: [
-				{
-					api: 'barcode_type_id',
-					param: 'barcode_type_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'barcode_value',
-					param: 'barcode_value',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'customer_id',
-					param: 'customer_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'date_of_birth',
-					param: 'date_of_birth',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'enabled',
-					param: 'enabled',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'expiry_date',
-					param: 'expiry_date',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'first_name',
-					param: 'first_name',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'last_name',
-					param: 'last_name',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'main_phone',
-					param: 'main_phone',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'middle_name',
-					param: 'middle_name',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'sex',
-					param: 'sex',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'unlimited',
-					param: 'unlimited',
-					kind: 'triBoolean',
-					required: false,
-				},
-			],
-		},
 		delete: {
 			path: 'RetailCard/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -20216,6 +16885,7 @@ export const operationsMeta = {
 			path: 'RetailCard/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'barcode_type_id',
@@ -20277,41 +16947,12 @@ export const operationsMeta = {
 			path: 'RetailCard/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'barcode_value',
-					param: 'barcode_value',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'customer_ids',
-					param: 'customer_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'group_ids',
-					param: 'group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'promo_ids',
-					param: 'promo_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -20326,17 +16967,12 @@ export const operationsMeta = {
 			path: 'RetailCard/GetBalance',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'card_id',
-					param: 'card_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'promo_id',
-					param: 'promo_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -20345,11 +16981,12 @@ export const operationsMeta = {
 			path: 'RetailCard/GetMigrationHistory',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'card_id',
-					param: 'card_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -20358,47 +16995,18 @@ export const operationsMeta = {
 			path: 'RetailCard/GetOperations',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'card_id',
-					param: 'card_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'promo_id',
-					param: 'promo_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'uuids',
-					param: 'uuids',
-					kind: 'stringList',
 					required: false,
 				},
 			],
@@ -20409,12 +17017,13 @@ export const operationsMeta = {
 			path: 'RetailCardGroup/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'parent_id',
@@ -20428,6 +17037,7 @@ export const operationsMeta = {
 			path: 'RetailCardGroup/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -20441,6 +17051,7 @@ export const operationsMeta = {
 			path: 'RetailCardGroup/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -20466,17 +17077,12 @@ export const operationsMeta = {
 			path: 'RetailCardGroup/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'parent_ids',
-					param: 'parent_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -20487,6 +17093,7 @@ export const operationsMeta = {
 			path: 'RetailCardMigration/SettingCondition/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'exclude',
@@ -20498,7 +17105,7 @@ export const operationsMeta = {
 					api: 'setting_id',
 					param: 'setting_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'type',
@@ -20518,6 +17125,7 @@ export const operationsMeta = {
 			path: 'RetailCardMigration/SettingCondition/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -20531,17 +17139,12 @@ export const operationsMeta = {
 			path: 'RetailCardMigration/SettingCondition/Get',
 			envelope: 'offsettedArray',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'setting_id',
-					param: 'setting_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -20550,6 +17153,7 @@ export const operationsMeta = {
 			path: 'RetailCardMigration/Settings/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'comparison',
@@ -20579,7 +17183,7 @@ export const operationsMeta = {
 					api: 'task_id',
 					param: 'task_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'type',
@@ -20599,6 +17203,7 @@ export const operationsMeta = {
 			path: 'RetailCardMigration/Settings/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -20612,6 +17217,7 @@ export const operationsMeta = {
 			path: 'RetailCardMigration/Settings/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'comparison',
@@ -20655,17 +17261,12 @@ export const operationsMeta = {
 			path: 'RetailCardMigration/Settings/Get',
 			envelope: 'offsettedArray',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'task_id',
-					param: 'task_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -20674,6 +17275,7 @@ export const operationsMeta = {
 			path: 'RetailCardMigration/Tasks/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'end_date',
@@ -20691,13 +17293,13 @@ export const operationsMeta = {
 					api: 'promo_from_id',
 					param: 'promo_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'promo_to_id',
 					param: 'promo_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'run_period',
@@ -20723,6 +17325,7 @@ export const operationsMeta = {
 			path: 'RetailCardMigration/Tasks/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -20736,6 +17339,7 @@ export const operationsMeta = {
 			path: 'RetailCardMigration/Tasks/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'end_date',
@@ -20759,13 +17363,13 @@ export const operationsMeta = {
 					api: 'promo_from_id',
 					param: 'promo_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'promo_to_id',
 					param: 'promo_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'run_period',
@@ -20791,29 +17395,12 @@ export const operationsMeta = {
 			path: 'RetailCardMigration/Tasks/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'promo_from_ids',
-					param: 'promo_from_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'promo_to_ids',
-					param: 'promo_to_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -20830,6 +17417,7 @@ export const operationsMeta = {
 			path: 'RetailCustomer/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'address',
@@ -20865,13 +17453,13 @@ export const operationsMeta = {
 					api: 'first_name',
 					param: 'first_name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'group_id',
 					param: 'group_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'last_name',
@@ -20921,30 +17509,31 @@ export const operationsMeta = {
 			path: 'RetailCustomer/AddDebt',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'amount',
 					param: 'amount',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'customer_id',
 					param: 'customer_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'paid',
 					param: 'paid',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'uuid',
@@ -20958,36 +17547,37 @@ export const operationsMeta = {
 			path: 'RetailCustomer/AddDebtPayment',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'amount',
 					param: 'amount',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'customer_id',
 					param: 'customer_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'date',
 					param: 'date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'debt_uuid',
 					param: 'debt_uuid',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'payment_uuid',
 					param: 'payment_uuid',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -20995,6 +17585,7 @@ export const operationsMeta = {
 			path: 'RetailCustomer/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -21008,6 +17599,7 @@ export const operationsMeta = {
 			path: 'RetailCustomer/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -21021,6 +17613,7 @@ export const operationsMeta = {
 			path: 'RetailCustomer/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'address',
@@ -21118,53 +17711,12 @@ export const operationsMeta = {
 			path: 'RetailCustomer/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'gender',
-					param: 'gender',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'group_ids',
-					param: 'group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'main_phone',
-					param: 'main_phone',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'refer_ids',
-					param: 'refer_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'region_ids',
-					param: 'region_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
 					required: false,
 				},
 				{
@@ -21179,23 +17731,12 @@ export const operationsMeta = {
 			path: 'RetailCustomer/GetAvgChequeAmount',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'customer_id',
-					param: 'customer_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'price_type_id',
-					param: 'price_type_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -21204,23 +17745,12 @@ export const operationsMeta = {
 			path: 'RetailCustomer/GetChequeCount',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'customer_id',
-					param: 'customer_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'price_type_id',
-					param: 'price_type_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -21229,29 +17759,12 @@ export const operationsMeta = {
 			path: 'RetailCustomer/GetDebts',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'customer_id',
-					param: 'customer_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'is_debts',
-					param: 'is_debts',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'uuids',
-					param: 'uuids',
-					kind: 'stringList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -21260,17 +17773,12 @@ export const operationsMeta = {
 			path: 'RetailCustomer/GetDebtsPaymentHistory',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'customer_id',
-					param: 'customer_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -21279,23 +17787,12 @@ export const operationsMeta = {
 			path: 'RetailCustomer/GetFavoritePurchases',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'customer_id',
-					param: 'customer_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'price_type_id',
-					param: 'price_type_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -21304,23 +17801,12 @@ export const operationsMeta = {
 			path: 'RetailCustomer/GetLastPurchaseDate',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'customer_id',
-					param: 'customer_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'price_type_id',
-					param: 'price_type_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -21329,17 +17815,12 @@ export const operationsMeta = {
 			path: 'RetailCustomer/GetPurchaseInfo',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'customer_id',
-					param: 'customer_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'stock_id',
-					param: 'stock_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -21350,12 +17831,13 @@ export const operationsMeta = {
 			path: 'RetailCustomerGroup/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'parent_id',
@@ -21369,6 +17851,7 @@ export const operationsMeta = {
 			path: 'RetailCustomerGroup/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -21382,6 +17865,7 @@ export const operationsMeta = {
 			path: 'RetailCustomerGroup/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -21393,7 +17877,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'parent_id',
@@ -21407,68 +17891,12 @@ export const operationsMeta = {
 			path: 'RetailCustomerGroup/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'parent_ids',
-					param: 'parent_ids',
-					kind: 'idList',
-					required: false,
-				},
-			],
-		},
-	},
-	retailOperationList: {
-		get: {
-			path: 'RetailOperationList/Get',
-			envelope: 'offsettedArray',
-			paginated: true,
-			fields: [
-				{
-					api: 'customer_ids',
-					param: 'customer_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'operating_cash_ids',
-					param: 'operating_cash_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'retail_card_ids',
-					param: 'retail_card_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'sort_orders',
-					param: 'sort_orders',
-					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'dateTime',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -21479,29 +17907,12 @@ export const operationsMeta = {
 			path: 'RetailPaymentReport/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'end_date',
-					param: 'end_date',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'operating_cash_ids',
-					param: 'operating_cash_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'period_interval',
-					param: 'period_interval',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'start_date',
-					param: 'start_date',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -21512,12 +17923,13 @@ export const operationsMeta = {
 			path: 'RetailReport/Counts',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'end_date',
 					param: 'end_date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'operating_cash_ids',
@@ -21529,7 +17941,7 @@ export const operationsMeta = {
 					api: 'start_date',
 					param: 'start_date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -21537,12 +17949,13 @@ export const operationsMeta = {
 			path: 'RetailReport/Operations',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'end_date',
 					param: 'end_date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'operating_cash_ids',
@@ -21560,7 +17973,7 @@ export const operationsMeta = {
 					api: 'start_date',
 					param: 'start_date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -21568,12 +17981,13 @@ export const operationsMeta = {
 			path: 'RetailReport/Payments',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'end_date',
 					param: 'end_date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'operating_cash_ids',
@@ -21585,7 +17999,7 @@ export const operationsMeta = {
 					api: 'start_date',
 					param: 'start_date',
 					kind: 'dateTime',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -21595,6 +18009,7 @@ export const operationsMeta = {
 			path: 'RetailReturnReason/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
@@ -21612,7 +18027,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -21620,6 +18035,7 @@ export const operationsMeta = {
 			path: 'RetailReturnReason/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -21633,6 +18049,7 @@ export const operationsMeta = {
 			path: 'RetailReturnReason/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
@@ -21664,23 +18081,12 @@ export const operationsMeta = {
 			path: 'RetailReturnReason/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'enabled',
-					param: 'enabled',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -21697,12 +18103,57 @@ export const operationsMeta = {
 			path: 'ReturnsToPartnerOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'cost',
+					param: 'cost',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		addDiscount: {
 			path: 'ReturnsToPartnerOperation/AddDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: '_document_type_id_',
@@ -21712,9 +18163,9 @@ export const operationsMeta = {
 				},
 				{
 					api: 'action',
-					param: 'action',
+					param: 'actionValue',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'amount',
@@ -21726,7 +18177,7 @@ export const operationsMeta = {
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'percent',
@@ -21738,7 +18189,7 @@ export const operationsMeta = {
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -21746,12 +18197,21 @@ export const operationsMeta = {
 			path: 'ReturnsToPartnerOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		deleteDiscount: {
 			path: 'ReturnsToPartnerOperation/DeleteDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: '_document_type_id_',
@@ -21771,35 +18231,56 @@ export const operationsMeta = {
 			path: 'ReturnsToPartnerOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'cost',
+					param: 'cost',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'ReturnsToPartnerOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -21814,23 +18295,12 @@ export const operationsMeta = {
 			path: 'ReturnsToPartnerOperation/GetDiscount',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: '_document_type_id_',
-					param: '_document_type_id_',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -21845,24 +18315,25 @@ export const operationsMeta = {
 			path: 'ReturnsToPartnerOperation/MoveOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -21870,12 +18341,13 @@ export const operationsMeta = {
 			path: 'ReturnsToPartnerOperation/SetCostByLastPurchase',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -21885,6 +18357,7 @@ export const operationsMeta = {
 			path: 'Role/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
@@ -21896,7 +18369,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -21904,6 +18377,7 @@ export const operationsMeta = {
 			path: 'Role/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -21917,6 +18391,7 @@ export const operationsMeta = {
 			path: 'Role/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
@@ -21934,7 +18409,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -21942,17 +18417,12 @@ export const operationsMeta = {
 			path: 'Role/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -21969,16 +18439,11 @@ export const operationsMeta = {
 			path: 'RolePermission/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
-		},
-		get: {
-			path: 'RolePermission/Get',
-			envelope: 'offsettedArray',
-			paginated: true,
+			bodyKind: 'array',
 			fields: [
 				{
-					api: 'group_id',
-					param: 'group_id',
+					api: 'id',
+					param: 'id',
 					kind: 'number',
 					required: false,
 				},
@@ -21995,36 +18460,29 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'value',
+					param: 'value',
+					kind: 'triBoolean',
+					required: true,
+				},
+			],
+		},
+		get: {
+			path: 'RolePermission/Get',
+			envelope: 'offsettedArray',
+			paginated: true,
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'value',
-					param: 'value',
-					kind: 'triBoolean',
-					required: false,
-				},
-			],
-		},
-	},
-	session: {
-		get: {
-			path: 'Session/Get',
-			envelope: 'array',
-			paginated: false,
-			fields: [
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'stringList',
 					required: false,
 				},
 			],
@@ -22035,24 +18493,51 @@ export const operationsMeta = {
 			path: 'SetPriceOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'base_value',
+					param: 'base_value',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'new_value',
+					param: 'new_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		copyOperationsFromDocPurchase: {
 			path: 'SetPriceOperation/CopyOperationsFromDocPurchase',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22060,41 +18545,52 @@ export const operationsMeta = {
 			path: 'SetPriceOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		edit: {
 			path: 'SetPriceOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'base_value',
+					param: 'base_value',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'new_value',
+					param: 'new_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'SetPriceOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -22109,18 +18605,19 @@ export const operationsMeta = {
 			path: 'SetPriceOperation/SetBasePriceByPriceType',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'price_type_id',
 					param: 'price_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22128,18 +18625,19 @@ export const operationsMeta = {
 			path: 'SetPriceOperation/SetNewPriceByPriceType',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'price_type_id',
 					param: 'price_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22149,12 +18647,13 @@ export const operationsMeta = {
 			path: 'SizeChart/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22162,6 +18661,7 @@ export const operationsMeta = {
 			path: 'SizeChart/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -22175,6 +18675,7 @@ export const operationsMeta = {
 			path: 'SizeChart/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -22186,7 +18687,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22194,17 +18695,12 @@ export const operationsMeta = {
 			path: 'SizeChart/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -22221,24 +18717,25 @@ export const operationsMeta = {
 			path: 'Sms/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'entity_id',
 					param: 'entity_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'entity_type',
 					param: 'entity_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'message',
 					param: 'message',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22246,29 +18743,12 @@ export const operationsMeta = {
 			path: 'Sms/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'entity_id',
-					param: 'entity_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'entity_type',
-					param: 'entity_type',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'status',
-					param: 'status',
-					kind: 'options',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -22277,6 +18757,7 @@ export const operationsMeta = {
 			path: 'Sms/SetStatus',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'error_message',
@@ -22294,7 +18775,7 @@ export const operationsMeta = {
 					api: 'status',
 					param: 'status',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22304,6 +18785,7 @@ export const operationsMeta = {
 			path: 'Stock/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'address',
@@ -22327,13 +18809,13 @@ export const operationsMeta = {
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22341,6 +18823,7 @@ export const operationsMeta = {
 			path: 'Stock/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -22354,12 +18837,13 @@ export const operationsMeta = {
 			path: 'Stock/DeleteConfirm',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'confirm_code',
 					param: 'confirm_code',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'id',
@@ -22373,6 +18857,7 @@ export const operationsMeta = {
 			path: 'Stock/DeleteMark',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -22386,6 +18871,7 @@ export const operationsMeta = {
 			path: 'Stock/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'address',
@@ -22415,7 +18901,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22423,29 +18909,12 @@ export const operationsMeta = {
 			path: 'Stock/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'deleted_mark',
-					param: 'deleted_mark',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -22462,29 +18931,12 @@ export const operationsMeta = {
 			path: 'StockAgregationOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -22501,6 +18953,7 @@ export const operationsMeta = {
 			path: 'Storage/Cleanup',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'end_date',
@@ -22526,15 +18979,31 @@ export const operationsMeta = {
 			path: 'Storage/Get',
 			envelope: 'object',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 	},
 	sys: {
 		getInfo: {
 			path: 'Sys/GetInfo',
-			envelope: 'raw',
+			envelope: 'object',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 	},
 	sysConfig: {
@@ -22542,17 +19011,32 @@ export const operationsMeta = {
 			path: 'SysConfig/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'key',
+					param: 'key',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'value',
+					param: 'value',
+					kind: 'string',
+					required: true,
+				},
+			],
 		},
 		get: {
 			path: 'SysConfig/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -22563,18 +19047,19 @@ export const operationsMeta = {
 			path: 'Tag/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'data',
 					param: 'data',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22582,6 +19067,7 @@ export const operationsMeta = {
 			path: 'Tag/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -22595,12 +19081,13 @@ export const operationsMeta = {
 			path: 'Tag/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'data',
 					param: 'data',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'id',
@@ -22612,7 +19099,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22620,18 +19107,19 @@ export const operationsMeta = {
 			path: 'Tag/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'id',
-					param: 'id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'include_data',
 					param: 'include_data',
 					kind: 'triBoolean',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22641,6 +19129,7 @@ export const operationsMeta = {
 			path: 'Target/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'currency_id',
@@ -22652,7 +19141,7 @@ export const operationsMeta = {
 					api: 'firm_id',
 					param: 'firm_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
@@ -22664,7 +19153,7 @@ export const operationsMeta = {
 					api: 'owner',
 					param: 'owner',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'period',
@@ -22676,12 +19165,18 @@ export const operationsMeta = {
 					api: 'period_type',
 					param: 'period_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'repeateable',
 					param: 'repeateable',
 					kind: 'boolean',
+					required: false,
+				},
+				{
+					api: 'start_date',
+					param: 'start_date',
+					kind: 'dateTime',
 					required: false,
 				},
 				{
@@ -22694,7 +19189,7 @@ export const operationsMeta = {
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'user_id',
@@ -22706,7 +19201,7 @@ export const operationsMeta = {
 					api: 'value',
 					param: 'value',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22714,6 +19209,7 @@ export const operationsMeta = {
 			path: 'Target/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -22727,6 +19223,7 @@ export const operationsMeta = {
 			path: 'Target/Finish',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -22740,35 +19237,12 @@ export const operationsMeta = {
 			path: 'Target/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'finished',
-					param: 'finished',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'firm_ids',
-					param: 'firm_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'owner',
-					param: 'owner',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'user_ids',
-					param: 'user_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -22777,12 +19251,13 @@ export const operationsMeta = {
 			path: 'Target/GetHistory',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'id',
-					param: 'id',
-					kind: 'number',
-					required: true,
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
 				},
 			],
 		},
@@ -22792,36 +19267,63 @@ export const operationsMeta = {
 			path: 'TargetSetting/Add',
 			envelope: 'insert',
 			paginated: false,
-			fields: [],
-		},
-		addSingle: {
-			path: 'TargetSetting/AddSingle',
-			envelope: 'insert',
-			paginated: false,
+			bodyKind: 'array',
 			fields: [
 				{
 					api: 'include',
 					param: 'include',
 					kind: 'boolean',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'target_id',
 					param: 'target_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'value',
 					param: 'value',
 					kind: 'string',
-					required: false,
+					required: true,
+				},
+			],
+		},
+		addSingle: {
+			path: 'TargetSetting/AddSingle',
+			envelope: 'insert',
+			paginated: false,
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'include',
+					param: 'include',
+					kind: 'boolean',
+					required: true,
+				},
+				{
+					api: 'target_id',
+					param: 'target_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'type',
+					param: 'type',
+					kind: 'options',
+					required: true,
+				},
+				{
+					api: 'value',
+					param: 'value',
+					kind: 'string',
+					required: true,
 				},
 			],
 		},
@@ -22829,6 +19331,7 @@ export const operationsMeta = {
 			path: 'TargetSetting/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -22842,23 +19345,12 @@ export const operationsMeta = {
 			path: 'TargetSetting/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'target_id',
-					param: 'target_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -22869,7 +19361,15 @@ export const operationsMeta = {
 			path: 'TargetType/Get',
 			envelope: 'array',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 	},
 	taxVat: {
@@ -22877,24 +19377,25 @@ export const operationsMeta = {
 			path: 'TaxVat/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'enabled',
 					param: 'enabled',
 					kind: 'triBoolean',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'value',
 					param: 'value',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22902,6 +19403,7 @@ export const operationsMeta = {
 			path: 'TaxVat/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -22915,6 +19417,7 @@ export const operationsMeta = {
 			path: 'TaxVat/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'enabled',
@@ -22932,7 +19435,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'value',
@@ -22946,17 +19449,12 @@ export const operationsMeta = {
 			path: 'TaxVat/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'enabled',
-					param: 'enabled',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -22967,18 +19465,19 @@ export const operationsMeta = {
 			path: 'TechMapOperation/Add',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'data',
 					param: 'data',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -22986,41 +19485,52 @@ export const operationsMeta = {
 			path: 'TechMapOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		edit: {
 			path: 'TechMapOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'part_cost',
+					param: 'part_cost',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'TechMapOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -23035,24 +19545,25 @@ export const operationsMeta = {
 			path: 'TechMapOperation/MoveOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -23062,18 +19573,25 @@ export const operationsMeta = {
 			path: 'Ticket/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
+				{
+					api: 'audio_recording_file_id',
+					param: 'audio_recording_file_id',
+					kind: 'number',
+					required: false,
+				},
 				{
 					api: 'channel_id',
 					param: 'channel_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'client_id',
 					param: 'client_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'description',
@@ -23135,6 +19653,7 @@ export const operationsMeta = {
 			path: 'Ticket/Close',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -23154,6 +19673,7 @@ export const operationsMeta = {
 			path: 'Ticket/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -23167,7 +19687,14 @@ export const operationsMeta = {
 			path: 'Ticket/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
+				{
+					api: 'audio_recording_file_id',
+					param: 'audio_recording_file_id',
+					kind: 'number',
+					required: false,
+				},
 				{
 					api: 'description',
 					param: 'description',
@@ -23216,47 +19743,12 @@ export const operationsMeta = {
 			path: 'Ticket/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'channel_ids',
-					param: 'channel_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'client_ids',
-					param: 'client_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'direction',
-					param: 'direction',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'external_dialog_id',
-					param: 'external_dialog_id',
-					kind: 'string',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'from_date',
-					param: 'from_date',
-					kind: 'dateTime',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
 					required: false,
 				},
 				{
@@ -23266,33 +19758,9 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'responsible_user_ids',
-					param: 'responsible_user_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
-					required: false,
-				},
-				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'statuses',
-					param: 'statuses',
-					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'to_date',
-					param: 'to_date',
-					kind: 'dateTime',
 					required: false,
 				},
 			],
@@ -23301,6 +19769,7 @@ export const operationsMeta = {
 			path: 'Ticket/SetClientSentiment',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -23318,7 +19787,7 @@ export const operationsMeta = {
 					api: 'sentiment_score',
 					param: 'sentiment_score',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -23326,6 +19795,7 @@ export const operationsMeta = {
 			path: 'Ticket/SetParticipants',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -23351,6 +19821,7 @@ export const operationsMeta = {
 			path: 'Ticket/SetRating',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -23362,7 +19833,7 @@ export const operationsMeta = {
 					api: 'rating',
 					param: 'rating',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'rating_comment',
@@ -23376,6 +19847,7 @@ export const operationsMeta = {
 			path: 'Ticket/SetResponsible',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -23387,7 +19859,7 @@ export const operationsMeta = {
 					api: 'responsible_user_id',
 					param: 'responsible_user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -23395,6 +19867,7 @@ export const operationsMeta = {
 			path: 'Ticket/SetStatus',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -23406,7 +19879,33 @@ export const operationsMeta = {
 					api: 'status',
 					param: 'status',
 					kind: 'options',
+					required: true,
+				},
+			],
+		},
+		setSupervisorReview: {
+			path: 'Ticket/SetSupervisorReview',
+			envelope: 'raw',
+			paginated: false,
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'review_comment',
+					param: 'review_comment',
+					kind: 'string',
 					required: false,
+				},
+				{
+					api: 'review_score',
+					param: 'review_score',
+					kind: 'number',
+					required: true,
 				},
 			],
 		},
@@ -23416,11 +19915,12 @@ export const operationsMeta = {
 			path: 'Translation/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'language_code',
-					param: 'language_code',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -23429,11 +19929,12 @@ export const operationsMeta = {
 			path: 'Translation/GetTranslationPacket',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'language_code',
-					param: 'language_code',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -23444,6 +19945,7 @@ export const operationsMeta = {
 			path: 'Unit/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
@@ -23452,22 +19954,16 @@ export const operationsMeta = {
 					required: false,
 				},
 				{
-					api: 'kkm_code',
-					param: 'kkm_code',
-					kind: 'number',
-					required: false,
-				},
-				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -23475,6 +19971,7 @@ export const operationsMeta = {
 			path: 'Unit/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -23488,6 +19985,7 @@ export const operationsMeta = {
 			path: 'Unit/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'description',
@@ -23500,12 +19998,6 @@ export const operationsMeta = {
 					param: 'id',
 					kind: 'number',
 					required: true,
-				},
-				{
-					api: 'kkm_code',
-					param: 'kkm_code',
-					kind: 'number',
-					required: false,
 				},
 				{
 					api: 'name',
@@ -23525,29 +20017,18 @@ export const operationsMeta = {
 			path: 'Unit/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
 					api: 'sort_orders',
 					param: 'sort_orders',
 					kind: 'json',
-					required: false,
-				},
-				{
-					api: 'type',
-					param: 'type',
-					kind: 'options',
 					required: false,
 				},
 			],
@@ -23558,6 +20039,7 @@ export const operationsMeta = {
 			path: 'User/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -23605,13 +20087,13 @@ export const operationsMeta = {
 					api: 'first_name',
 					param: 'first_name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'group_id',
 					param: 'group_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'language_code',
@@ -23629,7 +20111,7 @@ export const operationsMeta = {
 					api: 'login',
 					param: 'login',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'middle_name',
@@ -23641,13 +20123,13 @@ export const operationsMeta = {
 					api: 'new_password',
 					param: 'new_password',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'new_password_confirm',
 					param: 'new_password_confirm',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'phones',
@@ -23667,37 +20149,33 @@ export const operationsMeta = {
 			path: 'User/AddGlobal',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'group_id',
 					param: 'group_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'phone',
 					param: 'phone',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
-		},
-		addImage: {
-			path: 'User/AddImage',
-			envelope: 'raw',
-			paginated: false,
-			fields: [],
 		},
 		checkLogin: {
 			path: 'User/CheckLogin',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'login',
 					param: 'login',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -23705,19 +20183,7 @@ export const operationsMeta = {
 			path: 'User/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [
-				{
-					api: 'id',
-					param: 'id',
-					kind: 'number',
-					required: true,
-				},
-			],
-		},
-		deleteImage: {
-			path: 'User/DeleteImage',
-			envelope: 'raw',
-			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -23731,6 +20197,7 @@ export const operationsMeta = {
 			path: 'User/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -23840,65 +20307,12 @@ export const operationsMeta = {
 			path: 'User/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
-				{
-					api: 'active',
-					param: 'active',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'can_authorize',
-					param: 'can_authorize',
-					kind: 'triBoolean',
-					required: false,
-				},
 				{
 					api: 'filters',
 					param: 'filters',
 					kind: 'filters',
-					required: false,
-				},
-				{
-					api: 'gender',
-					param: 'gender',
-					kind: 'options',
-					required: false,
-				},
-				{
-					api: 'group_ids',
-					param: 'group_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'internal_phone',
-					param: 'internal_phone',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'language_code',
-					param: 'language_code',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'seller_barcode',
-					param: 'seller_barcode',
-					kind: 'string',
 					required: false,
 				},
 				{
@@ -23907,60 +20321,18 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'sub',
-					param: 'sub',
-					kind: 'string',
-					required: false,
-				},
-			],
-		},
-		getImage: {
-			path: 'User/GetImage',
-			envelope: 'array',
-			paginated: false,
-			fields: [
-				{
-					api: 'compress_data',
-					param: 'compress_data',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'include_data',
-					param: 'include_data',
-					kind: 'boolean',
-					required: false,
-				},
-				{
-					api: 'user_id',
-					param: 'user_id',
-					kind: 'number',
-					required: false,
-				},
 			],
 		},
 		getPermissions: {
 			path: 'User/GetPermissions',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'permission_ids',
-					param: 'permission_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'user_ids',
-					param: 'user_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -23969,24 +20341,25 @@ export const operationsMeta = {
 			path: 'User/PasswordChange',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'new_password',
 					param: 'new_password',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'new_password_confirm',
 					param: 'new_password_confirm',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'user_id',
 					param: 'user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -23994,6 +20367,7 @@ export const operationsMeta = {
 			path: 'User/PhoneChange',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -24005,7 +20379,7 @@ export const operationsMeta = {
 					api: 'phone',
 					param: 'phone',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24013,12 +20387,13 @@ export const operationsMeta = {
 			path: 'User/PhoneChangeConfirm',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'confirm_code',
 					param: 'confirm_code',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'id',
@@ -24030,7 +20405,7 @@ export const operationsMeta = {
 					api: 'phone',
 					param: 'phone',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24040,11 +20415,12 @@ export const operationsMeta = {
 			path: 'UserAccount/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'user_id',
-					param: 'user_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -24053,6 +20429,7 @@ export const operationsMeta = {
 			path: 'UserAccount/remove',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -24066,18 +20443,19 @@ export const operationsMeta = {
 			path: 'UserAccount/Set',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'account_id',
 					param: 'account_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'user_id',
 					param: 'user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24087,17 +20465,12 @@ export const operationsMeta = {
 			path: 'UserDashboard/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'dashboard_ids',
-					param: 'dashboard_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'user_id',
-					param: 'user_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -24106,12 +20479,13 @@ export const operationsMeta = {
 			path: 'UserDashboard/remove',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'dashboard_id',
 					param: 'dashboard_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'user_id',
@@ -24125,12 +20499,13 @@ export const operationsMeta = {
 			path: 'UserDashboard/Set',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'dashboard_id',
 					param: 'dashboard_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'user_id',
@@ -24144,12 +20519,13 @@ export const operationsMeta = {
 			path: 'UserDashboard/SetDefault',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'dashboard_id',
 					param: 'dashboard_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24159,12 +20535,13 @@ export const operationsMeta = {
 			path: 'UserGroup/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'parent_id',
@@ -24178,6 +20555,7 @@ export const operationsMeta = {
 			path: 'UserGroup/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -24191,6 +20569,7 @@ export const operationsMeta = {
 			path: 'UserGroup/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -24216,17 +20595,12 @@ export const operationsMeta = {
 			path: 'UserGroup/Get',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'parent_ids',
-					param: 'parent_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -24237,11 +20611,12 @@ export const operationsMeta = {
 			path: 'UserGroupRole/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'group_id',
-					param: 'group_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -24250,6 +20625,7 @@ export const operationsMeta = {
 			path: 'UserGroupRole/remove',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -24263,18 +20639,19 @@ export const operationsMeta = {
 			path: 'UserGroupRole/Set',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'group_id',
 					param: 'group_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'role_id',
 					param: 'role_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24284,11 +20661,12 @@ export const operationsMeta = {
 			path: 'UserNotify/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'user_id',
-					param: 'user_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -24297,7 +20675,27 @@ export const operationsMeta = {
 			path: 'UserNotify/Set',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'notification_key',
+					param: 'notification_key',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'user_id',
+					param: 'user_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'value',
+					param: 'value',
+					kind: 'boolean',
+					required: true,
+				},
+			],
 		},
 	},
 	userOperatingCash: {
@@ -24305,35 +20703,12 @@ export const operationsMeta = {
 			path: 'UserOperatingCash/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'is_virtual',
-					param: 'is_virtual',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'operating_cash_id',
-					param: 'operating_cash_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'price_type_ids',
-					param: 'price_type_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -24342,30 +20717,19 @@ export const operationsMeta = {
 					kind: 'json',
 					required: false,
 				},
-				{
-					api: 'stock_ids',
-					param: 'stock_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'user_id',
-					param: 'user_id',
-					kind: 'number',
-					required: false,
-				},
 			],
 		},
 		remove: {
 			path: 'UserOperatingCash/Remove',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
 					param: 'id',
 					kind: 'number',
-					required: true,
+					required: false,
 				},
 				{
 					api: 'operating_cash_id',
@@ -24385,18 +20749,19 @@ export const operationsMeta = {
 			path: 'UserOperatingCash/Set',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'operating_cash_id',
 					param: 'operating_cash_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'user_id',
 					param: 'user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24406,17 +20771,12 @@ export const operationsMeta = {
 			path: 'UserPermission/GetExt',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'permission_group_id',
-					param: 'permission_group_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'user_id',
-					param: 'user_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -24427,11 +20787,12 @@ export const operationsMeta = {
 			path: 'UserRole/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'user_id',
-					param: 'user_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -24440,6 +20801,7 @@ export const operationsMeta = {
 			path: 'UserRole/Remove',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -24453,18 +20815,19 @@ export const operationsMeta = {
 			path: 'UserRole/Set',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'role_id',
 					param: 'role_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'user_id',
 					param: 'user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24474,11 +20837,12 @@ export const operationsMeta = {
 			path: 'UserStock/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'user_id',
-					param: 'user_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -24487,6 +20851,7 @@ export const operationsMeta = {
 			path: 'UserStock/remove',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -24500,18 +20865,19 @@ export const operationsMeta = {
 			path: 'UserStock/Set',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'stock_id',
 					param: 'stock_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'user_id',
 					param: 'user_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24521,7 +20887,15 @@ export const operationsMeta = {
 			path: 'Webhook/Get',
 			envelope: 'array',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 	},
 	wholeSaleOperation: {
@@ -24529,12 +20903,63 @@ export const operationsMeta = {
 			path: 'WholeSaleOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price2',
+					param: 'price2',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		addDiscount: {
 			path: 'WholeSaleOperation/AddDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: '_document_type_id_',
@@ -24544,9 +20969,9 @@ export const operationsMeta = {
 				},
 				{
 					api: 'action',
-					param: 'action',
+					param: 'actionValue',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'amount',
@@ -24558,7 +20983,7 @@ export const operationsMeta = {
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'percent',
@@ -24570,7 +20995,7 @@ export const operationsMeta = {
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24578,18 +21003,19 @@ export const operationsMeta = {
 			path: 'WholeSaleOperation/CopyOperationsFromDocOrderFromPartner',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24597,18 +21023,19 @@ export const operationsMeta = {
 			path: 'WholeSaleOperation/CopyOperationsFromDocPurchase',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24616,12 +21043,21 @@ export const operationsMeta = {
 			path: 'WholeSaleOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		deleteDiscount: {
 			path: 'WholeSaleOperation/DeleteDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: '_document_type_id_',
@@ -24641,35 +21077,62 @@ export const operationsMeta = {
 			path: 'WholeSaleOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price2',
+					param: 'price2',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'WholeSaleOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -24684,23 +21147,12 @@ export const operationsMeta = {
 			path: 'WholeSaleOperation/GetDiscount',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: '_document_type_id_',
-					param: '_document_type_id_',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -24715,24 +21167,25 @@ export const operationsMeta = {
 			path: 'WholeSaleOperation/MoveOperations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24740,18 +21193,19 @@ export const operationsMeta = {
 			path: 'WholeSaleOperation/SetPriceByPriceType',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'price_type_id',
 					param: 'price_type_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24761,12 +21215,63 @@ export const operationsMeta = {
 			path: 'WholeSaleReturnOperation/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'document_id',
+					param: 'document_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'item_id',
+					param: 'item_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'price2',
+					param: 'price2',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		addDiscount: {
 			path: 'WholeSaleReturnOperation/AddDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: '_document_type_id_',
@@ -24776,9 +21281,9 @@ export const operationsMeta = {
 				},
 				{
 					api: 'action',
-					param: 'action',
+					param: 'actionValue',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'amount',
@@ -24790,7 +21295,7 @@ export const operationsMeta = {
 					api: 'document_id',
 					param: 'document_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'percent',
@@ -24802,7 +21307,7 @@ export const operationsMeta = {
 					api: 'type',
 					param: 'type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24810,12 +21315,21 @@ export const operationsMeta = {
 			path: 'WholeSaleReturnOperation/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		deleteDiscount: {
 			path: 'WholeSaleReturnOperation/DeleteDiscount',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: '_document_type_id_',
@@ -24835,35 +21349,62 @@ export const operationsMeta = {
 			path: 'WholeSaleReturnOperation/Edit',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'description',
+					param: 'description',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'order',
+					param: 'order',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price',
+					param: 'price',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'price2',
+					param: 'price2',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'quantity',
+					param: 'quantity',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'vat_value',
+					param: 'vat_value',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		get: {
 			path: 'WholeSaleReturnOperation/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'item_ids',
-					param: 'item_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -24878,23 +21419,12 @@ export const operationsMeta = {
 			path: 'WholeSaleReturnOperation/GetDiscount',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: '_document_type_id_',
-					param: '_document_type_id_',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'document_ids',
-					param: 'document_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 				{
@@ -24909,24 +21439,25 @@ export const operationsMeta = {
 			path: 'WholeSaleReturnOperation/moveOprerations',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'doc_from_id',
 					param: 'doc_from_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'doc_to_id',
 					param: 'doc_to_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'ids',
 					param: 'ids',
 					kind: 'idList',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24936,18 +21467,89 @@ export const operationsMeta = {
 			path: 'Widget/Add',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'column',
+					param: 'column',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'connected_integration_id',
+					param: 'connected_integration_id',
+					kind: 'string',
+					required: false,
+				},
+				{
+					api: 'dashboard_id',
+					param: 'dashboard_id',
+					kind: 'number',
+					required: true,
+				},
+				{
+					api: 'firm_id',
+					param: 'firm_id',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'height',
+					param: 'height',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'name',
+					param: 'name',
+					kind: 'string',
+					required: true,
+				},
+				{
+					api: 'row',
+					param: 'row',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'stock_id',
+					param: 'stock_id',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'widget_type',
+					param: 'widget_type',
+					kind: 'options',
+					required: true,
+				},
+				{
+					api: 'width',
+					param: 'width',
+					kind: 'number',
+					required: false,
+				},
+			],
 		},
 		delete: {
 			path: 'Widget/Delete',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
+			bodyKind: 'array',
+			fields: [
+				{
+					api: 'id',
+					param: 'id',
+					kind: 'number',
+					required: true,
+				},
+			],
 		},
 		edit: {
 			path: 'Widget/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -24959,7 +21561,7 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -24967,17 +21569,12 @@ export const operationsMeta = {
 			path: 'Widget/Get',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'dashboard_id',
-					param: 'dashboard_id',
-					kind: 'number',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -24986,6 +21583,7 @@ export const operationsMeta = {
 			path: 'Widget/SetFilters',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'firm_id',
@@ -25011,20 +21609,53 @@ export const operationsMeta = {
 			path: 'Widget/SetPosition',
 			envelope: 'raw',
 			paginated: false,
-			fields: [],
-		},
-	},
-	widgetData: {
-		get: {
-			path: 'WidgetData/Get',
-			envelope: 'array',
-			paginated: false,
+			bodyKind: 'array',
 			fields: [
+				{
+					api: 'column',
+					param: 'column',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'height',
+					param: 'height',
+					kind: 'number',
+					required: false,
+				},
 				{
 					api: 'id',
 					param: 'id',
 					kind: 'number',
 					required: true,
+				},
+				{
+					api: 'row',
+					param: 'row',
+					kind: 'number',
+					required: false,
+				},
+				{
+					api: 'width',
+					param: 'width',
+					kind: 'number',
+					required: false,
+				},
+			],
+		},
+	},
+	widgetData: {
+		get: {
+			path: 'WidgetData/Get',
+			envelope: 'object',
+			paginated: false,
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
 				},
 			],
 		},
@@ -25034,7 +21665,15 @@ export const operationsMeta = {
 			path: 'WidgetType/Get',
 			envelope: 'array',
 			paginated: false,
-			fields: [],
+			bodyKind: 'object',
+			fields: [
+				{
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
+					required: false,
+				},
+			],
 		},
 	},
 	workAttendance: {
@@ -25042,6 +21681,7 @@ export const operationsMeta = {
 			path: 'WorkAttendance/BreakEnd',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'comment',
@@ -25055,12 +21695,13 @@ export const operationsMeta = {
 			path: 'WorkAttendance/BreakStart',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'break_type',
 					param: 'break_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'comment',
@@ -25074,6 +21715,7 @@ export const operationsMeta = {
 			path: 'WorkAttendance/CheckIn',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'comment',
@@ -25087,6 +21729,7 @@ export const operationsMeta = {
 			path: 'WorkAttendance/CheckOut',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'comment',
@@ -25100,6 +21743,7 @@ export const operationsMeta = {
 			path: 'WorkAttendance/CurrentSession',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'user_id',
@@ -25113,6 +21757,7 @@ export const operationsMeta = {
 			path: 'WorkAttendance/Status',
 			envelope: 'object',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'user_id',
@@ -25128,6 +21773,7 @@ export const operationsMeta = {
 			path: 'WorkSchedule/Add',
 			envelope: 'insert',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -25163,13 +21809,13 @@ export const operationsMeta = {
 					api: 'name',
 					param: 'name',
 					kind: 'string',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'schedule_type',
 					param: 'schedule_type',
 					kind: 'options',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -25177,6 +21823,7 @@ export const operationsMeta = {
 			path: 'WorkSchedule/Delete',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -25190,6 +21837,7 @@ export const operationsMeta = {
 			path: 'WorkSchedule/Edit',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'active',
@@ -25239,23 +21887,12 @@ export const operationsMeta = {
 			path: 'WorkSchedule/Get',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'active',
-					param: 'active',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'ids',
-					param: 'ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'search',
-					param: 'search',
-					kind: 'string',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -25264,11 +21901,12 @@ export const operationsMeta = {
 			path: 'WorkSchedule/GetExceptions',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'schedule_id',
-					param: 'schedule_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -25277,11 +21915,12 @@ export const operationsMeta = {
 			path: 'WorkSchedule/GetIntervals',
 			envelope: 'array',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'schedule_id',
-					param: 'schedule_id',
-					kind: 'number',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -25290,6 +21929,7 @@ export const operationsMeta = {
 			path: 'WorkSchedule/SetDefault',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -25303,6 +21943,7 @@ export const operationsMeta = {
 			path: 'WorkSchedule/SetExceptions',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'exceptions',
@@ -25314,7 +21955,7 @@ export const operationsMeta = {
 					api: 'schedule_id',
 					param: 'schedule_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -25322,18 +21963,19 @@ export const operationsMeta = {
 			path: 'WorkSchedule/SetIntervals',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'intervals',
 					param: 'intervals',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 				{
 					api: 'schedule_id',
 					param: 'schedule_id',
 					kind: 'number',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -25343,6 +21985,7 @@ export const operationsMeta = {
 			path: 'WorkScheduleAssignment/DeleteGroup',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -25356,6 +21999,7 @@ export const operationsMeta = {
 			path: 'WorkScheduleAssignment/DeleteUser',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'id',
@@ -25369,17 +22013,12 @@ export const operationsMeta = {
 			path: 'WorkScheduleAssignment/GetGroups',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'date',
-					param: 'date',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'group_ids',
-					param: 'group_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -25388,29 +22027,12 @@ export const operationsMeta = {
 			path: 'WorkScheduleAssignment/GetUsers',
 			envelope: 'offsettedArray',
 			paginated: true,
+			bodyKind: 'object',
 			fields: [
 				{
-					api: 'active',
-					param: 'active',
-					kind: 'triBoolean',
-					required: false,
-				},
-				{
-					api: 'date',
-					param: 'date',
-					kind: 'string',
-					required: false,
-				},
-				{
-					api: 'schedule_ids',
-					param: 'schedule_ids',
-					kind: 'idList',
-					required: false,
-				},
-				{
-					api: 'user_ids',
-					param: 'user_ids',
-					kind: 'idList',
+					api: 'filters',
+					param: 'filters',
+					kind: 'filters',
 					required: false,
 				},
 			],
@@ -25419,12 +22041,13 @@ export const operationsMeta = {
 			path: 'WorkScheduleAssignment/SetGroups',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'assignments',
 					param: 'assignments',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 			],
 		},
@@ -25432,12 +22055,13 @@ export const operationsMeta = {
 			path: 'WorkScheduleAssignment/SetUsers',
 			envelope: 'raw',
 			paginated: false,
+			bodyKind: 'object',
 			fields: [
 				{
 					api: 'assignments',
 					param: 'assignments',
 					kind: 'json',
-					required: false,
+					required: true,
 				},
 			],
 		},
